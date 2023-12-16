@@ -1,0 +1,23 @@
+# Shortcuts for editors. And also for VS Code
+alias v="nvim"
+alias c="code"
+
+# Dotfile shortcuts
+alias zrc="v ~/.zshrc"
+alias zutils="v ~/Documents/repos/dotfiles/.zshutils"
+alias wezd="v ~/Documents/repos/dotfiles/.wezterm.lua"
+alias nvimd="v ~/Documents/repos/dotfiles/nvim"
+alias tmxd="v ~/Documents/repos/dotfiles/.tmux.conf"
+
+# Being re-source-ful
+alias szrc="source ~/.zshrc"
+
+# Folder Shortcuts
+alias repos="~/Documents/repos"
+alias tz="~/Documents/testzone"
+
+# Utility Functions
+function mkcd() { mkdir "$@" && cd "$@"; }
+function mkc() { mkdir "$@" && c "$@"; }
+
+
