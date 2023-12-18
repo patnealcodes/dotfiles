@@ -4,17 +4,25 @@ alias c="code"
 
 # Dotfile shortcuts
 alias zrc="v ~/.zshrc"
-alias zutils="v ~/Documents/repos/dotfiles/.zshutils"
-alias wezd="v ~/Documents/repos/dotfiles/.wezterm.lua"
-alias nvimd="v ~/Documents/repos/dotfiles/nvim"
-alias tmxd="v ~/Documents/repos/dotfiles/.tmux.conf"
+alias zut="v ~/Documents/repos/dotfiles/.zshutils"
+alias ala="v ~/Documents/repos/dotfiles/alacritty/alacritty.yml"
+alias vd="v ~/Documents/repos/dotfiles/nvim"
+alias txd="v ~/Documents/repos/dotfiles/.tmux.conf"
+alias ske="v ~/Documents/repos/dotfiles/sketchybar/"
 
 # Being re-source-ful
 alias szrc="source ~/.zshrc"
+alias sala="source ~/.config/alacritty/alacritty.yml"
+alias sske="sketchybar --reload"
 
 # Folder Shortcuts
 alias repos="~/Documents/repos"
 alias tz="~/Documents/testzone"
+
+# tmux shortcuts
+alias txls="tmux ls"
+function txa() { tmux attach -t "$@" }
+function txks() { tmux kill-session -t "$@" }
 
 # Utility Functions
 function mkcd() { mkdir "$@" && cd "$@"; }
