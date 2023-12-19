@@ -19,6 +19,9 @@ alias sske="sketchybar --reload"
 alias repos="~/Documents/repos"
 alias tz="~/Documents/testzone"
 
+# Repo shortcuts
+alias dot="~/Documents/repos/dotfiles"
+
 # tmux shortcuts
 alias txls="tmux ls"
 function txa() { tmux attach -t "$@" }

@@ -1,6 +1,6 @@
 #!/bin/bash
 
-SPACE_ICONS=("I" "II" "III" "IV" "V" "VI" "7" "8" "9" "10" "11" "12" "13" "14" "15")
+SPACE_ICONS=(":terminal:" ":git_hub:" ":obsidian:" ":google_chrome:" ":slack:" ":gear:" ":discord:" )
 
 # Destroy space on right click, focus space on left click.
 # New space by left clicking separator (>)
@@ -13,6 +13,7 @@ do
 
   space=(
     associated_space=$sid
+    icon.font="sketchybar-app-font:Regular:16.0"
     icon=${SPACE_ICONS[i]}
     icon.padding_left=10
     icon.padding_right=15
@@ -48,12 +49,8 @@ separator=(
   padding_right=15
   label.drawing=off
   associated_display=active
-  click_script='yabai -m space --create && sketchybar --trigger space_change'
   icon.color=$WHITE
 )
 
 sketchybar --add bracket spaces '/space\..*/' \
            --set spaces "${spaces[@]}"        \
-                                              \
-           --add item separator left          \
-           --set separator "${separator[@]}"
