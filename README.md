@@ -25,6 +25,7 @@ fi
 ln -s ~/Documents/repos/dotfiles/nvim ~/.config/nvim
 ln -s ~/Documents/repos/dotfiles/.wezterm.lua ~/.wezterm.lua
 ln -s ~/Documents/repos/dotfiles/.tmux.conf ~/.tmux.conf
+ln -s ~/Documents/repos/dotfiles/tmux/plugins/git.sh ~/.tmux/plugins/tmux/custom/git.sh
 ln -s ~/Documents/repos/dotfiles/.zshutils ~/.zshutils
 ln -s ~/Documents/repos/dotfiles/alacritty ~/.config/alacritty
 ```
