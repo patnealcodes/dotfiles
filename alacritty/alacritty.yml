@@ -1,34 +1,34 @@
+env:
+  TERM: xterm-256color   
+
 window:
   # padding:
   #   x: 20
   #   y: 20
   decorations: buttonless
-  opacity: 1
+  opacity: 0.95 
   title: Alacritty
   dynamic_title: true
 
 import:
-  # uncomment the flavour you want below:
   # - ~/.config/alacritty/catppuccin/catppuccin-mocha.yml
   - ~/.config/alacritty/catppuccin/catppuccin-macchiato.yml
   # - ~/.config/alacritty/catppuccin/catppuccin-frappe.yml
   # - ~/.config/alacritty/catppuccin/catppuccin-latte.yml
 
-    
-
 font:
   normal:
     family: JetBrainsMono Nerd Font Mono 
-    style: ExtraLight
+    style: Light  
   bold:
     family: JetBrainsMono Nerd Font Mono 
-    style: Medium
+    style: Regular
   italic:
     family: JetBrainsMono Nerd Font Mono
-    style: ExtraLight Italic
+    style: Light Italic
   bold_italic:
     family: JetBrainsMono Nerd Font Mono
-    style: Medium Italic
+    style: Italic
   size: 16.0
 
 cursor:
