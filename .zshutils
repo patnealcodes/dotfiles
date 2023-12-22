@@ -7,7 +7,7 @@ alias zrc="v ~/.zshrc"
 alias zut="v ~/Documents/repos/dotfiles/.zshutils"
 alias ala="v ~/Documents/repos/dotfiles/alacritty/alacritty.yml"
 alias vd="v ~/Documents/repos/dotfiles/nvim"
-alias txd="v ~/Documents/repos/dotfiles/.tmux.conf"
+alias tx="v ~/Documents/repos/dotfiles/.tmux.conf"
 alias ske="v ~/Documents/repos/dotfiles/sketchybar/"
 
 # Being re-source-ful
@@ -18,13 +18,15 @@ alias sske="sketchybar --reload"
 # Folder Shortcuts
 alias repos="~/Documents/repos"
 alias tz="~/Documents/testzone"
+alias ex="~/Exercism/typescript"
 
 # Repo shortcuts
 alias dot="~/Documents/repos/dotfiles"
 
 # tmux shortcuts
 alias txls="tmux ls"
-function txa() { tmux attach -t "$@" }
+alias txd="tmux detach"
+function txa() { if [ "$@" ]; then tmux attach -t "$@"; else tmux attach; fi }
 function txks() { tmux kill-session -t "$@" }
 
 # Utility Functions
