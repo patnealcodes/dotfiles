@@ -11,7 +11,7 @@ vim.keymap.set("n", "<leader>=", "m8gg=G`8")
 vim.keymap.set("n", "<C-d>", "<C-d>zz")
 vim.keymap.set("n", "<C-u>", "<C-u>zz")
 vim.keymap.set("n", "<leader>nh", "<Cmd>nohl<CR>")
-vim.keymap.set("v", "<C-r>", "y:%s/<C-r>0/")
+vim.keymap.set("v", "<C-R>", "y:%s/<C-r>0/")
 
 -- plugins
 -- neotree

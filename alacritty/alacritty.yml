@@ -35,13 +35,10 @@ cursor:
   style: Block
 
 # shell:
-#   program: /opt/homebrew/bin/tmux 
+#   program: /bin/zsh
 #   args:
-#     - new-session
-#     - -A
-#     - -D
-#     - -s
-#     - main 
+#     - -c
+#     - "/opt/homebrew/bin/tmux a"
 
 working_directory: None
 

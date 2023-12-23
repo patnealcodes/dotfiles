@@ -26,6 +26,7 @@ alias dot="~/Documents/repos/dotfiles"
 # tmux shortcuts
 alias txls="tmux ls"
 alias txd="tmux detach"
+function txn() { if [ "$@" ]; then tmux new -s "$@"; else tmux; fi }
 function txa() { if [ "$@" ]; then tmux attach -t "$@"; else tmux attach; fi }
 function txks() { tmux kill-session -t "$@" }
 
