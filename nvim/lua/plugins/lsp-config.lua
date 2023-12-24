@@ -9,7 +9,17 @@ return {
     "williamboman/mason-lspconfig.nvim",
     config = function()
       require("mason-lspconfig").setup({
-        ensure_installed = { "lua_ls", "tsserver", "pyright", "jsonls", "gopls", "cssls", "tailwindcss", "rust_analyzer"}
+        ensure_installed = {
+          "lua_ls",
+          "tsserver",
+          "pyright",
+          "jsonls",
+          "gopls",
+          "cssls",
+          "tailwindcss",
+          "rust_analyzer",
+          "taplo"
+        }
       })
     end
   },
@@ -25,6 +35,8 @@ return {
       lspconfig.gopls.setup({})
       lspconfig.cssls.setup({})
       lspconfig.tailwindcss.setup({})
+      lspconfig.rust_analyzer.setup({})
+      lspconfig.taplo.setup({})
 
       vim.keymap.set('n', '<leader>lh', vim.lsp.buf.hover)
       vim.keymap.set('n', '<leader>ld', vim.lsp.buf.definition)
