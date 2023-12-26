@@ -5,6 +5,7 @@
 - `tpm` tmux package manager
 - `jq` for spotify in sketchybar
 - `gh` and log in for the gh notifications in skethybar
+- `mac-mouse-manager`
 - [https://github.com/arl/gitmux](gitmux)
 
 ## Set up ailiases you wanna

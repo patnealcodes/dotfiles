@@ -7,7 +7,7 @@ window:
   #   y: 20
   decorations: buttonless
   opacity: 0.95 
-  title: Alacritty
+  title: trmnl
   dynamic_title: true
 
 import:
@@ -18,18 +18,18 @@ import:
 
 font:
   normal:
-    family: JetBrainsMono Nerd Font Mono 
+    family: MonaspiceNe Nerd Font 
     style: Light  
   bold:
-    family: JetBrainsMono Nerd Font Mono 
+    family: MonaspiceNe Nerd Font 
     style: Regular
   italic:
-    family: JetBrainsMono Nerd Font Mono
+    family: MonaspiceNe Nerd Font
     style: Light Italic
   bold_italic:
-    family: JetBrainsMono Nerd Font Mono
+    family: MonaspiceNe Nerd Font
     style: Italic
-  size: 16.0
+  size: 14.0
 
 cursor:
   style: Block
@@ -43,7 +43,7 @@ cursor:
 working_directory: None
 
 mouse:
-  hide_when_typing: false
+  hide_when_typing: true
 
 key_bindings:
   - { key: V, mods: Command, action: Paste           }
