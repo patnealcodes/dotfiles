@@ -2,6 +2,10 @@
 alias v="nvim"
 alias c="code"
 
+# Language Shortcuts
+alias py="python3"
+alias pip="pip3"
+
 # Dotfile shortcuts
 alias zrc="v ~/.zshrc"
 alias zut="v ~/Documents/repos/dotfiles/.zshutils"
@@ -18,7 +22,7 @@ alias sske="sketchybar --reload"
 # Folder Shortcuts
 alias repos="~/Documents/repos"
 alias tz="~/Documents/testzone"
-alias ex="~/Exercism/typescript"
+alias ex="~/Exercism/python"
 
 # Repo shortcuts
 alias dot="~/Documents/repos/dotfiles"
