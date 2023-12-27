@@ -23,15 +23,15 @@ local options = {
     ignore = true,
   },
   filesystem_watchers = {
-    enable = false,
+    enable = true,
   },
   actions = {
     open_file = {
-      quit_on_open = true,
+      resize_window = true,
     },
   },
   renderer = {
-    root_folder_label = true,
+    root_folder_label = false,
     highlight_git = false,
     highlight_opened_files = "none",
 

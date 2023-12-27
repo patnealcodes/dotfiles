@@ -3,48 +3,16 @@
 local M = {}
 
 M.general = {
-  i = {
-    -- go to  beginning and end
-    -- ["<C-b>"] = { "<ESC>^i", "Beginning of line" },
-    -- ["<C-e>"] = { "<End>", "End of line" },
-
-    -- navigate within insert mode
-    -- ["<C-h>"] = { "<Left>", "Move left" },
-    -- ["<C-l>"] = { "<Right>", "Move right" },
-    -- ["<C-j>"] = { "<Down>", "Move down" },
-    -- ["<C-k>"] = { "<Up>", "Move up" },
-  },
-
   n = {
-    -- my stuff
-    ["<C-d>"] = { "<C-d>zz", "Jump down half page and center"},
-    ["<C-u>"] = { "<C-u>zz", "Jump up half page and center"},
-    -- chad start
     ["<Esc>"] = { "<cmd> noh <CR>", "Clear highlights" },
-    -- switch between windows
-    -- ["<C-h>"] = { "<C-w>h", "Window left" },
-    -- ["<C-l>"] = { "<C-w>l", "Window right" },
-    -- ["<C-j>"] = { "<C-w>j", "Window down" },
-    -- ["<C-k>"] = { "<C-w>k", "Window up" },
-
-    -- save
-    -- ["<C-s>"] = { "<cmd> w <CR>", "Save file" },
-
-    -- Copy all
-    -- ["<C-c>"] = { "<cmd> %y+ <CR>", "Copy whole file" },
-
-    -- line numbers
-    -- ["<leader>n"] = { "<cmd> set nu! <CR>", "Toggle line number" },
-    -- ["<leader>rn"] = { "<cmd> set rnu! <CR>", "Toggle relative number" },
-
     -- Allow moving the cursor through wrapped lines with j, k, <Up> and <Down>
     -- http://www.reddit.com/r/vim/comments/2k4cbr/problem_with_gj_and_gk/
     -- empty mode is same as using <cmd> :map
     -- also don't use g[j|k] when in operator pending mode, so it doesn't alter d, y or c behaviour
-    -- ["j"] = { 'v:count || mode(1)[0:1] == "no" ? "j" : "gj"', "Move down", opts = { expr = true } },
-    -- ["k"] = { 'v:count || mode(1)[0:1] == "no" ? "k" : "gk"', "Move up", opts = { expr = true } },
-    -- ["<Up>"] = { 'v:count || mode(1)[0:1] == "no" ? "k" : "gk"', "Move up", opts = { expr = true } },
-    -- ["<Down>"] = { 'v:count || mode(1)[0:1] == "no" ? "j" : "gj"', "Move down", opts = { expr = true } },
+    ["j"] = { 'v:count || mode(1)[0:1] == "no" ? "j" : "gj"', "Move down", opts = { expr = true } },
+    ["k"] = { 'v:count || mode(1)[0:1] == "no" ? "k" : "gk"', "Move up", opts = { expr = true } },
+    ["<Up>"] = { 'v:count || mode(1)[0:1] == "no" ? "k" : "gk"', "Move up", opts = { expr = true } },
+    ["<Down>"] = { 'v:count || mode(1)[0:1] == "no" ? "j" : "gj"', "Move down", opts = { expr = true } },
 
     -- new buffer
     ["<leader>b"] = { "<cmd> enew <CR>", "New buffer" },
@@ -63,7 +31,6 @@ M.general = {
   },
 
   v = {
-    ["C-R"] = { "y:%s/<C-r>0/", "Yank selected text and use in a find and replace" },
     ["<Up>"] = { 'v:count || mode(1)[0:1] == "no" ? "k" : "gk"', "Move up", opts = { expr = true } },
     ["<Down>"] = { 'v:count || mode(1)[0:1] == "no" ? "j" : "gj"', "Move down", opts = { expr = true } },
     ["<"] = { "<gv", "Indent line" },
@@ -84,14 +51,14 @@ M.tabufline = {
 
   n = {
     -- cycle through buffers
-    ["<C-j>"] = {
+    ["<tab>"] = {
       function()
         require("nvchad.tabufline").tabuflineNext()
       end,
       "Goto next buffer",
     },
 
-    ["<C-k>"] = {
+    ["<S-tab>"] = {
       function()
         require("nvchad.tabufline").tabuflinePrev()
       end,
@@ -99,7 +66,7 @@ M.tabufline = {
     },
 
     -- close buffer + hide terminal buffer
-    ["<Esc>"] = {
+    ["<leader>x"] = {
       function()
         require("nvchad.tabufline").close_buffer()
       end,
@@ -279,7 +246,7 @@ M.telescope = {
     ["<leader>fa"] = { "<cmd> Telescope find_files follow=true no_ignore=true hidden=true <CR>", "Find all" },
     ["<leader>lg"] = { "<cmd> Telescope live_grep <CR>", "Live grep" },
     ["<leader>fb"] = { "<cmd> Telescope buffers <CR>", "Find buffers" },
-    ["<leader>h"] = { "<cmd> Telescope help_tags <CR>", "Help page" },
+    ["<leader>fh"] = { "<cmd> Telescope help_tags <CR>", "Help page" },
     ["<leader>fo"] = { "<cmd> Telescope oldfiles <CR>", "Find oldfiles" },
     ["<leader>fz"] = { "<cmd> Telescope current_buffer_fuzzy_find <CR>", "Find in current buffer" },
 
