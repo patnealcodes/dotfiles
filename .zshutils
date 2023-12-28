@@ -10,6 +10,7 @@ alias pip="pip3"
 alias zrc="v ~/.zshrc"
 alias zut="v ~/Documents/repos/dotfiles/.zshutils"
 alias ala="v ~/Documents/repos/dotfiles/alacritty/alacritty.yml"
+alias kit="v ~/Documents/repos/dotfiles/kitty/kitty.conf"
 alias vd="v ~/Documents/repos/dotfiles/nvim"
 alias tx="v ~/Documents/repos/dotfiles/.tmux.conf"
 alias ske="v ~/Documents/repos/dotfiles/sketchybar/"
@@ -17,6 +18,7 @@ alias ske="v ~/Documents/repos/dotfiles/sketchybar/"
 # Being re-source-ful
 alias szrc="source ~/.zshrc"
 alias sala="source ~/.config/alacritty/alacritty.yml"
+alias skit="source ~/.config/kitty/kitty.conf"
 alias sske="sketchybar --reload"
 
 # Folder Shortcuts

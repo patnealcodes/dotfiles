@@ -20,6 +20,8 @@ fi
 ## Run some commands for setup
 `defaults write .GlobalPreferences com.apple.scrollwheel.scaling -1`
 - to disable the dumb scroll acceleration
+`defaults write com.knollsoft.Hookshot screenEdgeGapTop -int 0`
+- to change Rectangle top gap
 
 ## Create required folders
 - `~/documents/tmux-rezzes`
