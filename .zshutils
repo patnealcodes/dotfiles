@@ -1,19 +1,18 @@
 # Shortcuts for editors. And also for VS Code
 alias v="nvim"
-alias c="code"
 
 # Language Shortcuts
 alias py="python3"
 alias pip="pip3"
 
 # Dotfile shortcuts
-alias zrc="v ~/.zshrc"
-alias zut="v ~/Documents/repos/dotfiles/.zshutils"
-alias ala="v ~/Documents/repos/dotfiles/alacritty/alacritty.yml"
-alias kit="v ~/Documents/repos/dotfiles/kitty/kitty.conf"
-alias vd="v ~/Documents/repos/dotfiles/nvim"
-alias tx="v ~/Documents/repos/dotfiles/.tmux.conf"
-alias ske="v ~/Documents/repos/dotfiles/sketchybar/"
+alias zrc="cd ~ && v .zshrc"
+alias zut="cd ~/Documents/repos/dotfiles && v .zshutils"
+alias ala="cd ~/Documents/repos/dotfiles/alacritty && v alacritty.yml"
+alias kit="cd ~/Documents/repos/dotfiles/kitty && v kitty.conf"
+alias vd="cd ~/Documents/repos/dotfiles && v nvim"
+alias tx="cd ~/Documents/repos/dotfiles && v .tmux.conf"
+alias ske="cd ~/Documents/repos/dotfiles/sketchybar && v ."
 
 # Being re-source-ful
 alias szrc="source ~/.zshrc"

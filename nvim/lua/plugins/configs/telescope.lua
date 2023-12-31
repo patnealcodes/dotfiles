@@ -14,6 +14,11 @@ local options = {
     selection_caret = "  ",
     entry_prefix = "  ",
     initial_mode = "insert",
+    pickers = {
+      file_browser = {
+        initial_mode = "normal"
+      }
+    },
     selection_strategy = "reset",
     sorting_strategy = "ascending",
     layout_strategy = "horizontal",
@@ -61,6 +66,17 @@ local options = {
       override_file_sorter = true,
       case_mode = "smart_case",
     },
+    file_browser = {
+      hijack_netrw = true,
+      opts = {
+        vim.api.nvim_set_keymap(
+          "n",
+          "<C-n>",
+          ":Telescope file_browser path=%:p:h select_buffer=true<CR>",
+          { noremap = true }
+        )
+      }
+    }
   },
 }
 
