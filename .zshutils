@@ -12,6 +12,7 @@ alias ala="cd ~/Documents/repos/dotfiles/alacritty && v alacritty.yml"
 alias kit="cd ~/Documents/repos/dotfiles/kitty && v kitty.conf"
 alias vd="cd ~/Documents/repos/dotfiles && v nvim"
 alias tx="cd ~/Documents/repos/dotfiles && v .tmux.conf"
+alias txth="cd ~/Documents/repos/dotfiles && v .tmux_themes"
 alias ske="cd ~/Documents/repos/dotfiles/sketchybar && v ."
 
 # Being re-source-ful
