@@ -1,4 +1,4 @@
-# Shortcuts for editors. And also for VS Code
+# Shortcuts for editors
 alias v="nvim"
 
 # Language Shortcuts
@@ -8,18 +8,14 @@ alias pip="pip3"
 # Dotfile shortcuts
 alias zrc="cd ~ && v .zshrc"
 alias zut="cd ~/Documents/repos/dotfiles && v .zshutils"
-alias ala="cd ~/Documents/repos/dotfiles/alacritty && v alacritty.yml"
-alias kit="cd ~/Documents/repos/dotfiles/kitty && v kitty.conf"
-alias vd="cd ~/Documents/repos/dotfiles && v nvim"
+alias kit="cd ~/Documents/repos/dotfiles/kitty && v"
+alias vd="cd ~/Documents/repos/dotfiles/nvim && v"
 alias tx="cd ~/Documents/repos/dotfiles && v .tmux.conf"
-alias txth="cd ~/Documents/repos/dotfiles && v .tmux_themes"
-alias ske="cd ~/Documents/repos/dotfiles/sketchybar && v ."
 
 # Being re-source-ful
 alias szrc="source ~/.zshrc"
 alias sala="source ~/.config/alacritty/alacritty.yml"
 alias skit="source ~/.config/kitty/kitty.conf"
-alias sske="sketchybar --reload"
 
 # Folder Shortcuts
 alias repos="~/Documents/repos"
@@ -30,11 +26,13 @@ alias ex="~/Exercism/python"
 alias dot="~/Documents/repos/dotfiles"
 
 # tmux shortcuts
+alias txl="tmux ls"
 alias txls="tmux ls"
 alias txd="tmux detach"
 function txn() { if [ "$@" ]; then tmux new -s "$@"; else tmux; fi }
 function txa() { if [ "$@" ]; then tmux attach -t "$@"; else tmux attach; fi }
 function txks() { tmux kill-session -t "$@" }
+function txkw() { tmux kill-window -t "$@" }
 
 # Utility Functions
 function mkcd() { mkdir "$@" && cd "$@"; }

@@ -72,7 +72,6 @@ return {
 				},
 				file_browser = {
 					hijack_netrw = true,
-					theme = "ivy",
 				},
 			},
 		})
