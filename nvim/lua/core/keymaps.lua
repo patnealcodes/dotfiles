@@ -21,7 +21,8 @@ keymap.set("n", "<C-u>", "<C-u>zz")
 keymap.set("n", "n", "nzzzv")
 keymap.set("n", "N", "Nzzzv")
 
-keymap.set("n", "<C-[>", "<cmd>BufferLineCyclePrev<CR>")
-keymap.set("n", "<C-]>", "<cmd>BufferLineCycleNext<CR>")
+keymap.set("n", "<C-I>", "<cmd>BufferLineCyclePrev<CR>")
+keymap.set("n", "<C-O>", "<cmd>BufferLineCycleNext<CR>")
+keymap.set("n", "<C-w>", "<cmd>bd<CR>")
 
 keymap.set("n", "<leader>nh", ":nohl<CR>")

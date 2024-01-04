@@ -29,14 +29,8 @@ return {
 			},
 			mapping = cmp.mapping.preset.insert({
 				["<Esc>"] = cmp.mapping.abort(),
-				["<Enter>"] = cmp.mapping.confirm({
-					behavior = cmp.ConfirmBehavior.Insert,
-					select = true,
-				}),
-				["<Tab>"] = cmp.mapping.confirm({
-					behavior = cmp.ConfirmBehavior.Insert,
-					select = true,
-				}),
+				["<CR>"] = cmp.mapping.confirm({ select = true }),
+				["<Tab>"] = cmp.mapping.confirm({ select = true }),
 			}),
 
 			sources = cmp.config.sources({
