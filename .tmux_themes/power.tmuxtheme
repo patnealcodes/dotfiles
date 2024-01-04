@@ -6,7 +6,7 @@ set -goq @themepack-status-left-area-right-format "#I:#P"
 set -goq @themepack-status-left-area-middle-format '#(gitmux -cfg $HOME/.gitmux.conf "#{pane_current_path}")'
 set -goq @themepack-status-right-area-left-format ""
 set -goq @themepack-status-right-area-middle-format "♫ #{music_status} #{artist}: #{track}"
-set -goq @themepack-status-right-area-right-format "%I:%M%p %b %d"
+set -goq @themepack-status-right-area-right-format " %b %d %G %I:%M%p"
 set -goq @themepack-window-status-current-format "#I:#W#F"
 set -goq @themepack-window-status-format "#I:#W#F"
 

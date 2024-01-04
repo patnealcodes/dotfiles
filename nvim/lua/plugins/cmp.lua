@@ -28,10 +28,6 @@ return {
 				end,
 			},
 			mapping = cmp.mapping.preset.insert({
-				["<C-k>"] = cmp.mapping.select_prev_item(),
-				["<C-j>"] = cmp.mapping.select_next_item(),
-				["<C-u>"] = cmp.mapping.scroll_docs(-4),
-				["<C-d>"] = cmp.mapping.scroll_docs(4),
 				["<Esc>"] = cmp.mapping.abort(),
 				["<Enter>"] = cmp.mapping.confirm({
 					behavior = cmp.ConfirmBehavior.Insert,

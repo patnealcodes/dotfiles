@@ -9,6 +9,7 @@ alias pip="pip3"
 alias zrc="cd ~ && v .zshrc"
 alias zut="cd ~/Documents/repos/dotfiles && v .zshutils"
 alias kit="cd ~/Documents/repos/dotfiles/kitty && v"
+alias ala="cd ~/Documents/repos/dotfiles/alacritty && v"
 alias vd="cd ~/Documents/repos/dotfiles/nvim && v"
 alias tx="cd ~/Documents/repos/dotfiles && v .tmux.conf"
 
