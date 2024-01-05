@@ -7,7 +7,7 @@ return {
 
 		lualine.setup({
 			options = {
-				theme = "nightfly",
+        theme="nightfly",
 				section_separators = { left = "", right = "" },
 			},
 			sections = {
@@ -32,3 +32,4 @@ return {
 		})
 	end,
 }
+

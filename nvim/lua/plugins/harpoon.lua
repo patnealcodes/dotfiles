@@ -3,7 +3,7 @@ return {
 	branch = "harpoon2",
 	event = "VeryLazy",
 	dependencies = {
-		"nvim-lua/plenary.nvim",
+		"plenary",
 	},
 	config = function()
 		local keymap = vim.keymap
@@ -15,17 +15,18 @@ return {
 		keymap.set("n", "<leader>h", function()
 			harpoon.ui:toggle_quick_menu(harpoon:list())
 		end, {})
-		keymap.set("n", "<C-J>", function()
+		keymap.set("n", "<C-1>", function()
 			harpoon:list():select(1)
 		end, {})
-		keymap.set("n", "<C-K>", function()
+		keymap.set("n", "<C-2>", function()
 			harpoon:list():select(2)
 		end, {})
-		keymap.set("n", "<C-L>", function()
+		keymap.set("n", "<C-3>", function()
 			harpoon:list():select(3)
 		end, {})
-		keymap.set("n", "<C-:>", function()
+		keymap.set("n", "<C-4>", function()
 			harpoon:list():select(4)
 		end, {})
 	end,
 }
+

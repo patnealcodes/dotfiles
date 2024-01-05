@@ -26,3 +26,4 @@ keymap.set("n", "<C-O>", "<cmd>BufferLineCycleNext<CR>")
 keymap.set("n", "<C-w>", "<cmd>bd<CR>")
 
 keymap.set("n", "<leader>nh", ":nohl<CR>")
+
