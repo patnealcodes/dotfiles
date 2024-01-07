@@ -7,8 +7,9 @@ return {
 	},
   config = function()
     local telescope = require("telescope")
-    local builtin = require("telescope.builtin")
-    
+local keymap = vim.keymap
+local builtin = require("telescope.builtin")
+
     telescope.setup({
       defaults = {
         path_display = { "truncate" },
@@ -39,16 +40,18 @@ return {
     telescope.load_extension("fzf")
     telescope.load_extension("file_browser")
 
-    vim.keymap.set('n', '<leader>ff', builtin.find_files)
-    vim.keymap.set('n', '<leader>fo', builtin.oldfiles)
-    vim.keymap.set('n', '<leader>fg', builtin.git_files)
-		vim.keymap.set("n", "<leader>bb", "<cmd>Telescope buffers<cr>")
-    vim.keymap.set('n', '<leader>lg', builtin.live_grep)
-    vim.keymap.set('n', '<leader>gs', function()
-      builtin.grep_string({ search = vim.fn.input("gimee > ") })
-    end)
-    vim.keymap.set('n', '<leader>vh', builtin.help_tags)
-    vim.keymap.set('n', '<leader>gg', builtin.git_files)
-    vim.keymap.set('n', '<leader>fb', "<cmd>Telescope file_browser path=%:p:h select_buffer=true<CR>")
+keymap.set('n', '<leader>ff', builtin.find_files)
+keymap.set('n', '<leader>of', builtin.oldfiles)
+keymap.set('n', '<leader>fg', builtin.git_files)
+keymap.set("n", "<leader>bb", builtin.buffers)
+keymap.set('n', '<leader>lg', builtin.live_grep)
+keymap.set('n', '<leader>gs', function()
+  builtin.grep_string({ search = vim.fn.input("Grep ⇒ ") })
+end)
+keymap.set('n', '<leader>vh', builtin.help_tags)
+keymap.set('n', '<leader>gff', builtin.git_files)
+keymap.set('n', '<leader>fb', function ()
+  telescope.extensions.file_browser.file_browser({ path="%:p:h", select_buffer="true" })
+end)
   end
 }

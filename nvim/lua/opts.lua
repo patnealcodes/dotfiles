@@ -1,34 +1,27 @@
 local opt = vim.opt
 
-opt.swapfile = false
-
-opt.relativenumber = true
-opt.number = true
-opt.signcolumn = "yes"
-
-opt.expandtab = true
-opt.shiftwidth = 2
-opt.smartindent = true
-opt.tabstop = 2
-opt.softtabstop = 2
-
-opt.ignorecase = true
-opt.smartcase = true
-
-opt.clipboard:append("unnamedplus")
-
+-- opt.autochdir = true
 opt.autoindent = true
-
-opt.wrap = false
-
-opt.termguicolors = true
 opt.background = "dark"
-opt.signcolumn = "yes"
-
 opt.backspace = "indent,eol,start"
-
+opt.clipboard:append("unnamedplus")
+opt.colorcolumn = "80"
+opt.expandtab = true
+opt.hlsearch = false
+opt.ignorecase = true
+opt.incsearch = true
+opt.number = true
+opt.relativenumber = true
+opt.shiftwidth = 2
+opt.signcolumn = "yes"
+opt.signcolumn = "yes"
+opt.smartcase = true
+opt.smartindent = true
+opt.softtabstop = 2
+opt.swapfile = false
+opt.tabstop = 2
+opt.termguicolors = true
 opt.splitright = true
 opt.splitbelow = true
-
 opt.swapfile = false
-
+opt.wrap = false

@@ -3,9 +3,9 @@
 # unfocused_hollow = true
 # thickness = 0.15
 
-[cursor.style]
-shape = "Beam"
-# blinking = "Always"
+# [cursor.style]
+# shape = "Beam"
+# # blinking = "Always"
 
 [mouse]
 hide_when_typing = true
@@ -43,10 +43,6 @@ decorations = "buttonless"
 x = 6
 y = 6
 
-[colors.cursor]
-text = "CellBackground"
-cursor = "CellForeground"
-
 [colors.primary]
 foreground = "#e0def4"
 background = "#191724"
@@ -56,10 +52,10 @@ bright_foreground = "#e0def4"
 # [colors.cursor]
 # text = "#e0def4"
 # cursor = "#524f67"
-
-[colors.vi_mode_cursor]
-text = "#e0def4"
-cursor = "#524f67"
+#
+# [colors.vi_mode_cursor]
+# text = "#e0def4"
+# cursor = "#FFFFFF"
 
 [colors.search.matches]
 foreground = "#908caa"
