@@ -1,6 +1,7 @@
 local opt = vim.opt
 
 -- opt.autochdir = true
+opt.path:append({ '**' })
 opt.autoindent = true
 opt.background = "dark"
 opt.backspace = "indent,eol,start"

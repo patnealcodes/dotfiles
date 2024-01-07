@@ -38,4 +38,5 @@ function txkw() { tmux kill-window -t "$@" }
 function mkcd() { mkdir "$@" && cd "$@"; }
 function mkc() { mkdir "$@" && c "$@"; }
 
-
+# Exercism Shortcuts
+alias exs="exercism submit"
