@@ -4,7 +4,9 @@ return {
 	dependencies = {
 		"hrsh7th/cmp-buffer",
 		"hrsh7th/cmp-path",
-		"L3MON4D3/LuaSnip",
+		"hrsh7th/cmp-nvim-lsp",
+		"hrsh7th/cmp-nvim-lua",
+    "L3MON4D3/LuaSnip",
 		"saadparwaiz1/cmp_luasnip",
 		"rafamadriz/friendly-snippets",
 		"onsails/lspkind.nvim",
@@ -27,6 +29,10 @@ return {
 					luasnip.lsp_expand(args.body)
 				end,
 			},
+      window = {
+        completion = cmp.config.window.bordered(),
+        documentation = cmp.config.window.bordered()
+      },
 			mapping = cmp.mapping.preset.insert({
 				["<Esc>"] = cmp.mapping.abort(),
 				["<CR>"] = cmp.mapping.confirm({ select = true }),

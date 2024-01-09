@@ -6,7 +6,6 @@ opt.autoindent = true
 opt.background = "dark"
 opt.backspace = "indent,eol,start"
 opt.clipboard:append("unnamedplus")
-opt.colorcolumn = "80"
 opt.expandtab = true
 opt.hlsearch = false
 opt.ignorecase = true
@@ -14,7 +13,6 @@ opt.incsearch = true
 opt.number = true
 opt.relativenumber = true
 opt.shiftwidth = 2
-opt.signcolumn = "yes"
 opt.signcolumn = "yes"
 opt.smartcase = true
 opt.smartindent = true
