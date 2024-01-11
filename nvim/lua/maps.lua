@@ -1,6 +1,9 @@
 vim.g.mapleader = " "
-
 local keymap = vim.keymap
+
+--// UNMAP \\--
+keymap.set({ "c", "n", "i" }, "<S-Up>", "")
+keymap.set({ "c", "n", "i" }, "<S-Down>", "")
 
 --// BASE \\--
 keymap.set({ "c", "n", "i" }, "<Down>", "<C-n>")
@@ -18,12 +21,13 @@ keymap.set("v", "J", ":m '>+1<CR>gv=gv")
 keymap.set("v", "K", ":m '<-2<CR>gv=gv")
 
 keymap.set("n", "J", "mzJ`z")
-keymap.set("n", "<C-d>", "<C-d>zz")
+keymap.set("n", "<C-d", "<C-d>zz")
 keymap.set("n", "<C-u>", "<C-u>zz")
 keymap.set("n", "n", "nzzzv")
 keymap.set("n", "N", "Nzzzv")
 
 keymap.set("n", "<C-w>", "<cmd>bd<CR>")
+keymap.set("n", "<C-w>!", "<cmd>bd!<CR>")
 
 --// PLUGINS \\--
 
@@ -45,16 +49,16 @@ end, {})
 keymap.set("n", "<leader>h", function()
   require("harpoon").ui:toggle_quick_menu(require("harpoon"):list())
 end, {})
-keymap.set("n", "<C-1>", function()
+keymap.set("n", "<leader>1", function()
   require("harpoon"):list():select(1)
 end, {})
-keymap.set("n", "<C-2>", function()
+keymap.set("n", "<leader>2", function()
   require("harpoon"):list():select(2)
 end, {})
-keymap.set("n", "<C-3>", function()
+keymap.set("n", "<leader>3", function()
   require("harpoon"):list():select(3)
 end, {})
-keymap.set("n", "<C-4>", function()
+keymap.set("n", "<leader>4", function()
   require("harpoon"):list():select(4)
 end, {})
 
