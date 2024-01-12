@@ -1,17 +1,26 @@
+# Oof
+alias unsafechrome="open -n -a /Applications/Google\ Chrome\ Canary.app/Contents/MacOS/Google\ Chrome\ Canary --args --user-data-dir="./Desktop" --disable-web-security"
+
 # Shortcuts for editors
 alias v="nvim"
 
 # Language Shortcuts
-alias py="python3"
-alias pip="pip3"
+alias -g py="python"
+alias -g pip="pip"
 
 # Dotfile shortcuts
-alias zrc="cd ~ && v .zshrc"
-alias zut="cd ~/Documents/repos/dotfiles && v .zshutils"
-alias kit="cd ~/Documents/repos/dotfiles/kitty && v"
-alias ala="cd ~/Documents/repos/dotfiles/alacritty && v"
-alias vd="cd ~/Documents/repos/dotfiles/nvim && v"
-alias tx="cd ~/Documents/repos/dotfiles && v .tmux.conf"
+# alias zrc="cd ~ && v .zshrc"
+# alias zut="cd ~/Documents/repos/dotfiles && v .zshutils"
+# alias kit="cd ~/Documents/repos/dotfiles/kitty && v"
+# alias ala="cd ~/Documents/repos/dotfiles/alacritty && v"
+# alias vd="cd ~/Documents/repos/dotfiles/nvim && v"
+# alias tx="cd ~/Documents/repos/dotfiles && v .tmux.conf"
+alias zrc="v ~/.zshrc"
+alias zut="v ~/Documents/repos/dotfiles/.zshutils"
+alias kit="v ~/Documents/repos/dotfiles/kitty/kitty.conf"
+alias ala="v ~/Documents/repos/dotfiles/alacritty/alacritty.toml"
+alias vd="v ~/Documents/repos/dotfiles/nvim"
+alias tx="v ~/Documents/repos/dotfiles/.tmux.conf"
 
 # Being re-source-ful
 alias szrc="source ~/.zshrc"
@@ -40,3 +49,8 @@ function mkc() { mkdir "$@" && c "$@"; }
 
 # Exercism Shortcuts
 alias exs="exercism submit"
+
+# pyen
+export PYENV_ROOT="$HOME/.pyenv"
+command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init -)"

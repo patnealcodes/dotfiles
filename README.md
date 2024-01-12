@@ -3,9 +3,10 @@
 ## install some things:
 
 - `tpm` tmux package manager
-- `jq` for spotify in sketchybar
-- `gh` and log in for the gh notifications in skethybar
 - `mac-mouse-manager`
+- `brew install pyenv`
+- `brew install pyenv-virtualenv`
+- `brew install xz`
 - [https://github.com/arl/gitmux](gitmux)
 
 ## Set up ailiases you wanna

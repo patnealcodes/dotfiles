@@ -1,17 +1,17 @@
-# [cursor]
-# blink_interval = 500
-# unfocused_hollow = true
-# thickness = 0.15
+[cursor]
+blink_interval = 500
+unfocused_hollow = true
+thickness = 0.15
 
-# [cursor.style]
-# shape = "Beam"
-# # blinking = "Always"
+[cursor.style]
+shape = "Beam"
+blinking = "Always"
 
 [mouse]
 hide_when_typing = true
 
 [font]
-size = 15.0
+size = 14.0
 
 [font.normal]
 family = "JetBrainsMono Nerd Font"
@@ -35,7 +35,7 @@ y = 20
 startup_mode = "Windowed"
 
 dynamic_padding = true
-opacity = 0.95
+opacity = 0.85
 blur = true
 decorations = "buttonless"
 
