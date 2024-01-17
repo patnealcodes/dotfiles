@@ -6,6 +6,7 @@ keymap.set({ "c", "n", "i" }, "<S-Up>", "")
 keymap.set({ "c", "n", "i" }, "<S-Down>", "")
 
 --// BASE \\--
+keymap.set({ "c", "n", "i" }, "<C-c>", "<Esc>")
 keymap.set({ "c", "n", "i" }, "<Down>", "<C-n>")
 keymap.set({ "c", "n", "i" }, "<Up>", "<C-p>")
 
