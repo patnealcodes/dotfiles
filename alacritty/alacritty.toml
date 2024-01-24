@@ -29,24 +29,16 @@ x = 20
 y = 20
 
 [window]
-startup_mode = "Windowed"
+startup_mode = "Fullscreen"
 
 dynamic_padding = true
 opacity = 0.85
 blur = true
-decorations = "buttonless"
+decorations = "none"
 
 [window.padding]
 x = 6
 y = 6
-
-[shell]
-program = "/bin/zsh"
-args = [
-  "-l",
-  "-c",
-  "tmux a -t base || tmux new -s base"
-]
 
 [colors.primary]
 foreground = "#e0def4"

@@ -44,6 +44,7 @@ function txks() { tmux kill-session -t "$@" }
 function txkw() { tmux kill-window -t "$@" }
 
 # Utility Functions
+alias gconfig="git config --global -e"
 function mkcd() { mkdir "$@" && cd "$@"; }
 function mkc() { mkdir "$@" && c "$@"; }
 function ff {

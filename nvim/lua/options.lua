@@ -1,6 +1,7 @@
+vim.g.mapleader = ' '
+
 local opt = vim.opt
 
--- opt.autochdir = true
 opt.path:append({ '**' })
 opt.autoindent = true
 opt.background = "dark"
@@ -13,13 +14,13 @@ opt.incsearch = true
 opt.number = true
 opt.relativenumber = true
 opt.shiftwidth = 2
-opt.signcolumn = "yes"
+opt.signcolumn = "auto"
 opt.smartcase = true
 opt.smartindent = true
 opt.softtabstop = 2
 opt.swapfile = false
 opt.tabstop = 2
-opt.termguicolors = true
+opt.termguicolors = false
 opt.splitright = true
 opt.splitbelow = true
 opt.swapfile = false
