@@ -16,6 +16,12 @@ family = "UbuntuMono Nerd Font"
 [font.italic]
 style = "Regular"
 
+[font.bold]
+style = "Regular"
+
+[font.bold_italic]
+style = "Italic"
+
 [window.dimensions]
 columns = 277
 lines = 69

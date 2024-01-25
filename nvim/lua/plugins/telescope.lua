@@ -33,6 +33,7 @@ return {
     })
 
     telescope.load_extension("fzf")
+    telescope.load_extension('harpoon')
 
     vim.keymap.set('n', '<leader>ff', builtin.find_files)
     vim.keymap.set('n', '<leader>bb', builtin.buffers)
