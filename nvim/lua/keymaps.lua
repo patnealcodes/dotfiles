@@ -30,47 +30,19 @@ keymap.set("n", "N", "Nzzzv")
 keymap.set("n", "<C-w>", "<cmd>bd<CR>")
 keymap.set("n", "<C-w>!", "<cmd>bd!<CR>")
 
---// PLUGINS \\--
+--// CMD LAZY LOADED PLUGINS \\--
 
--- Neogen
-keymap.set('n', "<leader>nf", function ()
-  require("neogen").generate({ type = "func" })
-end)
-keymap.set({ 'i', 's' }, "<C-y>", function ()
-  return require("luasnip").luasnip.jump(-1)
-end, { silent = true })
-keymap.set({ 'i', 's' }, "<C-u>", function ()
-  return require("luasnip").luasnip.jump(1)
-end, { silent = true })
+-- Telescope
+keymap.set("n", "<leader>ff", "<CMD>Telescope find_files<CR>")
+keymap.set("n", "<leader>bb", "<CMD>Telescope buffers<CR>")
+keymap.set("n", "<leader>of", "<CMD>Telescope oldfiles<CR>")
+keymap.set("n", "<leader>lg", "<CMD>Telescope live_grep<CR>")
+keymap.set("n", "<leader>lr", "<CMD>Telescope lsp_references bufnr=0<CR>")
+keymap.set("n", "<leader>LR", "<CMD>Telescope lsp_references<CR>")
+keymap.set("n", "<leader>ld", "<CMD>Telescope lsp_definitions<CR>")
+keymap.set("n", "<leader>dd", "<CMD>Telescope diagnostics bufnr=0<CR>")
+keymap.set("n", "<leader>DD", "<CMD>Telescope diagnostics<CR>")
+keymap.set("n", "<leader>td", "<CMD>Telescope lsp_type_definition<CR>")
 
--- Harpoon
-keymap.set("n", "<leader>a", function()
-  require("harpoon"):list():append()
-end, {})
-keymap.set("n", "<C-h>", function()
-  require("harpoon").ui:toggle_quick_menu(require("harpoon"):list())
-end, {})
-keymap.set("n", "<leader>1", function()
-  require("harpoon"):list():select(1)
-end, {})
-keymap.set("n", "<leader>2", function()
-  require("harpoon"):list():select(2)
-end, {})
-keymap.set("n", "<leader>3", function()
-  require("harpoon"):list():select(3)
-end, {})
-keymap.set("n", "<leader>4", function()
-  require("harpoon"):list():select(4)
-end, {})
-
-
--- Trouble
-keymap.set('n', '<leader>tt', function ()
-  require("trouble").toggle()
-end)
-keymap.set('n', '<leader>tn', function ()
-  require("trouble").next()
-end)
-keymap.set('n', '<leader>tp', function ()
-  require("trouble").prev()
-end)
+-- Oil
+keymap.set("n", "-", "<CMD>Oil<CR>")
