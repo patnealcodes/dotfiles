@@ -5,8 +5,8 @@ alias unsafechrome="open -n -a /Applications/Google\ Chrome\ Canary.app/Contents
 alias v="nvim"
 
 # Language Shortcuts
-alias -g py="python"
-alias -g pip="pip"
+alias -g py="python3"
+alias -g pip="pip3"
 
 # Dotfile shortcuts
 # alias zrc="cd ~ && v .zshrc"
@@ -26,6 +26,7 @@ alias tx="v ~/Documents/repos/dotfiles/.tmux.conf"
 alias szrc="source ~/.zshrc"
 alias sala="source ~/.config/alacritty/alacritty.yml"
 alias skit="source ~/.config/kitty/kitty.conf"
+alias activate="source ./bin/activate"
 
 # Folder Shortcuts
 alias repos="~/Documents/repos"

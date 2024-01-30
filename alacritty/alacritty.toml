@@ -8,19 +8,20 @@ shape = "Beam"
 blinking = "Always"
 
 [font]
-size = 18.0
+size = 16.0
 
 [font.normal]
-family = "UbuntuMono Nerd Font"
+family = "MonaspiceNe Nerd Font Mono"
+style = "Light"
 
 [font.italic]
-style = "Regular"
+style = "Light Italic"
 
 [font.bold]
 style = "Regular"
 
 [font.bold_italic]
-style = "Italic"
+style = "Regular Italic"
 
 [window.dimensions]
 columns = 277

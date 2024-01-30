@@ -59,10 +59,6 @@ return {
 					capabilities = capabilities,
 				}
 
-				if lsp == "pyright" then
-					setup.filetypes = { "python" }
-				end
-
 				if lsp == "cssls" then
 					setup.settings = {
 						css = {

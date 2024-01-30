@@ -10,6 +10,8 @@ keymap.set({ "c", "n", "i" }, "<C-c>", "<Esc>")
 keymap.set({ "c", "n", "i" }, "<Down>", "<C-n>")
 keymap.set({ "c", "n", "i" }, "<Up>", "<C-p>")
 
+keymap.set("n", "<leader>nh", "<CMD>nohl<CR>")
+
 keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
 keymap.set("x", "<leader>s", [[:%s/\<>/<>/gI<Left><Left><Left>]])
 
@@ -44,5 +46,11 @@ keymap.set("n", "<leader>dd", "<CMD>Telescope diagnostics bufnr=0<CR>")
 keymap.set("n", "<leader>DD", "<CMD>Telescope diagnostics<CR>")
 keymap.set("n", "<leader>td", "<CMD>Telescope lsp_type_definition<CR>")
 
+-- Telescope File Browser
+keymap.set("n", "<C-b>", "<cmd>Telescope file_browser path=%:p:h select_buffer=true<CR>", { desc = "Browse files" })
+
 -- Oil
-keymap.set("n", "-", "<CMD>Oil<CR>")
+keymap.set("n", "<leader>-", "<CMD>Oil<CR>")
+
+-- Undotree
+keymap.set("n", "U", vim.cmd.UndotreeToggle)
