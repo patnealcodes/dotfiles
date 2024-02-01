@@ -1,14 +1,15 @@
+-- No Rust or Go on certain machines
 local servers = {
 	"cssls",
 	"emmet_ls",
 	"eslint",
-	"golangci_lint_ls",
-	"gopls",
+	-- "golangci_lint_ls",
+	-- "gopls",
 	"html",
-	"htmx",
+	-- "htmx",
 	"lua_ls",
 	"pyright",
-	"rust_analyzer",
+	-- "rust_analyzer",
 	"tailwindcss",
 	"tsserver",
 	"yamlls",
@@ -42,7 +43,8 @@ return {
 					border = "rounded",
 				})
 
-				keymap.set("n", "K", vim.lsp.buf.hover)
+				keymap.set("n", "<leader>lh", vim.lsp.buf.hover)
+				keymap.set("n", "gd", vim.lsp.buf.definition)
 				keymap.set("n", "gD", vim.lsp.buf.declaration)
 				keymap.set("n", "<leader>d", vim.diagnostic.open_float)
 				keymap.set({ "n", "v" }, "<leader>ca", vim.lsp.buf.code_action)

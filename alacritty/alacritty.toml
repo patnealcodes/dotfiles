@@ -35,8 +35,8 @@ y = 20
 startup_mode = "Fullscreen"
 
 dynamic_padding = true
-opacity = 0.85
-blur = true
+opacity = 0.95
+blur = false
 decorations = "none"
 
 [window.padding]
