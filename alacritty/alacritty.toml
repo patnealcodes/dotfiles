@@ -32,7 +32,7 @@ x = 20
 y = 20
 
 [window]
-startup_mode = "Fullscreen"
+startup_mode = "Windowed"
 
 dynamic_padding = true
 opacity = 0.95

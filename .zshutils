@@ -3,6 +3,7 @@ alias unsafechrome="open -n -a /Applications/Google\ Chrome\ Canary.app/Contents
 
 # Shortcuts for editors
 alias v="nvim"
+alias z="zed"
 
 # Language Shortcuts
 alias -g py="python3"
@@ -19,6 +20,8 @@ alias zrc="v ~/.zshrc"
 alias zut="v ~/Documents/repos/dotfiles/.zshutils"
 alias kit="v ~/Documents/repos/dotfiles/kitty/kitty.conf"
 alias ala="v ~/Documents/repos/dotfiles/alacritty/alacritty.toml"
+alias zk="v ~/Documents/repos/dotfiles/zed/keymap.json"
+alias zs="v ~/Documents/repos/dotfiles/zed/settings.json"
 alias vd="v ~/Documents/repos/dotfiles/nvim"
 alias tx="v ~/Documents/repos/dotfiles/.tmux.conf"
 
