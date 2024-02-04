@@ -3,29 +3,41 @@
   {
     "context": "Editor",
     "bindings": {
-      "ctrl-h": ["workspace::ActivatePaneInDirection", "Left"],
-      "ctrl-j": ["workspace::ActivatePaneInDirection", "Down"],
-      "ctrl-k": ["workspace::ActivatePaneInDirection", "Up"],
-      "ctrl-l": ["workspace::ActivatePaneInDirection", "Right"],
-
+      "ctrl-b": "workspace::ToggleLeftDock",
+      "ctrl-h": [
+        "workspace::ActivatePaneInDirection",
+        "Left"
+      ],
+      "ctrl-j": [
+        "workspace::ActivatePaneInDirection",
+        "Down"
+      ],
+      "ctrl-k": [
+        "workspace::ActivatePaneInDirection",
+        "Up"
+      ],
+      "ctrl-l": [
+        "workspace::ActivatePaneInDirection",
+        "Right"
+      ],
       "shift-k": "editor::MoveLineUp",
       "shift-j": "editor::MoveLineDown",
-
       "/": [
         "buffer_search::Deploy",
         {
           "focus": true
         }
-      ]
+      ],
+      "ctrl-left": "editor::Fold",
+      "ctrl-right": "editor::UnfoldLines",
     }
   },
   {
     "context": "Workspace",
     "bindings": {
       "ctrl-b": "workspace::ToggleLeftDock",
-
+      "ctrl-`": "workspace::ToggleBottomDock",
       "space f f": "file_finder::Toggle",
-
       "space l l": "pane::DeploySearch"
     }
   },
@@ -33,10 +45,32 @@
     "context": "Pane",
     "bindings": {
       "ctrl-a \"": "pane::SplitDown",
-      "ctrl-a %": "pane::SplitRight"
+      "ctrl-a %": "pane::SplitRight",
+      "ctrl-w": "pane::CloseActiveItem",
+      "ctrl-shift-tab": "pane::ActivatePrevItem",
+      "ctrl-tab": "pane::ActivateNextItem",
     }
   },
-
+  {
+    "context": "BufferSearchBar",
+    "bindings": {
+      "ctrl-n": "search::SelectNextMatch",
+      "ctrl-shift-n": "search::SelectPrevMatch",
+    }
+  },
+  {
+    "context": "ProjectPanel",
+    "bindings": {
+      "n": "project_panel::NewFile",
+      "D": "project_panel::NewDirectory",
+      "d": "project_panel::Cut",
+      "y": "project_panel::Copy",
+      "p": "project_panel::Paste",
+      "cmd-opt-y": "project_panel::CopyPath",
+      "alt-cmd-shift-y": "project_panel::CopyRelativePath",
+      "r": "project_panel::Rename",
+    }
+  },
   // VIM Keybindings
   {
     "context": "Editor && VimControl && !VimWaiting && !menu",

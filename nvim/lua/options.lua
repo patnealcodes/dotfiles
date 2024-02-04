@@ -1,6 +1,7 @@
 local opt = vim.opt
 
 opt.path:append({ "**" })
+opt.conceallevel = 1
 opt.autoindent = true
 opt.background = "dark"
 opt.backspace = "indent,eol,start"

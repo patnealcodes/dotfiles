@@ -53,7 +53,10 @@ keymap.set("n", "<leader>td", "<CMD>Telescope lsp_type_definition<CR>")
 keymap.set("n", "<C-b>", "<cmd>Telescope file_browser path=%:p:h select_buffer=true<CR>", { desc = "Browse files" })
 
 -- Oil
-keymap.set("n", "<leader>-", "<CMD>Oil<CR>")
+keymap.set("n", "<leader>-", vim.cmd.Oil)
 
 -- Undotree
 keymap.set("n", "U", vim.cmd.UndotreeToggle)
+
+-- Obsidian
+keymap.set("n", "<C-o>", vim.cmd.ObsidianQuickSwitch)

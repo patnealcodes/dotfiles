@@ -15,6 +15,9 @@ return {
 					initial_mode = "normal",
 				},
 				pickers = {
+					opts = {
+						cwd_to_path = true,
+					},
 					live_grep = {
 						initial_mode = "insert",
 					},

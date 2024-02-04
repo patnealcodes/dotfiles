@@ -1,18 +1,18 @@
-return {
-	{
-		"rose-pine/neovim",
-		name = "rose-pine",
-		priority = 1000,
-		config = function()
-			require("rose-pine").setup({
-				styles = {
-					transparency = true,
-				},
-			})
-			vim.cmd.colorscheme("rose-pine")
-		end,
-	},
-}
+-- return {
+-- 	{
+-- 		"rose-pine/neovim",
+-- 		name = "rose-pine",
+-- 		priority = 1000,
+-- 		config = function()
+-- 			require("rose-pine").setup({
+-- 				styles = {
+-- 					transparency = true,
+-- 				},
+-- 			})
+-- 			vim.cmd.colorscheme("rose-pine")
+-- 		end,
+-- 	},
+-- }
 
 -- return {
 -- 	"rebelot/kanagawa.nvim",
@@ -31,16 +31,16 @@ return {
 -- 	end,
 -- }
 
--- return {
--- 	{
--- 		"folke/tokyonight.nvim",
--- 		lazy = false,
--- 		priority = 1000,
--- 		config = function()
--- 			require("tokyonight").setup({
--- 				transparent = true,
--- 			})
--- 			vim.cmd.colorscheme("tokyonight-storm")
--- 		end,
--- 	},
--- }
+return {
+	{
+		"folke/tokyonight.nvim",
+		lazy = false,
+		priority = 1000,
+		config = function()
+			require("tokyonight").setup({
+				transparent = true,
+			})
+			vim.cmd.colorscheme("tokyonight-night")
+		end,
+	},
+}

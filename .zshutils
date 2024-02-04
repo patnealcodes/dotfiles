@@ -22,7 +22,7 @@ alias kit="v ~/Documents/repos/dotfiles/kitty/kitty.conf"
 alias ala="v ~/Documents/repos/dotfiles/alacritty/alacritty.toml"
 alias zk="v ~/Documents/repos/dotfiles/zed/keymap.json"
 alias zs="v ~/Documents/repos/dotfiles/zed/settings.json"
-alias vd="v ~/Documents/repos/dotfiles/nvim"
+alias vd="~/Documents/repos/dotfiles/nvim && v"
 alias tx="v ~/Documents/repos/dotfiles/.tmux.conf"
 
 # Being re-source-ful
