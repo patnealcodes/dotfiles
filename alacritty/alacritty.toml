@@ -23,7 +23,7 @@ blinking = "Always"
 # cursor = "#FFFFFF"
 
 [font]
-size = 16.0
+size = 12.0
 
 [shell]
 program = "/bin/zsh"
@@ -43,20 +43,20 @@ style = "Regular"
 style = "Regular Italic"
 
 [window.dimensions]
-columns = 180
-lines = 45
+columns = 80
+lines = 25
 
 [window.position]
 x = 200
 y = 100
 
 [window]
-startup_mode = "Maximized"
+startup_mode = "Fullscreen"
 
 dynamic_padding = true
 opacity = 0.95
 blur = false
-decorations = "none"
+decorations = "Transparent"
 
 [window.padding]
 x = 6

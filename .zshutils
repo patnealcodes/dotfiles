@@ -1,6 +1,3 @@
-# Oof
-alias unsafechrome="open -n -a /Applications/Google\ Chrome\ Canary.app/Contents/MacOS/Google\ Chrome\ Canary --args --user-data-dir="./Desktop" --disable-web-security"
-
 # Shortcuts for editors
 alias v="nvim"
 alias z="zed"
@@ -34,7 +31,8 @@ alias activate="source ./bin/activate"
 # Folder Shortcuts
 alias repos="~/Documents/repos"
 alias tz="~/Documents/testzone"
-alias ex="~/Exercism/python"
+alias ex="~/Exercism"
+alias exr="~/exercism/rust"
 
 # Repo shortcuts
 alias dot="~/Documents/repos/dotfiles"
@@ -79,8 +77,3 @@ function ff {
 
 # Exercism Shortcuts
 alias exs="exercism submit"
-
-# pyen
-export PYENV_ROOT="$HOME/.pyenv"
-command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
-eval "$(pyenv init -)"
