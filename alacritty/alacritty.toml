@@ -1,8 +1,9 @@
 import = [
-  # "~/Documents/repos/dotfiles/alacritty/themes/rose_pine.toml",
+  "~/Documents/repos/dotfiles/alacritty/themes/rose_pine.toml",
+  # "~/Documents/repos/dotfiles/alacritty/themes/rose_pine_moon.toml",
   # "~/Documents/repos/dotfiles/alacritty/themes/tokyonight_moon.toml",
   # "~/Documents/repos/dotfiles/alacritty/themes/tokyonight_storm.toml",
-  "~/Documents/repos/dotfiles/alacritty/themes/tokyonight_night.toml",
+  # "~/Documents/repos/dotfiles/alacritty/themes/tokyonight_night.toml",
 ]
 
 [cursor]
@@ -14,33 +15,33 @@ thickness = 0.15
 shape = "Beam"
 blinking = "Always"
 
-# [colors.cursor]
-# text = "#e0def4"
-# cursor = "#524f67"
-#
-# [colors.vi_mode_cursor]
-# text = "#e0def4"
-# cursor = "#FFFFFF"
+[colors.cursor]
+text = "#e0def4"
+cursor = "#524f67"
+
+[colors.vi_mode_cursor]
+text = "#e0def4"
+cursor = "#FFFFFF"
 
 [font]
 size = 12.0
 
-[shell]
-program = "/bin/zsh"
-args = ["-l", "-c", "tmux a -t base || tmux new -s base"]
+# [shell]
+# program = "/bin/zsh"
+# args = ["-l", "-c", "-2", "tmux a -t base || tmux new -s base"]
 
 [font.normal]
-family = "MonaspiceNe Nerd Font Mono"
-style = "Light"
-
-[font.italic]
-style = "Light Italic"
-
-[font.bold]
+family = "JetBrainsMono Nerd Font"
 style = "Regular"
 
-[font.bold_italic]
+[font.italic]
 style = "Regular Italic"
+
+[font.bold]
+style = "Bold"
+
+[font.bold_italic]
+style = "Bold Italic"
 
 [window.dimensions]
 columns = 80
@@ -51,13 +52,23 @@ x = 200
 y = 100
 
 [window]
-startup_mode = "Fullscreen"
+startup_mode = "Maximized"
 
 dynamic_padding = true
-opacity = 0.95
-blur = false
-decorations = "Transparent"
+# opacity = 0.95
+# blur = false
+# decorations = "Transparent"
 
 [window.padding]
 x = 6
 y = 6
+
+[[keyboard.bindings]]
+key = "V"
+mods = "Control"
+action = "Paste"
+
+[[keyboard.bindings]]
+key = "C"
+mods = "Control"
+action = "Copy"

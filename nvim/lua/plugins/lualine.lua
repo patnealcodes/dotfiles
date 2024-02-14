@@ -4,8 +4,7 @@ return {
   config = function()
     require("lualine").setup({
       options = {
-        theme = "nightfly",
-        section_separators = { left = "", right = "" },
+        theme = "ayu_mirage",
       },
       sections = {
         lualine_c = {
