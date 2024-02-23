@@ -4,8 +4,6 @@
 
 - `tpm` tmux package manager
 - `mac-mouse-manager`
-- `brew install pyenv`
-- `brew install pyenv-virtualenv`
 - `brew install xz`
 - [https://github.com/arl/gitmux](gitmux)
 - [Zed](https://zed.dev/)

@@ -55,9 +55,9 @@ y = 100
 startup_mode = "Maximized"
 
 dynamic_padding = true
-# opacity = 0.95
-# blur = false
-# decorations = "Transparent"
+opacity = 0.97
+blur = false
+decorations = "None"
 
 [window.padding]
 x = 6
@@ -69,6 +69,6 @@ mods = "Control"
 action = "Paste"
 
 [[keyboard.bindings]]
-key = "C"
+key = "y"
 mods = "Control"
 action = "Copy"

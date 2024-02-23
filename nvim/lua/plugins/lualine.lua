@@ -7,6 +7,12 @@ return {
         theme = "ayu_mirage",
       },
       sections = {
+        lualine_b = {
+          {
+            "branch",
+            icon = "",
+          }
+        },
         lualine_c = {
           {
             "filename",
@@ -15,7 +21,7 @@ return {
         },
         lualine_x = {
           { "encoding" },
-          { "fileformat" },
+          -- { "fileformat" },
           { "filetype" },
         },
       },
