@@ -55,3 +55,6 @@ keymap.set("n", "<C-o>", vim.cmd.ObsidianQuickSwitch)
 
 -- Trouble
 keymap.set("n", "<leader>tt", vim.cmd.TroubleToggle)
+
+-- Git Messenger
+keymap.set("n", "gm", vim.cmd.GitMessenger)

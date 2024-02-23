@@ -1,41 +1,25 @@
 # Shortcuts for editors
 alias v="nvim"
-alias z="zed"
 
-# Language Shortcuts
-alias -g py="python3"
-alias -g pip="pip3"
+# Repo shortcuts
+alias dot="~/Documents/repos/dotfiles"
 
 # Dotfile shortcuts
-# alias zrc="cd ~ && v .zshrc"
-# alias zut="cd ~/Documents/repos/dotfiles && v .zshutils"
-# alias kit="cd ~/Documents/repos/dotfiles/kitty && v"
-# alias ala="cd ~/Documents/repos/dotfiles/alacritty && v"
-# alias vd="cd ~/Documents/repos/dotfiles/nvim && v"
-# alias tx="cd ~/Documents/repos/dotfiles && v .tmux.conf"
-alias zrc="v ~/.zshrc"
-alias zut="v ~/Documents/repos/dotfiles/.zshutils"
-alias kit="v ~/Documents/repos/dotfiles/kitty/kitty.conf"
-alias ala="v ~/Documents/repos/dotfiles/alacritty/alacritty.toml"
-alias zk="v ~/Documents/repos/dotfiles/zed/keymap.json"
-alias zs="v ~/Documents/repos/dotfiles/zed/settings.json"
-alias vd="~/Documents/repos/dotfiles/nvim && v"
-alias tx="v ~/Documents/repos/dotfiles/.tmux.conf"
+alias zrc="cd ~ && v .zshrc"
+alias zut="dot && v .zshutils"
+alias ala="dot && v alacritty/alacritty.toml"
+alias vd="dot && cd nvim && v"
+alias tx="dot && v .tmux.conf"
 
 # Being re-source-ful
 alias szrc="source ~/.zshrc"
 alias sala="source ~/.config/alacritty/alacritty.yml"
-alias skit="source ~/.config/kitty/kitty.conf"
-alias activate="source ./bin/activate"
 
 # Folder Shortcuts
 alias repos="~/Documents/repos"
 alias tz="~/Documents/testzone"
 alias ex="~/Exercism"
 alias exr="~/exercism/rust"
-
-# Repo shortcuts
-alias dot="~/Documents/repos/dotfiles"
 
 # tmux shortcuts
 alias txl="tmux ls"
@@ -74,6 +58,3 @@ function ff {
 
   tmux switch-client -t $selected_name
 }
-
-# Exercism Shortcuts
-alias exs="exercism submit"

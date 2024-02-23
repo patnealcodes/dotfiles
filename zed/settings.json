@@ -14,9 +14,9 @@
     "metrics": false
   },
   "vim_mode": true,
-  "ui_font_size": 15,
+  "ui_font_size": 16,
   "ui_font_family": "MonaspiceNe Nerd Font Mono",
-  "buffer_font_size": 15,
+  "buffer_font_size": 16,
   "projects_online_by_default": false,
   "show_call_status_icon": false,
   "tab_size": 2
