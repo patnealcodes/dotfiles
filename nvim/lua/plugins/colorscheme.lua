@@ -1,18 +1,18 @@
-return {
-  {
-    "rose-pine/neovim",
-    name = "rose-pine",
-    priority = 1000,
-    config = function()
-      require("rose-pine").setup({
-        styles = {
-          transparency = true,
-        },
-      })
-      vim.cmd.colorscheme("rose-pine")
-    end,
-  },
-}
+-- return {
+--   {
+--     "rose-pine/neovim",
+--     name = "rose-pine",
+--     priority = 1000,
+--     config = function()
+--       require("rose-pine").setup({
+--         styles = {
+--           transparency = true,
+--         },
+--       })
+--       vim.cmd.colorscheme("rose-pine")
+--     end,
+--   },
+-- }
 -- return {
 --   "bluz71/vim-nightfly-colors",
 --   name = "nightfly",
@@ -23,17 +23,17 @@ return {
 --   end,
 -- }
 
--- return {
---   "catppuccin/nvim",
---   name = "catppuccin",
---   priority = 1000,
---   config = function()
---     require("catppuccin").setup({
---       flavour = "mocha"
---     })
---     vim.cmd.colorscheme("catppuccin")
---   end,
--- }
+return {
+	"catppuccin/nvim",
+	name = "catppuccin",
+	priority = 1000,
+	config = function()
+		require("catppuccin").setup({
+			flavour = "mocha",
+		})
+		vim.cmd.colorscheme("catppuccin")
+	end,
+}
 
 -- return {
 -- 	"rebelot/kanagawa.nvim",

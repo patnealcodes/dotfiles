@@ -1,9 +1,10 @@
 return {
 	"stevearc/oil.nvim",
-	cmd = "Oil",
+
 	dependencies = { "devicons" },
 	config = function()
 		local oil = require("oil")
+		vim.keymap.set("n", "_", "<CMD>Oil<CR>")
 		oil.setup({
 			columns = {
 				"icon",
@@ -19,17 +20,19 @@ return {
 				max_width = 100,
 			},
 			keymaps = {
+				["<C-s>"] = "actions.vsplit",
+				["<C-t>"] = "actions.tabedit",
+				["<C-x>"] = "actions.split",
 				["<CR>"] = "actions.select",
 				["<C-p>"] = "actions.preview",
 				["<Esc>"] = "actions.close",
-				["-"] = "actions.parent",
-				["_"] = "actions.open_cwd",
-				["`"] = "actions.cd",
-				["~"] = "actions.tcd",
+				["_"] = "actions.parent",
+				["~"] = "actions.open_cwd",
 				["gs"] = "actions.change_sort",
 				["gx"] = "actions.open_external",
 				["g\\"] = "actions.toggle_trash",
 			},
+			use_default_keymaps = false,
 		})
 	end,
 }

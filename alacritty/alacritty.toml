@@ -1,9 +1,10 @@
 import = [
-  "~/Documents/repos/dotfiles/alacritty/themes/rose_pine.toml",
+  # "~/Documents/repos/dotfiles/alacritty/themes/rose_pine.toml",
   # "~/Documents/repos/dotfiles/alacritty/themes/rose_pine_moon.toml",
   # "~/Documents/repos/dotfiles/alacritty/themes/tokyonight_moon.toml",
   # "~/Documents/repos/dotfiles/alacritty/themes/tokyonight_storm.toml",
   # "~/Documents/repos/dotfiles/alacritty/themes/tokyonight_night.toml",
+  "~/Documents/repos/dotfiles/alacritty/themes/catppuccin-mocha.toml",
 ]
 
 [cursor]
@@ -24,7 +25,7 @@ text = "#e0def4"
 cursor = "#FFFFFF"
 
 [font]
-size = 15.0
+size = 12.0
 
 [shell]
 program = "/bin/zsh"
@@ -55,8 +56,8 @@ y = 100
 startup_mode = "Maximized"
 
 dynamic_padding = true
-opacity = 0.97
-blur = false
+# opacity = 0.97
+# blur = false
 decorations = "None"
 
 [window.padding]
@@ -72,3 +73,7 @@ action = "Paste"
 key = "y"
 mods = "Control"
 action = "Copy"
+
+[scrolling]
+history = 10000
+multiplier = 3

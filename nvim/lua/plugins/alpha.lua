@@ -27,12 +27,6 @@ return {
       dashboard.section.header.val = logo
       dashboard.section.buttons.val = {
         dashboard.button("s", " " .. " Restore Session", [[:lua require("persistence").load() <cr>]]),
-        dashboard.button("b", " " .. " Browse files", ":Telescope file_browser <CR>"),
-        dashboard.button("r", " " .. " Recent files", ":Telescope oldfiles <CR>"),
-        dashboard.button("f", " " .. " Find file", ":Telescope find_files <CR>"),
-        dashboard.button("g", " " .. " Live Grep", ":LiveGrepGitRoot<CR>"),
-        dashboard.button("l", "󰒲 " .. " Lazy", ":Lazy<CR>"),
-        dashboard.button("q", " " .. " Quit", ":qa<CR>"),
       }
       dashboard.section.header.opts.hl = "AlphaHeader"
       dashboard.opts.layout[1].val = 6

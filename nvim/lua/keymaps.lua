@@ -35,10 +35,7 @@ keymap.set("n", "<C-w>!", "<cmd>bd!<CR>")
 -- Telescope
 
 -- Telescope File Browser
-keymap.set("n", "<leader>b", "<cmd>Telescope file_browser path=%:p:h select_buffer=true<CR>", { desc = "Browse files" })
-
--- Oil
-keymap.set("n", "-", "<CMD>Oil<CR>")
+keymap.set("n", "<leader>-", "<cmd>Telescope file_browser path=%:p:h select_buffer=true<CR>", { desc = "Browse files" })
 
 -- Undotree
 keymap.set("n", "U", vim.cmd.UndotreeToggle)
