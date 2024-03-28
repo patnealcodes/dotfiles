@@ -25,7 +25,7 @@ text = "#e0def4"
 cursor = "#FFFFFF"
 
 [font]
-size = 12.0
+size = 15.0
 
 [shell]
 program = "/bin/zsh"

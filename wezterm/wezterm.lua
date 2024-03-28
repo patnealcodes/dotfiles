@@ -3,7 +3,7 @@ local mux = wezterm.mux
 local config = {}
 
 config.font = wezterm.font('JetBrains Mono', { weight = 'Bold', italic = false })
-config.color_scheme = 'rose-pine'
+config.color_scheme = 'catppuccin-mocha'
 config.enable_tab_bar = false
 config.font_size = 15.0
 config.window_padding = {
@@ -13,7 +13,6 @@ config.window_padding = {
   bottom = 6,
 }
 config.window_decorations = "RESIZE"
-config.window_background_opacity = 0.97
 
 wezterm.on("gui-startup", function()
   local tab, pane, window = mux.spawn_window {}
