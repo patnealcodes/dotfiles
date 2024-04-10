@@ -2,12 +2,13 @@
 alias v="nvim"
 
 # Repo shortcuts
-alias dot="~/Documents/repos/dotfiles"
+alias dot="~/Documents/GitHub/dotfiles"
 
 # Dotfile shortcuts
 alias zrc="cd ~ && v .zshrc"
 alias zut="dot && v .zshutils"
 alias ala="dot && v alacritty/alacritty.toml"
+alias wez="dot && v wezterm/wezterm.lua"
 alias vd="dot && cd nvim && v"
 alias tx="dot && v .tmux.conf"
 
@@ -30,6 +31,7 @@ function txks() { tmux kill-session -t "$@" }
 function txkw() { tmux kill-window -t "$@" }
 
 # Utility Functions
+alias lg="lazygit"
 alias gconfig="git config --global -e"
 function mkcd() { mkdir "$@" && cd "$@"; }
 function mkc() { mkdir "$@" && c "$@"; }
@@ -37,24 +39,23 @@ function ff {
   if [[ $# -eq 1 ]]; then
     selected=1
   else
-    selected=$(find ~/Documents/repos ~/Documents/testzone ~/Exercism -mindepth 1 -maxdepth 1 -type d | fzf)
+    selected=$(find ~/Documents/GitHub/dotfiles ~/Documents/testzone ~/Documents/repos ~/Exercism -mindepth 1 -maxdepth 1 -type d | fzf)
   fi
 
-  if [[ -z $selected ]]; then
+  if [[ $selected ]]; then
+    selected_name=$(basename "$selected" | tr . _)
+    tmux_running=$(pgrep tmux)
+
+    if [[ -z $TMUX ]] && [[ -z $tmux_running ]]; then
+      tmux new-session -s $selected_name -c $selected
       exit 0
+    fi
+
+    if ! tmux has-session -t=$selected_name 2> /dev/null; then
+        tmux new-session -ds $selected_name -c $selected
+    fi
+
+    tmux switch-client -t $selected_name
   fi
 
-  selected_name=$(basename "$selected" | tr . _)
-  tmux_running=$(pgrep tmux)
-
-  if [[ -z $TMUX ]] && [[ -z $tmux_running ]]; then
-    tmux new-session -s $selected_name -c $selected
-    exit 0
-  fi
-
-  if ! tmux has-session -t=$selected_name 2> /dev/null; then
-      tmux new-session -ds $selected_name -c $selected
-  fi
-
-  tmux switch-client -t $selected_name
 }
