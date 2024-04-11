@@ -2,7 +2,7 @@ local wezterm = require("wezterm")
 local mux = wezterm.mux
 local config = {}
 
-config.font = wezterm.font("JetBrains Mono", { weight = "Bold", italic = false })
+config.font = wezterm.font("JetBrains Mono", { weight = "Regular", italic = false })
 config.color_scheme = "Rosé Pine (Gogh)"
 config.enable_tab_bar = false
 config.font_size = 15.0

@@ -2,7 +2,7 @@
 alias v="nvim"
 
 # Repo shortcuts
-alias dot="~/Documents/GitHub/dotfiles"
+alias dot="~/codes/GitHub/dotfiles"
 
 # Dotfile shortcuts
 alias zrc="cd ~ && v .zshrc"
@@ -17,8 +17,8 @@ alias szrc="source ~/.zshrc"
 alias sala="source ~/.config/alacritty/alacritty.yml"
 
 # Folder Shortcuts
-alias repos="~/Documents/repos"
-alias tz="~/Documents/testzone"
+alias repos="~/codes/repos"
+alias tz="~/codes/testzone"
 alias ex="~/Exercism"
 alias exr="~/exercism/rust"
 
@@ -39,7 +39,7 @@ function ff {
   if [[ $# -eq 1 ]]; then
     selected=1
   else
-    selected=$(find ~/Documents/GitHub/dotfiles ~/Documents/testzone ~/Documents/repos ~/Exercism -mindepth 1 -maxdepth 1 -type d | fzf)
+    selected=$(find ~/codes/GitHub/dotfiles ~/codes/testzone ~/codes/repos ~/Exercism -mindepth 1 -maxdepth 1 -type d | fzf)
   fi
 
   if [[ $selected ]]; then
