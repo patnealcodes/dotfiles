@@ -27,9 +27,6 @@ keymap.set("n", "<C-u>", "<C-u>zz")
 keymap.set("n", "n", "nzzzv")
 keymap.set("n", "N", "Nzzzv")
 
--- Git Messenger
-keymap.set("n", "gm", vim.cmd.GitMessenger)
-
 -- Oil
 keymap.set("n", "-", "<CMD>Oil<CR>")
 

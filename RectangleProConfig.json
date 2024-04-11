@@ -28,14 +28,17 @@
     "alwaysAccountForStage" : {
       "int" : 0
     },
+    "alwaysAllowThrow" : {
+      "int" : 0
+    },
     "analogAdjacentResizing" : {
       "int" : 0
     },
     "applyGapToEdges" : {
-      "int" : 1
+      "int" : 2
     },
     "appSpecs" : {
-      "string" : "[{\"isGroup\":true,\"loc\":0,\"id\":17,\"name\":\"Left1\",\"children\":[{\"id\":81,\"w\":\"1634\",\"x\":\"463\",\"display\":-3,\"loc\":9,\"y\":\"245\",\"bundleId\":\"org.alacritty\",\"h\":\"950\"}]},{\"loc\":0,\"id\":24,\"name\":\"Left3\",\"isGroup\":true,\"children\":[{\"loc\":9,\"h\":\"680\",\"display\":-3,\"id\":19,\"y\":\"740\",\"bundleId\":\"com.apple.MobileSMS\",\"x\":\"1300\",\"w\":\"1240\"},{\"w\":\"1240\",\"x\":\"20\",\"id\":20,\"display\":-3,\"y\":\"740\",\"h\":\"680\",\"bundleId\":\"com.apple.mail\",\"loc\":9}]},{\"loc\":0,\"id\":49,\"children\":[{\"h\":\"1400\",\"x\":\"4239\",\"bundleId\":\"notion.id\",\"w\":\"861\",\"loc\":9,\"id\":46,\"y\":\"20\",\"display\":-3},{\"id\":47,\"h\":\"1400\",\"x\":\"2580\",\"loc\":9,\"display\":-3,\"y\":\"20\",\"w\":\"1639\",\"bundleId\":\"com.google.Chrome\"}],\"isGroup\":true,\"name\":\"Right1\"},{\"id\":44,\"isGroup\":true,\"loc\":0,\"children\":[{\"h\":\"1400\",\"id\":41,\"x\":\"2580\",\"display\":-3,\"w\":\"1240\",\"loc\":9,\"bundleId\":\"com.google.Chrome\",\"y\":\"20\"},{\"id\":42,\"loc\":9,\"x\":\"3840\",\"w\":\"1260\",\"y\":\"20\",\"display\":-3,\"h\":\"1400\",\"bundleId\":\"com.tinyspeck.slackmacgap\"}],\"name\":\"Right2\"},{\"loc\":0,\"id\":39,\"children\":[{\"h\":\"680\",\"bundleId\":\"com.apple.finder\",\"x\":\"3341\",\"display\":-3,\"w\":\"810\",\"loc\":9,\"id\":33,\"y\":\"20\"},{\"display\":-3,\"id\":34,\"bundleId\":\"com.apple.finder\",\"y\":\"20\",\"w\":\"909\",\"loc\":9,\"x\":\"4191\",\"h\":\"680\"},{\"w\":\"1240\",\"y\":\"740\",\"display\":-3,\"h\":\"680\",\"loc\":9,\"bundleId\":\"com.apple.iCal\",\"x\":\"3860\",\"id\":35},{\"x\":\"2580\",\"y\":\"20\",\"bundleId\":\"com.apple.systempreferences\",\"display\":-3,\"loc\":9,\"w\":\"715\",\"h\":\"680\",\"id\":36},{\"bundleId\":\"com.apple.ActivityMonitor\",\"h\":\"680\",\"loc\":9,\"display\":-3,\"w\":\"1240\",\"x\":\"2580\",\"id\":38,\"y\":\"740\"}],\"name\":\"Right3\",\"isGroup\":true}]"
+
     },
     "attemptMatchOnNextPrevDisplay" : {
       "int" : 0
@@ -65,7 +68,7 @@
       "int" : 0
     },
     "contextMenuShortcut" : {
-      "string" : "{\"keyCode\":49,\"modifierFlags\":1835008}"
+
     },
     "cornerSnapAreaSize" : {
       "float" : 20
@@ -81,6 +84,9 @@
     },
     "doubleClickTitleBar" : {
       "int" : 0
+    },
+    "doubleClickTitleBarIgnoredApps" : {
+
     },
     "doubleClickTitleBarRestore" : {
       "int" : 0
@@ -116,7 +122,7 @@
       "int" : 0
     },
     "gapSize" : {
-      "float" : 10
+      "float" : 0
     },
     "gestures" : {
 
@@ -161,10 +167,22 @@
 
     },
     "manualSpecs" : {
-      "string" : "[{\"loc\":0,\"id\":58},{\"id\":68,\"display\":-3,\"name\":\"Center\",\"loc\":9,\"h\":\"950\",\"y\":\"245\",\"x\":\"463\",\"w\":\"1634\",\"shortcut\":{\"modifierFlags\":1835008,\"keyCode\":1}}]"
+
     },
     "maximizeAcrossDisplays" : {
       "int" : 0
+    },
+    "menuActionVisibility" : {
+
+    },
+    "menuAppSpecVisibility" : {
+
+    },
+    "menuCategoryVisibility" : {
+
+    },
+    "menuCustomSpecVisibility" : {
+
     },
     "minimumWindowHeight" : {
       "float" : 0.25
@@ -182,13 +200,16 @@
       "int" : 250
     },
     "moveCursorAcrossDisplays" : {
-      "int" : 1
+      "int" : 0
     },
     "multiWindowAllDisplays" : {
       "int" : 0
     },
     "multiWindowRespectsIgnore" : {
       "int" : 0
+    },
+    "nextPrevSpaceFrontWindowDelay" : {
+      "int" : 300
     },
     "nsClickListen" : {
       "int" : 0
@@ -200,6 +221,9 @@
       "float" : 20
     },
     "obtainWindowOnClick" : {
+      "int" : 0
+    },
+    "performRepeatOnThrow" : {
       "int" : 0
     },
     "portraitSnapAreas" : {
@@ -236,7 +260,7 @@
       "int" : 2
     },
     "reticleColor" : {
-      "string" : "{\"red\":0.8,\"green\":0.3,\"blue\":0.2,\"alpha\":0.5}"
+      "string" : "{\"blue\":0.2,\"red\":0.8,\"green\":0.3,\"alpha\":0.5}"
     },
     "reticleDisplayMinDist" : {
       "float" : 0
@@ -254,7 +278,7 @@
       "int" : 35
     },
     "saveLayoutShortcut" : {
-      "string" : "null"
+
     },
     "screenEdgeGapBottom" : {
       "float" : 0
@@ -373,6 +397,9 @@
     "systemWideMouseDown" : {
       "int" : 0
     },
+    "systemWideMouseDownApps" : {
+
+    },
     "throwFrontmost" : {
       "int" : 0
     },
@@ -401,6 +428,9 @@
 
     },
     "traverseSingleScreen" : {
+      "int" : 0
+    },
+    "unhideStashedWhenFrontmost" : {
       "int" : 0
     },
     "unsnapRestore" : {
@@ -445,29 +475,13 @@
       "keyCode" : 3,
       "modifierFlags" : 786432
     },
-    "fillBottomLeft" : {
-      "keyCode" : 6,
-      "modifierFlags" : 1835008
-    },
-    "fillBottomRight" : {
-      "keyCode" : 9,
-      "modifierFlags" : 1835008
-    },
     "fillLeft" : {
-      "keyCode" : 0,
-      "modifierFlags" : 1835008
+      "keyCode" : 4,
+      "modifierFlags" : 1179648
     },
     "fillRight" : {
-      "keyCode" : 3,
-      "modifierFlags" : 1835008
-    },
-    "fillTopLeft" : {
-      "keyCode" : 12,
-      "modifierFlags" : 1835008
-    },
-    "fillTopRight" : {
-      "keyCode" : 15,
-      "modifierFlags" : 1835008
+      "keyCode" : 37,
+      "modifierFlags" : 1179648
     },
     "firstThird" : {
       "keyCode" : 2,
@@ -494,12 +508,16 @@
       "modifierFlags" : 786432
     },
     "maximize" : {
-      "keyCode" : 2,
-      "modifierFlags" : 1835008
+      "keyCode" : 40,
+      "modifierFlags" : 1179648
     },
     "maximizeHeight" : {
       "keyCode" : 126,
       "modifierFlags" : 917504
+    },
+    "middleCenterNinth" : {
+      "keyCode" : 38,
+      "modifierFlags" : 1179648
     },
     "nextDisplay" : {
       "keyCode" : 124,
@@ -508,10 +526,6 @@
     "previousDisplay" : {
       "keyCode" : 123,
       "modifierFlags" : 1835008
-    },
-    "restore" : {
-      "keyCode" : 51,
-      "modifierFlags" : 786432
     },
     "rightHalf" : {
       "keyCode" : 124,
@@ -534,6 +548,6 @@
       "modifierFlags" : 786432
     }
   },
-  "timestamp" : 726418032.91935,
-  "version" : "155"
+  "timestamp" : 734557080.897189,
+  "version" : "163"
 }
