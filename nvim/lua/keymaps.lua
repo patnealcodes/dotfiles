@@ -28,7 +28,4 @@ keymap.set("n", "n", "nzzzv")
 keymap.set("n", "N", "Nzzzv")
 
 -- Oil
-keymap.set("n", "-", "<CMD>Oil<CR>")
-
--- Obsidian
-keymap.set("n", "<C-o>", vim.cmd.ObsidianQuickSwitch)
+keymap.set("n", "-", "<CMD>Oil --float<CR>")
