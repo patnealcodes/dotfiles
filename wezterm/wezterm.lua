@@ -2,11 +2,11 @@ local wezterm = require("wezterm")
 local mux = wezterm.mux
 local config = {}
 
-config.font = wezterm.font("JetBrains Mono", { weight = "Regular", italic = false })
+config.font = wezterm.font("Monaspace Neon", { weight = "Regular", italic = false })
 config.color_scheme = "Rosé Pine (Gogh)"
 config.enable_tab_bar = false
 config.font_size = 13.0
-config.window_background_opacity = 0.9
+-- config.window_background_opacity = 0.9
 config.window_padding = {
   left = 30,
   right = 30,
