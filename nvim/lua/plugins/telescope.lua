@@ -97,7 +97,7 @@ return {
       vim.keymap.set("n", "<leader><leader>", builtin.buffers, { desc = "[ ] Find existing buffers" })
       vim.keymap.set(
         "n",
-        "-",
+        "<leader>fb",
         "<CMD>Telescope file_browser path=%:p:h select_buffer=true<CR>",
         { desc = "[F]ile [B]rowser" }
       )

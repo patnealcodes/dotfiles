@@ -28,4 +28,5 @@ keymap.set("n", "n", "nzzzv")
 keymap.set("n", "N", "Nzzzv")
 
 -- Oil
+keymap.set("n", "-", "<CMD>Oil<CR>")
 keymap.set("n", "<leader>-", "<CMD>Oil --float<CR>")
