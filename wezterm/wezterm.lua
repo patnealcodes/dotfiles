@@ -13,6 +13,7 @@ config.window_padding = {
   bottom = 10,
 }
 config.window_decorations = "RESIZE"
+config.allow_win32_input_mode = false
 
 wezterm.on("gui-startup", function()
   local tab, pane, window = mux.spawn_window({})
