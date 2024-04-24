@@ -4,7 +4,6 @@ vim.g.maplocalleader = ' '
 -- [[ Base Options ]]
 vim.opt.mouse = 'a'
 vim.opt.showmode = false
-vim.opt.clipboard = 'unnamedplus'
 vim.opt.number = true
 vim.opt.relativenumber = true
 vim.opt.breakindent = true
@@ -103,8 +102,37 @@ require('lazy').setup({
       { 'nvim-tree/nvim-web-devicons' },
     },
     config = function()
+      vim.api.nvim_create_autocmd('FileType', {
+        pattern = 'TelescopeResults',
+        callback = function(ctx)
+          vim.api.nvim_buf_call(ctx.buf, function()
+            vim.fn.matchadd('TelescopeParent', '\t\t.*$')
+            vim.api.nvim_set_hl(0, 'TelescopeParent', { link = 'Comment' })
+          end)
+        end,
+      })
+      local function filenameFirst(_, path)
+        local tail = vim.fs.basename(path)
+        local parent = vim.fs.dirname(path)
+        if parent == '.' then
+          return tail
+        end
+        return string.format('%s\t\t%s', tail, parent)
+      end
+
       require('telescope').setup {
         defaults = {
+          vimgrep_arguments = {
+            'rg',
+            '--color=never',
+            '--no-heading',
+            '--with-filename',
+            '--line-number',
+            '--column',
+            '--smart-case',
+            '-l',
+          },
+          path_display = filenameFirst,
           mappings = {
             i = { ['<c-enter>'] = 'to_fuzzy_refine' },
           },
@@ -112,7 +140,6 @@ require('lazy').setup({
         pickers = {
           buffers = {
             sort_lastused = true,
-            theme = 'dropdown',
             previewer = true,
             mappings = {
               i = {
@@ -457,10 +484,25 @@ require('lazy').setup({
       require('mini.surround').setup()
 
       local statusline = require 'mini.statusline'
+
       statusline.setup {
-        section_location = function()
-          return ''
-        end,
+        content = {
+          active = function()
+            local mode, mode_hl = statusline.section_mode { trunc_width = 50 }
+            local filename = statusline.section_filename { trunc_width = 140 }
+            local search = statusline.section_searchcount { trunc_width = 75 }
+            local diagnostics = statusline.section_diagnostics { trunc_width = 75 }
+
+            return statusline.combine_groups {
+              { hl = mode_hl, strings = { mode } },
+              { hl = 'MiniStatuslineFilename', strings = { filename } },
+              '%=', -- End left alignment
+              '%<', -- Mark general truncate point
+              { hl = 'MiniStatuslineSearch', strings = { search } },
+              { hl = 'MiniStatuslineDevinfo', strings = { diagnostics } },
+            }
+          end,
+        },
       }
     end,
   },

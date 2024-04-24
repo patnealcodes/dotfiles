@@ -10,10 +10,10 @@ config.font_rules = {
 }
 config.color_scheme = "Nord (base16)"
 config.colors = {
-	background = "#191D24",
+	background = "rgb(8,11,16)",
 }
 config.enable_tab_bar = false
-config.font_size = 13.0
+config.font_size = 16.0
 config.window_padding = {
 	left = 30,
 	right = 30,

@@ -47,57 +47,6 @@ return {
     },
   },
 
-  -- {
-  --   'folke/tokyonight.nvim',
-  --   config = function()
-  --     require('tokyonight').setup {
-  --       transparent = true,
-  --       terminal_colors = true,
-  --       styles = {
-  --         comments = { italic = false },
-  --         keywords = { italic = false },
-  --         sidebars = 'dark',
-  --         floats = 'dark',
-  --       },
-  --     }
-  --   end,
-  -- },
-  --
-  -- {
-  --   'rose-pine/neovim',
-  --   name = 'rose-pine',
-  --   config = function()
-  --     vim.cmd 'colorscheme rose-pine'
-  --     require('rose-pine').setup {
-  --       disable_background = true,
-  --     }
-  --     vim.cmd.colorscheme 'rose-pine'
-  --     vim.api.nvim_set_hl(0, 'Normal', { bg = '' })
-  --     vim.api.nvim_set_hl(0, 'NormalFloat', { bg = '' })
-  --   end,
-  -- },
-
-  -- {
-  --   'tiagovla/tokyodark.nvim',
-  --   opts = {
-  --     style = 'night',
-  --     transparent = false,
-  --     italic_comments = false,
-  --     italic_keywords = false,
-  --     italic_functions = false,
-  --     italic_variables = false,
-  --     contrast = true,
-  --     hide_eob = false,
-  --     dark_float = true,
-  --     dark_sidebar = true,
-  --     dark_toolbar = true,
-  --   },
-  --   config = function(_, opts)
-  --     require('tokyodark').setup(opts) -- calling setup is optional
-  --     vim.cmd [[colorscheme tokyodark]]
-  --   end,
-  -- },
-
   {
     'AlexvZyl/nordic.nvim',
     lazy = false,
@@ -107,13 +56,13 @@ return {
         bold_keywords = false,
         italic_comments = true,
         transparent_bg = true,
-        bright_border = false,
+        bright_border = true,
         swap_backgrounds = false,
         override = {},
         cursorline = {
           bold = false,
           bold_number = true,
-          theme = 'light',
+          theme = 'dark',
           blend = 0.85,
         },
         telescope = {
@@ -155,7 +104,7 @@ return {
       local keymap = vim.keymap
 
       keymap.set('n', '<leader>a', function()
-        require('harpoon'):list():append()
+        require('harpoon'):list():add()
       end, {})
       keymap.set('n', '<M-S-h>', function()
         require('harpoon').ui:toggle_quick_menu(require('harpoon'):list())
