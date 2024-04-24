@@ -2,8 +2,6 @@
 
 ## install some things:
 
-- `tpm` tmux package manager
-- `mac-mouse-manager`
 - `brew install xz`
 - [https://github.com/arl/gitmux](gitmux)
 - [Zed](https://zed.dev/)
