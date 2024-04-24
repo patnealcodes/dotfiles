@@ -122,6 +122,7 @@ require('lazy').setup({
 
       require('telescope').setup {
         defaults = {
+          dynamic_preview_title = true,
           vimgrep_arguments = {
             'rg',
             '--color=never',
@@ -130,9 +131,12 @@ require('lazy').setup({
             '--line-number',
             '--column',
             '--smart-case',
-            '-l',
+            '--hidden',
+            -- '-l',
           },
+          -- path_display = { 'truncate' },
           path_display = filenameFirst,
+          previewer = true,
           mappings = {
             i = { ['<c-enter>'] = 'to_fuzzy_refine' },
           },
@@ -140,7 +144,6 @@ require('lazy').setup({
         pickers = {
           buffers = {
             sort_lastused = true,
-            previewer = true,
             mappings = {
               i = {
                 ['<c-x>'] = 'delete_buffer',
@@ -173,6 +176,13 @@ require('lazy').setup({
       vim.keymap.set('n', '<leader>sr', builtin.resume, { desc = '[S]earch [R]esume' })
       vim.keymap.set('n', '<leader>s.', builtin.oldfiles, { desc = '[S]earch Recent Files ("." for repeat)' })
       vim.keymap.set('n', '<leader><leader>', builtin.buffers, { desc = '[ ] Find existing buffers' })
+
+      vim.keymap.set('n', '<leader>hsf', function()
+        builtin.find_files { hidden = true }
+      end, { desc = '([H]idden)[S]earch [F]iles' })
+      vim.keymap.set('n', '<leader>hsg', function()
+        builtin.live_grep { hidden = true }
+      end, { desc = '([H]idden)[S]earch by [G]rep' })
 
       -- Slightly advanced example of overriding default behavior and theme
       vim.keymap.set('n', '<leader>/', function()
@@ -213,6 +223,15 @@ require('lazy').setup({
           local map = function(keys, func, desc)
             vim.keymap.set('n', keys, func, { buffer = event.buf, desc = 'LSP: ' .. desc })
           end
+
+          vim.diagnostic.config {
+            float = {
+              border = 'rounded',
+            },
+          }
+          vim.lsp.handlers['textDocument/hover'] = vim.lsp.with(vim.lsp.handlers.hover, { border = 'rounded' })
+
+          vim.lsp.handlers['textDocument/signatureHelp'] = vim.lsp.with(vim.lsp.handlers.signature_help, { border = 'rounded' })
 
           map('gd', require('telescope.builtin').lsp_definitions, '[G]oto [D]efinition')
           map('gr', require('telescope.builtin').lsp_references, '[G]oto [R]eferences')
@@ -430,6 +449,16 @@ require('lazy').setup({
       luasnip.config.setup {}
 
       cmp.setup {
+        window = {
+          completion = {
+            border = 'rounded',
+            scrollbar = '║',
+          },
+          documentation = {
+            border = nil,
+            scrollbar = '',
+          },
+        },
         snippet = {
           expand = function(args)
             luasnip.lsp_expand(args.body)
@@ -509,6 +538,9 @@ require('lazy').setup({
   { -- Highlight, edit, and navigate code
     'nvim-treesitter/nvim-treesitter',
     build = ':TSUpdate',
+    dependencies = {
+      'nvim-treesitter/nvim-treesitter-context',
+    },
     opts = {
       ensure_installed = {
         'css',
@@ -537,6 +569,20 @@ require('lazy').setup({
     config = function(_, opts)
       require('nvim-treesitter.install').prefer_git = true
       require('nvim-treesitter.configs').setup(opts)
+      require('treesitter-context').setup {
+        enable = true, -- Enable this plugin (Can be enabled/disabled later via commands)
+        max_lines = 0, -- How many lines the window should span. Values <= 0 mean no limit.
+        min_window_height = 0, -- Minimum editor window height to enable context. Values <= 0 mean no limit.
+        line_numbers = true,
+        multiline_threshold = 20, -- Maximum number of lines to show for a single context
+        trim_scope = 'outer', -- Which context lines to discard if `max_lines` is exceeded. Choices: 'inner', 'outer'
+        mode = 'cursor', -- Line used to calculate context. Choices: 'cursor', 'topline'
+        -- Separator between context and content. Should be a single character string, like '-'.
+        -- When separator is set, the context will only show up when there are at least 2 lines above cursorline.
+        separator = nil,
+        zindex = 20, -- The Z-index of the context window
+        on_attach = nil, -- (fun(buf: integer): boolean) return false to disable attaching
+      }
 
       -- There are additional nvim-treesitter modules that you can use to interact
       -- with nvim-treesitter. You should go explore a few and see what interests you:

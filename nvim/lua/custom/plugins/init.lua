@@ -52,27 +52,21 @@ return {
     lazy = false,
     priority = 1000,
     config = function()
+      local C = require 'nordic.colors.nordic'
       require('nordic').load {
-        bold_keywords = false,
         italic_comments = true,
         transparent_bg = true,
         bright_border = true,
-        swap_backgrounds = false,
-        override = {},
+        override = {
+          TreesitterContext = { bg = C.black0 },
+        },
         cursorline = {
           bold = false,
           bold_number = true,
-          theme = 'dark',
-          blend = 0.85,
+          theme = 'light',
         },
         telescope = {
           style = 'classic',
-        },
-        leap = {
-          dim_backdrop = false,
-        },
-        ts_context = {
-          dark_background = true,
         },
       }
     end,
