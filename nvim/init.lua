@@ -16,8 +16,6 @@ vim.opt.updatetime = 50
 vim.opt.timeoutlen = 300
 vim.opt.splitright = true
 vim.opt.splitbelow = true
-vim.opt.list = true
-vim.opt.listchars = { tab = '» ', trail = '·', nbsp = '␣' }
 vim.opt.inccommand = 'split'
 vim.opt.cursorline = true
 vim.opt.scrolloff = 10
@@ -70,6 +68,7 @@ vim.opt.rtp:prepend(lazypath)
 require('lazy').setup({
   'tpope/vim-sleuth',
 
+  { 'folke/neodev.nvim', opts = {} },
   { 'numToStr/Comment.nvim', opts = {} },
 
   {
@@ -110,7 +109,21 @@ require('lazy').setup({
             i = { ['<c-enter>'] = 'to_fuzzy_refine' },
           },
         },
-        pickers = {},
+        pickers = {
+          buffers = {
+            sort_lastused = true,
+            theme = 'dropdown',
+            previewer = true,
+            mappings = {
+              i = {
+                ['<c-x>'] = 'delete_buffer',
+              },
+              n = {
+                ['<c-x>'] = 'delete_buffer',
+              },
+            },
+          },
+        },
         extensions = {
           ['ui-select'] = {
             require('telescope.themes').get_dropdown(),
@@ -163,7 +176,8 @@ require('lazy').setup({
       'williamboman/mason-lspconfig.nvim',
       'WhoIsSethDaniel/mason-tool-installer.nvim',
       { 'j-hui/fidget.nvim', opts = {} },
-      { 'folke/neodev.nvim', opts = {} },
+      'simrat39/inlay-hints.nvim',
+      'jose-elias-alvarez/nvim-lsp-ts-utils',
     },
     config = function()
       vim.api.nvim_create_autocmd('LspAttach', {
@@ -236,15 +250,57 @@ require('lazy').setup({
       --  - capabilities (table): Override fields in capabilities. Can be used to disable certain LSP features.
       --  - settings (table): Override the default settings passed when initializing the server.
       --        For example, to see the options for `lua_ls`, you could go to: https://luals.github.io/wiki/settings/
+      local ts_util = require 'nvim-lsp-ts-utils'
       local servers = {
         emmet_ls = {},
+        clangd = {
+          filetypes = {
+            'keymap',
+          },
+        },
         eslint = {},
         html = {},
         tailwindcss = {},
         cssls = {},
         yamlls = {},
         pyright = {},
-        tsserver = {},
+        rust_analyzer = {},
+        tsserver = {
+          init_options = ts_util.init_options,
+          cmd = { 'typescript-language-server', '--stdio' },
+          filetypes = {
+            'javascript',
+            'javascriptreact',
+            'javascript.jsx',
+            'typescript',
+            'typescriptreact',
+            'typescript.tsx',
+          },
+
+          on_attach = function(client)
+            ts_util.setup { auto_inlay_hints = false }
+            ts_util.setup_client(client)
+          end,
+        },
+        gopls = {
+          settings = {
+            gopls = {
+              codelenses = { test = true },
+              hints = {
+                assignVariableTypes = true,
+                compositeLiteralFields = true,
+                compositeLiteralTypes = true,
+                constantValues = true,
+                functionTypeParameters = true,
+                parameterNames = true,
+                rangeVariableTypes = true,
+              } or nil,
+            },
+          },
+          flags = {
+            debounce_text_changes = 200,
+          },
+        },
         lua_ls = {
           settings = {
             Lua = {
@@ -261,7 +317,12 @@ require('lazy').setup({
 
       local ensure_installed = vim.tbl_keys(servers or {})
       vim.list_extend(ensure_installed, {
+        'prettier',
+        'prettierd',
+        'isort',
+        'black',
         'stylua',
+        'clang-format',
       })
       require('mason-tool-installer').setup { ensure_installed = ensure_installed }
 
@@ -307,6 +368,9 @@ require('lazy').setup({
         python = { 'isort', 'black' },
         css = { { 'prettierd', 'prettier' } },
         javascript = { { 'prettierd', 'prettier' } },
+        go = { { 'prettierd', 'prettier' } },
+        rust = { { 'prettierd', 'prettier' } },
+        keymap = { 'clang-format' },
       },
     },
   },

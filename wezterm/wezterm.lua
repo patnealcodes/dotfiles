@@ -8,9 +8,12 @@ config.font_rules = {
 	{ intensity = "Normal", font = wezterm.font("FiraMono Nerd Font Propo", { weight = "Medium", italic = false }) },
 	{ intensity = "Half", font = wezterm.font("FiraMono Nerd Font Propo", { weight = "Medium", italic = false }) },
 }
-config.color_scheme = "Rosé Pine (Gogh)"
+config.color_scheme = "Nord (base16)"
+config.colors = {
+	background = "#191D24",
+}
 config.enable_tab_bar = false
-config.font_size = 16.0
+config.font_size = 13.0
 config.window_padding = {
 	left = 30,
 	right = 30,
