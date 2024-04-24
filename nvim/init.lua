@@ -291,10 +291,14 @@ require('lazy').setup({
                 compositeLiteralFields = true,
                 compositeLiteralTypes = true,
                 constantValues = true,
+                completeUnimported = true,
                 functionTypeParameters = true,
                 parameterNames = true,
                 rangeVariableTypes = true,
-              } or nil,
+                analyses = {
+                  unusedparams = true,
+                },
+              },
             },
           },
           flags = {
@@ -323,6 +327,9 @@ require('lazy').setup({
         'black',
         'stylua',
         'clang-format',
+        'goimports',
+        'gofumpt',
+        'goimports-reviser',
       })
       require('mason-tool-installer').setup { ensure_installed = ensure_installed }
 
@@ -368,7 +375,7 @@ require('lazy').setup({
         python = { 'isort', 'black' },
         css = { { 'prettierd', 'prettier' } },
         javascript = { { 'prettierd', 'prettier' } },
-        go = { { 'prettierd', 'prettier' } },
+        go = { 'gofumpt', 'goimports-reviser' },
         rust = { { 'prettierd', 'prettier' } },
         keymap = { 'clang-format' },
       },
