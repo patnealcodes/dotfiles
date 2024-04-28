@@ -1,5 +1,6 @@
 vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
+vim.g.copilot_enabled = false
 
 vim.opt.backup = false
 vim.opt.relativenumber = true
