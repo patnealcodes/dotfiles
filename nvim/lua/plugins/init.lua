@@ -12,5 +12,12 @@ return {
 	-- One-liners
 	"github/copilot.vim",
 	"tpope/vim-sleuth",
-	{ "numToStr/Comment.nvim", opts = {} },
+	{
+		"numToStr/Comment.nvim",
+		opts = {}
+	},
+	{
+		'stevearc/dressing.nvim',
+		opts = {},
+	}
 }

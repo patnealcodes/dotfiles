@@ -58,7 +58,11 @@ return {
 		vim.keymap.set("n", "<leader>ss", builtin.builtin, { desc = "[S]earch [S]elect Telescope" })
 		vim.keymap.set("n", "<leader>sw", builtin.grep_string, { desc = "[S]earch current [W]ord" })
 		vim.keymap.set("n", "<leader>sg", function()
-			builtin.grep_string({ search = vim.fn.input("Grep > ") })
+			vim.ui.input({ prompt = "Grep > " }, function(input)
+				if input ~= nil then
+					builtin.grep_string({ search = input })
+				end
+			end)
 		end)
 		vim.keymap.set("n", "<leader>sd", builtin.diagnostics, { desc = "[S]earch [D]iagnostics" })
 		vim.keymap.set("n", "<leader>sr", builtin.resume, { desc = "[S]earch [R]esume" })
@@ -69,7 +73,11 @@ return {
 			builtin.find_files({ hidden = true })
 		end, { desc = "([H]idden)[S]earch [F]iles" })
 		vim.keymap.set("n", "<leader>hsg", function()
-			builtin.live_grep({ hidden = true })
+			vim.ui.input({ prompt = "Grep (including hidden) > " }, function(input)
+				if input ~= nil then
+					builtin.grep_string({ search = input, hidden = true })
+				end
+			end)
 		end, { desc = "([H]idden)[S]earch by [G]rep" })
 
 		vim.keymap.set("n", "<leader>vh", builtin.help_tags, {})
