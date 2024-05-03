@@ -8,9 +8,11 @@ config.font_rules = {
 	{ intensity = "Normal", font = wezterm.font("FiraMono Nerd Font Propo", { weight = "Medium", italic = false }) },
 	{ intensity = "Half", font = wezterm.font("FiraMono Nerd Font Propo", { weight = "Medium", italic = false }) },
 }
-config.color_scheme = "Nord (base16)"
+config.color_scheme = "nordfox"
+-- config.color_scheme = "Rosé Pine (base16)"
+-- config.color_scheme = "Tokyo Night"
 config.colors = {
-	background = "rgb(8,11,16)",
+	background = "rgb(10,10,14)",
 }
 config.enable_tab_bar = false
 config.font_size = 16.0
@@ -21,6 +23,7 @@ config.window_padding = {
 	bottom = 10,
 }
 config.window_decorations = "RESIZE"
+config.window_background_opacity = 0.97
 
 wezterm.on("gui-startup", function()
 	local tab, pane, window = mux.spawn_window({})

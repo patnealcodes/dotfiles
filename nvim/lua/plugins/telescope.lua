@@ -19,6 +19,8 @@ return {
 
 		require("telescope").setup({
 			defaults = {
+				winblend = 0,
+				layout_strategy = "vertical",
 				dynamic_preview_title = true,
 				vimgrep_arguments = {
 					"rg",
