@@ -2,20 +2,14 @@ local wezterm = require("wezterm")
 local mux = wezterm.mux
 local config = {}
 
-config.font = wezterm.font("FiraMono Nerd Font Propo")
-config.font_rules = {
-	{ intensity = "Bold", font = wezterm.font("FiraMono Nerd Font Propo", { weight = "Bold", italic = false }) },
-	{ intensity = "Normal", font = wezterm.font("FiraMono Nerd Font Propo", { weight = "Medium", italic = false }) },
-	{ intensity = "Half", font = wezterm.font("FiraMono Nerd Font Propo", { weight = "Medium", italic = false }) },
-}
 config.color_scheme = "nordfox"
 -- config.color_scheme = "Rosé Pine (base16)"
 -- config.color_scheme = "Tokyo Night"
 config.colors = {
-	background = "rgb(10,10,14)",
+	background = "rgb(15,15,24)",
 }
 config.enable_tab_bar = false
-config.font_size = 16.0
+config.font_size = 12.0
 config.window_padding = {
 	left = 30,
 	right = 30,
