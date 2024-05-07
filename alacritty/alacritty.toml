@@ -1,0 +1,63 @@
+import = [
+  "~/codes/GitHub/dotfiles/alacritty/themes/nordic.toml",
+]
+
+[cursor]
+blink_interval = 500
+unfocused_hollow = true
+thickness = 0.15
+
+[cursor.style]
+shape = "Beam"
+
+[colors.primary]
+background = "#0f0f18"
+
+[font]
+size = 16.0
+
+[shell]
+program = "/bin/zsh"
+args = ["-l", "-c", "-2", "tmux a -t config || tmux new -s config"]
+
+[font.normal]
+family = "FiraMono Nerd Font Propo"
+style = "Regular"
+
+[font.italic]
+style = "Regular"
+
+[font.bold]
+style = "Medium"
+
+[font.bold_italic]
+style = "Medium"
+
+[window.dimensions]
+columns = 80
+lines = 25
+
+[window.position]
+x = 200
+y = 100
+
+[window]
+startup_mode = "Maximized"
+
+dynamic_padding = true
+opacity = 0.95
+# blur = false
+decorations = "None"
+
+[window.padding]
+x = 8
+y = 6
+
+[[keyboard.bindings]]
+key = "V"
+mods = "Control"
+action = "Paste"
+
+[scrolling]
+history = 10000
+multiplier = 3

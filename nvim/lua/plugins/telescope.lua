@@ -33,9 +33,15 @@ return {
 					"--hidden",
 				},
 				path_display = filenameFirst,
-				previewer = true,
+				previewer = false,
+				preview = {
+					hide_on_startup = true,
+				},
 				mappings = {
-					i = { ["<c-enter>"] = "to_fuzzy_refine" },
+					i = {
+						["<c-enter>"] = "to_fuzzy_refine",
+						["<c-p>"] = require("telescope.actions.layout").toggle_preview,
+					},
 				},
 			},
 			pickers = {

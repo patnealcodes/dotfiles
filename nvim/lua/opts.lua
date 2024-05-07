@@ -1,17 +1,19 @@
-vim.g.mapleader = ' '
-vim.g.maplocalleader = ' '
+vim.g.mapleader = " "
+vim.g.maplocalleader = " "
 vim.g.copilot_enabled = false
 
 vim.opt.backup = false
+vim.opt.clipboard = "unnamedplus"
 vim.opt.relativenumber = true
-vim.opt.mouse = 'a'
+vim.opt.mouse = "a"
 vim.opt.expandtab = true
-vim.opt.hlsearch = true
+vim.opt.hlsearch = false
 vim.opt.ignorecase = true
+
 vim.opt.isfname:append("@-@")
 vim.opt.incsearch = true
 vim.opt.number = true
-vim.opt.path:append { '**' }
+vim.opt.path:append({ "**" })
 vim.opt.scrolloff = 8
 vim.opt.shiftwidth = 4
 vim.opt.signcolumn = "yes"

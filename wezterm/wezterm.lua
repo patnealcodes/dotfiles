@@ -9,7 +9,7 @@ config.colors = {
 	background = "rgb(15,15,24)",
 }
 config.enable_tab_bar = false
-config.font_size = 12.0
+config.font_size = 16.0
 config.window_padding = {
 	left = 30,
 	right = 30,
@@ -18,6 +18,8 @@ config.window_padding = {
 }
 config.window_decorations = "RESIZE"
 config.window_background_opacity = 0.97
+config.send_composed_key_when_left_alt_is_pressed = false
+config.send_composed_key_when_right_alt_is_pressed = true
 
 wezterm.on("gui-startup", function()
 	local tab, pane, window = mux.spawn_window({})
