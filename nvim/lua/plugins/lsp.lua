@@ -29,6 +29,7 @@ return {
 			"gopls",
 			"html", -- html-lsp
 			"lua_ls", -- lua-language-server
+			"pyright",
 			"rust_analyzer",
 			"tailwindcss", -- tailwindcss-language-server
 			"tsserver", -- typescript-language-server
