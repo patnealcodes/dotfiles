@@ -91,7 +91,6 @@ return {
 				{ name = "nvim_lsp" },
 				{ name = "luasnip" }, -- TODO: Maybe don't need?
 			}, {
-				-- TODO: What about path?
 				{ name = "buffer" },
 			}),
 		})

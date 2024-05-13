@@ -20,7 +20,8 @@ alias sala="source ~/.config/alacritty/alacritty.yml"
 alias repos="~/codes/repos"
 alias tz="~/codes/testzone"
 alias ex="~/Exercism"
-alias exr="~/exercism/rust"
+alias exp="~/Exercism/python"
+alias exr="~/Exercism/rust"
 
 # tmux shortcuts
 alias txl="tmux ls"

@@ -1,5 +1,5 @@
 import = [
-  "~/codes/GitHub/dotfiles/alacritty/themes/rose_pine.toml",
+  "~/codes/GitHub/dotfiles/alacritty/themes/nordic.toml",
 ]
 
 [cursor]
@@ -14,14 +14,14 @@ shape = "Beam"
 background = "#0f0f18"
 
 [font]
-size = 16.0
+size = 12.0
 
 [shell]
 program = "/bin/zsh"
 args = ["-l", "-c", "-2", "tmux a -t config || tmux new -s config"]
 
 [font.normal]
-family = "FiraMono Nerd Font Propo"
+family = "FiraCode Nerd Font"
 style = "Regular"
 
 [font.italic]
@@ -46,7 +46,7 @@ startup_mode = "Maximized"
 
 dynamic_padding = true
 opacity = 0.95
-# blur = false
+blur = true
 decorations = "None"
 
 [window.padding]
