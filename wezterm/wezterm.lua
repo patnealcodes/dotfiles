@@ -17,7 +17,7 @@ config.window_padding = {
 	bottom = 10,
 }
 config.window_decorations = "RESIZE"
-config.window_background_opacity = 0.97
+-- config.window_background_opacity = 0.99
 config.send_composed_key_when_left_alt_is_pressed = false
 config.send_composed_key_when_right_alt_is_pressed = true
 
