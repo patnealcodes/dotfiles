@@ -14,7 +14,6 @@ alias tx="dot && v .tmux.conf"
 
 # Being re-source-ful
 alias szrc="source ~/.zshrc"
-alias sala="source ~/.config/alacritty/alacritty.yml"
 
 # Folder Shortcuts
 alias repos="~/codes/repos"
@@ -30,6 +29,10 @@ function txn() { if [ "$@" ]; then tmux new -s "$@"; else tmux; fi }
 function txa() { if [ "$@" ]; then tmux attach -t "$@"; else tmux attach; fi }
 function txks() { tmux kill-session -t "$@" }
 function txkw() { tmux kill-window -t "$@" }
+
+# Numbers are for chumps
+alias pip="pip3"
+alias python="python3"
 
 # Utility Functions
 alias lg="lazygit"
@@ -59,12 +62,18 @@ function ff {
     tmux switch-client -t $selected_name
   fi
 }
+addBeforePath() {
+    if [[ "$PATH" != *"$1"* ]]; then
+        export PATH=$1:$PATH
+    fi
+}
 addToPath() {
     if [[ "$PATH" != *"$1"* ]]; then
         export PATH=$PATH:$1
     fi
 } 
 
+addBeforePath /Users/nealp/Library/Python/3.9/bin
 addToPath /opt/homebrew/bin
 addToPath /usr/bin
 addToPath /usr/local/bin
