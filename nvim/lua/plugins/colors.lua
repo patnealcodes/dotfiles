@@ -3,32 +3,51 @@ return {
 	-- 	"folke/tokyonight.nvim",
 	-- 	config = function()
 	-- 		require("tokyonight").setup({
-	-- 			style = "day",
+	-- 			style = "storm",
+	-- 			transparent = true,
 	-- 			terminal_colors = true,
 	-- 			styles = {
 	-- 				comments = { italic = false },
 	-- 				keywords = { italic = false },
+	-- 				sidebars = "dark",
+	-- 				floats = "dark",
 	-- 			},
 	-- 			dim_inactive = true,
 	-- 		})
 	--
-	-- 		-- vim.cmd("colorscheme tokyonight")
+	-- 		vim.cmd("colorscheme tokyonight")
+	-- 	end,
+	-- },
+	--
+	-- {
+	-- 	"rose-pine/neovim",
+	-- 	name = "rose-pine",
+	-- 	config = function()
+	-- 		require("rose-pine").setup({
+	-- 			disable_background = true,
+	-- 			styles = {
+	-- 				italic = false,
+	-- 			},
+	-- 		})
+	--
+	-- 		vim.cmd.colorscheme("rose-pine")
+	--
+	-- 		vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
+	-- 		vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
 	-- 	end,
 	-- },
 
 	{
-		"rose-pine/neovim",
-		name = "rose-pine",
+		"EdenEast/nightfox.nvim",
+		lazy = false,
+		priority = 1000,
 		config = function()
-			require("rose-pine").setup({
-				variant = "moon",
-				dim_inactive_windows = true,
-				styles = {
-					italic = false,
+			require("nightfox").setup({
+				options = {
+					transparent = true,
 				},
 			})
-
-			vim.cmd("colorscheme rose-pine")
+			vim.cmd("colorscheme nordfox")
 		end,
 	},
 

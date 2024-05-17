@@ -1,5 +1,5 @@
 import = [
-  "~/codes/GitHub/dotfiles/alacritty/themes/rose_pine_moon.toml",
+  "~/codes/GitHub/dotfiles/alacritty/themes/rose_pine.toml",
 ]
 
 [cursor]
@@ -10,28 +10,22 @@ thickness = 0.15
 [cursor.style]
 shape = "Beam"
 
-# [colors.primary]
-# background = "#0f0f18"
+[colors.primary]
+background = "#1d1f20"
+
+# [colors.cursor]
+# text = "CellBackground"
+# background = "#60b579"
 
 [font]
-size = 15.0
+size = 16.0
 
-[shell]
-program = "/bin/zsh"
-args = ["-l", "-c", "-2", "tmux a -t config || tmux new -s config"]
+# [shell]
+# program = "/bin/zsh"
+# args = ["-l", "-c", "-2", "tmux a -t config || tmux new -s config"]
 
 [font.normal]
 family = "LiterationMono Nerd Font Mono"
-# style = "Regular"
-#
-# [font.italic]
-# style = "Italic"
-#
-# [font.bold]
-# style = "Regular"
-#
-# [font.bold_italic]
-# style = "Italic"
 
 [window.dimensions]
 columns = 80
