@@ -1,4 +1,5 @@
-#----- ZINIT Setup
+#----- ZINIT
+# Main Setup
 ZINIT_HOME="${XDG_DATA_HOME:-${HOME}/.local/share}/zinit/zinit.git"
 
 if [ ! -d "$ZINIT_HOME" ]; then
@@ -8,14 +9,34 @@ fi
 
 source $ZINIT_HOME/zinit.zsh
 
+# Plugins
 zinit ice depth=1; zinit light romkatv/powerlevel10k
+zinit light zsh-users/zsh-syntax-highlighting
 
+# P10k
 if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
-#----- END ZINIT Setup
+
+# Keybinds
+bindkey '^[[A' history-search-backward # Up Arrow
+bindkey '^[[B' history-search-forward # Down Arrow
+
+# History Settings
+HISTSIZE=1000
+HISTFILE=~/.zsh_history
+SAVEHIST=$HISTSIZE
+HISTDUP=erase
+setopt appendhistory
+setopt sharehistory
+setopt hist_ignore_space
+setopt hist_ignore_all_dups
+setopt hist_save_no_dups
+setopt hist_ignore_dups
+setopt hist_find_no_dups
+#----- END ZINIT
 
 # Options
 setopt AUTO_CD

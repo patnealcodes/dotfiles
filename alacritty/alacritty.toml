@@ -13,9 +13,9 @@ shape = "Beam"
 [colors.primary]
 background = "#1d1f20"
 
-[colors.cursor]
-text = "CellBackground"
-background = "#60b579"
+# [colors.cursor]
+# text = "CellBackground"
+# background = "#60b579"
 
 [font]
 size = 16.0
