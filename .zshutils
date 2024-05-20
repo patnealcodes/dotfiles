@@ -1,3 +1,25 @@
+#----- ZINIT Setup
+ZINIT_HOME="${XDG_DATA_HOME:-${HOME}/.local/share}/zinit/zinit.git"
+
+if [ ! -d "$ZINIT_HOME" ]; then
+  mkdir -p "$(dirname $ZINIT_HOME)"
+  git clone https://github.com/zdharma-continuum/zinit.git "$ZINIT_HOME"
+fi
+
+source $ZINIT_HOME/zinit.zsh
+
+zinit ice depth=1; zinit light romkatv/powerlevel10k
+
+if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+fi
+
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+#----- END ZINIT Setup
+
+# Options
+setopt AUTO_CD
+
 # Shortcuts for editors
 alias v="nvim"
 
@@ -5,22 +27,16 @@ alias v="nvim"
 alias dot="~/codes/GitHub/dotfiles"
 
 # Dotfile shortcuts
-alias zrc="cd ~ && v .zshrc"
-alias zut="dot && v .zshutils"
-alias ala="dot && v alacritty/alacritty.toml"
-alias wez="dot && v wezterm/wezterm.lua"
-alias vd="dot && cd nvim && v"
-alias tx="dot && v .tmux.conf"
-
-# Being re-source-ful
-alias szrc="source ~/.zshrc"
+alias zrc="v ~/.zshrc"
+alias zut="v ~/codes/GitHub/dotfiles/.zshutils"
+alias ala="v ~/codes/GitHub/dotfiles/alacritty/alacritty.toml"
+alias vd="~/codes/GitHub/dotfiles/nvim && v"
+alias tx="v ~/codes/GitHub/dotfiles/.tmux.conf"
 
 # Folder Shortcuts
 alias repos="~/codes/repos"
 alias tz="~/codes/testzone"
 alias ex="~/Exercism"
-alias exp="~/Exercism/python"
-alias exr="~/Exercism/rust"
 
 # tmux shortcuts
 alias txl="tmux ls"
@@ -35,6 +51,7 @@ alias pip="pip3"
 alias python="python3"
 
 # Utility Functions
+alias l="exa -lha --git --no-user"
 alias lg="lazygit"
 alias gconfig="git config --global -e"
 function mkcd() { mkdir "$@" && cd "$@"; }
@@ -73,6 +90,10 @@ addToPath() {
     fi
 } 
 
+export NVM_DIR=~/.nvm
+[[ -s "$NVM_DIR/nvm.sh" ]] && source "$NVM_DIR/nvm.sh" --no-use
+
+addBeforePath $NVM_DIR/versions/node/v18.17.1/bin:$PATH
 addBeforePath /Users/nealp/Library/Python/3.9/bin
 addToPath /opt/homebrew/bin
 addToPath /usr/bin

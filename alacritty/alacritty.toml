@@ -13,16 +13,16 @@ shape = "Beam"
 [colors.primary]
 background = "#1d1f20"
 
-# [colors.cursor]
-# text = "CellBackground"
-# background = "#60b579"
+[colors.cursor]
+text = "CellBackground"
+background = "#60b579"
 
 [font]
 size = 16.0
 
-# [shell]
-# program = "/bin/zsh"
-# args = ["-l", "-c", "-2", "tmux a -t config || tmux new -s config"]
+[shell]
+program = "/bin/zsh"
+args = ["-l", "-c", "-2", "tmux a -t config || tmux new -s config"]
 
 [font.normal]
 family = "LiterationMono Nerd Font Mono"
