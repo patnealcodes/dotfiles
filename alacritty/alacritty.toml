@@ -11,7 +11,7 @@ thickness = 0.15
 shape = "Beam"
 
 [colors.primary]
-background = "#1d1f20"
+# background = "#1d1f20"
 
 # [colors.cursor]
 # text = "CellBackground"

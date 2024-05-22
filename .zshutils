@@ -114,8 +114,12 @@ addToPath() {
 export NVM_DIR=~/.nvm
 [[ -s "$NVM_DIR/nvm.sh" ]] && source "$NVM_DIR/nvm.sh" --no-use
 
+export MODULAR_HOME="/Users/nealp/.modular"
+
 addBeforePath $NVM_DIR/versions/node/v18.17.1/bin:$PATH
 addBeforePath /Users/nealp/Library/Python/3.9/bin
 addToPath /opt/homebrew/bin
 addToPath /usr/bin
 addToPath /usr/local/bin
+addToPath /bin
+
