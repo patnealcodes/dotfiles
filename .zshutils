@@ -9,9 +9,16 @@ fi
 
 source $ZINIT_HOME/zinit.zsh
 
-# Plugins
+# Prompt
 zinit ice depth=1; zinit light romkatv/powerlevel10k
+
+# Plugins
 zinit light zsh-users/zsh-syntax-highlighting
+zinit light zsh-users/zsh-completions
+zinit light zsh-users/zsh-autosuggestions
+
+# Load Completions
+autoload -U compinit && compinit
 
 # P10k
 if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
@@ -21,8 +28,10 @@ fi
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 # Keybinds
-bindkey '^[[A' history-search-backward # Up Arrow
-bindkey '^[[B' history-search-forward # Down Arrow
+bindkey '^[OA' history-search-backward
+bindkey '^[[A' history-search-backward
+bindkey '^[OB' history-search-forward
+bindkey '^[[B' history-search-forward
 
 # History Settings
 HISTSIZE=1000
@@ -36,6 +45,11 @@ setopt hist_ignore_all_dups
 setopt hist_save_no_dups
 setopt hist_ignore_dups
 setopt hist_find_no_dups
+
+zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
+zstyle ':completion:*' menu no
+
+eval "$(zoxide init zsh)"
 #----- END ZINIT
 
 # Options
@@ -72,16 +86,16 @@ alias pip="pip3"
 alias python="python3"
 
 # Utility Functions
-alias l="exa -lha --git --no-user"
+alias l="exa -lha --no-user"
 alias lg="lazygit"
-alias gconfig="git config --global -e"
+alias gconfig="git config --global"
 function mkcd() { mkdir "$@" && cd "$@"; }
 function mkc() { mkdir "$@" && c "$@"; }
 function ff {
   if [[ $# -eq 1 ]]; then
     selected=1
   else
-    selected=$(find ~/codes/GitHub ~/codes/GitHub/dotfiles ~/codes/testzone ~/codes/repos -mindepth 1 -maxdepth 1 -type d | fzf)
+    selected=$(find ~/codes/GitHub ~/codes/GitHub/dotfiles ~/codes/testzone ~/codes/repos ~/codes/CodeCrafters -mindepth 1 -maxdepth 1 -type d | fzf)
   fi
 
   if [[ $selected ]]; then
