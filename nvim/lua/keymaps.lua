@@ -24,11 +24,9 @@ vim.keymap.set("n", "<leader>j", "<cmd>lprev<CR>zz")
 vim.keymap.set("n", "<leader>rp", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
 vim.keymap.set("x", "<leader>rp", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
 
-vim.keymap.set("n", "<leader><leader>", function()
-	vim.cmd("so")
-end)
+vim.keymap.set("n", "<leader>=-", [[:lua require("persistence").load() <cr>]])
 
 vim.keymap.set("n", "<Esc>", "<cmd>nohlsearch<CR>")
 
 -- Plugins
-vim.keymap.set("n", "-", "<cmd>lua require('oil').open_float('.')<CR>", { silent = true })
+vim.keymap.set("n", "-", "<cmd>lua require('oil').open_float()<CR>", { silent = true })

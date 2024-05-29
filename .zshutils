@@ -65,7 +65,7 @@ alias dot="~/codes/GitHub/dotfiles"
 alias zrc="v ~/.zshrc"
 alias zut="v ~/codes/GitHub/dotfiles/.zshutils"
 alias ala="v ~/codes/GitHub/dotfiles/alacritty/alacritty.toml"
-alias vd="~/codes/GitHub/dotfiles/nvim && v"
+alias vd=" v ~/codes/GitHub/dotfiles/nvim"
 alias tx="v ~/codes/GitHub/dotfiles/.tmux.conf"
 
 # Folder Shortcuts
@@ -135,5 +135,6 @@ addBeforePath /Users/nealp/Library/Python/3.9/bin
 addToPath /opt/homebrew/bin
 addToPath /usr/bin
 addToPath /usr/local/bin
+addToPath /Users/nealp/.local/bin
 addToPath /bin
 

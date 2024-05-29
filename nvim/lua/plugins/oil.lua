@@ -4,9 +4,6 @@ return {
 		view_options = {
 			show_hidden = true,
 		},
-		float = {
-			padding = 10,
-		},
 		keymaps = {
 			["<C-c>"] = "actions.close",
 			["<Esc>"] = "actions.close",

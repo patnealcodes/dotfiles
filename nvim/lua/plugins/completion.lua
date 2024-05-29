@@ -20,12 +20,89 @@ return {
 
 			local cmp = require("cmp")
 
+			local duplicates = {
+				buffer = 1,
+				path = 1,
+				nvim_lsp = 0,
+				luasnip = 1,
+			}
+
+			local kind = {
+				Array = "",
+				Boolean = "",
+				Class = "",
+				Color = "",
+				Constant = "",
+				Constructor = "",
+				Enum = "",
+				EnumMember = "",
+				Event = "",
+				Field = "",
+				File = "",
+				Folder = "󰉋",
+				Function = "",
+				Interface = "",
+				Key = "",
+				Keyword = "",
+				Method = "",
+				Module = "",
+				Namespace = "",
+				Null = "󰟢",
+				Number = "",
+				Object = "",
+				Operator = "",
+				Package = "",
+				Property = "",
+				Reference = "",
+				Snippet = "",
+				String = "",
+				Struct = "",
+				Text = "",
+				TypeParameter = "",
+				Unit = "",
+				Value = "",
+				Variable = "",
+			}
+
 			cmp.setup({
 				sources = {
-					{ name = "nvim_lsp" },
+					{
+						name = "copilot",
+						max_item_count = 3,
+						trigger_characters = {
+							{
+								".",
+								":",
+								"(",
+								"'",
+								'"',
+								"[",
+								",",
+								"#",
+								"*",
+								"@",
+								"|",
+								"=",
+								"-",
+								"{",
+								"/",
+								"\\",
+								"+",
+								"?",
+								" ",
+							},
+						},
+					},
+					{ name = "nvim_lsp", },
 					{ name = "path" },
+					{ name = "luasnip" },
+					{ name = "nvim_lua" },
 					{ name = "buffer" },
+					{ name = "treesitter" },
+					{ name = "crates" },
+					{ name = "tmux" },
 				},
+
 				mapping = {
 					["<C-n>"] = cmp.mapping.select_next_item(),
 					["<C-p>"] = cmp.mapping.select_prev_item(),
@@ -42,6 +119,37 @@ return {
 					expand = function(args)
 						require("luasnip").lsp_expand(args.body)
 					end,
+				},
+
+				formatting = {
+					fields = { "kind", "abbr", "menu" },
+
+					format = function(entry, vim_item)
+						local source_names = {
+							nvim_lsp = "(LSP)",
+							emoji = "(Emoji)",
+							path = "(Path)",
+							calc = "(Calc)",
+							cmp_tabnine = "(Tabnine)",
+							vsnip = "(Snippet)",
+							luasnip = "(Snippet)",
+							buffer = "(Buffer)",
+							tmux = "(TMUX)",
+							copilot = "(Copilot)",
+							treesitter = "(TreeSitter)",
+						}
+
+						vim_item.kind = kind[vim_item.kind]
+						vim_item.menu = source_names[entry.source.name] or entry.source.name
+						vim_item.dup = duplicates[entry.source.name] or 0
+
+						return vim_item
+					end
+				},
+
+				window = {
+					completion = cmp.config.window.bordered(),
+					documentation = cmp.config.window.bordered(),
 				},
 			})
 

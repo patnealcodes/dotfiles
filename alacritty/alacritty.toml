@@ -25,7 +25,15 @@ program = "/bin/zsh"
 args = ["-l", "-c", "-2", "tmux a -t config || tmux new -s config"]
 
 [font.normal]
-family = "LiterationMono Nerd Font Mono"
+family = "JetBrainsMono Nerd Font"
+
+[font.italic]
+
+[font.bold]
+style = "Regular"
+
+[font.bold_italic]
+style = "Regular Italic"
 
 [window.dimensions]
 columns = 80

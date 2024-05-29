@@ -1,6 +1,8 @@
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 vim.g.copilot_enabled = false
+vim.g.loaded_netrw = 0
+vim.g.loaded_netrwPlugin = 0
 
 vim.opt.backup = false
 vim.opt.clipboard = "unnamedplus"
@@ -10,6 +12,7 @@ vim.opt.mouse = "a"
 vim.opt.expandtab = true
 vim.opt.hlsearch = true
 vim.opt.ignorecase = true
+vim.opt.pumheight = 10
 
 vim.opt.isfname:append("@-@")
 vim.opt.incsearch = true
