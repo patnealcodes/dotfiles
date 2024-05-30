@@ -1,25 +1,24 @@
 return {
-	"rose-pine/neovim",
-	name = "rose-pine",
+	"catppuccin/nvim",
+	name = "catppuccin",
+	priority = 1000,
 	config = function()
-		require("rose-pine").setup({
-			disable_background = true,
-			styles = {
-				bold = false,
-				italic = false,
-			},
-			highlight_groups = {
-				TelescopeBorder = { fg = "highlight_high", bg = "none" },
-				TelescopeNormal = { bg = "none" },
-				TelescopePromptNormal = { bg = "base" },
-				TelescopeResultsNormal = { fg = "subtle", bg = "none" },
-				TelescopeSelection = { fg = "text", bg = "base" },
-				TelescopeSelectionCaret = { fg = "rose", bg = "rose" },
+		require("catppuccin").setup({
+			flavour = "mocha",
+			transparent_background = false,
+			show_end_of_buffer = false,
+			term_colors = true,
+			no_italic = true,
+			integrations = {
+				cmp = true,
+				gitsigns = true,
+				treesitter = true,
+				mini = {
+					enabled = true,
+					indentscope_color = "",
+				},
 			},
 		})
-
-		vim.cmd.colorscheme("rose-pine-main")
-
-		vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
-	end,
+		vim.cmd.colorscheme "catppuccin"
+	end
 }

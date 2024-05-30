@@ -1,5 +1,5 @@
 import = [
-  "~/codes/GitHub/dotfiles/alacritty/themes/rose_pine.toml",
+  "~/codes/GitHub/dotfiles/alacritty/themes/catppuccin-mocha.toml",
 ]
 
 [cursor]
@@ -25,14 +25,19 @@ program = "/bin/zsh"
 args = ["-l", "-c", "-2", "tmux a -t config || tmux new -s config"]
 
 [font.normal]
-family = "JetBrainsMono Nerd Font"
+family = "FiraCode Nerd Font Mono"
+style = "Light"
 
 [font.italic]
+family = "FiraCode Nerd Font Mono"
+style = "Light Italic"
 
 [font.bold]
+family = "FiraCode Nerd Font Mono"
 style = "Regular"
 
 [font.bold_italic]
+family = "FiraCode Nerd Font Mono"
 style = "Regular Italic"
 
 [window.dimensions]
