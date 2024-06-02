@@ -1,3 +1,27 @@
+local servers = {
+	"lua_ls",
+	"tsserver",
+	"clangd",
+	"cssls", -- css-lsp
+	"gopls",
+	"html", -- html-lsp
+	"lua_ls", -- lua-language-server
+	"pyright",
+	"ruff_lsp",
+	"rust_analyzer",
+	"tailwindcss", -- tailwindcss-language-server
+	"tsserver", -- typescript-language-server
+	"yamlls",   -- yaml-language-server
+}
+local formatters = {
+	"black",
+	"clang_format",
+	"isort",
+	"prettier",
+	"prettierd",
+	"stylua",
+	"pyright",
+}
 return {
 	"neovim/nvim-lspconfig",
 	dependencies = {
@@ -11,6 +35,8 @@ return {
 		"L3MON4D3/LuaSnip",
 		"j-hui/fidget.nvim",
 	},
+	servers = servers,
+	formatters = formatters,
 
 	config = function()
 		local cmp = require("cmp")
@@ -21,29 +47,6 @@ return {
 			vim.lsp.protocol.make_client_capabilities(),
 			cmp_lsp.default_capabilities()
 		)
-		local servers = {
-			"lua_ls",
-			"tsserver",
-			"clangd",
-			"cssls", -- css-lsp
-			"gopls",
-			"html", -- html-lsp
-			"lua_ls", -- lua-language-server
-			"pyright",
-			"rust_analyzer",
-			"tailwindcss", -- tailwindcss-language-server
-			"tsserver", -- typescript-language-server
-			"yamlls", -- yaml-language-server
-		}
-		local formatters = {
-			"black",
-			"clang_format",
-			"isort",
-			"prettier",
-			"prettierd",
-			"stylua",
-			"pyright",
-		}
 		local ensure_installed = vim.tbl_extend("keep", servers, formatters)
 
 		require("fidget").setup({})

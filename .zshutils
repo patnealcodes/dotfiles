@@ -91,29 +91,7 @@ alias lg="lazygit"
 alias gconfig="git config --global"
 function mkcd() { mkdir "$@" && cd "$@"; }
 function mkc() { mkdir "$@" && c "$@"; }
-function ff {
-  if [[ $# -eq 1 ]]; then
-    selected=1
-  else
-    selected=$(find ~/codes/GitHub ~/codes/GitHub/dotfiles ~/codes/testzone ~/codes/repos ~/codes/CodeCrafters -mindepth 1 -maxdepth 1 -type d | fzf)
-  fi
-
-  if [[ $selected ]]; then
-    selected_name=$(basename "$selected" | tr . _)
-    tmux_running=$(pgrep tmux)
-
-    if [[ -z $TMUX ]] && [[ -z $tmux_running ]]; then
-      tmux new-session -s $selected_name -c $selected
-      exit 0
-    fi
-
-    if ! tmux has-session -t=$selected_name 2> /dev/null; then
-        tmux new-session -ds $selected_name -c $selected
-    fi
-
-    tmux switch-client -t $selected_name
-  fi
-}
+alias ff="tmux neww bash ~/codes/GitHub/dotfiles/tmux-sessionizer"
 addBeforePath() {
     if [[ "$PATH" != *"$1"* ]]; then
         export PATH=$1:$PATH
@@ -130,7 +108,7 @@ export NVM_DIR=~/.nvm
 
 export MODULAR_HOME="/Users/nealp/.modular"
 
-addBeforePath $NVM_DIR/versions/node/v18.17.1/bin:$PATH
+addBeforePath $NVM_DIR/versions/node/$DEFAULT_NODE_VERSION/bin:$PATH
 addBeforePath /Users/nealp/Library/Python/3.9/bin
 addToPath /opt/homebrew/bin
 addToPath /usr/bin

@@ -1,6 +1,6 @@
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
-vim.g.copilot_enabled = false
+vim.g.copilot_enabled = true
 vim.g.loaded_netrw = 0
 vim.g.loaded_netrwPlugin = 0
 
@@ -28,7 +28,7 @@ vim.opt.splitright = true
 vim.opt.splitbelow = true
 vim.opt.swapfile = false
 vim.opt.tabstop = 4
-vim.opt.termguicolors = true
+vim.opt.termguicolors = false
 vim.opt.undodir = os.getenv("HOME") .. "/.vim/undodir"
 vim.opt.undofile = true
 vim.opt.updatetime = 50

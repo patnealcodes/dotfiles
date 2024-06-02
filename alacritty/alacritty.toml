@@ -1,5 +1,5 @@
 import = [
-  "~/codes/GitHub/dotfiles/alacritty/themes/catppuccin-mocha.toml",
+  "~/codes/GitHub/dotfiles/alacritty/themes/rose_pine.toml",
 ]
 
 [cursor]
@@ -18,7 +18,7 @@ shape = "Beam"
 # background = "#60b579"
 
 [font]
-size = 16.0
+size = 12.0
 
 [shell]
 program = "/bin/zsh"
