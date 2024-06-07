@@ -2,24 +2,30 @@ local wezterm = require("wezterm")
 local mux = wezterm.mux
 local config = {}
 
-config.color_scheme = "nordfox"
--- config.color_scheme = "Rosé Pine (base16)"
--- config.color_scheme = "Tokyo Night"
-config.colors = {
-	background = "rgb(15,15,24)",
-}
+config.color_scheme = "Catppuccin Mocha (Gogh)"
+
 config.enable_tab_bar = false
-config.font_size = 16.0
-config.window_padding = {
-	left = 30,
-	right = 30,
-	top = 30,
-	bottom = 10,
+
+config.font = wezterm.font("FiraCode Nerd Font Mono")
+config.font_rules = {
+	{ intensity = "Bold", font = wezterm.font("FiraCode Nerd Font Mono", { weight = "Bold", italic = false }) },
+	{ intensity = "Normal", font = wezterm.font("FiraCode Nerd Font Mono", { weight = "Regular", italic = false }) },
+	{ intensity = "Half", font = wezterm.font("FiraCode Nerd Font Mono", { weight = "Medium", italic = false }) },
 }
+config.font_size = 14.0
+-- config.window_padding = {
+-- 	left = 30,
+-- 	right = 30,
+-- 	top = 30,
+-- 	bottom = 10,
+-- }
+-- config.colors = {
+-- 	background = "#111111",
+-- }
 config.window_decorations = "RESIZE"
--- config.window_background_opacity = 0.99
-config.send_composed_key_when_left_alt_is_pressed = false
-config.send_composed_key_when_right_alt_is_pressed = true
+config.window_background_opacity = 0.96
+-- config.send_composed_key_when_left_alt_is_pressed = true
+-- config.send_composed_key_when_right_alt_is_pressed = true
 
 wezterm.on("gui-startup", function()
 	local tab, pane, window = mux.spawn_window({})
