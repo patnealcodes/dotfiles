@@ -29,4 +29,4 @@ vim.keymap.set("n", "<leader>=-", [[:lua require("persistence").load() <cr>]])
 vim.keymap.set("n", "<Esc>", "<cmd>nohlsearch<CR>")
 
 -- Plugins
-vim.keymap.set("n", "-", "<cmd>lua require('oil').open_float()<CR>", { silent = true })
+vim.keymap.set("n", "-", "<cmd>lua require('oil').open()<CR>", { silent = true })

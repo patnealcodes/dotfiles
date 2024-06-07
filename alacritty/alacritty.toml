@@ -1,6 +1,7 @@
-import = [
-  "~/codes/GitHub/dotfiles/alacritty/themes/rose_pine.toml",
-]
+import = ["~/codes/GitHub/dotfiles/alacritty/themes/duskfox.toml"]
+
+[env]
+TERM = "xterm-256color"
 
 [cursor]
 blink_interval = 500
@@ -13,12 +14,12 @@ shape = "Beam"
 [colors.primary]
 # background = "#1d1f20"
 
-# [colors.cursor]
-# text = "CellBackground"
-# background = "#60b579"
+[colors.cursor]
+# background = "#ffffff"
+text = "CellBackground"
 
 [font]
-size = 12.0
+size = 15.0
 
 [shell]
 program = "/bin/zsh"
@@ -52,7 +53,7 @@ y = 100
 startup_mode = "Maximized"
 
 dynamic_padding = true
-# opacity = 0.99
+opacity = 0.96
 # blur = true
 decorations = "None"
 

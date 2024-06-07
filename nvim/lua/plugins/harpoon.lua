@@ -3,7 +3,7 @@ return {
 	branch = "harpoon2",
 	event = "VeryLazy",
 	dependencies = {
-		"nvim-lua/plenary.nvim",
+		"plenary",
 	},
 	config = function()
 		local keymap = vim.keymap

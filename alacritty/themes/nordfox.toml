@@ -8,13 +8,13 @@ foreground = "#cdcecf"
 dim_foreground = "#abb1bb"
 bright_foreground = "#c7cdd9"
 
-# [colors.cursor]
-# text = "#cdcecf"
-# cursor = "#abb1bb"
-#
-# [colors.vi_mode_cursor]
-# text = "#cdcecf"
-# cursor = "#88c0d0"
+[colors.cursor]
+text = "#cdcecf"
+cursor = "#abb1bb"
+
+[colors.vi_mode_cursor]
+text = "#cdcecf"
+cursor = "#88c0d0"
 
 [colors.search.matches]
 foreground = "#cdcecf"

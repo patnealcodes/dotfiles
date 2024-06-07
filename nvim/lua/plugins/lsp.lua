@@ -1,7 +1,6 @@
 local servers = {
 	"lua_ls",
 	"tsserver",
-	"clangd",
 	"cssls", -- css-lsp
 	"gopls",
 	"html", -- html-lsp
@@ -9,17 +8,17 @@ local servers = {
 	"pyright",
 	"ruff_lsp",
 	"rust_analyzer",
-	"tailwindcss", -- tailwindcss-language-server
 	"tsserver", -- typescript-language-server
-	"yamlls",   -- yaml-language-server
+	"yamlls", -- yaml-language-server
 }
 local formatters = {
 	"black",
-	"clang_format",
 	"isort",
 	"prettier",
 	"prettierd",
 	"stylua",
+	"gofumpt",
+	"goimports_reviser",
 	"pyright",
 }
 return {

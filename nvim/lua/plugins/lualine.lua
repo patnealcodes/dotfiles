@@ -171,12 +171,12 @@ local icons = {
 local conditions = {
 	hide_in_width = function()
 		return vim.o.columns > 100
-	end
+	end,
 }
 local function env_cleanup(venv)
 	if string.find(venv, "/") then
 		local final_venv = venv
-		for w in venv:gmatch "([^/]+)" do
+		for w in venv:gmatch("([^/]+)") do
 			final_venv = w
 		end
 		venv = final_venv
@@ -218,7 +218,7 @@ local components = {
 	},
 	lsp = {
 		function()
-			local buf_clients = vim.lsp.get_clients { bufnr = 0 }
+			local buf_clients = vim.lsp.get_clients({ bufnr = 0 })
 			if #buf_clients == 0 then
 				return "LSP Inactive"
 			end
@@ -228,22 +228,22 @@ local components = {
 			local copilot_active = false
 
 			for _, client in pairs(buf_clients) do
-				if client.name ~= "copilot" then
+				if client.name ~= "GitHub Copilot" then
 					table.insert(buf_client_names, client.name)
 				end
 
-				if client.name == "copilot" then
+				if client.name == "GitHub Copilot" then
 					copilot_active = true
 				end
 			end
 
-			local formatters = require "plugins.lsp.formatters"
-			local supported_formatters = formatters.list_registered(buf_ft)
-			vim.list_extend(buf_client_names, supported_formatters)
-
-			local linters = require "plugins.lsp"
-			local supported_linters = linters.list_registered(buf_ft)
-			vim.list_extend(buf_client_names, supported_linters)
+			-- local formatters = require "plugins.lsp.formatters"
+			-- local supported_formatters = formatters.list_registered(buf_ft)
+			-- vim.list_extend(buf_client_names, supported_formatters)
+			--
+			-- local linters = require "plugins.lsp"
+			-- local supported_linters = linters.list_registered(buf_ft)
+			-- vim.list_extend(buf_client_names, supported_linters)
 
 			local unique_client_names = table.concat(buf_client_names, ", ")
 			local language_servers = string.format("[%s]", unique_client_names)
@@ -275,10 +275,10 @@ local components = {
 	python_env = {
 		function()
 			if vim.bo.filetype == "python" then
-				local venv = os.getenv "VIRTUAL_ENV"
+				local venv = os.getenv("VIRTUAL_ENV")
 				if venv then
-					local devicons = require "nvim-web-devicons"
-					local py_icon, _ = devicons.get_icon ".py"
+					local devicons = require("nvim-web-devicons")
+					local py_icon, _ = devicons.get_icon(".py")
 					return string.format(py_icon .. " (%s)", env_cleanup(venv))
 				end
 			end
@@ -292,13 +292,15 @@ return {
 	"nvim-lualine/lualine.nvim",
 	config = function()
 		require("lualine").setup({
+			options = {
+				component_separators = { left = " ", right = " " },
+				section_separators = { left = " ", right = " " },
+			},
 			sections = {
-				lualine_a = {
-				},
-				lualine_b = {
-					components.branch,
-				},
+				lualine_a = {},
+				lualine_b = {},
 				lualine_c = {
+					components.branch,
 					components.filename,
 				},
 				lualine_x = {
@@ -309,8 +311,7 @@ return {
 				lualine_y = {
 					components.python_env,
 				},
-				lualine_z = {
-				},
+				lualine_z = {},
 			},
 		})
 	end,

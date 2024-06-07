@@ -22,8 +22,8 @@ return {
 			require("telescope").setup({
 				extensions = {
 					["ui-select"] = {
-						require("telescope.themes").get_dropdown({})
-					}
+						require("telescope.themes").get_dropdown({}),
+					},
 				},
 				defaults = {
 					winblend = 0,
@@ -97,6 +97,5 @@ return {
 
 			require("telescope").load_extension("ui-select")
 		end,
-
 	},
 }
