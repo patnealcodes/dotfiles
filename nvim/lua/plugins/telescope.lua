@@ -1,3 +1,18 @@
+local togglescope_config = {
+	find_files = {
+		["<leader>g."] = {
+			hidden = true,
+			togglescope_title = "Find Files (Hidden)",
+		},
+	},
+	live_grep = {
+		["<leader>g."] = {
+			hidden = true,
+			togglescope_title = "Live Grep (Hidden)",
+		},
+	},
+}
+
 return {
 	"nvim-telescope/telescope-ui-select.nvim",
 	{
@@ -6,6 +21,8 @@ return {
 		tag = "0.1.5",
 
 		dependencies = {
+
+			"Theo-Steiner/togglescope",
 			"plenary",
 		},
 
@@ -19,14 +36,24 @@ return {
 				return string.format("%s\t\t%s", tail, parent)
 			end
 
+			local previewers = require("telescope.previewers")
+			local sorters = require("telescope.sorters")
 			require("telescope").setup({
 				extensions = {
 					["ui-select"] = {
 						require("telescope.themes").get_dropdown({}),
 					},
+					fzf = {
+						fuzzy = true, -- false will only do exact matching
+						override_generic_sorter = true, -- override the generic sorter
+						override_file_sorter = true, -- override the file sorter
+						case_mode = "smart_case", -- or "ignore_case" or "respect_case"
+					},
+					togglescope = togglescope_config,
 				},
 				defaults = {
 					winblend = 0,
+					file_ignore_patterns = { "^.git/" },
 					layout_strategy = "vertical",
 					dynamic_preview_title = true,
 					vimgrep_arguments = {
@@ -40,39 +67,59 @@ return {
 						"--hidden",
 					},
 					path_display = filenameFirst,
-					mappings = {
-						i = {
-							["<c-enter>"] = "to_fuzzy_refine",
-						},
-					},
 				},
 				pickers = {
+					live_grep = {
+						only_sort_text = true,
+					},
+					grep_string = {
+						only_sort_text = true,
+					},
 					buffers = {
-						sort_lastused = true,
+						initial_mode = "normal",
 						mappings = {
 							i = {
-								["<c-x>"] = "delete_buffer",
+								["<C-x>"] = "delete_buffer",
 							},
 							n = {
-								["<c-x>"] = "delete_buffer",
+								["dd"] = "delete_buffer",
 							},
 						},
 					},
+					planets = {
+						show_pluto = true,
+						show_moon = true,
+					},
+					git_files = {
+						hidden = true,
+						show_untracked = true,
+					},
+					colorscheme = {
+						enable_preview = true,
+					},
 				},
+				file_previewer = previewers.vim_buffer_cat.new,
+				grep_previewer = previewers.vim_buffer_vimgrep.new,
+				qflist_previewer = previewers.vim_buffer_qflist.new,
+				file_sorter = sorters.get_fuzzy_file,
+				generic_sorter = sorters.get_generic_fuzzy_sorter,
 			})
 			local builtin = require("telescope.builtin")
 
 			vim.keymap.set("n", "<leader>sh", builtin.help_tags, { desc = "[S]earch [H]elp" })
 			vim.keymap.set("n", "<leader>sk", builtin.keymaps, { desc = "[S]earch [K]eymaps" })
-			vim.keymap.set("n", "<leader>sf", builtin.find_files, { desc = "[S]earch [F]iles" })
+			vim.keymap.set("n", "<leader>sf", function()
+				require("telescope").extensions.togglescope.find_files()
+			end, { desc = "[S]earch [F]iles" })
 			vim.keymap.set("n", "<leader>ss", builtin.builtin, { desc = "[S]earch [S]elect Telescope" })
 			vim.keymap.set("n", "<leader>sw", builtin.grep_string, { desc = "[S]earch current [W]ord" })
 			vim.keymap.set("n", "<leader>sg", function()
-				vim.ui.input({ prompt = "Grep > " }, function(input)
-					if input ~= nil then
-						builtin.grep_string({ search = input })
-					end
-				end)
+				require("telescope").extensions.togglescope.live_grep({
+					sorting_strategy = "ascending",
+					layout_strategy = "bottom_pane",
+					prompt_prefix = ">> ",
+					prompt_title = "Live Grep",
+				})
 			end)
 			vim.keymap.set("n", "<leader>sd", builtin.diagnostics, { desc = "[S]earch [D]iagnostics" })
 			vim.keymap.set("n", "<leader>sr", builtin.resume, { desc = "[S]earch [R]esume" })
