@@ -12,11 +12,11 @@ thickness = 0.15
 shape = "Beam"
 
 [colors.primary]
-# background = "#161620"
+# background = "#111111"
 
 [colors.cursor]
 # background = "#ffffff"
-text = "CellBackground"
+# text = "CellBackground"
 
 [font]
 size = 15.0
@@ -53,7 +53,7 @@ y = 100
 startup_mode = "Maximized"
 
 dynamic_padding = true
-opacity = 0.97
+opacity = 0.92
 # blur = true
 decorations = "None"
 
