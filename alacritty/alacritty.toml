@@ -1,4 +1,4 @@
-import = ["~/codes/GitHub/dotfiles/alacritty/themes/catppuccin_mocha.toml"]
+import = ["~/codes/GitHub/dotfiles/alacritty/themes/nightfox.toml"]
 
 [env]
 TERM = "xterm-256color"
@@ -16,7 +16,7 @@ shape = "Beam"
 
 [colors.cursor]
 # background = "#ffffff"
-# text = "CellBackground"
+text = "CellBackground"
 
 [font]
 size = 15.0

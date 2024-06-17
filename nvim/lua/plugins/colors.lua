@@ -3,25 +3,29 @@ local set_up_hl_post_colorscheme_load = function()
   vim.api.nvim_set_hl(0, "NormalNC", { bg = "none" })
   vim.api.nvim_set_hl(0, "Normal", { bg = "none", fg = "none" })
   vim.api.nvim_set_hl(0, "TelescopeNormal", { bg = "none" })
-  vim.api.nvim_set_hl(0, "TelescopePromptNormal", { bg = "none" })
+  vim.api.nvim_set_hl(0, "LspInfoTip", { bg = "none" })
   vim.api.nvim_set_hl(0, "TelescopeFloat", { bg = "none" })
-  vim.api.nvim_set_hl(0, "TelescopeBorder", { bg = "none" })
+  vim.api.nvim_set_hl(0, "TelescopePromptNormal", { bg = "none" })
+  vim.api.nvim_set_hl(0, "TelescopeBorder", { bg = "none", fg = "#FFFFFF" })
+  vim.api.nvim_set_hl(0, "TelescopePromptTitle", { bg = "none", fg = "#FFFFFF" })
   vim.api.nvim_set_hl(0, "CursorLine", { bg = "none" })
 end
 return {
-  -- {
-  -- 	"EdenEast/nightfox.nvim",
-  -- 	lazy = false,
-  -- 	priority = 1000,
-  -- 	config = function()
-  -- 		local nightfox = require("nightfox")
-  -- 		nightfox.setup({
-  -- 			transparent = true,
-  -- 		})
-  -- 		vim.cmd.colorscheme("duskfox")
-  -- 		set_up_hl_post_colorscheme_load()
-  -- 	end,
-  -- },
+  {
+    "EdenEast/nightfox.nvim",
+    lazy = false,
+    priority = 1000,
+    config = function()
+      local nightfox = require "nightfox"
+      nightfox.setup {
+        options = {
+          transparent = true,
+        },
+      }
+      vim.cmd.colorscheme "nightfox"
+      set_up_hl_post_colorscheme_load()
+    end,
+  },
 
   -- {
   -- 	"AlexvZyl/nordic.nvim",
@@ -87,27 +91,27 @@ return {
   -- },
 
   -- {
-  -- 	"rose-pine/neovim",
-  -- 	name = "rose-pine",
-  -- 	config = function()
-  -- 		local palette = require("rose-pine.palette")
-  -- 		require("rose-pine").setup({
-  -- 			disable_background = true,
-  -- 			styles = {
-  -- 				italic = false,
-  -- 			},
-  -- 			highlight_groups = {
-  -- 				TelescopeBorder = { fg = palette.highlight_high, bg = "none" },
-  -- 				TelescopeNormal = { bg = "none" },
-  -- 				TelescopePromptNormal = { bg = "base" },
-  -- 				TelescopeResultsNormal = { fg = "subtle", bg = "none" },
-  -- 				TelescopeSelection = { fg = "text", bg = "base" },
-  -- 				TelescopeSelectionCaret = { fg = "rose", bg = "rose" },
-  -- 			},
-  -- 		})
-  --
-  -- 		vim.cmd("colorscheme rose-pine")
-  -- 	end,
+  --   "rose-pine/neovim",
+  --   name = "rose-pine",
+  --   config = function()
+  --     local palette = require "rose-pine.palette"
+  --     require("rose-pine").setup {
+  --       disable_background = true,
+  --       styles = {
+  --         italic = false,
+  --       },
+  --       highlight_groups = {
+  --         TelescopeBorder = { fg = palette.highlight_high, bg = "none" },
+  --         TelescopeNormal = { bg = "none" },
+  --         TelescopePromptNormal = { bg = "base" },
+  --         TelescopeResultsNormal = { fg = "subtle", bg = "none" },
+  --         TelescopeSelection = { fg = "text", bg = "base" },
+  --         TelescopeSelectionCaret = { fg = "rose", bg = "rose" },
+  --       },
+  --     }
+  --     vim.cmd "colorscheme rose-pine"
+  --     set_up_hl_post_colorscheme_load()
+  --   end,
   -- },
 
   -- {
@@ -125,29 +129,29 @@ return {
   -- 	end
   -- },
 
-  {
-    "catppuccin/nvim",
-    name = "catppuccin",
-    priority = 1000,
-    config = function()
-      require("catppuccin").setup {
-        flavour = "mocha",
-        transparent_background = true,
-        show_end_of_buffer = false,
-        term_colors = true,
-        no_italic = true,
-        integrations = {
-          cmp = true,
-          gitsigns = true,
-          treesitter = true,
-          mini = {
-            enabled = true,
-            indentscope_color = "",
-          },
-        },
-      }
-      vim.cmd.colorscheme "catppuccin"
-      set_up_hl_post_colorscheme_load()
-    end,
-  },
+  -- {
+  --   "catppuccin/nvim",
+  --   name = "catppuccin",
+  --   priority = 1000,
+  --   config = function()
+  --     require("catppuccin").setup {
+  --       flavour = "mocha",
+  --       transparent_background = true,
+  --       show_end_of_buffer = false,
+  --       term_colors = true,
+  --       no_italic = true,
+  --       integrations = {
+  --         cmp = true,
+  --         gitsigns = true,
+  --         treesitter = true,
+  --         mini = {
+  --           enabled = true,
+  --           indentscope_color = "",
+  --         },
+  --       },
+  --     }
+  --     vim.cmd.colorscheme "catppuccin"
+  --     set_up_hl_post_colorscheme_load()
+  --   end,
+  -- },
 }
