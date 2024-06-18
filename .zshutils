@@ -66,7 +66,7 @@ alias zrc="v ~/.zshrc"
 alias zut="v ~/codes/GitHub/dotfiles/.zshutils"
 alias ala="v ~/codes/GitHub/dotfiles/alacritty/alacritty.toml"
 alias wez="v ~/codes/GitHub/dotfiles/wezterm/wezterm.lua"
-alias vd=" v ~/codes/GitHub/dotfiles/nvim"
+alias vd="~/codes/GitHub/dotfiles/nvim && v"
 alias tx="v ~/codes/GitHub/dotfiles/.tmux.conf"
 
 # Folder Shortcuts

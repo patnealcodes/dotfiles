@@ -1,15 +1,15 @@
 local servers = {
   "lua_ls",
   "tsserver",
-  "cssls", -- css-lsp
+  "cssls",  -- css-lsp
   "gopls",
-  "html", -- html-lsp
+  "html",   -- html-lsp
   "lua_ls", -- lua-language-server
   "pyright",
   "ruff_lsp",
   "rust_analyzer",
   "tsserver", -- typescript-language-server
-  "yamlls", -- yaml-language-server
+  "yamlls",   -- yaml-language-server
 }
 local formatters = {
   "black",
@@ -41,7 +41,7 @@ return {
     local cmp = require "cmp"
     local cmp_lsp = require "cmp_nvim_lsp"
     local capabilities =
-      vim.tbl_deep_extend("force", {}, vim.lsp.protocol.make_client_capabilities(), cmp_lsp.default_capabilities())
+        vim.tbl_deep_extend("force", {}, vim.lsp.protocol.make_client_capabilities(), cmp_lsp.default_capabilities())
     local ensure_installed = vim.tbl_extend("keep", servers, formatters)
     local lspconfig = require "lspconfig"
 

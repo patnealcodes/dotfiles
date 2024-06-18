@@ -53,7 +53,7 @@ y = 100
 startup_mode = "Maximized"
 
 dynamic_padding = true
-opacity = 0.92
+opacity = 0.94
 # blur = true
 decorations = "None"
 

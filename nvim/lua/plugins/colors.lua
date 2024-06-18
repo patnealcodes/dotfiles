@@ -1,13 +1,9 @@
 local set_up_hl_post_colorscheme_load = function()
-  vim.api.nvim_set_hl(0, "lualine_a", { bg = "none" })
-  vim.api.nvim_set_hl(0, "NormalNC", { bg = "none" })
-  vim.api.nvim_set_hl(0, "Normal", { bg = "none", fg = "none" })
-  vim.api.nvim_set_hl(0, "TelescopeNormal", { bg = "none" })
-  vim.api.nvim_set_hl(0, "LspInfoTip", { bg = "none" })
-  vim.api.nvim_set_hl(0, "TelescopeFloat", { bg = "none" })
-  vim.api.nvim_set_hl(0, "TelescopePromptNormal", { bg = "none" })
-  vim.api.nvim_set_hl(0, "TelescopeBorder", { bg = "none", fg = "#FFFFFF" })
-  vim.api.nvim_set_hl(0, "TelescopePromptTitle", { bg = "none", fg = "#FFFFFF" })
+  vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
+  vim.api.nvim_set_hl(0, "TelescopeTitle", { link = "FloatTitle" })
+  vim.api.nvim_set_hl(0, "TelescopeBorder", { link = "LspSagaHoverBorder" })
+  vim.api.nvim_set_hl(0, "TelescopePromptTitle", { link = "FloatTitle" })
+  vim.api.nvim_set_hl(0, "TelescopePromptBorder", { link = "LspSagaHoverBorder" })
   vim.api.nvim_set_hl(0, "CursorLine", { bg = "none" })
 end
 return {

@@ -170,7 +170,7 @@ local icons = {
 
 local conditions = {
   hide_in_width = function()
-    return vim.o.columns > 100
+    return vim.o.columns > 200
   end,
 }
 local function env_cleanup(venv)
