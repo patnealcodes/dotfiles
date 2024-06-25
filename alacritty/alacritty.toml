@@ -35,11 +35,11 @@ style = "Light"
 
 [font.bold]
 family = "FiraCode Nerd Font Mono"
-style = "Regular"
+style = "Light"
 
 [font.bold_italic]
 family = "FiraCode Nerd Font Mono"
-style = "Regular"
+style = "Light"
 
 [window.dimensions]
 columns = 80
