@@ -34,3 +34,4 @@ vim.keymap.set("n", "<Esc>", "<cmd>nohlsearch<CR>")
 
 -- Plugins
 vim.keymap.set("n", "-", "<cmd>lua require('oil').open()<CR>", { silent = true })
+vim.keymap.set("n", "<leader>gb", "<cmd>GitBlameToggle<CR>", { silent = true })
