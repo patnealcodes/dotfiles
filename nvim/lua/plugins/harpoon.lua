@@ -4,30 +4,49 @@ return {
 	event = "VeryLazy",
 	dependencies = {
 		"plenary",
+		"nvim-telescope/telescope.nvim",
 	},
 	config = function()
-		local keymap = vim.keymap
+		local harpoon = require('harpoon')
+		harpoon:setup({})
 
-		keymap.set("n", "<leader>a", function()
+		local conf = require("telescope.config").values
+		local function toggle_telescope(harpoon_files)
+			local file_paths = {}
+			for _, item in ipairs(harpoon_files.items) do
+				table.insert(file_paths, item.value)
+			end
+
+			require("telescope.pickers").new({}, {
+				prompt_title = "Harpoon",
+				finder = require("telescope.finders").new_table({
+					results = file_paths,
+				}),
+				previewer = conf.file_previewer({}),
+				sorter = conf.generic_sorter({}),
+			}):find()
+		end
+
+		vim.keymap.set("n", "<leader><leader>", function() toggle_telescope(harpoon:list()) end,
+			{ desc = "Open harpoon window" })
+
+		vim.keymap.set("n", "<leader>a", function()
 			require("harpoon"):list():add()
-		end, {})
-		keymap.set("n", "˙", function()
-			require("harpoon").ui:toggle_quick_menu(require("harpoon"):list())
-		end, {})
-		keymap.set("n", "∆", function()
+		end, { desc = "Add/edit mark in current file to harpoon" })
+		vim.keymap.set("n", "∆", function()
 			require("harpoon"):list():select(1)
-		end, {})
-		keymap.set("n", "˚", function()
+		end, { desc = "Open harpoon mark 1" })
+		vim.keymap.set("n", "˚", function()
 			require("harpoon"):list():select(2)
-		end, {})
-		keymap.set("n", "¬", function()
+		end, { desc = "Open harpoon mark 2" })
+		vim.keymap.set("n", "¬", function()
 			require("harpoon"):list():select(3)
-		end, {})
-		keymap.set("n", "…", function()
+		end, { desc = "Open harpoon mark 3" })
+		vim.keymap.set("n", "…", function()
 			require("harpoon"):list():select(4)
-		end, {})
-		keymap.set("n", "æ", function()
+		end, { desc = "Open harpoon mark 4" })
+		vim.keymap.set("n", "æ", function()
 			require("harpoon"):list():select(5)
-		end, {})
+		end, { desc = "Open harpoon mark 5" })
 	end,
 }

@@ -15,8 +15,6 @@ vim.keymap.set("n", "<leader>Y", [["+Y]])
 vim.keymap.set({ "n", "v" }, "<leader>d", [["_d]])
 vim.keymap.set({ "n", "v" }, "<leader>D", [["_D]])
 
-vim.keymap.set("n", "Q", "<nop>")
-
 vim.keymap.set("n", "<C-k>", "<cmd>cnext<CR>zz")
 vim.keymap.set("n", "<C-j>", "<cmd>cprev<CR>zz")
 vim.keymap.set("n", "<leader>k", "<cmd>lnext<CR>zz")
@@ -34,4 +32,5 @@ vim.keymap.set("n", "<Esc>", "<cmd>nohlsearch<CR>")
 
 -- Plugins
 vim.keymap.set("n", "-", "<cmd>lua require('oil').open()<CR>", { silent = true })
+vim.keymap.set("n", "<leader>-", "<cmd>NvimTreeToggle<CR>", { silent = true })
 vim.keymap.set("n", "<leader>gb", "<cmd>GitBlameToggle<CR>", { silent = true })

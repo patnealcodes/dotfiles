@@ -5,7 +5,7 @@ require "lazy_init"
 local augroup = vim.api.nvim_create_augroup
 local autocmd = vim.api.nvim_create_autocmd
 
-local MyGroup = augroup("Auu Yeah", {})
+local MyGroup = augroup("auuuuuyeah", {})
 
 autocmd("FileType", {
   pattern = "TelescopeResults",
@@ -43,6 +43,7 @@ autocmd("LspAttach", {
     end, opts)
   end,
 })
+
 autocmd("BufWritePre", {
   callback = function(args)
     require("conform").format {
@@ -51,6 +52,17 @@ autocmd("BufWritePre", {
       quiet = true,
     }
   end,
+})
+
+autocmd("BufEnter", {
+  group = vim.api.nvim_create_augroup("NvimTreeClose", { clear = true }),
+  pattern = "NvimTree_*",
+  callback = function()
+    local layout = vim.api.nvim_call_function("winlayout", {})
+    if layout[1] == "leaf" and vim.api.nvim_buf_get_option(vim.api.nvim_win_get_buf(layout[2]), "filetype") == "NvimTree" and layout[3] == nil then
+      vim.cmd("confirm quit")
+    end
+  end
 })
 
 vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, {

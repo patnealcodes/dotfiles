@@ -1,17 +1,17 @@
-local colors = {
-  bg = "#202328",
-  fg = "#bbc2cf",
-  yellow = "#ECBE7B",
-  cyan = "#008080",
-  darkblue = "#081633",
-  green = "#98be65",
-  orange = "#FF8800",
-  violet = "#a9a1e1",
-  magenta = "#c678dd",
-  purple = "#c678dd",
-  blue = "#51afef",
-  red = "#ec5f67",
-}
+-- local colors = {
+--   bg = "#202328",
+--   fg = "#bbc2cf",
+--   yellow = "#ECBE7B",
+--   cyan = "#008080",
+--   darkblue = "#081633",
+--   green = "#98be65",
+--   orange = "#FF8800",
+--   violet = "#a9a1e1",
+--   magenta = "#c678dd",
+--   purple = "#c678dd",
+--   blue = "#51afef",
+--   red = "#ec5f67",
+-- }
 
 local icons = {
   kind = {
@@ -188,7 +188,7 @@ local components = {
   branch = {
     "b:gitsigns_head",
     icon = icons.git.Branch,
-    use_mode_colors = false,
+    -- use_mode_colors = false,
   },
   filename = {
     "filename",
@@ -209,11 +209,11 @@ local components = {
     function()
       return icons.ui.Tree
     end,
-    color = function()
-      local buf = vim.api.nvim_get_current_buf()
-      local ts = vim.treesitter.highlighter.active[buf]
-      return { fg = ts and not vim.tbl_isempty(ts) and colors.green or colors.red }
-    end,
+    -- color = function()
+    --   local buf = vim.api.nvim_get_current_buf()
+    --   local ts = vim.treesitter.highlighter.active[buf]
+    --   return { fg = ts and not vim.tbl_isempty(ts) and colors.green or colors.red }
+    -- end,
     cond = conditions.hide_in_width,
   },
   lsp = {
@@ -253,7 +253,7 @@ local components = {
 
       return language_servers
     end,
-    color = { gui = "bold" },
+    -- color = { gui = "bold" },
     cond = conditions.hide_in_width,
   },
 
@@ -267,7 +267,6 @@ local components = {
   encoding = {
     "o:encoding",
     fmt = string.upper,
-    color = {},
     cond = conditions.hide_in_width,
   },
   filetype = { "filetype", cond = nil, padding = { left = 1, right = 1 } },
@@ -283,7 +282,7 @@ local components = {
       end
       return ""
     end,
-    color = { fg = colors.green },
+    -- color = { fg = colors.green },
   },
 }
 
@@ -294,6 +293,7 @@ return {
       options = {
         component_separators = { left = " ", right = " " },
         section_separators = { left = " ", right = " " },
+        theme = "tokyonight"
       },
       sections = {
         lualine_a = {},

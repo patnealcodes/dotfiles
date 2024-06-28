@@ -4,6 +4,7 @@ vim.g.copilot_enabled = true
 vim.g.loaded_netrw = 0
 vim.g.loaded_netrwPlugin = 0
 
+vim.opt.background = "dark"
 vim.opt.backup = false
 vim.opt.clipboard = "unnamedplus"
 vim.opt.cursorline = true
