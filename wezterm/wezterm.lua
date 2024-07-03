@@ -2,15 +2,15 @@ local wezterm = require("wezterm")
 local mux = wezterm.mux
 local config = {}
 
-config.color_scheme = "Catppuccin Mocha (Gogh)"
+config.color_scheme = "Tokyo Night"
 
 config.enable_tab_bar = false
 
 config.font = wezterm.font("FiraCode Nerd Font Mono")
 config.font_rules = {
-	{ intensity = "Bold", font = wezterm.font("FiraCode Nerd Font Mono", { weight = "Bold", italic = false }) },
+	{ intensity = "Bold",   font = wezterm.font("FiraCode Nerd Font Mono", { weight = "Bold", italic = false }) },
 	{ intensity = "Normal", font = wezterm.font("FiraCode Nerd Font Mono", { weight = "Regular", italic = false }) },
-	{ intensity = "Half", font = wezterm.font("FiraCode Nerd Font Mono", { weight = "Medium", italic = false }) },
+	{ intensity = "Half",   font = wezterm.font("FiraCode Nerd Font Mono", { weight = "Medium", italic = false }) },
 }
 config.font_size = 14.0
 -- config.window_padding = {
@@ -23,7 +23,7 @@ config.font_size = 14.0
 -- 	background = "#111111",
 -- }
 config.window_decorations = "RESIZE"
-config.window_background_opacity = 0.96
+-- config.window_background_opacity = 0.96
 -- config.send_composed_key_when_left_alt_is_pressed = true
 -- config.send_composed_key_when_right_alt_is_pressed = true
 
