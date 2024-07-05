@@ -1,3 +1,5 @@
+vim.cmd "set noshowmode"
+
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 vim.g.copilot_enabled = true

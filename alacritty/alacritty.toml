@@ -1,21 +1,22 @@
-import = ["~/codes/GitHub/dotfiles/alacritty/themes/rose_pine.toml"]
+import = ["~/codes/GitHub/dotfiles/alacritty/themes/tokyonight_storm.toml"]
 
 [env]
 TERM = "xterm-256color"
 
 [cursor]
-blink_interval = 500
 unfocused_hollow = true
 thickness = 0.15
+blink_timeout = 0
 
 [cursor.style]
+blinking = "Always"
 shape = "Beam"
 
 [colors.primary]
 # background = "#1d1f20"
 
-[colors.cursor]
-# background = "#ffffff"
+# [colors.cursor]
+# background = "#CCCCCC"
 # text = "CellBackground"
 
 [font]
@@ -53,7 +54,7 @@ y = 100
 startup_mode = "Maximized"
 
 dynamic_padding = true
-opacity = 0.98
+opacity = 0.95
 # blur = true
 decorations = "None"
 
