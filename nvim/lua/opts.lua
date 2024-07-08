@@ -1,4 +1,4 @@
-vim.cmd "set noshowmode"
+-- vim.cmd "set noshowmode"
 
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "

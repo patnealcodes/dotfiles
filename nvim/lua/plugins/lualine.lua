@@ -177,7 +177,7 @@ local components = {
   filename = {
     "filename",
     path = 1,
-    color = "Boolean"
+    color = { fg = "none" }
   },
   diagnostics = {
     "diagnostics",
@@ -228,7 +228,7 @@ local components = {
       local language_servers = string.format("[%s]", unique_client_names)
 
       if copilot_active then
-        language_servers = language_servers .. "%#SLCopilot#" .. " " .. icons.git.Octoface .. "%*"
+        language_servers = icons.git.Octoface .. " " .. language_servers
       end
 
       return language_servers
@@ -271,12 +271,13 @@ return {
       options = {
         component_separators = { left = " ", right = " " },
         section_separators = { left = " ", right = " " },
-        theme = "tokyonight"
+        theme = "palenight"
       },
       sections = {
+        lualine_a = {},
         lualine_b = {},
         lualine_c = {
-          components.branch,
+          -- components.branch,
           components.filename,
         },
         lualine_x = {
