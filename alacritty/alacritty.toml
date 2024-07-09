@@ -12,13 +12,6 @@ blink_timeout = 0
 blinking = "Always"
 shape = "Beam"
 
-[colors.primary]
-# background = "#000000"
-
-# [colors.cursor]
-# background = "#CCCCCC"
-# text = "CellBackground"
-
 [font]
 size = 15.0
 
@@ -54,8 +47,7 @@ y = 100
 startup_mode = "Maximized"
 
 dynamic_padding = true
-opacity = 0.94
-# blur = true
+opacity = 0.95
 decorations = "None"
 
 [window.padding]
@@ -64,7 +56,7 @@ y = 6
 
 [[keyboard.bindings]]
 key = "V"
-mods = "Control"
+mods = "Super"
 action = "Paste"
 
 [scrolling]

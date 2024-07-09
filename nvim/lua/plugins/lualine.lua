@@ -176,8 +176,13 @@ local components = {
   },
   filename = {
     "filename",
-    path = 1,
+    path = 0,
     color = { fg = "none" }
+  },
+  filename_with_path = {
+    "filename",
+    path = 3,
+    use_mode_colors = false
   },
   diagnostics = {
     "diagnostics",
@@ -215,14 +220,6 @@ local components = {
           copilot_active = true
         end
       end
-
-      -- local formatters = require "plugins.lsp.formatters"
-      -- local supported_formatters = formatters.list_registered(buf_ft)
-      -- vim.list_extend(buf_client_names, supported_formatters)
-      --
-      -- local linters = require "plugins.lsp"
-      -- local supported_linters = linters.list_registered(buf_ft)
-      -- vim.list_extend(buf_client_names, supported_linters)
 
       local unique_client_names = table.concat(buf_client_names, ", ")
       local language_servers = string.format("[%s]", unique_client_names)
@@ -275,10 +272,11 @@ return {
       },
       sections = {
         lualine_a = {},
-        lualine_b = {},
-        lualine_c = {
-          -- components.branch,
+        lualine_b = {
           components.filename,
+        },
+        lualine_c = {
+          components.filename_with_path,
         },
         lualine_x = {
           components.diagnostics,
