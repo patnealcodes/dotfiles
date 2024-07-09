@@ -1,18 +1,3 @@
-local togglescope_config = {
-	find_files = {
-		["<leader>g."] = {
-			hidden = true,
-			togglescope_title = "Find Files (Hidden)",
-		},
-	},
-	live_grep = {
-		["<leader>g."] = {
-			hidden = true,
-			togglescope_title = "Live Grep (Hidden)",
-		},
-	},
-}
-
 return {
 	"nvim-telescope/telescope-ui-select.nvim",
 	{
@@ -49,7 +34,20 @@ return {
 						override_file_sorter = true, -- override the file sorter
 						case_mode = "smart_case", -- or "ignore_case" or "respect_case"
 					},
-					togglescope = togglescope_config,
+					togglescope = {
+						find_files = {
+							["<leader>g."] = {
+								hidden = true,
+								togglescope_title = "Find Files (Hidden)",
+							},
+						},
+						live_grep = {
+							["<leader>g."] = {
+								hidden = true,
+								togglescope_title = "Live Grep (Hidden)",
+							},
+						},
+					},
 				},
 				defaults = {
 					winblend = 0,
