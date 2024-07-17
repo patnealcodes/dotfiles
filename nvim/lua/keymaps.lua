@@ -15,20 +15,16 @@ vim.keymap.set("n", "<leader>Y", [["+Y]])
 vim.keymap.set({ "n", "v" }, "<leader>d", [["_d]])
 vim.keymap.set({ "n", "v" }, "<leader>D", [["_D]])
 
-vim.keymap.set("n", "<C-k>", "<cmd>cnext<CR>zz")
-vim.keymap.set("n", "<C-j>", "<cmd>cprev<CR>zz")
 vim.keymap.set("n", "<leader>k", "<cmd>lnext<CR>zz")
 vim.keymap.set("n", "<leader>j", "<cmd>lprev<CR>zz")
-vim.keymap.set("n", "<C-h>", "B")
-vim.keymap.set("n", "<C-j>", "10jzz")
-vim.keymap.set("n", "<C-k>", "10kzz")
-vim.keymap.set("n", "<C-l>", "W")
 
 vim.keymap.set("n", "<leader>rp", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
 
 vim.keymap.set("n", "<leader>=-", [[:lua require("persistence").load() <cr>]])
 
 vim.keymap.set("n", "<Esc>", "<cmd>nohlsearch<CR>")
+
+vim.keymap.set("n", "<leader>lr", "<cmd>LspRestart<CR>")
 
 -- Plugins
 vim.keymap.set("n", "-", "<cmd>lua require('oil').open()<CR>", { silent = true })

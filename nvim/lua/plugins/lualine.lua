@@ -268,7 +268,7 @@ return {
       options = {
         component_separators = { left = " ", right = " " },
         section_separators = { left = " ", right = " " },
-        theme = "rose-pine"
+        theme = "tokyonight"
       },
       sections = {
         lualine_a = {},
