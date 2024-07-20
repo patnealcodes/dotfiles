@@ -19,7 +19,7 @@ return {
 			css = { { "prettierd", "prettier" } },
 			javascript = { { "prettierd", "prettier" } },
 			go = { "gofumpt", "goimports-reviser" },
-			rust = { { "prettierd", "prettier" } },
+			rust = { "rustfmt" },
 		},
 	},
 }

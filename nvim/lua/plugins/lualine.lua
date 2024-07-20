@@ -271,7 +271,6 @@ return {
         theme = "tokyonight"
       },
       sections = {
-        lualine_a = {},
         lualine_b = {
           components.filename,
         },

@@ -54,12 +54,12 @@ return {
   --       },
   --     }
   --     vim.cmd "colorscheme rose-pine"
+  --     set_up_hl_post_colorscheme_load()
   --     vim.api.nvim_set_hl(0, "FloatBorder", { link = "Macro" })
   --     vim.api.nvim_set_hl(0, "TelescopeBorder", { link = "Macro" })
   --     vim.api.nvim_set_hl(0, "TelescopeTitle", { link = "@diff.delta" })
   --     vim.api.nvim_set_hl(0, "TelescopePromptBorder", { link = "Macro" })
   --     vim.api.nvim_set_hl(0, "TelescopePromptTitle", { link = "@diff.delta" })
-  --     set_up_hl_post_colorscheme_load()
   --   end,
   -- },
 

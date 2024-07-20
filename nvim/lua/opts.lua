@@ -1,8 +1,8 @@
--- vim.cmd "set noshowmode"
+vim.cmd "set noshowmode"
 
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
-vim.g.copilot_enabled = true
+vim.g.copilot_enabled = false
 vim.g.loaded_netrw = 0
 vim.g.loaded_netrwPlugin = 0
 

@@ -20,6 +20,7 @@ local formatters = {
   "gofumpt",
   "goimports_reviser",
   "pyright",
+  "rustfmt"
 }
 return {
   "neovim/nvim-lspconfig",
