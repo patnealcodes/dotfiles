@@ -22,5 +22,5 @@ return {
       ["q"] = "actions.close",
     },
   },
-  dependencies = { "devicons" },
+  dependencies = { "echasnovski/mini.nvim" },
 }

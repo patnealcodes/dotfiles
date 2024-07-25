@@ -42,7 +42,11 @@ return {
     local cmp = require "cmp"
     local cmp_lsp = require "cmp_nvim_lsp"
     local capabilities =
-        vim.tbl_deep_extend("force", {}, vim.lsp.protocol.make_client_capabilities(), cmp_lsp.default_capabilities())
+        vim.tbl_deep_extend(
+          "force",
+          {},
+          vim.lsp.protocol.make_client_capabilities(),
+          cmp_lsp.default_capabilities())
     local ensure_installed = vim.tbl_extend("keep", servers, formatters)
     local lspconfig = require "lspconfig"
 
@@ -90,7 +94,7 @@ return {
     cmp.setup {
       snippet = {
         expand = function(args)
-          require("luasnip").lsp_expand(args.body) -- TODO: Maybe don't need?
+          require("luasnip").lsp_expand(args.body)
         end,
       },
       mapping = cmp.mapping.preset.insert {
@@ -101,7 +105,7 @@ return {
       },
       sources = cmp.config.sources({
         { name = "nvim_lsp" },
-        { name = "luasnip" }, -- TODO: Maybe don't need?
+        { name = "luasnip" },
       }, {
         { name = "buffer" },
       }),
@@ -110,11 +114,10 @@ return {
     vim.diagnostic.config {
       float = {
         focusable = false,
-        style = "minimal",
         border = "rounded",
-        source = "always",
-        header = "",
-        prefix = "",
+        -- source = "always",
+        -- header = "",
+        -- prefix = "",
       },
     }
   end,

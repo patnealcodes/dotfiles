@@ -177,12 +177,14 @@ local components = {
   filename = {
     "filename",
     path = 0,
-    color = { fg = "none" }
+    use_mode_colors = false,
+    color = { fg = "none", bg = "none" }
   },
   filename_with_path = {
     "filename",
     path = 3,
-    use_mode_colors = false
+    use_mode_colors = false,
+    color = { fg = "#7b8496" }
   },
   diagnostics = {
     "diagnostics",
@@ -251,8 +253,8 @@ local components = {
       if vim.bo.filetype == "python" then
         local venv = os.getenv "VIRTUAL_ENV"
         if venv then
-          local devicons = require "nvim-web-devicons"
-          local py_icon, _ = devicons.get_icon ".py"
+          local mini_icons = require "mini.icons"
+          local py_icon, _ = mini_icons.get_icon ".py"
           return string.format(py_icon .. " (%s)", env_cleanup(venv))
         end
       end

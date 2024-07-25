@@ -12,55 +12,106 @@ local set_up_hl_post_colorscheme_load = function()
   update_hl_values("WinBar", { bg = "none" })
   update_hl_values("NormalFloat", { bg = "none" })
   update_hl_values("TelescopeNormal", { bg = "none" })
-  vim.api.nvim_set_hl(0, "TelescopeSelection", { link = "Visual" })
-
-  -- -- // Style Updates
-  update_hl_values("FloatBorder", { bg = "none" })
-  update_hl_values("TelescopeBorder", { bg = "none" })
-  update_hl_values("TelescopeTitle", { bg = "none" })
-  update_hl_values("TelescopePromptBorder", { bg = "none" })
-  update_hl_values("TelescopePromptTitle", { bg = "none" })
-  update_hl_values("CursorLine", { bg = "none" })
-  vim.api.nvim_set_hl(0, "IblScope", { link = "Statement" })
 end
 
 return {
+
+  -- {
+  --   "folke/tokyonight.nvim",
+  --   lazy = false,
+  --   priority = 1000,
+  --   config = function()
+  --     require("tokyonight").setup({
+  --       style = "moon",
+  --       -- transparent = true,
+  --       terminal_colors = true,
+  --       -- sidebars = { "qf", "help" },
+  --       hide_inactive_statusline = false,
+  --       lualine_bold = false,
+  --     })
+  --     vim.cmd.colorscheme "tokyonight"
+  --     vim.api.nvim_set_hl(0, "CursorLine", { bg = "none" })
+  --   end
+  -- },
+
   {
-    "folke/tokyonight.nvim",
-    lazy = false,
-    priority = 1000,
+    "rose-pine/neovim",
+    name = "rose-pine",
     config = function()
-      require("tokyonight").setup({
-        style = "moon",
-        transparent = true,
-        terminal_colors = true,
-        sidebars = { "qf", "help" },
-        hide_inactive_statusline = false,
-        lualine_bold = false,
+      require('rose-pine').setup({
+        disable_background = true,
+        styles = {
+          italic = false,
+        },
       })
-      vim.cmd.colorscheme "tokyonight"
+      vim.cmd "colorscheme rose-pine-moon"
       set_up_hl_post_colorscheme_load()
-    end
+      vim.api.nvim_set_hl(0, "TelescopeBorder", { fg = "#9cc7d8" })
+      vim.api.nvim_set_hl(0, "TelescopeTitle", { link = "@comment.info" })
+      vim.api.nvim_set_hl(0, "TelescopePromptTitle", { link = "@comment.hint" })
+      vim.api.nvim_set_hl(0, "TelescopePromptBorder", { fg = "#c4a7e7" })
+      vim.api.nvim_set_hl(0, "CursorLine", { bg = "none" })
+      vim.api.nvim_set_hl(0, "CursorLineNr", { link = "boolean" })
+
+      update_hl_values("FloatBorder", { bg = "none" })
+      update_hl_values("TelescopeBorder", { bg = "none" })
+      update_hl_values("TelescopeTitle", { bg = "none" })
+      update_hl_values("TelescopePromptBorder", { bg = "none" })
+      update_hl_values("TelescopePromptTitle", { bg = "none" })
+
+      update_hl_values("ColorColumn", { bg = "#373737" })
+      update_hl_values("TelescopeSelection", { bg = "#373737" })
+    end,
   },
 
   -- {
-  --   "rose-pine/neovim",
-  --   name = "rose-pine",
+  --   "scottmckendry/cyberdream.nvim",
+  --   lazy = false,
+  --   priority = 1000,
   --   config = function()
-  --     require("rose-pine").setup {
-  --       transparent_background = true,
-  --       styles = {
-  --         italic = false,
+  --     require("cyberdream").setup({
+  --       -- Enable transparent background
+  --       transparent = true,
+  --
+  --       -- Enable italics comments
+  --       italic_comments = false,
+  --
+  --       -- Replace all fillchars with ' ' for the ultimate clean look
+  --       hide_fillchars = false,
+  --
+  --       -- Modern borderless telescope theme
+  --       -- borderless_telescope = true,
+  --
+  --       -- Set terminal colors used in `:terminal`
+  --       terminal_colors = true,
+  --
+  --       theme = {
+  --         variant = "default", -- use "light" for the light variant. Also accepts "auto" to set dark or light colors based on the current value of `vim.o.background`
+  --         highlights = {
+  --           Comment = { fg = "#696969", bg = "NONE", italic = true },
+  --         },
+  --
+  --         colors = {
+  --           magenta = "#86e1fc",
+  --         },
+  --         overrides = function(colors) -- NOTE: This function nullifies the `highlights` option
+  --           -- Example:
+  --           return {
+  --             -- Comment = { fg = colors.green, bg = "NONE", italic = true },
+  --             ["@property"] = { fg = colors.magenta, bold = true },
+  --           }
+  --         end,
+  --
   --       },
-  --     }
-  --     vim.cmd "colorscheme rose-pine"
-  --     set_up_hl_post_colorscheme_load()
-  --     vim.api.nvim_set_hl(0, "FloatBorder", { link = "Macro" })
-  --     vim.api.nvim_set_hl(0, "TelescopeBorder", { link = "Macro" })
-  --     vim.api.nvim_set_hl(0, "TelescopeTitle", { link = "@diff.delta" })
-  --     vim.api.nvim_set_hl(0, "TelescopePromptBorder", { link = "Macro" })
-  --     vim.api.nvim_set_hl(0, "TelescopePromptTitle", { link = "@diff.delta" })
-  --   end,
+  --
+  --       -- Disable or enable colorscheme extensions
+  --       extensions = {
+  --         telescope = true,
+  --         mini = true,
+  --         -- lualine = true
+  --       },
+  --     })
+  --     vim.cmd "colorscheme cyberdream"
+  --   end
   -- },
-
 }

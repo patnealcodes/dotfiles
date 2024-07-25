@@ -16,7 +16,6 @@ vim.opt.expandtab = true
 vim.opt.hlsearch = true
 vim.opt.ignorecase = true
 vim.opt.pumheight = 10
-
 vim.opt.isfname:append "@-@"
 vim.opt.incsearch = true
 vim.opt.number = true
@@ -36,3 +35,6 @@ vim.opt.undodir = os.getenv "HOME" .. "/.vim/undodir"
 vim.opt.undofile = true
 vim.opt.updatetime = 50
 vim.opt.wrap = false
+
+vim.opt.nu = true
+vim.opt.colorcolumn = "100"
