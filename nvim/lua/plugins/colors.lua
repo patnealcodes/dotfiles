@@ -60,6 +60,8 @@ return {
       update_hl_values("TelescopePromptTitle", { bg = "none" })
 
       update_hl_values("ColorColumn", { bg = "#373737" })
+      update_hl_values("TreesitterContextLineNumber", { bg = "#373737" })
+      update_hl_values("TreesitterContext", { bg = "#373737" })
       update_hl_values("TelescopeSelection", { bg = "#373737" })
     end,
   },
