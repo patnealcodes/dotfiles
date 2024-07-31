@@ -16,23 +16,23 @@ end
 
 return {
 
-  -- {
-  --   "folke/tokyonight.nvim",
-  --   lazy = false,
-  --   priority = 1000,
-  --   config = function()
-  --     require("tokyonight").setup({
-  --       style = "moon",
-  --       -- transparent = true,
-  --       terminal_colors = true,
-  --       -- sidebars = { "qf", "help" },
-  --       hide_inactive_statusline = false,
-  --       lualine_bold = false,
-  --     })
-  --     vim.cmd.colorscheme "tokyonight"
-  --     vim.api.nvim_set_hl(0, "CursorLine", { bg = "none" })
-  --   end
-  -- },
+  {
+    "folke/tokyonight.nvim",
+    lazy = false,
+    priority = 1000,
+    config = function()
+      require("tokyonight").setup({
+        style = "storm",
+        -- transparent = true,
+        terminal_colors = true,
+        -- sidebars = { "qf", "help" },
+        hide_inactive_statusline = false,
+        lualine_bold = false,
+      })
+      -- vim.cmd.colorscheme "tokyonight"
+      -- vim.api.nvim_set_hl(0, "CursorLine", { bg = "none" })
+    end
+  },
 
   {
     "rose-pine/neovim",
@@ -59,10 +59,10 @@ return {
       update_hl_values("TelescopePromptBorder", { bg = "none" })
       update_hl_values("TelescopePromptTitle", { bg = "none" })
 
-      update_hl_values("ColorColumn", { bg = "#373737" })
-      update_hl_values("TreesitterContextLineNumber", { bg = "#373737" })
-      update_hl_values("TreesitterContext", { bg = "#373737" })
-      update_hl_values("TelescopeSelection", { bg = "#373737" })
+      update_hl_values("ColorColumn", { bg = "#444444" })
+      update_hl_values("TreesitterContextLineNumber", { bg = "#444444" })
+      update_hl_values("TreesitterContext", { bg = "#444444" })
+      update_hl_values("TelescopeSelection", { bg = "#444444" })
     end,
   },
 

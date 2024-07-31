@@ -37,4 +37,4 @@ vim.opt.updatetime = 50
 vim.opt.wrap = false
 
 vim.opt.nu = true
-vim.opt.colorcolumn = "100"
+vim.opt.colorcolumn = "80"

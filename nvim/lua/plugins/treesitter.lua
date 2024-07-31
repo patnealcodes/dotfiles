@@ -11,6 +11,7 @@ return {
 			"go",
 			"javascript",
 			"jsdoc",
+			"json",
 			"lua",
 			"markdown",
 			"markdown_inline",

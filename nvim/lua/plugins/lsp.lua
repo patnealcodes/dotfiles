@@ -4,12 +4,14 @@ local servers = {
   "cssls",  -- css-lsp
   "gopls",
   "html",   -- html-lsp
+  "jsonls", -- json-lsp
   "lua_ls", -- lua-language-server
   "pyright",
   "ruff_lsp",
   "rust_analyzer",
-  "tsserver", -- typescript-language-server
-  "yamlls",   -- yaml-language-server
+  "tailwindcss", -- tailwindcss-language-server
+  "tsserver",    -- typescript-language-server
+  "yamlls",      -- yaml-language-server
 }
 local formatters = {
   "black",
@@ -20,7 +22,8 @@ local formatters = {
   "gofumpt",
   "goimports_reviser",
   "pyright",
-  "rustfmt"
+  "rustfmt",
+  "rustywind",
 }
 return {
   "neovim/nvim-lspconfig",

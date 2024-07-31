@@ -20,7 +20,7 @@ blinking = "Always"
 shape = "Beam"
 
 [font]
-size = 15.0
+size = 16.0
 
 [shell]
 program = "/bin/zsh"
@@ -54,7 +54,7 @@ y = 100
 startup_mode = "Maximized"
 
 dynamic_padding = true
-opacity = 0.95
+# opacity = 0.95
 decorations = "None"
 
 [window.padding]

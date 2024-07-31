@@ -15,7 +15,7 @@ config.font_rules = {
 	{ intensity = "Normal", font = wezterm.font("FiraMono Nerd Font Mono", { weight = "Regular", italic = false }) },
 	{ intensity = "Half",   font = wezterm.font("FiraMono Nerd Font Mono", { weight = "Medium", italic = false }) },
 }
-config.font_size = 15.0
+config.font_size = 16.0
 config.window_padding = {
 	left = 15,
 	right = 15,

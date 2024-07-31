@@ -114,6 +114,8 @@ addBeforePath /Users/nealp/Library/Python/3.9/bin
 addToPath /opt/homebrew/bin
 addToPath /usr/bin
 addToPath /usr/local/bin
+addToPath /usr/local/go/bin
+addToPath /Users/nealp/go/bin
 addToPath /Users/nealp/.local/bin
 addToPath /bin
 
