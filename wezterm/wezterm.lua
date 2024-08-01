@@ -2,9 +2,10 @@ local wezterm = require("wezterm")
 local mux = wezterm.mux
 local config = {}
 
-config.colors = {
-	background = "#1e2224",
-}
+-- config.colors = {
+-- 	background = "#1e2224",
+-- }
+
 config.color_scheme = "Rosé Pine Moon (Gogh)"
 
 config.enable_tab_bar = false

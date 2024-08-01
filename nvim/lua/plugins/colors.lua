@@ -6,12 +6,12 @@ end
 
 local set_up_hl_post_colorscheme_load = function()
   -- -- // Transparency tweaks
-  update_hl_values("Normal", { bg = "none" })
-  update_hl_values("NormalNC", { bg = "none" })
-  update_hl_values("Float", { bg = "none" })
-  update_hl_values("WinBar", { bg = "none" })
-  update_hl_values("NormalFloat", { bg = "none" })
-  update_hl_values("TelescopeNormal", { bg = "none" })
+  -- update_hl_values("Normal", { bg = "none" })
+  -- update_hl_values("NormalNC", { bg = "none" })
+  -- update_hl_values("Float", { bg = "none" })
+  -- update_hl_values("WinBar", { bg = "none" })
+  -- update_hl_values("NormalFloat", { bg = "none" })
+  -- update_hl_values("TelescopeNormal", { bg = "none" })
 end
 
 return {
@@ -46,23 +46,23 @@ return {
       })
       vim.cmd "colorscheme rose-pine-moon"
       set_up_hl_post_colorscheme_load()
-      vim.api.nvim_set_hl(0, "TelescopeBorder", { fg = "#9cc7d8" })
-      vim.api.nvim_set_hl(0, "TelescopeTitle", { link = "@comment.info" })
-      vim.api.nvim_set_hl(0, "TelescopePromptTitle", { link = "@comment.hint" })
-      vim.api.nvim_set_hl(0, "TelescopePromptBorder", { fg = "#c4a7e7" })
-      vim.api.nvim_set_hl(0, "CursorLine", { bg = "none" })
-      vim.api.nvim_set_hl(0, "CursorLineNr", { link = "boolean" })
-
-      update_hl_values("FloatBorder", { bg = "none" })
-      update_hl_values("TelescopeBorder", { bg = "none" })
-      update_hl_values("TelescopeTitle", { bg = "none" })
-      update_hl_values("TelescopePromptBorder", { bg = "none" })
-      update_hl_values("TelescopePromptTitle", { bg = "none" })
-
-      update_hl_values("ColorColumn", { bg = "#444444" })
-      update_hl_values("TreesitterContextLineNumber", { bg = "#444444" })
-      update_hl_values("TreesitterContext", { bg = "#444444" })
-      update_hl_values("TelescopeSelection", { bg = "#444444" })
+      -- vim.api.nvim_set_hl(0, "TelescopeBorder", { fg = "#9cc7d8" })
+      -- vim.api.nvim_set_hl(0, "TelescopeTitle", { link = "@comment.info" })
+      -- vim.api.nvim_set_hl(0, "TelescopePromptTitle", { link = "@comment.hint" })
+      -- vim.api.nvim_set_hl(0, "TelescopePromptBorder", { fg = "#c4a7e7" })
+      -- vim.api.nvim_set_hl(0, "CursorLine", { bg = "none" })
+      -- vim.api.nvim_set_hl(0, "CursorLineNr", { link = "boolean" })
+      --
+      -- update_hl_values("FloatBorder", { bg = "none" })
+      -- update_hl_values("TelescopeBorder", { bg = "none" })
+      -- update_hl_values("TelescopeTitle", { bg = "none" })
+      -- update_hl_values("TelescopePromptBorder", { bg = "none" })
+      -- update_hl_values("TelescopePromptTitle", { bg = "none" })
+      --
+      -- update_hl_values("ColorColumn", { bg = "#444444" })
+      -- update_hl_values("TreesitterContextLineNumber", { bg = "#444444" })
+      -- update_hl_values("TreesitterContext", { bg = "#444444" })
+      -- update_hl_values("TelescopeSelection", { bg = "#444444" })
     end,
   },
 
