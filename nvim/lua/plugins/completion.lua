@@ -67,7 +67,13 @@ return {
       cmp.setup {
         sources = {
           { name = "path" },
-          { name = "luasnip" },
+          { name = "luasnip",
+            option = {
+              markdown_oxide = {
+                keyword_pattern = [[\(\k\| \|\/\|#\)\+]]
+              }
+            }
+          },
           { name = "nvim_lsp" },
           { name = "nvim_lua" },
           { name = "buffer" },
@@ -119,10 +125,10 @@ return {
           end,
         },
 
-        window = {
-          completion = cmp.config.window.bordered {},
-          documentation = cmp.config.window.bordered(),
-        },
+        -- window = {
+        --   completion = cmp.config.window.bordered {},
+        --   documentation = cmp.config.window.bordered(),
+        -- },
       }
 
       local ls = require "luasnip"

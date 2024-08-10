@@ -1,11 +1,12 @@
 local servers = {
   "lua_ls",
   "tsserver",
-  "cssls",  -- css-lsp
+  "cssls",          -- css-lsp
   "gopls",
-  "html",   -- html-lsp
-  "jsonls", -- json-lsp
-  "lua_ls", -- lua-language-server
+  "html",           -- html-lsp
+  "jsonls",         -- json-lsp
+  "lua_ls",         -- lua-language-server
+  "markdown_oxide", -- markdown-oxide
   "pyright",
   "ruff_lsp",
   "rust_analyzer",
@@ -52,6 +53,12 @@ return {
           cmp_lsp.default_capabilities())
     local ensure_installed = vim.tbl_extend("keep", servers, formatters)
     local lspconfig = require "lspconfig"
+
+    capabilities.workspace = {
+      didChangeWatchedFiles = {
+        dynamicRegistration = true,
+      },
+    }
 
     require("fidget").setup {}
     require("mason").setup()
@@ -106,19 +113,12 @@ return {
         ["<C-y>"] = cmp.mapping.confirm { select = true },
         ["<C-Space>"] = cmp.mapping.complete(),
       },
-      sources = cmp.config.sources({
-        { name = "nvim_lsp" },
-        { name = "luasnip" },
-      }, {
-        { name = "buffer" },
-      }),
     }
 
     vim.diagnostic.config {
       float = {
         focusable = false,
-        border = "rounded",
-        -- source = "always",
+        source = "always",
         -- header = "",
         -- prefix = "",
       },

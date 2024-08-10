@@ -6,9 +6,6 @@ return {
     dependencies = { "plenary" },
     config = function()
       require("crates").setup {
-        popup = {
-          border = "rounded",
-        },
       }
     end,
   },

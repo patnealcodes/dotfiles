@@ -171,7 +171,7 @@ end
 
 local components = {
   branch = {
-    "b:gitsigns_head",
+    "branch",
     icon = icons.git.Branch,
   },
   filename = {
@@ -232,7 +232,6 @@ local components = {
 
       return language_servers
     end,
-    cond = conditions.hide_in_width,
   },
 
   spaces = {
@@ -270,11 +269,11 @@ return {
       options = {
         component_separators = { left = " ", right = " " },
         section_separators = { left = " ", right = " " },
-        theme = "tokyonight"
+        theme = "moonfly"
       },
       sections = {
         lualine_b = {
-          components.filename,
+          components.branch,
         },
         lualine_c = {
           components.filename_with_path,
@@ -282,12 +281,15 @@ return {
         lualine_x = {
           components.diagnostics,
           components.lsp,
-          components.filetype,
         },
         lualine_y = {
           components.python_env,
+          components.filename,
+          components.filetype,
         },
-        lualine_z = {},
+        lualine_z = {
+
+        },
       },
     }
   end,

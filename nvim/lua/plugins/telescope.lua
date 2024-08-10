@@ -114,6 +114,7 @@ return {
 					layout_strategy = "bottom_pane",
 					prompt_prefix = ">> ",
 					prompt_title = "Live Grep",
+					hidden = false
 				})
 			end)
 			vim.keymap.set("n", "<leader>sd", builtin.diagnostics, { desc = "[S]earch [D]iagnostics" })
@@ -122,19 +123,6 @@ return {
 			vim.keymap.set("n", "<leader><leader>", builtin.buffers, { desc = "[ ] Find existing buffers" })
 			vim.keymap.set("n", "<leader>sC", builtin.colorscheme, { desc = "[S]earch colorschemes" })
 			vim.keymap.set("n", "<leader>sH", builtin.highlights, { desc = "[S]earch highlights" })
-
-			vim.keymap.set("n", "<leader>hsf", function()
-				builtin.find_files({ hidden = true })
-			end, { desc = "([H]idden)[S]earch [F]iles" })
-			vim.keymap.set("n", "<leader>hsg", function()
-				require("telescope").extensions.togglescope.live_grep({
-					sorting_strategy = "ascending",
-					layout_strategy = "bottom_pane",
-					prompt_prefix = ">> ",
-					prompt_title = "Live Grep (Include Hidden)",
-					hidden = true
-				})
-			end, { desc = "([H]idden)[S]earch by [G]rep" })
 
 			vim.keymap.set("n", "<leader>vh", builtin.help_tags, {})
 			vim.keymap.set("n", "gd", builtin.lsp_definitions, {})
