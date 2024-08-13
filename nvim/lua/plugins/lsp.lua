@@ -10,9 +10,8 @@ local servers = {
   "pyright",
   "ruff_lsp",
   "rust_analyzer",
-  "tailwindcss", -- tailwindcss-language-server
-  "tsserver",    -- typescript-language-server
-  "yamlls",      -- yaml-language-server
+  "tsserver", -- typescript-language-server
+  "yamlls",   -- yaml-language-server
 }
 local formatters = {
   "black",

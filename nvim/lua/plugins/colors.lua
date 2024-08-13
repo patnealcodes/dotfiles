@@ -57,48 +57,48 @@ return {
   --   end,
   -- },
 
-  -- {
-  --   "folke/tokyonight.nvim",
-  --   lazy = false,
-  --   priority = 1000,
-  --   config = function()
-  --     require("tokyonight").setup({
-  --       style = "storm",
-  --       -- transparent = true,
-  --       terminal_colors = true,
-  --       -- sidebars = { "qf", "help" },
-  --       hide_inactive_statusline = false,
-  --       lualine_bold = false,
-  --     })
-  --     vim.cmd.colorscheme "tokyonight"
-  --     set_up_hl_post_colorscheme_load()
-  --     update_hl_values("ColorColumn", { link = "TreesitterContext" })
-  --   end
-  -- },
-
   {
-    "rose-pine/neovim",
-    name = "rose-pine",
+    "folke/tokyonight.nvim",
+    lazy = false,
+    priority = 1000,
     config = function()
-      require('rose-pine').setup({
-        disable_background = true,
-        styles = {
-          italic = false,
-        },
+      require("tokyonight").setup({
+        style = "night",
+        transparent = true,
+        terminal_colors = true,
+        sidebars = { "qf", "help" },
+        hide_inactive_statusline = false,
+        lualine_bold = false,
       })
-      vim.cmd "colorscheme rose-pine-moon"
-      set_up_hl_post_colorscheme_load()
-      update_hl_values("TelescopeBorder", { fg = "#9cc7d8" })
-      update_hl_values("TelescopeTitle", { link = "@comment.info" })
-      update_hl_values("TelescopePromptTitle", { link = "Macro" })
-      update_hl_values("TelescopePromptBorder", { fg = "#c4a7e7" })
-      vim.api.nvim_set_hl(0, "CursorLineNr", { link = "boolean" })
-
-      update_hl_values("ColorColumn", { bg = "#444444" })
-      update_hl_values("TreesitterContextLineNumber", { bg = "#444444" })
-      update_hl_values("TreesitterContext", { bg = "#444444" })
-      update_hl_values("TelescopeSelection", { bg = "#444444" })
-    end,
+      vim.cmd.colorscheme "tokyonight"
+      -- set_up_hl_post_colorscheme_load()
+      -- update_hl_values("ColorColumn", { link = "TreesitterContext" })
+      vim.api.nvim_set_hl(0, "CursorLine", { bg = "none" })
+    end
   },
+
+  -- {
+  --   "rose-pine/neovim",
+  --   name = "rose-pine",
+  --   config = function()
+  --     require('rose-pine').setup({
+  --       disable_background = true,
+  --       styles = {
+  --         italic = false,
+  --       },
+  --     })
+  --     vim.cmd "colorscheme rose-pine"
+  --     set_up_hl_post_colorscheme_load()
+  --     update_hl_values("telescopeborder", { fg = "#9cc7d8" })
+  --     update_hl_values("telescopetitle", { link = "@comment.info" })
+  --     update_hl_values("telescopeprompttitle", { link = "macro" })
+  --     update_hl_values("telescopepromptborder", { fg = "#c4a7e7" })
+  --     update_hl_values("ColorColumn", { bg = "#333333" })
+  --     update_hl_values("TreesitterContextLineNumber", { bg = "#333333" })
+  --     update_hl_values("TreesitterContext", { bg = "#333333" })
+  --     update_hl_values("TelescopeSelection", { bg = "#333333" })
+  --     vim.api.nvim_set_hl(0, "CursorLineNr", { link = "boolean" })
+  --   end,
+  -- },
 
 }

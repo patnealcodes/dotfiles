@@ -269,7 +269,7 @@ return {
       options = {
         component_separators = { left = " ", right = " " },
         section_separators = { left = " ", right = " " },
-        theme = "moonfly"
+        theme = "tokyonight-moon"
       },
       sections = {
         lualine_b = {

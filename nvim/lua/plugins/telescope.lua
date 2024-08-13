@@ -53,7 +53,6 @@ return {
 				},
 				defaults = {
 					winblend = 0,
-					file_ignore_patterns = { "^.git/" },
 					layout_strategy = "vertical",
 					dynamic_preview_title = true,
 					vimgrep_arguments = {
@@ -65,6 +64,9 @@ return {
 						"--column",
 						"--smart-case",
 						"--hidden",
+						"--glob=!.git/*",
+						"--glob=!**/node_modules/*",
+						"--glob=!**/package-lock.json",
 					},
 					path_display = filenameFirst,
 				},
