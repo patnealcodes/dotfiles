@@ -170,6 +170,16 @@ local function env_cleanup(venv)
 end
 
 local components = {
+  mode = {
+    "mode",
+    fmt = function(str)
+      local formatted = ""
+      for word in formatted.gmatch(str, '([^-]+)') do
+        formatted = formatted .. word:sub(1, 1)
+      end
+      return formatted
+    end
+  },
   branch = {
     "branch",
     icon = icons.git.Branch,
@@ -269,14 +279,15 @@ return {
       options = {
         component_separators = { left = " ", right = " " },
         section_separators = { left = " ", right = " " },
-        theme = "tokyonight-moon"
       },
       sections = {
+        lualine_a = {
+          components.mode,
+        },
         lualine_b = {
-          components.branch,
+          components.filename,
         },
         lualine_c = {
-          components.filename_with_path,
         },
         lualine_x = {
           components.diagnostics,
@@ -291,6 +302,7 @@ return {
 
         },
       },
+      extensions = { 'nvim-tree' }
     }
   end,
   event = "VimEnter",

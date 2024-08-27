@@ -17,45 +17,16 @@ local set_up_hl_post_colorscheme_load = function()
   update_hl_values("TelescopeTitle", { bg = "none" })
   update_hl_values("TelescopePromptBorder", { bg = "none" })
   update_hl_values("TelescopePromptTitle", { bg = "none" })
+  update_hl_values("NvimTreeNormal", { bg = "none" })
+  update_hl_values("NvimTreeNormalNC", { bg = "none" })
 
-  update_hl_values("CursorLine", { bg = "none" })
-  update_hl_values("CursorLineNr", { bg = "none" })
-  -- update_hl_values("SignColumn", { bg = "none" })
+  -- update_hl_values("CursorLine", { bg = "none" })
+  -- update_hl_values("CursorLineNr", { bg = "none" })
+  update_hl_values("SignColumn", { bg = "none" })
+  update_hl_values("LineNr", { bg = "none" })
 end
 
 return {
-  -- {
-  --   "ellisonleao/gruvbox.nvim",
-  --   name = "gruvbox",
-  --   config = function()
-  --     require("gruvbox").setup({
-  --       terminal_colors = false, -- add neovim terminal colors
-  --       undercurl = true,
-  --       underline = false,
-  --       bold = false,
-  --       italic = {
-  --         strings = false,
-  --         emphasis = false,
-  --         comments = false,
-  --         operators = false,
-  --         folds = false,
-  --       },
-  --       strikethrough = true,
-  --       invert_selection = false,
-  --       invert_signs = false,
-  --       invert_tabline = false,
-  --       invert_intend_guides = false,
-  --       inverse = true, -- invert background for search, diffs, statuslines and errors
-  --       contrast = "",  -- can be "hard", "soft" or empty string
-  --       palette_overrides = {},
-  --       overrides = {},
-  --       dim_inactive = false,
-  --       transparent_mode = false,
-  --     })
-  --     vim.cmd.colorscheme "gruvbox"
-  --     -- set_up_hl_post_colorscheme_load()
-  --   end,
-  -- },
 
   {
     "folke/tokyonight.nvim",
@@ -64,16 +35,13 @@ return {
     config = function()
       require("tokyonight").setup({
         style = "night",
-        transparent = true,
         terminal_colors = true,
         sidebars = { "qf", "help" },
         hide_inactive_statusline = false,
         lualine_bold = false,
       })
       vim.cmd.colorscheme "tokyonight"
-      -- set_up_hl_post_colorscheme_load()
-      -- update_hl_values("ColorColumn", { link = "TreesitterContext" })
-      vim.api.nvim_set_hl(0, "CursorLine", { bg = "none" })
+      set_up_hl_post_colorscheme_load()
     end
   },
 
@@ -89,16 +57,32 @@ return {
   --     })
   --     vim.cmd "colorscheme rose-pine"
   --     set_up_hl_post_colorscheme_load()
-  --     update_hl_values("telescopeborder", { fg = "#9cc7d8" })
-  --     update_hl_values("telescopetitle", { link = "@comment.info" })
-  --     update_hl_values("telescopeprompttitle", { link = "macro" })
-  --     update_hl_values("telescopepromptborder", { fg = "#c4a7e7" })
-  --     update_hl_values("ColorColumn", { bg = "#333333" })
-  --     update_hl_values("TreesitterContextLineNumber", { bg = "#333333" })
-  --     update_hl_values("TreesitterContext", { bg = "#333333" })
-  --     update_hl_values("TelescopeSelection", { bg = "#333333" })
-  --     vim.api.nvim_set_hl(0, "CursorLineNr", { link = "boolean" })
+  --     -- update_hl_values("telescopeborder", { fg = "#9cc7d8" })
+  --     -- update_hl_values("telescopetitle", { link = "@comment.info" })
+  --     -- update_hl_values("telescopeprompttitle", { link = "macro" })
+  --     -- update_hl_values("telescopepromptborder", { fg = "#c4a7e7" })
+  --     -- update_hl_values("ColorColumn", { bg = "#333333" })
+  --     -- update_hl_values("TreesitterContextLineNumber", { bg = "#333333" })
+  --     -- update_hl_values("TreesitterContext", { bg = "#333333" })
+  --     -- update_hl_values("TelescopeSelection", { bg = "#333333" })
+  --     -- vim.api.nvim_set_hl(0, "CursorLineNr", { link = "boolean" })
   --   end,
+  -- },
+
+  -- {
+  --   "rebelot/kanagawa.nvim",
+  --   lazy = false,
+  --   priority = 1000,
+  --   config = function()
+  --     require("kanagawa").setup({
+  --       theme = "wave",
+  --       transparent = true,
+  --       terminalColors = true,
+  --       dimInactive = true,
+  --     })
+  --     vim.cmd.colorscheme "kanagawa"
+  --     set_up_hl_post_colorscheme_load()
+  --   end
   -- },
 
 }

@@ -9,7 +9,6 @@ vim.g.loaded_netrwPlugin = 0
 vim.opt.background = "dark"
 vim.opt.backup = false
 vim.opt.clipboard = "unnamedplus"
-vim.opt.cursorline = true
 vim.opt.relativenumber = true
 vim.opt.mouse = "a"
 vim.opt.expandtab = true
@@ -37,4 +36,3 @@ vim.opt.updatetime = 50
 vim.opt.wrap = false
 
 vim.opt.nu = true
-vim.opt.colorcolumn = "80"
