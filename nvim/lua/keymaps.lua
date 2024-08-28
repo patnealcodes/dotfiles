@@ -27,4 +27,4 @@ vim.keymap.set("n", "<Esc>", "<cmd>nohlsearch<CR>")
 vim.keymap.set("n", "<leader>lr", "<cmd>LspRestart<CR>")
 
 -- Plugins
-vim.keymap.set("n", "-", "<cmd>NvimTreeFocus<CR>", { silent = true })
+vim.keymap.set("n", "<C-b>", "<cmd>NvimTreeFocus<CR>", { silent = true })

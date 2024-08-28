@@ -158,16 +158,6 @@ local conditions = {
     return vim.o.columns > 200
   end,
 }
-local function env_cleanup(venv)
-  if string.find(venv, "/") then
-    local final_venv = venv
-    for w in venv:gmatch "([^/]+)" do
-      final_venv = w
-    end
-    venv = final_venv
-  end
-  return venv
-end
 
 local components = {
   mode = {
@@ -175,26 +165,47 @@ local components = {
     fmt = function(str)
       local formatted = ""
       for word in formatted.gmatch(str, '([^-]+)') do
-        formatted = formatted .. word:sub(1, 1)
+        formatted = formatted .. (formatted ~= "" and "-" or "") .. word:sub(1, 1)
       end
       return formatted
     end
   },
-  branch = {
-    "branch",
-    icon = icons.git.Branch,
-  },
+
   filename = {
     "filename",
     path = 0,
     use_mode_colors = false,
-    color = { fg = "none", bg = "none" }
+    color = { fg = "none", bg = "none" },
+    fmt = function(str)
+      if str ~= "." then
+        return str
+      end
+      return ""
+    end
   },
+
+  filetype = {
+    "filetype",
+    color = { bg = "none" },
+    icon_only = true,
+    padding = { left = 0 },
+  },
+
   filename_with_path = {
     "filename",
     path = 3,
     use_mode_colors = false,
-    color = { fg = "#7b8496" }
+    color = { fg = "#7b8496" },
+    cond = conditions.hide_in_width,
+    fmt = function(str)
+      local prev = ""
+      local path = ""
+      for part in path.gmatch(str, '([^/]+)') do
+        path = path .. (path ~= "" and "/" or "") .. prev
+        prev = part
+      end
+      return path
+    end
   },
   diagnostics = {
     "diagnostics",
@@ -205,12 +216,6 @@ local components = {
       info = icons.diagnostics.BoldInformation .. " ",
       hint = icons.diagnostics.BoldHint .. " ",
     },
-    cond = conditions.hide_in_width,
-  },
-  treesitter = {
-    function()
-      return icons.ui.Tree
-    end,
     cond = conditions.hide_in_width,
   },
   lsp = {
@@ -243,33 +248,6 @@ local components = {
       return language_servers
     end,
   },
-
-  spaces = {
-    function()
-      local shiftwidth = vim.api.nvim_get_option_value("shiftwidth", { buf = 0 })
-      return icons.ui.Tab .. " " .. shiftwidth
-    end,
-    padding = 1,
-  },
-  encoding = {
-    "o:encoding",
-    fmt = string.upper,
-    cond = conditions.hide_in_width,
-  },
-  filetype = { "filetype", cond = nil, padding = { left = 1, right = 1 } },
-  python_env = {
-    function()
-      if vim.bo.filetype == "python" then
-        local venv = os.getenv "VIRTUAL_ENV"
-        if venv then
-          local mini_icons = require "mini.icons"
-          local py_icon, _ = mini_icons.get_icon ".py"
-          return string.format(py_icon .. " (%s)", env_cleanup(venv))
-        end
-      end
-      return ""
-    end,
-  },
 }
 
 return {
@@ -281,26 +259,18 @@ return {
         section_separators = { left = " ", right = " " },
       },
       sections = {
-        lualine_a = {
-          components.mode,
-        },
+        lualine_a = { components.mode, },
         lualine_b = {
           components.filename,
+          components.filetype,
         },
-        lualine_c = {
-        },
+        lualine_c = { components.filename_with_path, },
         lualine_x = {
           components.diagnostics,
           components.lsp,
         },
-        lualine_y = {
-          components.python_env,
-          components.filename,
-          components.filetype,
-        },
-        lualine_z = {
-
-        },
+        lualine_y = {},
+        lualine_z = {},
       },
       extensions = { 'nvim-tree' }
     }

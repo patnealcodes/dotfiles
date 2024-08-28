@@ -14,11 +14,6 @@ return {
       end
 
       vim.keymap.set('n', '_', api.tree.change_root_to_node, opts('CD'))
-      vim.keymap.set('n', '<C-k>', api.node.show_info_popup, opts('Info'))
-      vim.keymap.set('n', '<C-r>', api.fs.rename_sub, opts('Rename: Omit Filename'))
-      vim.keymap.set('n', '<C-t>', api.node.open.tab, opts('Open: New Tab'))
-      vim.keymap.set('n', '<C-v>', api.node.open.vertical, opts('Open: Vertical Split'))
-      vim.keymap.set('n', '<C-x>', api.node.open.horizontal, opts('Open: Horizontal Split'))
       vim.keymap.set('n', '<BS>', api.node.navigate.parent_close, opts('Close Directory'))
       vim.keymap.set('n', '<CR>', api.node.open.edit, opts('Open'))
       vim.keymap.set('n', '<Tab>', api.node.open.preview, opts('Open Preview'))
@@ -72,15 +67,15 @@ return {
       vim.keymap.set('n', '<CR>', api.node.open.edit, opts('Open'))
       vim.keymap.set('n', 'o', api.node.open.edit, opts('Open'))
       vim.keymap.set('n', 'h', api.node.navigate.parent_close, opts('Close Directory'))
-      vim.keymap.set('n', 'v', api.node.open.vertical, opts('Open: Vertical Split'))
     end
 
     nvim_tree.setup({
       on_attach = on_attach,
       hijack_directories = {
-        enable = true,
+        enable = false,
         auto_open = false
       },
+      hijack_unnamed_buffer_when_opening = true,
       update_focused_file = {
         enable = true,
         update_cwd = true,
@@ -134,21 +129,16 @@ return {
         preserve_window_proportions = false,
         number = false,
         relativenumber = false,
-        signcolumn = "yes",
-        width = 30,
-        float = {
-          enable = false,
-          quit_on_focus_loss = true,
-          open_win_config = {
-            relative = "editor",
-            border = "rounded",
-            width = 30,
-            height = 30,
-            row = 1,
-            col = 1,
-          },
-        },
+        signcolumn = "no",
+        width = 40,
       },
+      filters = {
+        no_buffer = true,
+        custom = {
+          ".git",
+          ".github",
+        }
+      }
     })
   end
 }

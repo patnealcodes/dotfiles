@@ -17,8 +17,8 @@ local set_up_hl_post_colorscheme_load = function()
   update_hl_values("TelescopeTitle", { bg = "none" })
   update_hl_values("TelescopePromptBorder", { bg = "none" })
   update_hl_values("TelescopePromptTitle", { bg = "none" })
-  update_hl_values("NvimTreeNormal", { bg = "none" })
-  update_hl_values("NvimTreeNormalNC", { bg = "none" })
+  -- update_hl_values("NvimTreeNormal", { bg = "none" })
+  -- update_hl_values("NvimTreeNormalNC", { bg = "none" })
 
   -- update_hl_values("CursorLine", { bg = "none" })
   -- update_hl_values("CursorLineNr", { bg = "none" })
@@ -36,12 +36,11 @@ return {
       require("tokyonight").setup({
         style = "night",
         terminal_colors = true,
-        sidebars = { "qf", "help" },
-        hide_inactive_statusline = false,
+        hide_inactive_statusline = true,
         lualine_bold = false,
       })
       vim.cmd.colorscheme "tokyonight"
-      set_up_hl_post_colorscheme_load()
+      -- set_up_hl_post_colorscheme_load()
     end
   },
 
