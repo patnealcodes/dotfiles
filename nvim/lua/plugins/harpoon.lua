@@ -3,7 +3,7 @@ return {
 	branch = "harpoon2",
 	event = "VeryLazy",
 	dependencies = {
-		"plenary",
+		"nvim-lua/plenary.nvim",
 		"nvim-telescope/telescope.nvim",
 	},
 	config = function()

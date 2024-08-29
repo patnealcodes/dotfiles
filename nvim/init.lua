@@ -5,7 +5,7 @@ require "lazy_init"
 local augroup = vim.api.nvim_create_augroup
 local autocmd = vim.api.nvim_create_autocmd
 
-local MyGroup = augroup("auuuuuyeah", {})
+local MyGroup = augroup("BIS", {})
 
 autocmd("FileType", {
   pattern = "TelescopeResults",
@@ -37,7 +37,6 @@ autocmd("LspAttach", {
     vim.keymap.set("n", "<leader>ws", function() vim.lsp.buf.workspace_symbol() end, opts)
     vim.keymap.set("n", "<leader>vd", function() vim.diagnostic.open_float() end, opts)
     vim.keymap.set("n", "<leader>ca", function() vim.lsp.buf.code_action() end, opts)
-    vim.keymap.set("n", "<leader>rr", function() vim.lsp.buf.references() end, opts)
     vim.keymap.set("n", "<leader>rn", function() vim.lsp.buf.rename() end, opts)
     vim.keymap.set("i", "<C-h>", function() vim.lsp.buf.signature_help() end, opts)
     vim.keymap.set("n", "[d", function() vim.diagnostic.goto_next() end, opts)
@@ -45,30 +44,19 @@ autocmd("LspAttach", {
   end,
 })
 
-autocmd("BufWritePre", {
-  callback = function(args)
-    require("conform").format {
-      bufnr = args.buf,
-      lsp_fallback = true,
-      quiet = true,
-    }
-  end,
-})
-
-autocmd("BufEnter", {
-  group = vim.api.nvim_create_augroup("NvimTreeClose", { clear = true }),
-  pattern = "NvimTree_*",
-  callback = function()
-    local layout = vim.api.nvim_call_function("winlayout", {})
-    if layout[1] == "leaf" and vim.api.nvim_buf_get_option(vim.api.nvim_win_get_buf(layout[2]), "filetype") == "NvimTree" and layout[3] == nil then
-      vim.cmd("confirm quit")
-    end
-  end
-})
+-- autocmd("BufWritePre", {
+--   callback = function(args)
+--     require("conform").format {
+--       bufnr = args.buf,
+--       lsp_fallback = true,
+--       quiet = true,
+--     }
+--   end,
+-- })
 
 vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, {
-  focusable = false,
   source = "always",
+  border = "rounded",
   header = "",
   prefix = "",
 })

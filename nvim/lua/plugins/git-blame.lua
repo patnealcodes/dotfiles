@@ -8,9 +8,6 @@ return {
       highlight_group = "GitBlameInline"
     }
 
-    -- vim.api.nvim_set_hl(0, "GitBlameInline", { fg = "#696969" })
-    vim.api.nvim_set_hl(0, "GitBlameInline", { fg = "#343a55", bg = "none" })
-
     vim.keymap.set("n", "<leader>gb", "<CMD>GitBlameToggle<CR>", { desc = "Toggle git blame" })
     vim.keymap.set("n", "<leader>gof", "<CMD>GitBlameOpenFileURL<CR>", { desc = "Open file in GitHub" })
     vim.keymap.set("n", "<leader>goc", "<CMD>GitBlameOpenCommitURL<CR>",

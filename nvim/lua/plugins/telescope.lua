@@ -5,11 +5,7 @@ return {
 
 		tag = "0.1.5",
 
-		dependencies = {
-
-			"Theo-Steiner/togglescope",
-			"plenary",
-		},
+		dependencies = { "nvim-lua/plenary.nvim", },
 
 		config = function()
 			local function filenameFirst(_, path)
@@ -35,20 +31,6 @@ return {
 						override_generic_sorter = true, -- override the generic sorter
 						override_file_sorter = true, -- override the file sorter
 						case_mode = "smart_case", -- or "ignore_case" or "respect_case"
-					},
-					togglescope = {
-						find_files = {
-							["<leader>g."] = {
-								hidden = true,
-								togglescope_title = "Find Files (Hidden)",
-							},
-						},
-						live_grep = {
-							["<leader>g."] = {
-								hidden = true,
-								togglescope_title = "Live Grep (Hidden)",
-							},
-						},
 					},
 				},
 				defaults = {
@@ -105,13 +87,11 @@ return {
 
 			vim.keymap.set("n", "<leader>s?", builtin.help_tags, { desc = "[S]earch [H]elp" })
 			vim.keymap.set("n", "<leader>sk", builtin.keymaps, { desc = "[S]earch [K]eymaps" })
-			vim.keymap.set("n", "<leader>sf", function()
-				require("telescope").extensions.togglescope.find_files()
-			end, { desc = "[S]earch [F]iles" })
+			vim.keymap.set("n", "<leader>sf", function() builtin.find_files() end, { desc = "[S]earch [F]iles" })
 			vim.keymap.set("n", "<leader>ss", builtin.builtin, { desc = "[S]earch [S]elect Telescope" })
 			vim.keymap.set("n", "<leader>sw", builtin.grep_string, { desc = "[S]earch current [W]ord" })
 			vim.keymap.set("n", "<leader>sg", function()
-				require("telescope").extensions.togglescope.live_grep({
+				builtin.live_grep({
 					sorting_strategy = "ascending",
 					layout_strategy = "bottom_pane",
 					prompt_prefix = ">> ",
