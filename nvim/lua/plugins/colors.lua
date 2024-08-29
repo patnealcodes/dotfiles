@@ -16,7 +16,7 @@ return {
             fujiGray = "#54546D",   -- Color Palette: sumiInk4
           }
         },
-        overrides = function(colors)
+        overrides = function()
           return {
             Normal = { bg = "none" },
             NormalNC = { bg = "none" },
@@ -35,7 +35,7 @@ return {
             CursorLineNr = { bg = "none" },
             SignColumn = { bg = "none" },
             LineNr = { bg = "none" },
-            GitBlameInline = { fg = colors.palette.sumiInk3 }
+            GitBlameInline = { fg = "#363646" }
           }
         end,
         theme = "wave",
