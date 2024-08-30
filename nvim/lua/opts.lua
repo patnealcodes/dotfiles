@@ -7,6 +7,7 @@ vim.g.copilot_enabled = true
 vim.opt.background = "dark"
 vim.opt.backup = false
 vim.opt.clipboard = "unnamedplus"
+vim.opt.cursorline = true
 vim.opt.mouse = "a"
 vim.opt.expandtab = true
 vim.opt.hlsearch = true

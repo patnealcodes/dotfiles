@@ -31,8 +31,6 @@ return {
           NvimTreeNormal = { bg = "none" },
           NvimTreeNormalNC = { bg = "none" },
           NvimTreeCursorLine = { bg = "#363646" },
-          CursorLine = { bg = "none" },
-          CursorLineNr = { bg = "none" },
           SignColumn = { bg = "none" },
           LineNr = { bg = "none" },
           GitBlameInline = { fg = "#363646" }
