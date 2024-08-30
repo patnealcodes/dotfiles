@@ -27,6 +27,5 @@ vim.keymap.set("n", "<Esc>", "<cmd>nohlsearch<CR>", silent)
 vim.keymap.set("n", "<leader>lr", "<cmd>LspRestart<CR>", silent)
 
 -- Plugins
-vim.keymap.set("n", "<C-b>", "<cmd>NvimTreeFocus<CR>", silent)
-vim.keymap.set("n", "<leader>t", "<cmd>NvimTreeToggle<CR>", silent)
+vim.keymap.set("n", "-", "<cmd>Oil --float<cr>", { desc = "Floaty Oil" })
 

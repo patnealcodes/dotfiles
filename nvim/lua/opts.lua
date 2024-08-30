@@ -2,15 +2,11 @@ vim.cmd "set noshowmode"
 
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
-vim.g.copilot_enabled = false
-vim.g.loaded_netrw = 0
-vim.g.loaded_netrwPlugin = 0
+vim.g.copilot_enabled = true
 
 vim.opt.background = "dark"
 vim.opt.backup = false
 vim.opt.clipboard = "unnamedplus"
-vim.opt.cursorline = true
-vim.opt.relativenumber = true
 vim.opt.mouse = "a"
 vim.opt.expandtab = true
 vim.opt.hlsearch = true

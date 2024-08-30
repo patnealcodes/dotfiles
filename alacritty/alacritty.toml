@@ -24,19 +24,19 @@ program = "/bin/zsh"
 args = ["-l", "-c", "-2", "tmux a -t base || tmux new -s base"]
 
 [font.normal]
-family = "FiraCode Nerd Font Mono"
+family = "FiraCode Nerd Font"
 style = "Light"
 
 [font.italic]
-family = "FiraCode Nerd Font Mono"
+family = "FiraCode Nerd Font"
 style = "Light Italic"
 
 [font.bold]
-family = "FiraCode Nerd Font Mono"
+family = "FiraCode Nerd Font"
 style = "Light"
 
 [font.bold_italic]
-family = "FiraCode Nerd Font Mono"
+family = "FiraCode Nerd Font"
 style = "Light Italic"
 
 [window.dimensions]
