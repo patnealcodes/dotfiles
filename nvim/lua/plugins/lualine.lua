@@ -176,24 +176,15 @@ local components = {
     path = 0,
     use_mode_colors = false,
     color = { fg = "none", bg = "none" },
-    fmt = function(str)
-      if str ~= "." then
-        return str
-      end
-      return ""
-    end
-  },
-
-  filetype = {
-    "filetype",
-    color = { bg = "none" },
-    icon_only = true,
-    padding = { left = 0 },
+    padding = {
+      left = 1,
+      right = 2
+    }
   },
 
   filename_with_path = {
     "filename",
-    path = 3,
+    path = 1,
     use_mode_colors = false,
     color = { fg = "#7b8496" },
     cond = conditions.hide_in_width,
@@ -260,10 +251,7 @@ return {
       },
       sections = {
         lualine_a = { components.mode, },
-        lualine_b = {
-          components.filename,
-          components.filetype,
-        },
+        lualine_b = { components.filename, },
         lualine_c = { components.filename_with_path, },
         lualine_x = {
           components.diagnostics,

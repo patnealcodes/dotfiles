@@ -2,10 +2,11 @@ return {
   "f-person/git-blame.nvim",
   config = function()
     require('gitblame').setup {
-      enabled = true,
-      message_template = " <author> • <date> • <sha>",
+      enabled = false,
+      message_template = " <author> • <date> • <summary>",
       message_when_not_committed = " Not Committed Yet",
-      highlight_group = "GitBlameInline"
+      highlight_group = "GitBlameInline",
+      date_format = "%m-%d-%y"
     }
 
     vim.keymap.set("n", "<leader>gb", "<CMD>GitBlameToggle<CR>", { desc = "Toggle git blame" })

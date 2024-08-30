@@ -8,13 +8,11 @@ return {
 		ensure_installed = {
 			"css",
 			"html",
-			"go",
 			"javascript",
 			"jsdoc",
 			"json",
 			"lua",
 			"markdown",
-			"markdown_inline",
 			"python",
 			"scss",
 			"rust",
@@ -27,10 +25,6 @@ return {
 		auto_install = true,
 		indent = {
 			enable = true,
-		},
-		highlight = {
-			enable = true,
-			additional_vim_regex_highlighting = { "markdown" },
 		},
 	},
 	config = function(_, opts)
