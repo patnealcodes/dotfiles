@@ -13,6 +13,10 @@ return {
       { "mtime", highlight = "OilDir" },
       "icon",
     },
+    float = {
+      padding = 4,
+      max_width = 175
+    },
     sort = {
       { "name", "asc" },
       { "type", "asc" },

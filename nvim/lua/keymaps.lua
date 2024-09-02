@@ -11,7 +11,6 @@ vim.keymap.set("n", "N", "Nzzzv", silent)
 
 vim.keymap.set("x", "<leader>p", [["_dP]], silent)
 
--- vim.keymap.set({ "n", "v" }, "<leader>y", [["+y]]) -- Only needed when clipboard is not set to unnamedplus
 vim.keymap.set("n", "<leader>Y", [["+Y]], silent)
 
 vim.keymap.set({ "n", "v" }, "<leader>d", [["_d]], silent)
@@ -27,5 +26,5 @@ vim.keymap.set("n", "<Esc>", "<cmd>nohlsearch<CR>", silent)
 vim.keymap.set("n", "<leader>lr", "<cmd>LspRestart<CR>", silent)
 
 -- Plugins
-vim.keymap.set("n", "-", "<cmd>Oil --float<cr>", { desc = "Floaty Oil" })
+vim.keymap.set("n", "-", "<cmd>Oil<cr>", { desc = "Oil" })
 

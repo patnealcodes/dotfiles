@@ -9,6 +9,7 @@ vim.opt.background = "dark"
 vim.opt.backup = false
 vim.opt.clipboard = "unnamedplus"
 vim.opt.cursorline = true
+vim.opt.colorcolumn = "100"
 vim.opt.expandtab = true
 vim.opt.hlsearch = true
 vim.opt.ignorecase = true
