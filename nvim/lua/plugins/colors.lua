@@ -11,8 +11,8 @@ return {
       keywordStyle = { italic = false },
       colors = {
         palette = {
-          samuraiRed = "#C34043",   -- Color Palette: autumnRed
-          fujiGray = "#54546D",     -- Color Palette: sumiInk4
+          samuraiRed = "#C34043", -- Color Palette: autumnRed
+          fujiGray = "#54546D",   -- Color Palette: sumiInk4
         }
       },
       overrides = function()
@@ -31,9 +31,6 @@ return {
           NvimTreeNormal = { bg = "none" },
           NvimTreeNormalNC = { bg = "none" },
           NvimTreeCursorLine = { bg = "#363646" },
-          TelescopeSelection = { bg = "#363646" },
-          CursorLine = { bg = "none" },
-          CursorLineNr = { bg = "none" },
           SignColumn = { bg = "none" },
           LineNr = { bg = "none" },
           GitBlameInline = { fg = "#363646" }

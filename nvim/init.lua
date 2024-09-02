@@ -2,6 +2,7 @@ require "opts"
 require "keymaps"
 require "lazy_init"
 
+
 local augroup = vim.api.nvim_create_augroup
 local autocmd = vim.api.nvim_create_autocmd
 
@@ -44,15 +45,15 @@ autocmd("LspAttach", {
   end,
 })
 
--- autocmd("BufWritePre", {
---   callback = function(args)
---     require("conform").format {
---       bufnr = args.buf,
---       lsp_fallback = true,
---       quiet = true,
---     }
---   end,
--- })
+autocmd("BufWritePre", {
+  callback = function(args)
+    require("conform").format {
+      bufnr = args.buf,
+      lsp_fallback = true,
+      quiet = true,
+    }
+  end,
+})
 
 vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, {
   source = "always",
