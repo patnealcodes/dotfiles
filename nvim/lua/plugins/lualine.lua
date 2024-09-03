@@ -153,11 +153,11 @@ local icons = {
   },
 }
 
-local conditions = {
-  hide_in_width = function()
-    return vim.o.columns > 200
-  end,
-}
+-- local conditions = {
+--   hide_in_width = function()
+--     return vim.o.columns > 200
+--   end,
+-- }
 
 local components = {
   mode = {
@@ -187,7 +187,6 @@ local components = {
     path = 1,
     use_mode_colors = false,
     color = { fg = "#7b8496" },
-    cond = conditions.hide_in_width,
     fmt = function(str)
       local prev = ""
       local path = ""
@@ -207,7 +206,6 @@ local components = {
       info = icons.diagnostics.BoldInformation .. " ",
       hint = icons.diagnostics.BoldHint .. " ",
     },
-    cond = conditions.hide_in_width,
   },
   lsp = {
     function()
