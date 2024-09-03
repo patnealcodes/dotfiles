@@ -22,5 +22,6 @@ return {
 
     vim.cmd("colorscheme tokyonight")
     update_hl_values("GitBlameInline", { fg = "#2d3144" })
+    update_hl_values("TreesitterContext", { link = "ColorColumn" })
   end
 }
