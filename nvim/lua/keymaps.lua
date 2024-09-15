@@ -26,5 +26,5 @@ vim.keymap.set("n", "<Esc>", "<cmd>nohlsearch<CR>", silent)
 vim.keymap.set("n", "<leader>lr", "<cmd>LspRestart<CR>", silent)
 
 -- Plugins
-vim.keymap.set("n", "-", "<cmd>Oil<cr>", { desc = "Oil" })
-
+vim.keymap.set("n", "<leader>-", "<cmd>Oil<cr>", { desc = "Oil" })
+vim.keymap.set("n", "-", "<cmd>NvimTreeOpen<cr>", { desc = "Nvim Tree" })

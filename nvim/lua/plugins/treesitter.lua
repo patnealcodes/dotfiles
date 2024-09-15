@@ -15,6 +15,7 @@ return {
 			"markdown",
 			"python",
 			"scss",
+			"sql",
 			"rust",
 			"typescript",
 			"tsx",

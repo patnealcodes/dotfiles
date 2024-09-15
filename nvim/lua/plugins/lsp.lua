@@ -34,8 +34,8 @@ return {
         "pyright",
         "ruff_lsp",
         "rust_analyzer",
-        "tsserver", -- typescript-language-server
-        "yamlls",   -- yaml-language-server
+        "ts_ls",  -- typescript-language-server
+        "yamlls", -- yaml-language-server
       },
       handlers = {
         function(server_name)
