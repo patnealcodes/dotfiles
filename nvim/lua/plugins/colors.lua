@@ -66,7 +66,7 @@ return {
             GitBlameInline = { fg = "#363646" }
           }
         end,
-        theme = "dragon",
+        theme = "wave",
       })
       vim.cmd("colorscheme kanagawa")
     end,

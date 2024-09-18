@@ -26,5 +26,10 @@ vim.keymap.set("n", "<Esc>", "<cmd>nohlsearch<CR>", silent)
 vim.keymap.set("n", "<leader>lr", "<cmd>LspRestart<CR>", silent)
 
 -- Plugins
-vim.keymap.set("n", "<leader>-", "<cmd>Oil<cr>", { desc = "Oil" })
-vim.keymap.set("n", "-", "<cmd>NvimTreeOpen<cr>", { desc = "Nvim Tree" })
+vim.keymap.set("n", "-", "<cmd>Oil<cr>", { desc = "Oil" })
+
+vim.keymap.set("n", "<C-b>", "<cmd>NvimTreeToggle<cr>", { desc = "Nvim Tree" })
+
+vim.keymap.set("n", "<leader>gbb", "<cmd>Git blame<cr>", { desc = "Git Blame with Fugutive" })
+vim.keymap.set("n", "<leader>gbo", "<cmd>.GBrowse<cr>", { desc = "Open the current line in github" })
+vim.keymap.set("n", "<leader>gbc", "<cmd>.GBrowse!<cr>", { desc = "Copy a link to the current line in github" })
