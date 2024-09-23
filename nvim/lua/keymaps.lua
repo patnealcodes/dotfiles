@@ -25,6 +25,8 @@ vim.keymap.set("n", "<Esc>", "<cmd>nohlsearch<CR>", silent)
 
 vim.keymap.set("n", "<leader>lr", "<cmd>LspRestart<CR>", silent)
 
+vim.keymap.set("n", "<leader>f", vim.lsp.buf.format, { desc = "Format File" })
+
 -- Plugins
 vim.keymap.set("n", "-", "<cmd>Oil<cr>", { desc = "Oil" })
 

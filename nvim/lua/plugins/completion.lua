@@ -72,7 +72,6 @@ return {
           { name = "buffer" },
           { name = "treesitter" },
           { name = "crates" },
-          { name = "tmux" },
         },
 
         mapping = {
@@ -97,21 +96,19 @@ return {
           fields = { "kind", "abbr", "menu" },
 
           format = function(entry, vim_item)
-            -- local source_names = {
-            --   nvim_lsp = "(LSP)",
-            --   emoji = "(Emoji)",
-            --   path = "(Path)",
-            --   calc = "(Calc)",
-            --   vsnip = "(Snip)",
-            --   luasnip = "(Snip)",
-            --   buffer = "(Buffer)",
-            --   tmux = "(TMUX)",
-            --   copilot = "(Copilot)",
-            --   treesitter = "(TreeSitter)",
-            -- }
+            local source_names = {
+              path = "(Path)",
+              nvim_lsp = "(LSP)",
+              calc = "(Calc)",
+              vsnip = "(VSnip)",
+              luasnip = "(LSnip)",
+              buffer = "(Buffer)",
+              treesitter = "(TreeSitter)",
+              crates = "(Crates)"
+            }
 
             vim_item.kind = kind[vim_item.kind]
-            -- vim_item.menu = source_names[entry.source.name] or entry.source.name
+            vim_item.menu = source_names[entry.source.name] or entry.source.name
             vim_item.dup = duplicates[entry.source.name] or 0
 
             return vim_item
