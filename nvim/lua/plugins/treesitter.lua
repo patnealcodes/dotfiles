@@ -17,15 +17,8 @@ return {
       },
       auto_install = true,
       highlight = {
-        enable = true
-      },
-      incremental_selection = {
         enable = true,
-        keymaps = {
-          init_selection = "<Tab>",
-          node_incremental = "<Tab>",
-          node_decremental = "<S-Tab>",
-        }
+        additional_vim_regex_highlighting = { "markdown" },
       }
     })
   end

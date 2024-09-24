@@ -1,6 +1,7 @@
 return {
   "neovim/nvim-lspconfig",
   dependencies = {
+    "onsails/lspkind.nvim",
     "hrsh7th/nvim-cmp",
     "hrsh7th/cmp-nvim-lsp",
     "hrsh7th/cmp-path",
@@ -22,18 +23,52 @@ return {
       crates = "(Crates)"
     }
 
-    local duplicates = {
-      path = 1,
-      nvim_lsp = 1,
-      buffer = 1,
+    local lspkind = require "lspkind"
+    lspkind.init {}
+
+    local kind = {
+      Array = "",
+      Boolean = "",
+      Class = "",
+      Color = "",
+      Constant = "",
+      Constructor = "",
+      Enum = "",
+      EnumMember = "",
+      Event = "",
+      Field = "",
+      File = "",
+      Folder = "󰉋",
+      Function = "",
+      Interface = "",
+      Key = "",
+      Keyword = "",
+      Method = "",
+      Module = "",
+      Namespace = "",
+      Null = "󰟢",
+      Number = "",
+      Object = "",
+      Operator = "",
+      Package = "",
+      Property = "",
+      Reference = "",
+      Snippet = "",
+      String = "",
+      Struct = "",
+      Text = "",
+      TypeParameter = "",
+      Unit = "",
+      Value = "",
+      Variable = "",
     }
 
     cmp.setup {
       formatting = {
-        fields = { "abbr", "menu" },
+        fields = { "kind", "abbr", "menu" },
         format = function(entry, vim_item)
+          vim_item.kind = kind[vim_item.kind]
           vim_item.menu = source_names[entry.source.name] or entry.source.name
-          vim_item.dup = duplicates[entry.source.name] or 0
           return vim_item
         end,
       },
@@ -43,21 +78,17 @@ return {
         end
       },
       sources = {
-        { name = "path" },
-        { name = "nvim_lsp" },
-        { name = "luasnip" },
-        { name = "nvim_lua" },
-        { name = "buffer" },
-        { name = "treesitter" },
-        { name = "crates" },
+        { name = "path",     max_item_count = 3, dup = 1 },
+        { name = "nvim_lsp", max_item_count = 5, dup = 1 },
+        { name = "luasnip",  max_item_count = 2, dup = 1 },
+        { name = "buffer",   max_item_count = 2, dup = 1 },
       },
       mapping = {
         ["<C-n>"] = cmp.mapping.select_next_item(),
         ["<C-p>"] = cmp.mapping.select_prev_item(),
         ["<C-y>"] = cmp.mapping.confirm(),
+        ["<C-Space>"] = cmp.mapping.complete(),
       },
-
-
       window = {
         completion = cmp.config.window.bordered {},
         documentation = cmp.config.window.bordered(),
