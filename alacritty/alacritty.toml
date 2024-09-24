@@ -16,6 +16,9 @@ blink_timeout = 0
 blinking = "Always"
 shape = "Beam"
 
+[font]
+size = 15.0
+
 [shell]
 program = "/bin/zsh"
 args = ["-l", "-c", "-2", "tmux a -t base || tmux new -s base"]

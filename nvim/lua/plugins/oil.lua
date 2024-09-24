@@ -1,32 +1,32 @@
 return {
   "stevearc/oil.nvim",
-  cmd = "Oil",
-  dependencies = { "nvim-tree/nvim-web-devicons" },
-  opts = {
-    default_file_explorer = true,
-    view_options = {
-      show_hidden = true,
-    },
-    delete_to_trash = false,
-    constrain_cursor = "name",
-    columns = {
-      "permissions",
-      { "size",  highlight = "OilCopy" },
-      { "mtime", highlight = "OilDir" },
-      "icon",
-    },
-    float = {
-      padding = 4,
-      max_width = 175
-    },
-    sort = {
-      { "name", "asc" },
-      { "type", "asc" },
-    },
-    keymaps = {
-      ["<C-c>"] = "actions.close",
-      ["<Esc>"] = "actions.close",
-      ["q"] = "actions.close",
-    },
-  },
+  dependencies = {},
+  config = function()
+    require("oil").setup({
+      columns = {
+        "permissions",
+        { "size",  highlight = "OilCopy" },
+        { "mtime", highlight = "OilDir" },
+        "icon"
+      },
+      constrain_cursor = "editable",
+      default_file_explorer = true,
+      delete_to_trash = false,
+      float = {
+        padding = 10,
+      },
+      keymaps = {
+        ["<Esc>"] = "actions.close"
+      },
+      sort = {
+        { "name", "asc" },
+        { "type", "asc" },
+      },
+      view_options = {
+        show_hidden = true
+      },
+    })
+
+    vim.keymap.set("n", "-", "<cmd>Oil --float<cr>", { desc = "Open Oil in float mode" })
+  end
 }

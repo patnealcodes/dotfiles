@@ -55,10 +55,12 @@ zstyle ':completion:*' menu no
 eval "$(zoxide init zsh)"
 #----- END ZINIT
 
+. "$HOME/.asdf/asdf.sh"
+
 # Options
 setopt AUTO_CD
 
-# Shortcuts for editors
+# Shortcuts for editor
 alias v="nvim"
 
 # Repo shortcuts
@@ -96,6 +98,7 @@ alias gconfig="git config --global"
 function mkcd() { mkdir "$@" && cd "$@"; }
 function mkc() { mkdir "$@" && c "$@"; }
 alias ff="tmux neww bash ~/codes/GitHub/dotfiles/tmux-sessionizer"
+
 addBeforePath() {
     if [[ "$PATH" != *"$1"* ]]; then
         export PATH=$1:$PATH
@@ -107,12 +110,6 @@ addToPath() {
     fi
 } 
 
-export NVM_DIR=~/.nvm
-[[ -s "$NVM_DIR/nvm.sh" ]] && source "$NVM_DIR/nvm.sh" --no-use
-
-export MODULAR_HOME="/Users/nealp/.modular"
-
-addBeforePath $NVM_DIR/versions/node/$DEFAULT_NODE_VERSION/bin:$PATH
 addBeforePath /Users/nealp/Library/Python/3.9/bin
 addToPath /opt/homebrew/bin
 addToPath /usr/bin

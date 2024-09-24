@@ -1,32 +1,32 @@
 return {
-	"nvim-treesitter/nvim-treesitter",
-	build = ":TSUpdate",
-	config = function()
-		require("nvim-treesitter.configs").setup({
-			ensure_installed = {
-				"css",
-				"html",
-				"javascript",
-				"json",
-				"lua",
-				"python",
-				"scss",
-				"sql",
-				"rust",
-				"typescript",
-				"tsx",
-				"vim",
-				"vimdoc",
-			},
-			sync_install = false,
-			auto_install = true,
-			indent = {
-				enable = true
-			},
-			highlight = {
-				enable = true,
-				additional_vim_regex_highlighting = { "markdown" },
-			},
-		})
-	end
+  "nvim-treesitter/nvim-treesitter",
+  config = function()
+    require("nvim-treesitter.configs").setup({
+      ensure_installed = {
+        "c",
+        "css",
+        "javascript",
+        "lua",
+        "python",
+        "rust",
+        "typescript",
+        "tsx",
+        "vim",
+        "vimdoc",
+        "yaml"
+      },
+      auto_install = true,
+      highlight = {
+        enable = true
+      },
+      incremental_selection = {
+        enable = true,
+        keymaps = {
+          init_selection = "<Tab>",
+          node_incremental = "<Tab>",
+          node_decremental = "<S-Tab>",
+        }
+      }
+    })
+  end
 }
