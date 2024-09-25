@@ -7,6 +7,7 @@ vim.opt.isfname:append("@-@")
 vim.opt.inccommand = "split"
 vim.opt.ignorecase = true
 vim.opt.nu = true
+vim.opt.pumheight = 10
 vim.opt.relativenumber = true
 vim.opt.scrolloff = 8
 vim.opt.signcolumn = "yes"

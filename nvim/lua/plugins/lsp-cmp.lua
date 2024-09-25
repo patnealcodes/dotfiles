@@ -8,6 +8,7 @@ return {
     "hrsh7th/cmp-buffer",
     "L3MON4D3/LuaSnip",
     "saadparwaiz1/cmp_luasnip",
+    "j-hui/fidget.nvim",
   },
   config = function()
     local lspconfig = require("lspconfig")
@@ -63,6 +64,8 @@ return {
       Variable = "",
     }
 
+    require("fidget").setup({})
+
     cmp.setup {
       formatting = {
         fields = { "kind", "abbr", "menu" },
@@ -78,10 +81,10 @@ return {
         end
       },
       sources = {
-        { name = "path",     max_item_count = 3, dup = 1 },
-        { name = "nvim_lsp", max_item_count = 5, dup = 1 },
-        { name = "luasnip",  max_item_count = 2, dup = 1 },
-        { name = "buffer",   max_item_count = 2, dup = 1 },
+        { name = "path",     dup = 1 },
+        { name = "nvim_lsp", dup = 1 },
+        { name = "luasnip",  dup = 1 },
+        { name = "buffer",   dup = 1 },
       },
       mapping = {
         ["<C-n>"] = cmp.mapping.select_next_item(),
