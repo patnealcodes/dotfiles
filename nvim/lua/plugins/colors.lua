@@ -37,7 +37,6 @@ return {
           CursorLine = { link = "clear" },
         }
       end,
-      theme = "wave",
     })
     vim.cmd("colorscheme kanagawa")
   end,
