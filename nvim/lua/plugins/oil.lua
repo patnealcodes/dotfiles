@@ -9,7 +9,7 @@ return {
         { "mtime", highlight = "OilDir" },
         "icon"
       },
-      constrain_cursor = "editable",
+      constrain_cursor = "name",
       default_file_explorer = true,
       delete_to_trash = false,
       float = {
