@@ -3,13 +3,8 @@
     "context": "Editor || Workspace",
     "bindings": {
       "ctrl-shift-e": "workspace::ToggleLeftDock",
-      "ctrl-x": "pane::CloseActiveItem"
-    }
-  },
-  {
-    "context": "Workspace",
-    "bindings": {
-      "ctrl-`": "workspace::ToggleBottomDock"
+      "ctrl-x": "pane::CloseActiveItem",
+      "*": ["buffer_search::Deploy", { "focus": false }]
     }
   },
   {
@@ -17,10 +12,18 @@
     "bindings": {
       "space space": "tab_switcher::Toggle",
       "space s f": "file_finder::Toggle",
+      "space s g": "pane::DeploySearch",
       "space = -": "projects::OpenRecent"
-      // ", r l": "task::Rerun",
-      // ", r e": ["task::Rerun", { "reevaluate_context": true }],
-      // "ctrl-s": "projects::OpenRecent"
+    }
+  },
+  {
+    "context": "Workspace || Pane || Editor || Terminal",
+    "bindings": {
+      "cmd-e": "project_panel::ToggleFocus",
+      "cmd-t": "terminal_panel::ToggleFocus",
+      "cmd-left": "workspace::ToggleLeftDock",
+      "cmd-right": "workspace::ToggleRightDock",
+      "cmd-down": "workspace::ToggleBottomDock"
     }
   },
   {
@@ -34,6 +37,7 @@
       "ctrl-j": ["workspace::ActivatePaneInDirection", "Down"],
       "cmd-shift-k": "editor::DeleteLine",
       // "1 g shift-d": "editor::GoToImplementation",
+      "space d": "diagnostics::Deploy",
       "] d": "editor::GoToDiagnostic",
       "[ d": "editor::GoToPrevDiagnostic",
       "space g r": "editor::FindAllReferences",
@@ -101,6 +105,12 @@
       "ctrl-l": ["workspace::ActivatePaneInDirection", "Right"],
       "ctrl-k": ["workspace::ActivatePaneInDirection", "Up"],
       "ctrl-j": ["workspace::ActivatePaneInDirection", "Down"]
+    }
+  },
+  {
+    "context": "TabSwitcher",
+    "bindings": {
+      "x": "tab_switcher::CloseSelectedItem"
     }
   }
 ]

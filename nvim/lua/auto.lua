@@ -1,12 +1,11 @@
 local create_augroup = vim.api.nvim_create_augroup
 local create_autocmd = vim.api.nvim_create_autocmd
-local group = create_augroup("group", {})
+local group = create_augroup("puorgua", {})
 
-
-create_autocmd("VimEnter", {
+create_autocmd("BufWritePre", {
   group = group,
   callback = function()
-    require("persistence").load()
+    vim.lsp.buf.format()
   end,
 })
 
@@ -21,6 +20,22 @@ create_autocmd("FileType", {
   end,
 })
 
+create_autocmd("LspAttach", {
+  group = group,
+  callback = function(e)
+    local opts = { buffer = e.buf }
+    vim.keymap.set("n", "gd", function() vim.lsp.buf.definition() end, opts)
+    vim.keymap.set("n", "K", function() vim.lsp.buf.hover() end, opts)
+    vim.keymap.set("n", "<leader>ws", function() vim.lsp.buf.workspace_symbol() end, opts)
+    vim.keymap.set("n", "<leader>vd", function() vim.diagnostic.open_float() end, opts)
+    vim.keymap.set("n", "<leader>ca", function() vim.lsp.buf.code_action() end, opts)
+    vim.keymap.set("n", "<leader>rn", function() vim.lsp.buf.rename() end, opts)
+    vim.keymap.set("i", "<C-h>", function() vim.lsp.buf.signature_help() end, opts)
+    vim.keymap.set("n", "]d", function() vim.diagnostic.goto_next() end, opts)
+    vim.keymap.set("n", "[d", function() vim.diagnostic.goto_prev() end, opts)
+  end,
+})
+
 create_autocmd("TextYankPost", {
   group = group,
   pattern = "*",
@@ -32,9 +47,9 @@ create_autocmd("TextYankPost", {
   end
 })
 
-create_autocmd("BufWritePre", {
+create_autocmd("VimEnter", {
   group = group,
   callback = function()
-    vim.lsp.buf.format()
+    require("persistence").load()
   end,
 })

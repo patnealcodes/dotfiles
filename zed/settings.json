@@ -17,15 +17,10 @@
   },
   "assistant": {
     "default_model": {
-      "provider": "openai",
-      "model": "gpt-4o"
+      "provider": "zed.dev",
+      "model": "claude-3-5-sonnet-20240620"
     },
-    "dock": "right",
-    "version": "2",
-    "provider": {
-      "name": "zed.dev",
-      "default_model": "gpt-4o"
-    }
+    "version": "2"
   },
   // "relative_line_numbers": true,
   "always_treat_brackets_as_autoclosed": false,
@@ -43,31 +38,26 @@
     "SQL": {
       "formatter": "prettier"
     },
+    "TypeScript": {
+      "code_actions_on_format": {
+        "source.fixAll.eslint": true,
+        "source.organizeImports": true
+      }
+    },
     "TSX": {
       "code_actions_on_format": {
         "source.fixAll.eslint": true
       }
     },
-    "Vue.js": {
-      "code_actions_on_format": {
-        "source.fixAll.eslint": true
-      }
-      // "formatter": {
-      //   "code_actions": {
-      //     "source.fixAll.eslint": true
-      //   }
-      // }
-    },
     "JavaScript": {
-      // "formatter": "language_server",
       "code_actions_on_format": {
         "source.fixAll.eslint": true
+      },
+      "formatter": {
+        "code_actions": {
+          "source.fixAll.eslint": true
+        }
       }
-      // "formatter": {
-      //   "code_actions": {
-      //     "source.fixAll.eslint": true
-      //   }
-      // }
     },
     "Ruby": {
       "language_servers": ["tailwindcss-language-server", "solargraph"],
@@ -90,7 +80,7 @@
     }
   },
   "project_panel": {
-    "dock": "left"
+    "dock": "right"
   },
   // "soft_wrap": "preferred_line_length",
   "soft_wrap": "none",
@@ -101,11 +91,11 @@
   },
   "base_keymap": "VSCode",
   "theme": "Kanagawa Wave",
-  "ui_font_size": 16,
+  "ui_font_size": 14,
   "ui_font_weight": 100,
   "ui_font_family": "FiraCode Nerd Font",
   "buffer_font_weight": 100,
-  "buffer_font_size": 16,
+  "buffer_font_size": 14,
   "buffer_font_family": "FiraCode Nerd Font",
   "buffer_line_height": {
     "custom": 1.25
@@ -113,7 +103,7 @@
   "terminal": {
     "dock": "right",
     "blinking": "on",
-    "font_size": 16,
+    "font_size": 14,
     "font_family": "FiraCode Nerd Font",
     "font_weight": 100,
     "line_height": {

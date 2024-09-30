@@ -15,17 +15,15 @@ return {
     local cmp = require("cmp")
     local luasnip = require("luasnip")
 
-    local source_names = {
-      path = "(Path)",
-      nvim_lsp = "(LSP)",
-      calc = "(Calc)",
-      buffer = "(Buffer)",
-      treesitter = "(TreeSitter)",
-      crates = "(Crates)"
-    }
-
     local lspkind = require "lspkind"
     lspkind.init {}
+
+    local duplicates = {
+      buffer = 1,
+      path = 1,
+      nvim_lsp = 0,
+      luasnip = 1,
+    }
 
     local kind = {
       Array = "",
@@ -69,28 +67,47 @@ return {
     cmp.setup {
       formatting = {
         fields = { "kind", "abbr", "menu" },
+
         format = function(entry, vim_item)
+          local source_names = {
+            path = "(Path)",
+            nvim_lsp = "(LSP)",
+            calc = "(Calc)",
+            buffer = "(Buffer)",
+            treesitter = "(TreeSitter)",
+            crates = "(Crates)"
+          }
+
           vim_item.kind = kind[vim_item.kind]
           vim_item.menu = source_names[entry.source.name] or entry.source.name
+          vim_item.dup = duplicates[entry.source.name] or 0
+
           return vim_item
         end,
       },
       snippet = {
         expand = function(args)
-          luasnip.lsp_expand(args.body)
-        end
+          require("luasnip").lsp_expand(args.body)
+        end,
       },
       sources = {
-        { name = "path",     dup = 1 },
-        { name = "nvim_lsp", dup = 1 },
-        { name = "luasnip",  dup = 1 },
-        { name = "buffer",   dup = 1 },
+        { name = "path" },
+        { name = "nvim_lsp" },
+        { name = "nvim_lua" },
+        { name = "buffer" },
+        { name = "treesitter" },
+        { name = "crates" },
       },
       mapping = {
         ["<C-n>"] = cmp.mapping.select_next_item(),
         ["<C-p>"] = cmp.mapping.select_prev_item(),
-        ["<C-y>"] = cmp.mapping.confirm(),
-        ["<C-Space>"] = cmp.mapping.complete(),
+        ["<C-y>"] = cmp.mapping.confirm(
+          cmp.mapping.confirm {
+            behavior = cmp.ConfirmBehavior.Insert,
+            select = true,
+          },
+          { "i", "c" }
+        ),
       },
       window = {
         completion = cmp.config.window.bordered {},
