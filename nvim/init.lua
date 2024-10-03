@@ -1,4 +1,4 @@
 require("auto")
 require("keymaps")
-require("opts-handlers")
+require("opts_config")
 require("lazy_init")

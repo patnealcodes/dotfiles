@@ -28,11 +28,11 @@ return {
       }):find()
     end
 
-    keymap.set("n", "<leader>hh", function()
+    keymap.set("n", "<leader>H", function()
       harpoon.ui:toggle_quick_menu(harpoon:list())
     end, { desc = "Open harpoon window" })
 
-    keymap.set("n", "<leader>sh", function()
+    keymap.set("n", "<leader>ht", function()
       toggle_telescope(harpoon:list())
     end, { desc = "Open harpoon list in telescope" })
 

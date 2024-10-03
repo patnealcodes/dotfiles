@@ -46,10 +46,3 @@ create_autocmd("TextYankPost", {
     })
   end
 })
-
-create_autocmd("VimEnter", {
-  group = group,
-  callback = function()
-    require("persistence").load()
-  end,
-})

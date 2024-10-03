@@ -101,13 +101,11 @@ return {
       mapping = {
         ["<C-n>"] = cmp.mapping.select_next_item(),
         ["<C-p>"] = cmp.mapping.select_prev_item(),
-        ["<C-y>"] = cmp.mapping.confirm(
-          cmp.mapping.confirm {
-            behavior = cmp.ConfirmBehavior.Insert,
-            select = true,
-          },
-          { "i", "c" }
-        ),
+        ["<C-Space>"] = cmp.mapping.complete(),
+        ["<C-y>"] = cmp.mapping.confirm {
+          behavior = cmp.ConfirmBehavior.Insert,
+          select = true,
+        },
       },
       window = {
         completion = cmp.config.window.bordered {},

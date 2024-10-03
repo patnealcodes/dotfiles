@@ -1,7 +1,7 @@
 vim.opt.backup = false
 vim.opt.clipboard = "unnamedplus"
 vim.opt.cot = { "menu", "menuone", "noselect" } -- insert mode completion options
-vim.opt.cursorline = true
+-- vim.opt.cursorline = true
 vim.opt.expandtab = true
 vim.opt.isfname:append("@-@")
 vim.opt.inccommand = "split"
@@ -31,3 +31,7 @@ vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, {
   header = "",
   prefix = "",
 })
+
+vim.diagnostic.config {
+  float = { border = "rounded" },
+}

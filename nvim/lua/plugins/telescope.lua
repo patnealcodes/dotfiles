@@ -46,7 +46,7 @@ return {
     key('n', '<leader>gr', builtin.lsp_references, { desc = "[G]o to [r]eferences" })
     key('n', '<leader>sf', builtin.find_files, { desc = "[S]earch [f]iles" })
     key('n', '<leader>sr', builtin.resume, { desc = "[S]earch [r]esume" })
-    key("n", "<leader>s?", builtin.help_tags, { desc = "[S]earch Help [?]" })
+    key("n", "<leader>sh", builtin.help_tags, { desc = "[S]earch Help [?]" })
     key("n", "<leader>sk", builtin.keymaps, { desc = "[S]earch [k]eymaps" })
     key("n", "<leader>ss", builtin.builtin, { desc = "[S]earch [b]uiltin" })
     key('n', '<leader>sg', function()

@@ -6,6 +6,8 @@ vim.g.mapleader = " "
 -- General
 key("n", "<Esc>", "<cmd>nohl<cr>", { desc = "No highlight" })
 key("n", ";", "/<BS>", { desc = "Clear command line" })
+key("n", "H", "", { desc = "Unbind" })
+key("n", "L", "", { desc = "Unbind" })
 key("v", "J", ":m '>+1<cr>gv=gv", { desc = "Move visually selected line down" })
 key("v", "K", ":m '<-2<cr>gv=gv", { desc = "Move visually selected line up" })
 key("n", "J", "mzJ`z", { desc = "Join line with line below but retain cursor position" })

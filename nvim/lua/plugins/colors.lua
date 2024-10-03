@@ -1,3 +1,8 @@
+local update_hl_values = function(hl_group, hl_values)
+  local current_values = vim.api.nvim_get_hl(0, { name = hl_group })
+  vim.api.nvim_set_hl(0, hl_group, vim.tbl_extend("force", current_values, hl_values))
+end
+
 return {
   "rebelot/kanagawa.nvim",
   lazy = false,
