@@ -21,6 +21,10 @@ return {
         layout_strategy = "vertical",
         dynamic_preview_title = true,
         path_display = filenameFirst,
+        file_ignore_patterns = {
+          ".git",
+          "*/node_modules"
+        }
       },
       pickers = {
         live_grep = { only_sort_text = true },
@@ -32,7 +36,6 @@ return {
           }
         },
         git_files = {
-          hidden = true,
           show_untracked = true
         }
       }
@@ -44,14 +47,31 @@ return {
     key('n', '<leader>d', builtin.diagnostics, { desc = "[S]earch [d]iagnostics" })
     key('n', '<leader>gd', builtin.lsp_definitions, { desc = "[G]o to [d]efinitions" })
     key('n', '<leader>gr', builtin.lsp_references, { desc = "[G]o to [r]eferences" })
-    key('n', '<leader>sf', builtin.find_files, { desc = "[S]earch [f]iles" })
+    key('n', '<leader>sf', function()
+      builtin.find_files({ hidden = false, no_ignore = false })
+    end, { desc = "[S]earch [f]iles" })
+    key('n', '<leader>saf', function()
+      builtin.find_files({ hidden = true, no_ignore = true })
+    end, { desc = "[S]earch [a]ll [f]iles" })
     key('n', '<leader>sr', builtin.resume, { desc = "[S]earch [r]esume" })
     key("n", "<leader>sh", builtin.help_tags, { desc = "[S]earch Help [?]" })
     key("n", "<leader>sk", builtin.keymaps, { desc = "[S]earch [k]eymaps" })
     key("n", "<leader>ss", builtin.builtin, { desc = "[S]earch [b]uiltin" })
     key('n', '<leader>sg', function()
-      builtin.grep_string({ search = vim.fn.input("Grep > ") })
-    end, { desc = "[S]earch [s]elect Telescope" })
+      local search = vim.fn.input("Grep > ")
+      if search ~= "" then
+        builtin.grep_string({ search = search })
+      end
+    end, { desc = "[S]earch with [g]rep" })
+    key('n', '<leader>sog', function()
+      local search = vim.fn.input("Grep Open Files > ")
+      if search ~= "" then
+        builtin.grep_string({ search = search, grep_open_files = true })
+      end
+    end, { desc = "[S]earch [o]pen files with [g]rep" })
+    key('n', '<leader>sag', function()
+      builtin.grep_string({ search = vim.fn.input("Grep ALL > ") })
+    end, { desc = "[S]earch [a]ll with [g]rep" })
     key('n', '<leader>sw', function()
       builtin.grep_string({ search = vim.fn.expand("<cword>") })
     end, { desc = "[S]earch for [w]ord" })
