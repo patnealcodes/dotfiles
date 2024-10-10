@@ -6,9 +6,15 @@ return {
     "hrsh7th/cmp-nvim-lsp",
     "hrsh7th/cmp-path",
     "hrsh7th/cmp-buffer",
+
     "L3MON4D3/LuaSnip",
+
     "saadparwaiz1/cmp_luasnip",
+
     "j-hui/fidget.nvim",
+
+    "williamboman/mason.nvim",
+    "williamboman/mason-lspconfig.nvim",
   },
   config = function()
     local lspconfig = require("lspconfig")
@@ -62,7 +68,66 @@ return {
       Variable = "",
     }
 
+    local cmp_lsp = require("cmp_nvim_lsp")
+    local capabilities = vim.tbl_deep_extend(
+      "force",
+      {},
+      vim.lsp.protocol.make_client_capabilities(),
+      cmp_lsp.default_capabilities()
+    )
+
     require("fidget").setup({})
+    require("mason").setup()
+    require("mason-lspconfig").setup({
+      ensure_installed = {
+        "denols",
+        "lua_ls",
+        "pyright",
+        "rust_analyzer",
+        "ts_ls",
+        "yamlls",
+      },
+      handlers = {
+        function(server_name)
+          if server_name == "tsserver" then
+            server_name = "ts_ls"
+          end
+
+          require("lspconfig")[server_name].setup {
+            capabilities = capabilities
+          }
+        end,
+
+        ["lua_ls"] = function()
+          lspconfig.lua_ls.setup({
+            capabilities = capabilities,
+            settings = {
+              Lua = {
+                runtime = { version = "Lua 5.1" },
+                diagnostics = {
+                  globals = { "vim" }
+                }
+              }
+            }
+          })
+        end,
+
+        ["ts_ls"] = function()
+          lspconfig.ts_ls.setup({
+            capabilities = capabilities,
+            root_dir = lspconfig.util.root_pattern("package.json"),
+            single_file_support = false
+          })
+        end,
+
+        ["denols"] = function()
+          lspconfig.denols.setup({
+            capabilities = capabilities,
+            root_dir = lspconfig.util.root_pattern("deno.json", "deno.jsonc")
+          })
+        end
+      }
+    })
 
     cmp.setup {
       formatting = {
@@ -124,40 +189,5 @@ return {
         luasnip.jump(-1)
       end
     end, { desc = "Expand or jump snippet" })
-
-    -- // Language Servers // --
-    -- // https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md
-    local cmp_lsp = require("cmp_nvim_lsp")
-    local capabilities = vim.tbl_deep_extend(
-      "force",
-      {},
-      vim.lsp.protocol.make_client_capabilities(),
-      cmp_lsp.default_capabilities()
-    )
-
-    -- npm i -g @vtsls/language-server
-    lspconfig.vtsls.setup({ capabilities = capabilities })
-
-    -- rustup component add rust-analyzer
-    lspconfig.rust_analyzer.setup({ capabilities = capabilities })
-
-    -- $ pip install pyright
-    lspconfig.pyright.setup({ capabilities = capabilities })
-
-    -- $ npm i -g yaml-language-server
-    lspconfig.yamlls.setup({ capabilities = capabilities })
-
-    -- https://luals.github.io/#install
-    lspconfig.lua_ls.setup({
-      capabilities = capabilities,
-      settings = {
-        Lua = {
-          runtime = { version = "Lua 5.1" },
-          diagnostics = {
-            globals = { "vim" }
-          }
-        }
-      }
-    })
   end
 }

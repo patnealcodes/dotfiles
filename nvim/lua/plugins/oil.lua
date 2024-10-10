@@ -12,9 +12,6 @@ return {
       constrain_cursor = "name",
       default_file_explorer = true,
       delete_to_trash = false,
-      float = {
-        padding = 10,
-      },
       keymaps = {
         ["<Esc>"] = "actions.close"
       },
