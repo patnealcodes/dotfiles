@@ -1,7 +1,8 @@
 vim.opt.backup = false
 vim.opt.clipboard = "unnamedplus"
 vim.opt.cot = { "menu", "menuone", "noselect" } -- insert mode completion options
--- vim.opt.cursorline = true
+vim.opt.cursorline = true
+vim.opt.showmode = false
 vim.opt.expandtab = true
 vim.opt.isfname:append("@-@")
 vim.opt.inccommand = "split"
