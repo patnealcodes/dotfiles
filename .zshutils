@@ -118,6 +118,7 @@ addToPath /opt/homebrew/bin
 addToPath /usr/bin
 addToPath /usr/local/bin
 addToPath /usr/local/go/bin
+addToPath /opt/nvim-linux64/bin
 addToPath /Users/nealp/go/bin
 addToPath /Users/nealp/.local/bin
 addToPath /Users/nealp/.deno/bin
