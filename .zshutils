@@ -63,8 +63,9 @@ eval "$(zoxide init zsh)"
 # Options
 setopt AUTO_CD
 
-# Shortcuts for editor
+# Shortcuts for editors
 alias v="nvim"
+alias z="zed"
 
 # Repo shortcuts
 alias dot="~/codes/GitHub/dotfiles"

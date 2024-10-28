@@ -1,4 +1,4 @@
-import = ["~/codes/GitHub/dotfiles/alacritty/themes/carbonfox.toml"]
+import = ["~/codes/GitHub/dotfiles/alacritty/themes/dracula-pro.toml"]
 
 [env]
 TERM = "xterm-256color"
@@ -18,10 +18,6 @@ shape = "Beam"
 
 [font]
 size = 15.0
-
-[shell]
-program = "/bin/zsh"
-args = ["-l", "-c", "-2", "tmux a -t base || tmux new -s base"]
 
 [font.normal]
 family = "FiraCode Nerd Font"
@@ -51,7 +47,7 @@ y = 100
 startup_mode = "Maximized"
 
 dynamic_padding = true
-opacity = 0.75
+# opacity = 0.75
 decorations = "None"
 
 [window.padding]
