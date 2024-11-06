@@ -115,7 +115,7 @@ return {
         ["ts_ls"] = function()
           lspconfig.ts_ls.setup({
             capabilities = capabilities,
-            root_dir = lspconfig.util.root_pattern("package.json"),
+            root_dir = lspconfig.util.root_pattern(".git"),
             single_file_support = false
           })
         end,
