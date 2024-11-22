@@ -30,7 +30,7 @@ return {
     priority = 1000,
     config = function()
       require("tokyonight").setup({
-        style = "storm",
+        style = "night",
         transparent = true,
         terminal_colors = true,
         hide_inactive_statusline = true,

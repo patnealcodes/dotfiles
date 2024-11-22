@@ -1,4 +1,4 @@
-import = ["~/codes/GitHub/dotfiles/alacritty/themes/tokyonight_storm.toml"]
+import = ["~/codes/GitHub/dotfiles/alacritty/themes/tokyonight_night.toml"]
 
 [env]
 TERM = "xterm-256color"
