@@ -15,6 +15,7 @@ return {
 
     "williamboman/mason.nvim",
     "williamboman/mason-lspconfig.nvim",
+    "sigmasd/deno-nvim"
   },
   config = function()
     local lspconfig = require("lspconfig")
@@ -122,9 +123,31 @@ return {
         end,
 
         ["denols"] = function()
+          vim.g.markdown_fenced_languages = {
+            "ts=typescript"
+          }
           lspconfig.denols.setup({
+            init_options = {
+              lint = true,
+              unstable = true,
+            },
             capabilities = capabilities,
-            root_dir = lspconfig.util.root_pattern("deno.json", "deno.jsonc")
+            root_dir = lspconfig.util.root_pattern("deno.json", "deno.jsonc"),
+            settings = {
+              deno = {
+                enable = true,
+                suggest = {
+                  imports = {
+                    hosts = {
+                      ["https://crux.land"] = true,
+                      ["https://deno.land"] = true,
+                      ["https://x.nest.land"] = true,
+                      ["https://jsr.io"] = true
+                    }
+                  }
+                }
+              }
+            }
           })
         end
       }
