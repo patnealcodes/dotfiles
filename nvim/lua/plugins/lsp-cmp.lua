@@ -77,6 +77,10 @@ return {
       cmp_lsp.default_capabilities()
     )
 
+    local denoRootDir = function(filename)
+      return lspconfig.util.root_pattern("deno.json", "deno.jsonc")(filename)
+    end
+
     require("fidget").setup({})
     require("mason").setup()
     require("mason-lspconfig").setup({
@@ -117,7 +121,13 @@ return {
         ["ts_ls"] = function()
           lspconfig.ts_ls.setup({
             capabilities = capabilities,
-            root_dir = lspconfig.util.root_pattern(".git"),
+            root_dir = function(filename)
+              if denoRootDir(filename) then
+                return nil
+              else
+                return lspconfig.util.root_pattern("package.json", "tsconfig.json")(filename)
+              end
+            end,
             single_file_support = false
           })
         end,
@@ -132,7 +142,9 @@ return {
               unstable = true,
             },
             capabilities = capabilities,
-            root_dir = lspconfig.util.root_pattern("deno.json", "deno.jsonc"),
+            root_dir = function(filename)
+              return denoRootDir(filename)
+            end,
             settings = {
               deno = {
                 enable = true,

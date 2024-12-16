@@ -122,6 +122,7 @@ addToPath /usr/local/go/bin
 addToPath /opt/nvim-linux64/bin
 addToPath /Users/nealp/go/bin
 addToPath /Users/nealp/.local/bin
+addToPath /Users/patnealcodes/.local/bin
 addToPath /Users/nealp/.deno/bin
 addToPath /bin
 

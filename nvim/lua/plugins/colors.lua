@@ -25,16 +25,20 @@ local override_groups = {
 }
 
 return {
-  "rose-pine/neovim",
-  name = "rose-pine",
+  "EdenEast/nightfox.nvim",
   lazy = false,
   priority = 1000,
   config = function()
-    require("rose-pine").setup({
-      transparent = true,
-      highlight_groups = override_groups
+    require('nightfox').setup({
+      options = {
+        transparent = true,
+        terminal_colors = true,
+        dim_inactive = true,
+      },
+      groups = {
+        all = override_groups
+      },
     })
-    vim.cmd("colorscheme rose-pine")
+    vim.cmd("colorscheme nightfox")
   end
-
 }
