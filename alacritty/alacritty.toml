@@ -1,6 +1,10 @@
+import = ["~/codes/GitHub/dotfiles/alacritty/themes/nightfox.toml"]
 
 [env]
 TERM = "xterm-256color"
+
+[colors.primary]
+background = "#181818"
 
 [colors.cursor]
 cursor = "CellForeground"
@@ -41,13 +45,9 @@ y = 100
 
 [window]
 startup_mode = "Maximized"
-
 decorations = "None"
 
 [[keyboard.bindings]]
 key = "V"
 mods = "Super"
 action = "Paste"
-
-[general]
-import = ["~/codes/GitHub/dotfiles/alacritty/themes/nightfox.toml"]
