@@ -128,9 +128,7 @@ return {
                 return lspconfig.util.root_pattern("package.json", "tsconfig.json")(filename)
               end
             end,
-            single_file_support = function(filename)
-              denoRootDir(filename)
-            end
+            single_file_support = false
           })
         end,
 
