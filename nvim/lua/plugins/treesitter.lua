@@ -5,6 +5,7 @@ return {
       ensure_installed = {
         "c",
         "css",
+        "html",
         "javascript",
         "lua",
         "python",
