@@ -2,13 +2,6 @@ local create_augroup = vim.api.nvim_create_augroup
 local create_autocmd = vim.api.nvim_create_autocmd
 local group = create_augroup("puorgua", {})
 
-create_autocmd("BufWritePre", {
-  group = group,
-  callback = function()
-    vim.lsp.buf.format()
-  end,
-})
-
 create_autocmd("FileType", {
   group = group,
   pattern = "TelescopeResults",
@@ -22,8 +15,22 @@ create_autocmd("FileType", {
 
 create_autocmd("LspAttach", {
   group = group,
-  callback = function(e)
-    local opts = { buffer = e.buf }
+  callback = function(args)
+    local client = vim.lsp.get_client_by_id(args.data.client_id)
+    local opts = { buffer = args.buf }
+
+    if not client then return end
+
+    if client.supports_method('textDocumetn/formatting') then
+      create_autocmd("BufWritePre", {
+        group = group,
+        buffer = args.buf,
+        callback = function()
+          vim.lsp.buf.format({ bufnr = args.buf, id = client.id })
+        end,
+      })
+    end
+
     vim.keymap.set("n", "gd", function() vim.lsp.buf.definition() end, opts)
     vim.keymap.set("n", "K", function() vim.lsp.buf.hover() end, opts)
     vim.keymap.set("n", "<leader>ws", function() vim.lsp.buf.workspace_symbol() end, opts)
