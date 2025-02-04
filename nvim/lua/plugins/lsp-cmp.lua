@@ -15,7 +15,6 @@ return {
 
     "williamboman/mason.nvim",
     "williamboman/mason-lspconfig.nvim",
-    "sigmasd/deno-nvim"
   },
   config = function()
     local lspconfig = require("lspconfig")
@@ -77,16 +76,11 @@ return {
       cmp_lsp.default_capabilities()
     )
 
-    local denoRootDir = function(filename)
-      return lspconfig.util.root_pattern("deno.json", "deno.jsonc")(filename)
-    end
-
     require("fidget").setup({})
     require("mason").setup()
     require("mason-lspconfig").setup({
       ensure_installed = {
         "cssls",
-        "denols",
         "lua_ls",
         "pyright",
         "rust_analyzer",
@@ -121,47 +115,9 @@ return {
         ["ts_ls"] = function()
           lspconfig.ts_ls.setup({
             capabilities = capabilities,
-            root_dir = function(filename)
-              if denoRootDir(filename) then
-                return nil
-              else
-                return lspconfig.util.root_pattern("package.json", "tsconfig.json")(filename)
-              end
-            end,
-            single_file_support = false
+            single_file_support = true
           })
         end,
-
-        ["denols"] = function()
-          vim.g.markdown_fenced_languages = {
-            "ts=typescript"
-          }
-          lspconfig.denols.setup({
-            init_options = {
-              lint = true,
-              unstable = true,
-            },
-            capabilities = capabilities,
-            root_dir = function(filename)
-              return denoRootDir(filename)
-            end,
-            settings = {
-              deno = {
-                enable = true,
-                suggest = {
-                  imports = {
-                    hosts = {
-                      ["https://crux.land"] = true,
-                      ["https://deno.land"] = true,
-                      ["https://x.nest.land"] = true,
-                      ["https://jsr.io"] = true
-                    }
-                  }
-                }
-              }
-            }
-          })
-        end
       }
     })
 
