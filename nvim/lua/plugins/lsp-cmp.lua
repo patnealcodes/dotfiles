@@ -81,6 +81,7 @@ return {
     require("mason-lspconfig").setup({
       ensure_installed = {
         "cssls",
+        "gopls",
         "lua_ls",
         "pyright",
         "rust_analyzer",
@@ -109,13 +110,6 @@ return {
                 }
               }
             }
-          })
-        end,
-
-        ["ts_ls"] = function()
-          lspconfig.ts_ls.setup({
-            capabilities = capabilities,
-            single_file_support = true
           })
         end,
       }

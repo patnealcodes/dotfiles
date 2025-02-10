@@ -1,9 +1,16 @@
 {
+  "assistant": {
+    "default_model": {
+      "provider": "zed.dev",
+      "model": "claude-3-5-sonnet-latest"
+    },
+    "version": "2"
+  },
   "enable_preview_from_file_finder": true,
   "enable_preview_from_code_navigation": true,
   "show_inline_completions": false,
   "indent_guides": {
-    "enabled": false
+    "enabled": true
   },
   "current_line_highlight": "none",
   "preview_tabs": {
@@ -12,26 +19,15 @@
   "git": {
     "inline_blame": {
       "enabled": true
-      // "min_column": 80
     }
   },
-  "assistant": {
-    "default_model": {
-      "provider": "zed.dev",
-      "model": "claude-3-5-sonnet-20240620"
-    },
-    "version": "2"
-  },
-  // "relative_line_numbers": true,
+  "relative_line_numbers": true,
   "always_treat_brackets_as_autoclosed": false,
   "show_copilot_suggestions": true,
   "features": {
     "copilot": false
   },
   "languages": {
-    "Scala": {
-      "language_servers": ["tailwindcss-language-server"]
-    },
     "Markdown": {
       "preferred_line_length": 80
     },
@@ -80,9 +76,8 @@
     }
   },
   "project_panel": {
-    "dock": "right"
+    "dock": "left"
   },
-  // "soft_wrap": "preferred_line_length",
   "soft_wrap": "none",
   "vim_mode": true,
   "cursor_blink": true,
@@ -90,7 +85,7 @@
     "show": "never"
   },
   "base_keymap": "VSCode",
-  "theme": "Kanagawa Wave",
+  "theme": "Nightfox",
   "ui_font_size": 14,
   "ui_font_weight": 100,
   "ui_font_family": "FiraCode Nerd Font",
@@ -130,14 +125,6 @@
     "show": false
   },
   "lsp": {
-    "eslint": {
-      // "settings": {
-      // "workingDirectories": ["./"],
-      // "codeActionOnSave": {
-      // "rules": ["import/order"]
-      // }
-      // }
-    },
     "rust-analyzer": {
       "initialization_options": {
         "checkOnSave": true,
@@ -147,13 +134,8 @@
       }
     },
     "gopls": {
-      // "binary": {
-      //   "path": "/Users/thorstenball/bin/gopls",
-      //   "arguments": ["-debug=0.0.0.0:9090"]
-      // },
       "initialization_options": {
         "usePlaceholders": true,
-        "buildFlags": ["-tags=debug"],
         "completeUnimported": true,
         "experimentalPostfixCompletions": true,
         "hints": {
@@ -165,36 +147,6 @@
           "parameterNames": true,
           "rangeVariableTypes": true
         }
-      }
-    },
-    "tailwindcss-language-server": {
-      "binary": {
-        // "path": "/Users/thorstenball/bin/gopls",
-        "arguments": [
-          "/Users/thorstenball/code/clones/tailwindcss-intellisense/packages/tailwindcss-language-server/bin/tailwindcss-language-server",
-          "--stdio"
-        ]
-      },
-      "settings": {
-        // "includeLanguages": {
-        //   "erb": "html",
-        //   "ruby": "html"
-        // },
-        // "experimental": {
-        //   "classRegex": ["\\bclass:\\s*['\"]([^'\"]*)['\"]"]
-        // }
-        "includeLanguages": {
-          "scala": "html"
-        },
-        "experimental": {
-          "classRegex": ["[cls|className]\\s\\:\\=\\s\"([^\"]*)"]
-        }
-      }
-    },
-    "solargraph": {
-      "initialization_options": {
-        "diagnostics": true,
-        "formatting": false
       }
     }
   }
