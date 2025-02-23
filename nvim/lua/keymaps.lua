@@ -21,6 +21,15 @@ key("n", "<leader>rp", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
 
 -- LSP
 key("n", "<leader>f", vim.lsp.buf.format, { desc = "Format via LSP" })
+key("n", "gd", function() vim.lsp.buf.definition() end, { desc = "Go to definition" })
+key("n", "K", function() vim.lsp.buf.hover() end, { desc = "Hover info" })
+key("n", "<leader>ws", function() vim.lsp.buf.workspace_symbol() end, { desc = "Workspace Symbols" })
+key("n", "<leader>vd", function() vim.diagnostic.open_float() end, { desc = "Open floating diagnostics" })
+key("n", "<leader>ca", function() vim.lsp.buf.code_action() end, { desc = "Code actions" })
+key("n", "<leader>rn", function() vim.lsp.buf.rename() end, { desc = "Rename" })
+key("i", "<C-h>", function() vim.lsp.buf.signature_help() end, { desc = "Signature help" })
+key("n", "]d", function() vim.diagnostic.goto_next() end, { desc = "Go to previous dignostic issue" })
+key("n", "[d", function() vim.diagnostic.goto_prev() end, { desc = "Go to next dignostic issue" })
 
 -- Persistence
 vim.keymap.set("n", "<leader>=-", [[:lua require("persistence").load() <cr>]], { desc = "Load last session" })
