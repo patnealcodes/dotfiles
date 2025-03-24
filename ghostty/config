@@ -1,5 +1,4 @@
-background = 151b23
-background-opacity = 0.95
+background-opacity = 0.9
 cursor-invert-fg-bg = true
 cursor-opacity = 0.8
 cursor-style = block
