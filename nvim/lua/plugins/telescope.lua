@@ -107,6 +107,10 @@ return {
     key("n", "<leader>sqf", builtin.quickfix, { desc = "[S]earch [q]uick[f]ix" })
     key("n", "<leader>sqh", builtin.quickfixhistory, { desc = "[S]earch [q]uickfix [h]istory" })
     key("n", "<leader>sg", builtin.live_grep, { desc = "[S]earch live [g]rep" })
+    key("n", "<leader>sag", function()
+        builtin.live_grep({ hidden = true, no_ignore = true })
+      end,
+      { desc = "[S]earch [a]ll live [g]rep" })
     key('n', '<leader>smg', live_multigrep, { desc = "[S]earch [m]ulti [g]rep" })
     key('n', '<leader>sw', function()
       builtin.grep_string({ search = vim.fn.expand("<cword>") })

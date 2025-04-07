@@ -25,12 +25,16 @@ vim.opt.undofile = true
 vim.opt.updatetime = 50
 vim.opt.wrap = false
 
-vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, {
-  source = "always",
-  border = "rounded",
-  header = "",
-  prefix = "",
-})
+local hover = vim.lsp.buf.hover
+---@diagnostic disable-next-line: duplicate-set-field
+vim.lsp.buf.hover = function()
+  return hover({
+    border = "rounded",
+    source = "always",
+    header = "",
+    prefix = "",
+  })
+end
 
 vim.diagnostic.config {
   float = { border = "rounded" },

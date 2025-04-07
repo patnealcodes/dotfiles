@@ -19,6 +19,9 @@ local override_groups = {
   NvimTreeNormalNC = { bg = "none" },
   LineNr = { bg = "none" },
   -- NvimTreeCursorLine = { bg = "#363646" },
+  TreesitterContext = { bg = "#3c404f" },
+  TreesitterContextBottom = { gui = "underline" },
+  TreesitterContextLineNumberBottom = { gui = "underline" },
   SignColumn = { bg = "none" },
   GitBlameInline = { fg = "#3c404f", bg = "none" },
   CursorLine = { bg = "none" }
