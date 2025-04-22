@@ -40,23 +40,23 @@ return {
       require("harpoon"):list():add()
     end, { desc = "Add buffer to harpoon list" })
 
-    keymap.set("n", "<leader>^", function()
+    keymap.set("n", "<leader>1", function()
       require("harpoon"):list():select(1)
     end, { desc = "Jump to harpoon buffer 1" })
 
-    keymap.set("n", "<leader>{", function()
+    keymap.set("n", "<leader>2", function()
       require("harpoon"):list():select(2)
     end, { desc = "Jump to harpoon buffer 2" })
 
-    keymap.set("n", "<leader>[", function()
+    keymap.set("n", "<leader>3", function()
       require("harpoon"):list():select(3)
     end, { desc = "Jump to harpoon buffer 3" })
 
-    keymap.set("n", "<leader>(", function()
+    keymap.set("n", "<leader>4", function()
       require("harpoon"):list():select(4)
     end, { desc = "Jump to harpoon buffer 4" })
 
-    keymap.set("n", "<leader><", function()
+    keymap.set("n", "<leader>5", function()
       require("harpoon"):list():select(5)
     end, { desc = "Jump to harpoon buffer 5" })
   end,
