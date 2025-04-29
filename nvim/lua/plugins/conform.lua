@@ -9,6 +9,7 @@ return {
       yaml = { "prettierd" },
       markdown = { "prettierd" },
       html = { "prettierd" },
+      python = { "ruff" },
     },
     format_on_save = {
       timeout_ms = 500,

@@ -12,6 +12,7 @@ return {
         ensure_installed = {
           "pyright",
           "lua_ls",
+          "ruff",
           "ts_ls",
         },
       })
