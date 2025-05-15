@@ -1,8 +1,3 @@
-local update_hl_values = function(hl_group, hl_values)
-  local current_values = vim.api.nvim_get_hl(0, { name = hl_group })
-  vim.api.nvim_set_hl(0, hl_group, vim.tbl_extend("force", current_values, hl_values))
-end
-
 local override_groups = {
   Normal = { bg = "none" },
   NormalNC = { bg = "none" },
@@ -20,28 +15,25 @@ local override_groups = {
   LineNr = { bg = "none" },
   -- NvimTreeCursorLine = { bg = "#363646" },
   TreesitterContext = { bg = "#3c404f" },
-  TreesitterContextBottom = { gui = "underline" },
-  TreesitterContextLineNumberBottom = { gui = "underline" },
+  -- TreesitterContextBottom = { gui = "underline" },
+  -- TreesitterContextLineNumberBottom = { gui = "underline" }
   SignColumn = { bg = "none" },
   GitBlameInline = { fg = "#3c404f", bg = "none" },
   CursorLine = { bg = "none" }
 }
 
 return {
-  "EdenEast/nightfox.nvim",
-  lazy = false,
-  priority = 1000,
+  "rose-pine/neovim",
+  name = "rose-pine",
   config = function()
-    require('nightfox').setup({
-      options = {
-        transparent = true,
-        terminal_colors = true,
-        dim_inactive = true,
+    require('rose-pine').setup({
+      disable_background = true,
+      styles = {
+        italic = false,
       },
-      groups = {
-        all = override_groups
-      },
+      highlight_groups = override_groups
     })
-    vim.cmd("colorscheme nightfox")
+
+    vim.cmd.colorscheme("rose-pine-moon")
   end
 }

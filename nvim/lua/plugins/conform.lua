@@ -3,8 +3,8 @@ return {
   opts = {
     formatters_by_ft = {
       lua = { "stylua" },
-      javascript = { "prettierd" },
-      typescript = { "prettierd" },
+      javascript = { "prettierd", "eslint-lsp" },
+      typescript = { "prettierd", "eslint-lsp" },
       json = { "prettierd" },
       yaml = { "prettierd" },
       markdown = { "prettierd" },
