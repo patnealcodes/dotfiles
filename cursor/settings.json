@@ -1,0 +1,30 @@
+{
+    "window.commandCenter": true,
+    "workbench.colorTheme": "Rosé Pine (no italics)",
+    // "editor.fontFamily": "'Fira Code Nerd Font'",
+    // "terminal.integrated.fontFamily": "monospace",
+    // "custom-ui-style.font.monospace": "Fira Code Nerd Font",
+    // "custom-ui-style.font.sansSerif": "Fira Code Nerd Font",
+    // "editor.codeLensFontFamily": "Fira Code Nerd Font",
+    // "editor.inlayHints.fontFamily": "Fira Code Nerd Font",
+    // "editor.inlineSuggest.fontFamily": "Fira Code Nerd Font",
+    // "debug.console.fontFamily": "Fira Code Nerd Font",
+    // "scm.inputFontFamily": "Fira Code Nerd Font",
+    // "notebook.output.fontFamily": "Fira Code Nerd Font",
+    // "gitlens.blame.fontFamily": "Fira Code Nerd Font",
+    "editor.fontSize": 13,
+    "terminal.integrated.fontSize": 13,
+    "custom-ui-style.electron": {
+        "transparent": true,
+        "opacity": 0.95,
+        "frame": false,
+        "vibrancy": "ultra-dark",
+        "visualEffectState": "active"
+    },
+    "workbench.activityBar.location": "hidden",
+    "editor.fontWeight": 100,
+    "extensions.experimental.affinity": {
+        "asvetliakov.vscode-neovim": 1
+    },
+    
+}
