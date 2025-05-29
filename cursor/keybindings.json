@@ -38,4 +38,12 @@
         "command": "insertSnippet",
         "when": "editorTextFocus && hasSnippetCompletions && !editorTabMovesFocus && !inSnippetMode"
     },
+    {
+        "key": "ctrl+shift+l",
+        "command": "settings.cycle.relativeLineNumbers"
+    },
+    {
+        "key": "ctrl+shift+t",
+        "command": "settings.cycle.tabBar"
+    }
 ]
