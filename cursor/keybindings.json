@@ -8,4 +8,34 @@
         "key": "cmd+down",
         "command": "workbench.action.toggleMaximizedPanel",
     },
+    {
+        "key": "] d",
+        "command": "editor.action.marker.nextInFiles",
+        "when": "editorFocus  && neovim.mode != 'insert'"
+    },
+    {
+        "key": "[ d",
+        "command": "editor.action.marker.prevInFiles",
+        "when": "editorFocus  && neovim.mode != 'insert'"
+    },
+    {
+        "key": "space r n",
+        "command": "editor.action.rename",
+        "when": "editorHasRenameProvider && editorTextFocus && !editorReadonly && neovim.mode != 'insert'"
+    },
+    {
+        "key": "ctrl+y",
+        "command": "acceptSelectedCodeAction",
+        "when": "codeActionMenuVisible"
+    },
+    {
+        "key": "ctrl+y",
+        "command": "acceptSelectedSuggestion",
+        "when": "suggestionCanResolve"
+    },
+    {
+        "key": "ctrl+y",
+        "command": "insertSnippet",
+        "when": "editorTextFocus && hasSnippetCompletions && !editorTabMovesFocus && !inSnippetMode"
+    },
 ]
