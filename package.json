@@ -1,0 +1,14 @@
+{
+  "name": "dotfiles",
+  "private": true,
+  "scripts": {
+    "setup": "bun run dotfiler.ts setup --dir ./files",
+    "remove": "bun run dotfiler.ts remove --dir ./files",
+  },
+  "devDependencies": {
+    "@types/bun": "latest"
+  },
+  "peerDependencies": {
+    "typescript": "^5"
+  }
+}
