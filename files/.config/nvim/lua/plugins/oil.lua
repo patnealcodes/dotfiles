@@ -1,8 +1,9 @@
 return {
   "stevearc/oil.nvim",
-  dependencies = {},
+  dependencies = { { "echasnovski/mini.icons", opts = {} } },
   config = function()
-    require("oil").setup({
+    local oil = require("oil")
+    oil.setup({
       columns = {
         "permissions",
         { "size",  highlight = "OilCopy" },
@@ -12,6 +13,9 @@ return {
       constrain_cursor = "name",
       default_file_explorer = true,
       delete_to_trash = false,
+      float = {
+        preview_split = "below"
+      },
       keymaps = {
         ["<Esc>"] = "actions.close"
       },
@@ -24,6 +28,10 @@ return {
       },
     })
 
-    vim.keymap.set("n", "-", "<cmd>Oil --float<cr>", { desc = "Open Oil in float mode" })
+    vim.keymap.set("n", "-", function()
+      oil.open_float(nil, nil, function()
+        oil.open_preview({ horizontal = true })
+      end)
+    end, { desc = "Open Oil in float mode with delayed horizontal preview" })
   end
 }
