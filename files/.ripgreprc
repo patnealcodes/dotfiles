@@ -5,7 +5,31 @@
 --colors=line:style:bold
 --smart-case
 
---glob
-!.git/*
-!node_modules/*
-!package-lock.json
+# Exclude common build/dependency directories and files
+--glob=!.git/*
+--glob=!node_modules/*
+--glob=!dist/*
+--glob=!build/*
+--glob=!target/*
+--glob=!.next/*
+--glob=!.nuxt/*
+--glob=!.cache/*
+--glob=!coverage/*
+--glob=!*.min.js
+--glob=!*.min.css
+--glob=!package-lock.json
+--glob=!yarn.lock
+--glob=!pnpm-lock.yaml
+--glob=!Cargo.lock
+--glob=!*.log
+--glob=!.DS_Store
+--glob=!*.pyc
+--glob=!__pycache__/*
+--glob=!*.o
+--glob=!*.so
+--glob=!*.dylib
+--glob=!*.class
+--glob=!*.jar
+--glob=!*.war
+--glob=!*.zip
+--glob=!*.tar.gz
