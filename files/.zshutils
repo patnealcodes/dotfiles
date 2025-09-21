@@ -1,5 +1,5 @@
 #----- MISE
-eval "$(~/.local/bin/mise activate zsh)"
+eval "$(/opt/homebrew/bin/mise activate zsh)"
 
 # #----- ZINIT
 # # Main Setup
@@ -84,6 +84,8 @@ alias gho="v ~/codes/GitHub/dotfiles/files/ghostty/config"
 alias wez="v ~/codes/GitHub/dotfiles/files/wezterm/wezterm.lua"
 alias vd="~/codes/GitHub/dotfiles/files/nvim && v"
 alias tx="v ~/codes/GitHub/dotfiles/files/.tmux.conf"
+alias gflash="gemini --model=gemini-flash"
+alias gpro="gemini --model=gemini-pro"
 
 # Folder Shortcuts
 alias repos="~/codes/repos"
@@ -103,7 +105,7 @@ alias pip="pip3.13"
 alias python="python3.13"
 
 # Utility Functions
-alias l="exa -lha --no-user"
+alias l="eza -lha --no-user"
 alias lg="lazygit"
 alias gconfig="git config --global"
 function mkcd() { mkdir "$@" && cd "$@"; }
