@@ -14,7 +14,10 @@ return {
         layout_strategy = "vertical",
         file_ignore_patterns = {
           "node_modules/.*",
+          "*/node_modules/.*",
           "%.git/.*",
+          ".angular/",
+          "*/.angular/",
           "dist/.*",
           "build/.*",
           "target/.*",
@@ -60,7 +63,7 @@ return {
     key('n', '<leader>sf', builtin.find_files, { desc = "[S]earch [f]iles" })
     key('n', '<leader>saf', function()
         builtin.find_files({
-          hidden = true,
+          -- hidden = true,
           no_ignore = true,
           file_ignore_patterns = {}
         })
