@@ -1,116 +1,32 @@
 [
   {
-    "context": "Editor || Workspace",
+    "context": "Editor && vim_mode == visual && !VimWaiting && !VimObject",
     "bindings": {
-      "ctrl-shift-e": "workspace::ToggleLeftDock",
-      "ctrl-x": "pane::CloseActiveItem",
-      "*": ["buffer_search::Deploy", { "focus": false }]
+      "space p": ["vim::Paste", { "preserve_clipboard": true }]
     }
   },
   {
-    "context": "EmptyPane || SharedScreen || vim_operator == none && !VimWaiting && vim_mode != insert",
+    "context": "((VimControl && !menu) || !Editor)",
     "bindings": {
-      "space space": "tab_switcher::Toggle",
-      "space s f": "file_finder::Toggle",
-      "space s g": "pane::DeploySearch",
-      "space = -": "projects::OpenRecent"
+      "ctrl-a h": "workspace::ActivatePaneLeft"
     }
   },
   {
-    "context": "Workspace || Pane || Editor || Terminal",
+    "context": "((VimControl && !menu) || !Editor)",
     "bindings": {
-      "cmd-e": "project_panel::ToggleFocus",
-      "cmd-t": "terminal_panel::ToggleFocus",
-      "cmd-left": "workspace::ToggleLeftDock",
-      "cmd-right": "workspace::ToggleRightDock",
-      "cmd-down": "workspace::ToggleBottomDock"
+      "ctrl-a j": "workspace::ActivatePaneDown"
     }
   },
   {
-    "context": "Editor && VimControl && !VimWaiting && !menu",
+    "context": "((VimControl && !menu) || !Editor)",
     "bindings": {
-      "ctrl-a z": "workspace::ToggleZoom",
-      "ctrl-w t": "terminal_panel::ToggleFocus",
-      "ctrl-h": ["workspace::ActivatePaneInDirection", "Left"],
-      "ctrl-l": ["workspace::ActivatePaneInDirection", "Right"],
-      "ctrl-k": ["workspace::ActivatePaneInDirection", "Up"],
-      "ctrl-j": ["workspace::ActivatePaneInDirection", "Down"],
-      "cmd-shift-k": "editor::DeleteLine",
-      // "1 g shift-d": "editor::GoToImplementation",
-      "space d": "diagnostics::Deploy",
-      "] d": "editor::GoToDiagnostic",
-      "[ d": "editor::GoToPrevDiagnostic",
-      "space g r": "editor::FindAllReferences",
-      "shift-k": "editor::Hover",
-      "space c a": "editor::ToggleCodeActions",
-      "space r n": "editor::Rename",
-      "[ x": "editor::SelectLargerSyntaxNode",
-      "] x": "editor::SelectSmallerSyntaxNode",
-      // "space w": "workspace::Save",
-      "j": [
-        "vim::Down",
-        {
-          "displayLines": true
-        }
-      ],
-      "k": [
-        "vim::Up",
-        {
-          "displayLines": true
-        }
-      ],
-      "space g b": "editor::ToggleGitBlame"
+      "ctrl-a k": "workspace::ActivatePaneUp"
     }
   },
   {
-    "context": "Editor && vim_mode == normal && !VimWaiting && !VimCount",
+    "context": "((VimControl && !menu) || !Editor)",
     "bindings": {
-      "0": [
-        "vim::StartOfLine",
-        {
-          "displayLines": true
-        }
-      ],
-      "$": [
-        "vim::EndOfLine",
-        {
-          "displayLines": true
-        }
-      ]
-    }
-  },
-  {
-    "context": "Editor && vim_mode == normal",
-    "bindings": {
-      "g c c": "editor::ToggleComments"
-    }
-  },
-  {
-    "context": "Editor && vim_mode == visual",
-    "bindings": {
-      "g c": "editor::ToggleComments"
-    }
-  },
-  {
-    "context": "Terminal",
-    "bindings": {
-      "ctrl-b z": "workspace::ToggleZoom",
-      "ctrl-u": "terminal::Clear"
-    }
-  },
-  {
-    "context": "Dock",
-    "bindings": {
-      "ctrl-h": ["workspace::ActivatePaneInDirection", "Left"],
-      "ctrl-l": ["workspace::ActivatePaneInDirection", "Right"],
-      "ctrl-k": ["workspace::ActivatePaneInDirection", "Up"],
-      "ctrl-j": ["workspace::ActivatePaneInDirection", "Down"]
-    }
-  },
-  {
-    "context": "TabSwitcher",
-    "bindings": {
-      "x": "tab_switcher::CloseSelectedItem"
+      "ctrl-a l": "workspace::ActivatePaneRight"
     }
   }
 ]
