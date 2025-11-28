@@ -28,5 +28,26 @@
     "bindings": {
       "ctrl-a l": "workspace::ActivatePaneRight"
     }
+  },
+  {
+    "bindings": {
+      "cmd-;": "editor::ToggleRelativeLineNumbers"
+    }
+  },
+  {
+    "bindings": {
+      "": "editor::ToggleRelativeLineNumbers"
+    }
+  },
+  {
+    "bindings": {
+      "ctrl-a space": "tab_switcher::ToggleAll"
+    }
+  },
+  {
+    "context": "Workspace",
+    "bindings": {
+      "cmd-shift-t": "editor::ToggleTabBar"
+    }
   }
 ]
