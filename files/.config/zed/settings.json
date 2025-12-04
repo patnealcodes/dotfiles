@@ -1,7 +1,4 @@
 {
-  "active_pane_modifiers": {
-    "inactive_opacity": 0.5
-  },
   "agent": {
     "button": false,
     "default_model": {
@@ -11,18 +8,10 @@
     "default_profile": "ask",
     "model_parameters": []
   },
-  "agent_ui_font_size": 14.0,
-  "buffer_font_family": "FiraCode Nerd Font Mono",
-  "buffer_font_size": 14.0,
-  "buffer_font_weight": 500.0,
   "inline_code_actions": false,
-  "collaboration_panel": {
-    "button": false
-  },
+  "collaboration_panel": { "button": false },
   "current_line_highlight": "gutter",
-  "debugger": {
-    "button": false
-  },
+  "debugger": { "button": false },
   "theme_overrides": {
     "Rosé Pine": {
       "background": "#191725DA",
@@ -34,54 +23,27 @@
       "terminal.background": "#00000000",
       "toolbar.background": "#00000000",
       "panel.background": "#00000000",
+      "panel.overlay_background": "#262433",
+      // "panel.overlay_hover": "#262433",
       "status_bar.background": "#191725DA",
       "border": "#6D6B8630"
     }
   },
-  "git": {
-    "git_gutter": "hide"
-  },
+  "git": { "git_gutter": "hide" },
   "git_panel": {
     "button": false,
     "status_style": null
   },
-  "gutter": {
-    "folds": true
-  },
-  "icon_theme": "Material Icon Theme",
-  "indent_guides": {
-    "enabled": false
-  },
-  "notification_panel": {
-    "button": false
-  },
-  "outline_panel": {
-    "button": false
-  },
-  "project_panel": {
-    "button": false
-  },
-  "scrollbar": {
-    "show": "never"
-  },
-  "search": {
-    "button": false
-  },
+  "notification_panel": { "button": false },
+  "outline_panel": { "button": false },
+  "project_panel": { "button": false },
+  "scrollbar": { "show": "never" },
+  "search": { "button": false },
   "tab_bar": {
-    "show": true,
     "show_nav_history_buttons": false,
     "show_tab_bar_buttons": false
   },
   "theme": "Rosé Pine",
-  "title_bar": {
-    "show_onboarding_banner": false,
-    "show_user_picture": false
-  },
-  "toolbar": {
-    "quick_actions": false
-  },
-  "ui_font_family": "FiraCode Nerd Font Mono",
-  "ui_font_size": 14.0,
-  "ui_font_weight": 400.0,
+  "toolbar": { "quick_actions": false },
   "vim_mode": true
 }
