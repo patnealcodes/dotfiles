@@ -5,11 +5,11 @@ local override_groups = {
   FloatBorder = { bg = "none" },
   WinBar = { bg = "none" },
   NormalFloat = { bg = "none" },
-  TelescopeNormal = { bg = "none" },
-  TelescopeBorder = { bg = "none" },
-  TelescopeTitle = { link = "Character" },
-  TelescopePromptBorder = { bg = "none" },
-  TelescopePromptTitle = { link = "Character" },
+  -- TelescopeNormal = { bg = "none" },
+  -- TelescopeBorder = { bg = "none" },
+  -- TelescopeTitle = { link = "Character" },
+  -- TelescopePromptBorder = { bg = "none" },
+  -- TelescopePromptTitle = { link = "Character" },
   NvimTreeNormal = { bg = "none" },
   NvimTreeNormalNC = { bg = "none" },
   LineNr = { bg = "none" },
@@ -19,21 +19,21 @@ local override_groups = {
   -- TreesitterContextLineNumberBottom = { gui = "underline" }
   SignColumn = { bg = "none" },
   GitBlameInline = { fg = "#3c404f", bg = "none" },
-  CursorLine = { bg = "none" }
+  CursorLine = { bg = "none" },
 }
 
 return {
   "rose-pine/neovim",
   name = "rose-pine",
   config = function()
-    require('rose-pine').setup({
+    require("rose-pine").setup {
       disable_background = true,
       styles = {
         italic = false,
       },
-      highlight_groups = override_groups
-    })
+      highlight_groups = override_groups,
+    }
 
-    vim.cmd.colorscheme("rose-pine-moon")
-  end
+    vim.cmd.colorscheme "rose-pine-moon"
+  end,
 }

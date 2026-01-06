@@ -1,21 +1,31 @@
 {
+  "icon_theme": "Zed (Default)",
+  "ui_font_size": 15.0,
+  "ui_font_family": "FiraCode Nerd Font Mono",
+  "buffer_font_family": "FiraCode Nerd Font Mono",
+  "formatter": "language_server",
   "agent": {
-    "button": false,
     "default_model": {
-      "model": "gemini-3-pro-preview",
-      "provider": "zed.dev"
+      "provider": "anthropic",
+      "model": "claude-sonnet-4-5-latest",
     },
-    "default_profile": "ask",
-    "model_parameters": []
+    "play_sound_when_agent_done": true,
+    "model_parameters": [],
   },
+  "edit_predictions": {
+    "mode": "subtle",
+  },
+  "agent_buffer_font_size": 14.0,
+  "buffer_line_height": "standard",
   "inline_code_actions": false,
-  "collaboration_panel": { "button": false },
+  "collaboration_panel": {
+    "button": false
+  },
   "current_line_highlight": "gutter",
-  "debugger": { "button": false },
   "theme_overrides": {
     "Rosé Pine": {
-      "background": "#191725DA",
-      "background.appearance": "blurred",
+      "background": "#191725F3",
+      "background.appearance": "transparent",
       "editor.gutter.background": "#00000000",
       "editor.background": "#00000000",
       "tab_bar.background": "#00000000",
@@ -24,26 +34,43 @@
       "toolbar.background": "#00000000",
       "panel.background": "#00000000",
       "panel.overlay_background": "#262433",
-      // "panel.overlay_hover": "#262433",
       "status_bar.background": "#191725DA",
-      "border": "#6D6B8630"
-    }
+      "border": "#6D6B8630",
+    },
   },
-  "git": { "git_gutter": "hide" },
+  "git": {
+    "git_gutter": "hide"
+  },
   "git_panel": {
     "button": false,
-    "status_style": null
+    "status_style": null,
   },
-  "notification_panel": { "button": false },
-  "outline_panel": { "button": false },
-  "project_panel": { "button": false },
-  "scrollbar": { "show": "never" },
-  "search": { "button": false },
+  "notification_panel": {
+    "button": false
+  },
+  "outline_panel": {
+    "button": false
+  },
+  "project_panel": {
+    "button": false
+  },
+  "indent_guides": {
+    "enabled": false,
+  },
+  "scrollbar": {
+    "show": "never"
+  },
+  "search": {
+    "button": false
+  },
   "tab_bar": {
+    "show": true,
     "show_nav_history_buttons": false,
-    "show_tab_bar_buttons": false
+    "show_tab_bar_buttons": false,
   },
   "theme": "Rosé Pine",
-  "toolbar": { "quick_actions": false },
-  "vim_mode": true
+  "toolbar": {
+    "quick_actions": false
+  },
+  "vim_mode": true,
 }

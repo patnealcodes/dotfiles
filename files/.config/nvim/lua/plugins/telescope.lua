@@ -1,95 +1,52 @@
 return {
-  "nvim-telescope/telescope.nvim",
-
-  tag = "0.1.5",
-
-  dependencies = {
-    "nvim-lua/plenary.nvim"
-  },
-
-  config = function()
-    require('telescope').setup({
-      defaults = {
-        winblend = 0,
-        layout_strategy = "vertical",
-        file_ignore_patterns = {
-          "node_modules/.*",
-          "*/node_modules/.*",
-          "%.git/.*",
-          ".angular/",
-          "*/.angular/",
-          "dist/.*",
-          "build/.*",
-          "target/.*",
-          "%.DS_Store",
-          "%.pyc",
-          "__pycache__/.*",
-          "%.o",
-          "%.so",
-          "%.dylib",
-          "%.class",
-          "%.jar",
-          "%.war",
-          "%.zip",
-          "%.tar%.gz",
-          "%.log",
+    "nvim-telescope/telescope.nvim",
+    event = "VimEnter",
+    dependencies = {
+      "nvim-lua/plenary.nvim",
+      { "nvim-telescope/telescope-fzf-native.nvim", build = "make", cond = vim.fn.executable("make") == 1 },
+      "nvim-telescope/telescope-ui-select.nvim",
+    },
+    config = function()
+      local actions = require("telescope.actions")
+      local telescope = require("telescope")
+      telescope.setup({
+        defaults = {
+          file_ignore_patterns = { "node_modules", ".git/" },
+          mappings = {
+            i = {
+              ["<C-j>"] = actions.move_selection_next,
+              ["<C-k>"] = actions.move_selection_previous,
+            },
+            n = {
+              ["<C-j>"] = actions.move_selection_next,
+              ["<C-k>"] = actions.move_selection_previous,
+            },
+          },
         },
-      },
-      pickers = {
-        find_files = {
-          hidden = true,
-          no_ignore = true,
+        extensions = {
+          ["ui-select"] = {
+            require("telescope.themes").get_dropdown(),
+          },
         },
-        live_grep = {
-          additional_args = function()
-            return {"--hidden", "--no-ignore"}
-          end,
-        },
-        grep_string = {
-          additional_args = function()
-            return {"--hidden", "--no-ignore"}
-          end,
-        },
-      }
-    })
+      })
+      pcall(telescope.load_extension, "fzf")
+      pcall(telescope.load_extension, "ui-select")
 
-    local key = vim.keymap.set
-    local builtin = require("telescope.builtin")
-
-    key('n', '<leader><leader>', builtin.buffers, { desc = "[S]earch Buffers []" })
-    key('n', '<leader>d', builtin.diagnostics, { desc = "[S]earch [d]iagnostics" })
-    key('n', '<leader>gd', builtin.lsp_definitions, { desc = "[G]o to [d]efinitions" })
-    key('n', '<leader>gr', builtin.lsp_references, { desc = "[G]o to [r]eferences" })
-    key('n', '<leader>sf', builtin.find_files, { desc = "[S]earch [f]iles" })
-    key('n', '<leader>saf', function()
-        builtin.find_files({
-          -- hidden = true,
-          no_ignore = true,
-          file_ignore_patterns = {}
-        })
-      end,
-      { desc = "[S]earch [a]bsolutely all [f]iles" })
-    key('n', '<leader>sr', builtin.resume, { desc = "[S]earch [r]esume" })
-    key("n", "<leader>sh", builtin.help_tags, { desc = "[S]earch Help [?]" })
-    key("n", "<leader>sk", builtin.keymaps, { desc = "[S]earch [k]eymaps" })
-    key("n", "<leader>sb", builtin.builtin, { desc = "[S]earch [b]uiltin" })
-    key("n", "<leader>sqf", builtin.quickfix, { desc = "[S]earch [q]uick[f]ix" })
-    key("n", "<leader>sqh", builtin.quickfixhistory, { desc = "[S]earch [q]uickfix [h]istory" })
-    key("n", "<leader>sg", builtin.live_grep, { desc = "[S]earch live [g]rep" })
-    key("n", "<leader>sag", function()
-        builtin.live_grep({
-          hidden = true,
-          no_ignore = true,
-          file_ignore_patterns = {},
-          additional_args = {"--hidden", "--no-ignore", "--no-ignore-global"}
-        })
-      end,
-      { desc = "[S]earch [a]bsolutely all live [g]rep" })
-    key('n', '<leader>sw', function()
-      builtin.grep_string({ search = vim.fn.expand("<cword>") })
-    end, { desc = "[S]earch for [w]ord" })
-    key('n', '<leader>sW', function()
-      builtin.grep_string({ search = vim.fn.expand("<cWORD>") })
-    end, { desc = "[S]earch for [W]ORD" })
-  end
-}
+      local builtin = require("telescope.builtin")
+      vim.keymap.set("n", "<leader>sf", builtin.find_files, { desc = "Search files" })
+      vim.keymap.set("n", "<leader>sg", builtin.live_grep, { desc = "Search grep" })
+      vim.keymap.set("n", "<leader>sw", builtin.grep_string, { desc = "Search word" })
+      vim.keymap.set("n", "<leader>sh", builtin.help_tags, { desc = "Search help" })
+      vim.keymap.set("n", "<leader>sk", builtin.keymaps, { desc = "Search keymaps" })
+      vim.keymap.set("n", "<leader>sd", builtin.diagnostics, { desc = "Search diagnostics" })
+      vim.keymap.set("n", "<leader>sr", builtin.resume, { desc = "Search resume" })
+      vim.keymap.set("n", "<leader>s.", builtin.oldfiles, { desc = "Search recent files" })
+      vim.keymap.set("n", "<leader><leader>", builtin.buffers, { desc = "Find buffers" })
+      vim.keymap.set("n", "<leader>/", function()
+        builtin.current_buffer_fuzzy_find(require("telescope.themes").get_dropdown({
+          winblend = 10,
+          previewer = false,
+        }))
+      end, { desc = "Fuzzy search buffer" })
+    end,
+  }

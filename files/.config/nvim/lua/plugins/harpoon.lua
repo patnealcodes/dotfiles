@@ -1,63 +1,54 @@
+-- Harpoon configuration with fzf-lua integration
 return {
   "ThePrimeagen/harpoon",
   branch = "harpoon2",
   event = "VeryLazy",
   dependencies = {
     "nvim-lua/plenary.nvim",
-    "nvim-telescope/telescope.nvim",
+    "ibhagwan/fzf-lua",
   },
   config = function()
-    local keymap = vim.keymap
-    local harpoon = require('harpoon')
-    harpoon:setup({})
+    local harpoon = require "harpoon"
+    harpoon:setup {}
 
-    local conf = require("telescope.config").values
-    local function toggle_telescope(harpoon_files)
+    -- FZF-Lua integration for harpoon
+    local function toggle_fzf_lua(harpoon_files)
       local file_paths = {}
       for _, item in ipairs(harpoon_files.items) do
         table.insert(file_paths, item.value)
       end
 
-      require("telescope.pickers").new({}, {
-        prompt_title = "Harpoon",
-        finder = require("telescope.finders").new_table({
-          results = file_paths,
-        }),
-        previewer = conf.file_previewer({}),
-        sorter = conf.generic_sorter({}),
-      }):find()
+      require("fzf-lua").fzf_exec(file_paths, {
+        prompt = "Harpoon❯ ",
+        preview_window = "right:50%",
+        actions = {
+          ["default"] = function(selected)
+            if selected and selected[1] then
+              vim.cmd("edit " .. selected[1])
+            end
+          end,
+        },
+      })
     end
 
-    keymap.set("n", "<leader>H", function()
+    -- Keymaps
+    vim.keymap.set("n", "<leader>H", function()
       harpoon.ui:toggle_quick_menu(harpoon:list())
     end, { desc = "Open harpoon window" })
 
-    keymap.set("n", "<leader>ht", function()
-      toggle_telescope(harpoon:list())
-    end, { desc = "Open harpoon list in telescope" })
+    vim.keymap.set("n", "<leader>ht", function()
+      toggle_fzf_lua(harpoon:list())
+    end, { desc = "Open harpoon list in fzf-lua" })
 
-    keymap.set("n", "<leader>ha", function()
+    vim.keymap.set("n", "<leader>ha", function()
       require("harpoon"):list():add()
     end, { desc = "Add buffer to harpoon list" })
 
-    keymap.set("n", "<leader>1", function()
-      require("harpoon"):list():select(1)
-    end, { desc = "Jump to harpoon buffer 1" })
-
-    keymap.set("n", "<leader>2", function()
-      require("harpoon"):list():select(2)
-    end, { desc = "Jump to harpoon buffer 2" })
-
-    keymap.set("n", "<leader>3", function()
-      require("harpoon"):list():select(3)
-    end, { desc = "Jump to harpoon buffer 3" })
-
-    keymap.set("n", "<leader>4", function()
-      require("harpoon"):list():select(4)
-    end, { desc = "Jump to harpoon buffer 4" })
-
-    keymap.set("n", "<leader>5", function()
-      require("harpoon"):list():select(5)
-    end, { desc = "Jump to harpoon buffer 5" })
+    -- Number keymaps
+    for i = 1, 5 do
+      vim.keymap.set("n", "<leader>" .. i, function()
+        require("harpoon"):list():select(i)
+      end, { desc = "Jump to harpoon buffer " .. i })
+    end
   end,
 }

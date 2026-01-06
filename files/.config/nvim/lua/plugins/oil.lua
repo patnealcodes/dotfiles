@@ -1,37 +1,31 @@
 return {
   "stevearc/oil.nvim",
-  dependencies = { { "echasnovski/mini.icons", opts = {} } },
+  lazy = false,
   config = function()
-    local oil = require("oil")
-    oil.setup({
-      columns = {
-        "permissions",
-        { "size",  highlight = "OilCopy" },
-        { "mtime", highlight = "OilDir" },
-        "icon"
-      },
-      constrain_cursor = "name",
+    require("oil").setup({
       default_file_explorer = true,
-      delete_to_trash = false,
-      float = {
-        preview_split = "below"
+      columns = {},
+      view_options = {
+        show_hidden = true,
       },
       keymaps = {
-        ["<Esc>"] = "actions.close"
-      },
-      sort = {
-        { "name", "asc" },
-        { "type", "asc" },
-      },
-      view_options = {
-        show_hidden = true
+        ["g?"] = "actions.show_help",
+        ["<CR>"] = "actions.select",
+        ["<C-v>"] = "actions.select_vsplit",
+        ["<C-s>"] = "actions.select_split",
+        ["<C-t>"] = "actions.select_tab",
+        ["<C-p>"] = "actions.preview",
+        ["<C-c>"] = "actions.close",
+        ["<C-r>"] = "actions.refresh",
+        ["-"] = "actions.parent",
+        ["_"] = "actions.open_cwd",
+        ["`"] = "actions.cd",
+        ["~"] = "actions.tcd",
+        ["gs"] = "actions.change_sort",
+        ["gx"] = "actions.open_external",
+        ["g."] = "actions.toggle_hidden",
       },
     })
-
-    vim.keymap.set("n", "-", function()
-      oil.open_float(nil, nil, function()
-        oil.open_preview({ horizontal = true })
-      end)
-    end, { desc = "Open Oil in float mode with delayed horizontal preview" })
-  end
+    vim.keymap.set("n", "-", "<CMD>Oil<CR>", { desc = "Open parent directory" })
+  end,
 }

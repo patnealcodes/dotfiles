@@ -2,52 +2,82 @@
   {
     "context": "Editor && vim_mode == visual && !VimWaiting && !VimObject",
     "bindings": {
-      "space p": ["vim::Paste", { "preserve_clipboard": true }]
-    }
+      "space p": ["vim::Paste", { "preserve_clipboard": true }],
+    },
   },
   {
     "context": "((VimControl && !menu) || !Editor)",
     "bindings": {
-      "ctrl-a h": "workspace::ActivatePaneLeft"
-    }
+      "ctrl-a h": "workspace::ActivatePaneLeft",
+    },
   },
   {
     "context": "((VimControl && !menu) || !Editor)",
     "bindings": {
-      "ctrl-a j": "workspace::ActivatePaneDown"
-    }
+      "ctrl-a j": "workspace::ActivatePaneDown",
+    },
   },
   {
     "context": "((VimControl && !menu) || !Editor)",
     "bindings": {
-      "ctrl-a k": "workspace::ActivatePaneUp"
-    }
+      "ctrl-a k": "workspace::ActivatePaneUp",
+    },
   },
   {
     "context": "((VimControl && !menu) || !Editor)",
     "bindings": {
-      "ctrl-a l": "workspace::ActivatePaneRight"
-    }
+      "ctrl-a l": "workspace::ActivatePaneRight",
+    },
   },
   {
     "bindings": {
-      "cmd-;": "editor::ToggleRelativeLineNumbers"
-    }
+      "cmd-;": "editor::ToggleRelativeLineNumbers",
+    },
   },
   {
     "bindings": {
-      "": "editor::ToggleRelativeLineNumbers"
-    }
+      "": "editor::ToggleRelativeLineNumbers",
+    },
   },
   {
     "bindings": {
-      "ctrl-a space": "tab_switcher::ToggleAll"
-    }
+      "ctrl-a space": "tab_switcher::ToggleAll",
+    },
   },
   {
     "context": "Workspace",
     "bindings": {
-      "cmd-shift-t": "editor::ToggleTabBar"
+      "cmd-shift-t": "editor::ToggleTabBar",
+    },
+  },
+  {
+    "context": "((VimControl && !menu) || (!Editor && !Terminal))",
+    "bindings": {
+      "ctrl-a ctrl-up": "vim::ResizePaneUp",
+    },
+  },
+  {
+    "context": "((VimControl && !menu) || (!Editor && !Terminal))",
+    "bindings": {
+      "ctrl-a ctrl-down": "vim::ResizePaneUp",
+    },
+  },
+  {
+    "context": "((VimControl && !menu) || (!Editor && !Terminal))",
+    "bindings": {
+      "ctrl-a ctrl-left": "vim::ResizePaneLeft",
+    },
+  },
+  {
+    "context": "((VimControl && !menu) || (!Editor && !Terminal))",
+    "bindings": {
+      "ctrl-a ctrl-right": "vim::ResizePaneRight",
+    },
+  },
+  {
+    "context": "Editor",
+    "bindings": {
+      "alt-g": "editor::ToggleGitBlameInline"
     }
   }
 ]
