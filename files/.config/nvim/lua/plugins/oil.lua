@@ -2,9 +2,43 @@ return {
   "stevearc/oil.nvim",
   lazy = false,
   config = function()
-    require("oil").setup({
+    local permission_hlgroups = {
+      ['-'] = 'NonText',
+      ['r'] = 'DiagnosticSignWarn',
+      ['w'] = 'DiagnosticSignError',
+      ['x'] = 'DiagnosticSignOk',
+    }
+    local oil = require("oil")
+    oil.setup({
+      columns = {
+        {
+          'permissions',
+          highlight = function(permission_str)
+            local hls = {}
+            for i = 1, #permission_str do
+              local char = permission_str:sub(i, i)
+              table.insert(hls, { permission_hlgroups[char], i - 1, i })
+            end
+            return hls
+          end,
+        },
+        { 'size',  highlight = 'Special' },
+        { 'mtime', highlight = 'Number' },
+        {
+          'icon',
+          -- default_file = icon_file,
+          -- directory = icon_dir,
+          add_padding = false,
+        },
+      },
+      win_options = {
+        number = false,
+        relativenumber = false,
+        signcolumn = 'no',
+        foldcolumn = '0',
+        statuscolumn = '',
+      },
       default_file_explorer = true,
-      columns = {},
       view_options = {
         show_hidden = true,
       },
@@ -26,6 +60,10 @@ return {
         ["g."] = "actions.toggle_hidden",
       },
     })
-    vim.keymap.set("n", "-", "<CMD>Oil<CR>", { desc = "Open parent directory" })
+    vim.keymap.set("n", "-", function()
+      oil.open_float(nil, nil, function()
+        oil.open_preview({ vertical = true })
+      end)
+    end, { desc = "Open Oil in float mode with delayed vertical preview" })
   end,
 }

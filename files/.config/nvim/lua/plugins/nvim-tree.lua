@@ -1,76 +1,26 @@
-return {}
--- local status, nvim_tree = pcall(require, "nvim-tree")
--- if not status then
---   return
--- end
---
--- local function on_attach(bufnr)
---   local api = require('nvim-tree.api')
---
---   local function opts(desc)
---     return { desc = 'nvim-tree: ' .. desc, buffer = bufnr, noremap = true, silent = true, nowait = true }
---   end
---
---   vim.keymap.set('n', 'l', api.node.open.edit, opts('Open'))
---   vim.keymap.set('n', '<CR>', api.node.open.edit, opts('Open'))
---   vim.keymap.set('n', 'o', api.node.open.edit, opts('Open'))
---   vim.keymap.set('n', 'h', api.node.navigate.parent_close, opts('Close Directory'))
---   vim.keymap.set('n', 'v', api.node.open.vertical, opts('Open: Vertical Split'))
--- end
---
--- nvim_tree.setup({
---   on_attach = on_attach,
---   hijack_directories = {
---     enable = false,
---     auto_open = false
---   },
---   update_focused_file = {
---     enable = true,
---     update_cwd = true,
---     update_root = false,
---   },
---   renderer = {
---     root_folder_modifier = ":t",
---     icons = {
---       glyphs = {
---         default = "",
---         symlink = "",
---         folder = {
---           arrow_open = "",
---           arrow_closed = "",
---           default = "",
---           open = "",
---           empty = "",
---           empty_open = "",
---           symlink = "",
---           symlink_open = "",
---         },
---         git = {
---           unstaged = "",
---           staged = "S",
---           unmerged = "",
---           renamed = "➜",
---           untracked = "U",
---           deleted = "",
---           ignored = "◌",
---         },
---       },
---     },
---   },
---   diagnostics = {
---     enable = true,
---     show_on_dirs = true,
---     icons = {
---       hint = "",
---       info = "",
---       warning = "",
---       error = "",
---     },
---   },
---   view = {
---     side = "left",
---     float = {
---       enable = true,
---     }
---   },
--- })
+return {
+  "nvim-tree/nvim-tree.lua",
+  version = "*",
+  lazy = false,
+  keys = {
+    { "<C-p>", "<cmd>NvimTreeFindFileToggle<cr>", desc = "Find file in filetree" },
+  },
+  dependencies = {
+    "nvim-tree/nvim-web-devicons",
+  },
+  config = function()
+    require("nvim-tree").setup({
+      filters = {
+        custom = { ".git", "node_modules", ".vscode" },
+        dotfiles = true,
+      },
+      git = {},
+      view = {
+        adaptive_size = true,
+        float = {
+          enable = true,
+        },
+      },
+    })
+  end,
+}
