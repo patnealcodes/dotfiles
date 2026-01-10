@@ -33,3 +33,6 @@ key("n", "[d", function() vim.diagnostic.goto_prev() end, { desc = "Go to next d
 
 -- Persistence
 vim.keymap.set("n", "<leader>=-", [[:lua require("persistence").load() <cr>]], { desc = "Load last session" })
+
+-- Mini Files
+vim.keymap.set("n", "<C-b>", [[:lua MiniFiles.open()<cr>]], { desc = "Open mini.files" })

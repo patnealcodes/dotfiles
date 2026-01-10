@@ -74,16 +74,16 @@ alias v="nvim"
 alias z="zed"
 
 # Repo shortcuts
-alias dot="~/codes/GitHub/dotfiles"
+alias dot="~/codes/repos/dotfiles"
 
 # Dotfile shortcuts
 alias zrc="v ~/.zshrc"
-alias zut="v ~/codes/GitHub/dotfiles/files/.zshutils"
-alias ala="v ~/codes/GitHub/dotfiles/files/alacritty/alacritty.toml"
-alias gho="v ~/codes/GitHub/dotfiles/files/ghostty/config"
-alias wez="v ~/codes/GitHub/dotfiles/files/wezterm/wezterm.lua"
-alias vd="~/codes/GitHub/dotfiles/files/nvim && v"
-alias tx="v ~/codes/GitHub/dotfiles/files/.tmux.conf"
+alias zut="v ~/codes/repos/dotfiles/files/.zshutils"
+alias ala="v ~/codes/repos/dotfiles/files/alacritty/alacritty.toml"
+alias gho="v ~/codes/repos/dotfiles/files/ghostty/config"
+alias wez="v ~/codes/repos/dotfiles/files/wezterm/wezterm.lua"
+alias vd="~/codes/repos/dotfiles/files/nvim && v"
+alias tx="v ~/codes/repos/dotfiles/files/.tmux.conf"
 alias gflash="gemini --model=gemini-flash"
 alias gpro="gemini --model=gemini-pro"
 
@@ -110,7 +110,7 @@ alias lg="lazygit"
 alias gconfig="git config --global"
 function mkcd() { mkdir "$@" && cd "$@"; }
 function mkc() { mkdir "$@" && c "$@"; }
-alias ff="tmux neww bash ~/codes/GitHub/dotfiles/tmux-sessionizer"
+alias ff="tmux neww bash ~/codes/repos/dotfiles/tmux-sessionizer"
 
 addBeforePath() {
     if [[ "$PATH" != *"$1"* ]]; then
@@ -123,18 +123,16 @@ addToPath() {
     fi
 } 
 
-addBeforePath /Users/nealp/Library/Python/3.9/bin
-addBeforePath /Users/patnealcodes/Library/Python/3.9/bin
-addToPath /Users/nealp/Library/Python/3.9/bin
+addBeforePath /Users/$USER/Library/Python/3.9/bin
+addToPath /Users/$USER/.opencode/bin
+addToPath /Users/$USER/go/bin
+addToPath /Users/$USER/.local/bin
+addToPath /Users/$USER/.deno/bin
 addToPath /opt/homebrew/bin
 addToPath /usr/bin
 addToPath /usr/local/bin
 addToPath /usr/local/go/bin
 addToPath /opt/nvim-linux64/bin
-addToPath /Users/nealp/go/bin
 addToPath $HOME/go/bin
-addToPath /Users/nealp/.local/bin
-addToPath /Users/patnealcodes/.local/bin
-addToPath /Users/nealp/.deno/bin
 addToPath /bin
 

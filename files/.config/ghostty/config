@@ -1,13 +1,12 @@
-background = #191725
 background-opacity = 0.94
 cursor-invert-fg-bg = true
 cursor-opacity = 0.8
 cursor-style = block
 cursor-style-blink = true
-font-family = "FiraCode Nerd Font Mono Ret"
+font-family = "JetbrainsMono Nerd Font Mono"
 font-size = 14
-theme = Rose Pine
+theme = tiede_darker
 window-padding-balance = true
 window-padding-x = 10
-window-decoration = true
+window-decoration = false
 keybind = shift+enter=text:\n

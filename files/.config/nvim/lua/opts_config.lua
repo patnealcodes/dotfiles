@@ -1,7 +1,7 @@
 vim.opt.backup = false
 vim.opt.clipboard = "unnamedplus"
 vim.opt.cot = { "menu", "menuone", "noselect" } -- insert mode completion options
-vim.opt.cursorline = true
+vim.opt.cursorline = false
 vim.opt.showmode = false
 vim.opt.expandtab = true
 vim.opt.isfname:append("@-@")
