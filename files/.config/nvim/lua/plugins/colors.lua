@@ -37,18 +37,36 @@ local override_groups = {
 --     vim.cmd.colorscheme "rose-pine-moon"
 --   end,
 -- }
+
+-- return {
+--   "serhez/teide.nvim",
+--   lazy = false,
+--   priority = 1000,
+--   config = function()
+--     require("teide").setup({
+--       style = "darker",
+--       transparent = true,
+--       on_highlights = function(hl)
+--         hl.GitBlameInline = { fg = "#3c404f", bg = "none" }
+--       end
+--     })
+--     vim.cmd([[colorscheme teide-darker]])
+--   end
+-- }
+
 return {
-  "serhez/teide.nvim",
+  "folke/tokyonight.nvim",
   lazy = false,
   priority = 1000,
   config = function()
-    require("teide").setup({
-      style = "darker",
+    require('tokyonight').setup({
+      style = "night",
       transparent = true,
+      on_cololrs = function(colors) end,
       on_highlights = function(hl)
         hl.GitBlameInline = { fg = "#3c404f", bg = "none" }
       end
     })
-    vim.cmd([[colorscheme teide-darker]])
+    vim.cmd([[colorscheme tokyonight]])
   end
 }
