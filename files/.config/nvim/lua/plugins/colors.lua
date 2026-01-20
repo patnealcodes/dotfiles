@@ -22,21 +22,21 @@ local override_groups = {
   CursorLine = { bg = "none" },
 }
 
--- return {
---   "rose-pine/neovim",
---   name = "rose-pine",
---   config = function()
---     require("rose-pine").setup {
---       disable_background = true,
---       styles = {
---         italic = false,
---       },
---       highlight_groups = override_groups,
---     }
---
---     vim.cmd.colorscheme "rose-pine-moon"
---   end,
--- }
+return {
+  "rose-pine/neovim",
+  name = "rose-pine",
+  config = function()
+    require("rose-pine").setup {
+      disable_background = true,
+      styles = {
+        italic = false,
+      },
+      highlight_groups = override_groups,
+    }
+
+    vim.cmd.colorscheme "rose-pine-moon"
+  end,
+}
 
 -- return {
 --   "serhez/teide.nvim",
@@ -54,19 +54,19 @@ local override_groups = {
 --   end
 -- }
 
-return {
-  "folke/tokyonight.nvim",
-  lazy = false,
-  priority = 1000,
-  config = function()
-    require('tokyonight').setup({
-      style = "night",
-      transparent = true,
-      on_cololrs = function(colors) end,
-      on_highlights = function(hl)
-        hl.GitBlameInline = { fg = "#3c404f", bg = "none" }
-      end
-    })
-    vim.cmd([[colorscheme tokyonight]])
-  end
-}
+-- return {
+--   "folke/tokyonight.nvim",
+--   lazy = false,
+--   priority = 1000,
+--   config = function()
+--     require('tokyonight').setup({
+--       style = "night",
+--       transparent = true,
+--       on_cololrs = function(colors) end,
+--       on_highlights = function(hl)
+--         hl.GitBlameInline = { fg = "#3c404f", bg = "none" }
+--       end
+--     })
+--     vim.cmd([[colorscheme tokyonight]])
+--   end
+-- }
