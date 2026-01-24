@@ -56,6 +56,7 @@ return {
         },
       },
       ts_ls = {},
+      jsonls = {},
     }
 
     local ensure_installed = vim.tbl_keys(servers)
