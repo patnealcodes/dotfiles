@@ -1,8 +1,22 @@
 {
+  "agent_servers": {
+    "opencode": {
+      "type": "extension",
+      "favorite_models": [
+        "openai/gpt-5.2-codex",
+        "opencode/gpt-5-nano"
+      ]
+    }
+  },
   "icon_theme": "Zed (Default)",
-  "ui_font_size": 15.0,
-  "ui_font_family": "FiraCode Nerd Font Mono",
-  "buffer_font_family": "FiraCode Nerd Font Mono",
+  "ui_font_size": 14.5,
+  "buffer_font_size": 14.5,
+  "agent_ui_font_size": 14.5,
+  "agent_buffer_font_size": 14.5,
+  "ui_font_weight": 300,
+  "buffer_font_weight": 300,
+  "ui_font_family": "JetBrainsMono Nerd Font Mono",
+  "buffer_font_family": "JetBrainsMono Nerd Font Mono",
   "formatter": "language_server",
   "agent": {
     "default_model": {
@@ -15,7 +29,6 @@
   "edit_predictions": {
     "mode": "subtle",
   },
-  "agent_buffer_font_size": 14.0,
   "buffer_line_height": "standard",
   "inline_code_actions": false,
   "collaboration_panel": {
@@ -23,6 +36,20 @@
   },
   "current_line_highlight": "gutter",
   "theme_overrides": {
+    "One Dark Pro": {
+      "background": "#23272eF3",
+      "background.appearance": "transparent",
+      "editor.gutter.background": "#00000000",
+      "editor.background": "#00000000",
+      "tab_bar.background": "#00000000",
+      "tab.inactive_background": "#00000000",
+      "terminal.background": "#00000000",
+      "toolbar.background": "#00000000",
+      "panel.background": "#00000000",
+      "panel.overlay_background": "#23272e",
+      "status_bar.background": "#23272eF3",
+      "border": "#6D6B8630",
+    },
     "Rosé Pine": {
       "background": "#191725F3",
       "background.appearance": "transparent",
@@ -68,7 +95,7 @@
     "show_nav_history_buttons": false,
     "show_tab_bar_buttons": false,
   },
-  "theme": "Rosé Pine",
+  "theme": "One Dark Pro",
   "toolbar": {
     "quick_actions": false
   },
