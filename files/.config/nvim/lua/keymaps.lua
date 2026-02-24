@@ -35,4 +35,4 @@ key("n", "[d", function() vim.diagnostic.goto_prev() end, { desc = "Go to next d
 vim.keymap.set("n", "<leader>=-", [[:lua require("persistence").load() <cr>]], { desc = "Load last session" })
 
 -- Mini Files
-vim.keymap.set("n", "<C-b>", [[:lua MiniFiles.open()<cr>]], { desc = "Open mini.files" })
+vim.keymap.set("n", "<C-b>", "<cmd>NvimTreeFindFileToggle<cr>", { desc = "Open Nvim Tree" })

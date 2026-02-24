@@ -67,33 +67,5 @@ return {
         end,
       },
     })
-
-    require("mini.files").setup({
-      mappings = {
-        close       = '<C-c>',
-        go_in       = 'l',
-        go_in_plus  = 'L',
-        go_out      = 'h',
-        go_out_plus = 'H',
-        mark_goto   = "'",
-        mark_set    = 'm',
-        reset       = '<BS>',
-        reveal_cwd  = '@',
-        show_help   = 'g?',
-        synchronize = '=',
-        trim_left   = '<',
-        trim_right  = '>',
-      },
-      windows = {
-        max_number = 4, -- Maximum number of windows to show side by side
-        preview = false, -- Whether to show preview of file/directory under cursor
-        width_focus = 25, -- Width of focused window
-        width_nofocus = 25, -- Width of non-focused window
-      },
-    })
-
-    require("mini.git").setup({
-
-    })
   end,
 }

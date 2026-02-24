@@ -10,6 +10,7 @@ return {
     }
     local oil = require("oil")
     oil.setup({
+      constrain_cursor = "name",
       columns = {
         {
           'permissions',

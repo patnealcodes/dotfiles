@@ -3,22 +3,27 @@ return {
   lazy = false,
   build = ":TSUpdate",
   config = function()
-    require("nvim-treesitter").setup({
+    local treesitter = require("nvim-treesitter")
 
-      ensure_installed = {
-        "bash", "c", "diff", "html", "css", "javascript", "typescript", "tsx",
-        "json", "jsonc", "lua", "luadoc", "markdown", "markdown_inline",
-        "python", "query", "regex", "vim", "vimdoc", "yaml", "toml", "rust", "go",
-      },
-      sync_install = false,
-      auto_install = true,
-      indent = {
-        enable = true
-      },
-    })
+    treesitter.setup({})
+
+    local function ensure_parser(lang)
+      if not vim.list_contains(treesitter.get_installed("parsers"), lang) then
+        treesitter.install(lang)
+      end
+    end
+
+    vim.treesitter.language.register("tsx", "typescriptreact")
+    vim.treesitter.language.register("tsx", "javascriptreact")
+
     vim.api.nvim_create_autocmd("FileType", {
-      callback = function()
-        pcall(vim.treesitter.start)
+      callback = function(args)
+        if args.match == "typescriptreact" or args.match == "javascriptreact" then
+          ensure_parser("tsx")
+          pcall(vim.treesitter.start, args.buf, "tsx")
+          return
+        end
+        pcall(vim.treesitter.start, args.buf)
       end,
     })
   end,
