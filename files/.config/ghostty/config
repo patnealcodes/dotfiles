@@ -4,8 +4,11 @@ cursor-style = block
 cursor-style-blink = true
 font-family = "JetbrainsMono Nerd Font Mono"
 font-size = 15
-theme = "tiede_darker"
+theme = "teide_dark"
 window-padding-balance = true
 window-padding-x = 10
 window-decoration = false
+
+# Keybind Updates
+# ==========================
 keybind = shift+enter=text:\n

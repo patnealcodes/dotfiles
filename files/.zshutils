@@ -135,4 +135,5 @@ addToPath /usr/local/go/bin
 addToPath /opt/nvim-linux64/bin
 addToPath $HOME/go/bin
 addToPath /bin
+addToPath $HOME/user/.local/share/bob/nvim-bin/nvim
 
