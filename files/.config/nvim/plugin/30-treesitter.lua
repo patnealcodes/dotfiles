@@ -8,6 +8,12 @@ local function ensure_parser(lang)
   end
 end
 
+-- Parsers required for LSP hover/docs rendering
+ensure_parser("markdown")
+ensure_parser("markdown_inline")
+ensure_parser("typescript")
+ensure_parser("vue")
+
 vim.treesitter.language.register("tsx", "typescriptreact")
 vim.treesitter.language.register("tsx", "javascriptreact")
 
