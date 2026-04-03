@@ -22,9 +22,19 @@ require("blink.cmp").setup({
     },
   },
   sources = {
-    default = { "lsp", "path", "snippets", "buffer", "lazydev" },
+    default = function()
+      local sources = { "lsp", "path", "snippets", "buffer" }
+      if package.loaded["lazydev"] then
+        table.insert(sources, "lazydev")
+      end
+      return sources
+    end,
     providers = {
-      lazydev = { module = "lazydev.integrations.blink", score_offset = 100 },
+      lazydev = {
+        name = "LazyDev",
+        module = "lazydev.integrations.blink",
+        score_offset = 100,
+      },
     },
   },
   signature = { enabled = true },

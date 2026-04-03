@@ -1,3 +1,4 @@
+
 require("mason").setup({})
 require("fidget").setup({})
 
@@ -62,7 +63,20 @@ local servers = {
       },
     },
   },
-  ts_ls = {},
+  ts_ls = {
+    filetypes = { "javascript", "javascriptreact", "typescript", "typescriptreact", "vue" },
+    init_options = {
+      plugins = {
+        {
+          name = "@vue/typescript-plugin",
+          location = vim.fn.stdpath("data")
+            .. "/mason/packages/vue-language-server/node_modules/@vue/language-server",
+          languages = { "vue" },
+        },
+      },
+    },
+  },
+  vue_ls = {},
   jsonls = {},
 }
 
@@ -76,4 +90,21 @@ require("mason-lspconfig").setup({
       require("lspconfig")[server_name].setup(server)
     end,
   },
+})
+
+-- Ensure ts_ls attaches to .vue files so vue_ls can find it (required for hybrid mode in v3.0+)
+vim.api.nvim_create_autocmd("FileType", {
+  pattern = "vue",
+  callback = function(args)
+    local root_dir = vim.fs.root(args.buf, { "package.json", "tsconfig.json", "jsconfig.json" })
+    local init_options = vim.deepcopy(servers.ts_ls.init_options)
+
+    vim.lsp.start({
+      name = "ts_ls",
+      cmd = { "typescript-language-server", "--stdio" },
+      root_dir = root_dir,
+      init_options = init_options,
+      capabilities = capabilities,
+    })
+  end,
 })
