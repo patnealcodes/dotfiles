@@ -1,0 +1,16 @@
+[packages]
+brew = [ 'ghostty', 'nvim', 'eza', 'gitmux' ]
+manual = [ 'omz' ]
+app = [ 'Rectangle', 'Zed' ]
+
+[configs.app]
+'RectangleProConfig.json' = '~/Library/Application Support/Rectangle Pro/RectangleProConfig.json'
+
+[configs.symlink]
+'.zshutils' = '~/.zshutils'
+'ghostty' = '~/.config/ghostty'
+'lazygit' = '~/.config/lazygit'
+'mise' = '~/.config/mise'
+'nvim' = '~/.config/nvim'
+'opencode' = '~/.config/opencode'
+'zed' = '~/.config/zed'

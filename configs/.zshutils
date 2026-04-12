@@ -1,0 +1,73 @@
+#----- MISE
+eval "$(/opt/homebrew/bin/mise activate zsh)"
+
+# Setup
+LG_CONFIG_FILE="/Users/$USER/.config/lazygit/config.yml"
+
+# Lazy days
+alias zource="source ~/.zshrc"
+
+# Shortcuts for editors
+alias v="nvim"
+alias z="zed"
+
+# Repo shortcuts
+alias dot="~/codes/repos/dotfiles"
+
+# Dotfile shortcuts
+alias zrc="v ~/.zshrc"
+alias zut="v ~/codes/repos/dotfiles/files/.zshutils"
+alias ala="v ~/codes/repos/dotfiles/files/alacritty/alacritty.toml"
+alias gho="v ~/codes/repos/dotfiles/files/ghostty/config"
+alias wez="v ~/codes/repos/dotfiles/files/wezterm/wezterm.lua"
+alias vd="~/codes/repos/dotfiles/files/nvim && v"
+alias tx="v ~/codes/repos/dotfiles/files/.tmux.conf"
+alias gflash="gemini --model=gemini-flash"
+alias gpro="gemini --model=gemini-pro"
+
+# Folder Shortcuts
+alias repos="~/codes/repos"
+alias tz="~/codes/testzone"
+alias ex="~/Exercism"
+
+# tmux shortcuts
+alias txl="tmux ls"
+alias txd="tmux detach"
+function txn() { if [ "$@" ]; then tmux new -s "$@"; else tmux; fi }
+function txa() { if [ "$@" ]; then tmux attach -t "$@"; else tmux attach; fi }
+function txks() { tmux kill-session -t "$@" }
+function txkw() { tmux kill-window -t "$@" }
+
+# Utility Functions
+alias l="eza -lha --no-user"
+alias lg="lazygit"
+alias gconfig="git config --global"
+function mkcd() { mkdir "$@" && cd "$@"; }
+function mkc() { mkdir "$@" && c "$@"; }
+alias ff="tmux neww bash ~/codes/repos/dotfiles/tmux-sessionizer"
+alias dc="docker-compose"
+
+addBeforePath() {
+    if [[ "$PATH" != *"$1"* ]]; then
+        export PATH=$1:$PATH
+    fi
+}
+addToPath() {
+    if [[ "$PATH" != *"$1"* ]]; then
+        export PATH=$PATH:$1
+    fi
+}
+
+addBeforePath /Users/$USER/Library/Python/3.9/bin
+addToPath /Users/$USER/.opencode/bin
+addToPath /Users/$USER/go/bin
+addToPath /Users/$USER/.local/bin
+addToPath /Users/$USER/.deno/bin
+addToPath /opt/homebrew/bin
+addToPath /usr/bin
+addToPath /usr/local/bin
+addToPath /usr/local/go/bin
+addToPath /opt/nvim-linux64/bin
+addToPath $HOME/go/bin
+addToPath /bin
+addToPath $HOME/user/.local/share/bob/nvim-bin/nvim

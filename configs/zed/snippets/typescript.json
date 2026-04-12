@@ -1,0 +1,7 @@
+{
+  "Labelled console log": {
+    "prefix": "alala",
+    "body": ["console.log(\"$0!\")", "$0"],
+    "description": "Labelled console log"
+  }
+}

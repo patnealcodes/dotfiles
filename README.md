@@ -1,42 +1,72 @@
 # patnealcodes' dotfiles
 
-## install some things:
+## install some tools/utils:
 
-- `brew install xz`
-- [https://github.com/arl/gitmux](gitmux)
-- [Zed](https://zed.dev/)
+### IDEs
+  - [Neovim](https://neovim.io/doc/install/)
+  - [Zed](https://zed.dev/)
+### Apps
+- Rectangle | *Mac window management*
+  - [Download](https://rectangleapp.com/) 
+- Oh My Zsh
+  - [Download](https://ohmyz.sh/#install)
+### Homebrew packages
+- mise | *like nvm, but for most things*
+  - `brew install mise`
+- Ghostty | *Terminal emulator of choice*
+  - `brew install --cask ghostty`
+- eza | *better `ls`*
+  - `brew install eza`
+- lazygit | *simple git TUI*
+  - `brew install gitmux`
+- tmux | *terminal multiplexer*
+  - `brew install gitmux`
+- gitmux | *git status in tmux*
+  - `brew install gitmux`
+- OpenCode | *Agent harness of choice*
+  - `brew install anomalyco/tap/opencode`
 
-## Set up ailiases you wanna
 
-add the following to your `.zshrc`
+___
+## Configs
+### Ezpz CLI to set up config file symlinks with `dotfiler`
+```bash
+./dotfiler
+```
 
+### Some configs need to be imported manually
+- `./configs/RectangleProConfig.json`
+
+___
+
+## Include `zsh` utilities folder in `.zshrc`
 ```bash
 if [ -f ~/.zshutils ]; then
 source ~/.zshutils
-else
-print "404: ~/.zshutils not found."
-fi
 ```
 
-## Run some commands for setup
+___
 
-`defaults write .GlobalPreferences com.apple.scrollwheel.scaling -1`
-
+## Some preference tweaks
+```bash
+defaults write .GlobalPreferences com.apple.scrollwheel.scaling -1
+```
 - to disable the dumb scroll acceleration
-  `defaults write com.knollsoft.Hookshot screenEdgeGapTop -int 0`
-- to change Rectangle top gap
-
-## Create required folders
-
-- `~/documents/tmux-rezzes`
-
-## Then symlink what you want from the repo to the respective folder. e.g.:
 
 ```bash
-ln -s ~/Documents/repos/dotfiles/nvim ~/.config/nvim
-ln -s ~/Documents/repos/dotfiles/.tmux.conf ~/.tmux.conf
-ln -s ~/Documents/repos/dotfiles/tmux_plugins/* ~/.tmux/plugins/tmux/custom/
-ln -s ~/Documents/repos/dotfiles/.zshutils ~/.zshutils
-ln -s ~/Documents/repos/dotfiles/alacritty ~/.config/alacritty
-ln -s ~/Documents/repos/dotfiles/zed/* ~/.config/zed/
+defaults write com.knollsoft.Hookshot screenEdgeGapTop -int 0
+```
+- to change Rectangle top gap
+
+
+## Utils
+
+### `dotfiler` Go CLI
+- Build *(from `./utils/dotfiler`)*
+```bash
+cd ./utils/dotfiler && go build -o ../../dotfiler
+```
+- Run *(from `./`)*
+```bash
+./dotfiler
 ```
