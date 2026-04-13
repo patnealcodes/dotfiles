@@ -8,6 +8,7 @@ app = [ 'Rectangle', 'Zed' ]
 
 [configs.symlink]
 '.zshutils' = '~/.zshutils'
+'.tmux.conf' = '~/.tmux.conf'
 'ghostty' = '~/.config/ghostty'
 'lazygit' = '~/.config/lazygit'
 'mise' = '~/.config/mise'
