@@ -2,3 +2,4 @@
 *.bak
 nvim.*
 node_modules
+configs/zed/prompts

@@ -4,6 +4,12 @@ local telescope = require("telescope")
 telescope.setup({
   defaults = {
     file_ignore_patterns = { "node_modules", ".git/" },
+    layout_strategy = 'flex',
+    layout_config = {
+      flex = {
+        flip_columns = 200,
+      }
+    },
     mappings = {
       i = {
         ["<C-j>"] = actions.move_selection_next,

@@ -1,10 +1,9 @@
-cursor-invert-fg-bg = true
 cursor-opacity = 0.8
 cursor-style = block
 cursor-style-blink = true
-font-family = "JetbrainsMono Nerd Font Mono"
-font-size = 15
-theme = "teide_dark"
+font-family = "JetBrainsMono Nerd Font Propo"
+font-size = 14
+theme = "teide_dimmed"
 window-padding-balance = true
 window-padding-x = 10
 window-decoration = false

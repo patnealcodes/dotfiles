@@ -1,37 +1,23 @@
 {
-  "agent_buffer_font_size": 15.0,
-  "agent_ui_font_size": 15.0,
-  "ui_font_size": 15.0,
+  "agent_buffer_font_size": 14.0,
+  "agent_ui_font_size": 14.0,
+  "ui_font_size": 14.0,
   "buffer_font_size": 14.0,
   "agent_servers": {
     "claude-acp": {
-      "type": "registry"
+      "type": "registry",
     },
   },
-  "icon_theme": {
-    "mode": "light",
-    "light": "Material Icon Theme",
-    "dark": "Zed (Default)"
-  },
-  // "ui_font_size": 14.5,
-  // "buffer_font_size": 14.5,
-  // "agent_ui_font_size": 14.5,
-  // "agent_buffer_font_size": 14.5,
-  // "ui_font_weight": 300,
-  // "buffer_font_weight": 300,
-  "ui_font_family": "JetBrainsMono Nerd Font Mono",
-  "buffer_font_family": "JetBrainsMono Nerd Font Mono",
-  // "formatter": "language_server",
-  // "edit_predictions": {
-  //   "mode": "subtle",
-  // },
-  // "buffer_line_height": "standard",
+  "icon_theme": "Material Icon Theme",
+  "ui_font_family": "JetBrainsMono Nerd Font Propo",
+  "buffer_font_family": "JetBrainsMono Nerd Font Propo",
+  "buffer_line_height": "standard",
   "inline_code_actions": false,
   "collaboration_panel": {
-    "button": false
+    "button": false,
   },
   "git": {
-    "git_gutter": "hide"
+    "git_gutter": "hide",
   },
   "git_panel": {
     "tree_view": true,
@@ -39,30 +25,26 @@
     "status_style": null,
   },
   "notification_panel": {
-    "button": false
+    "button": false,
   },
   "outline_panel": {
-    "button": false
+    "button": false,
   },
   "project_panel": {
-    "button": false
+    "button": false,
   },
   "indent_guides": {
     "enabled": false,
   },
   "scrollbar": {
-    "show": "never"
+    "show": "never",
   },
   "search": {
-    "button": false
+    "button": false,
   },
-  "theme": {
-    "mode": "dark",
-    "light": "One Light",
-    "dark": "Tokyo Night"
-  },
+  "theme": "Teide Dimmed (Claude)",
   "toolbar": {
-    "quick_actions": false
+    "quick_actions": false,
   },
   "vim_mode": true,
 }
