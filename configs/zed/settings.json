@@ -1,14 +1,18 @@
 {
-  "agent_buffer_font_size": 14.0,
-  "agent_ui_font_size": 14.0,
-  "ui_font_size": 14.0,
-  "buffer_font_size": 14.0,
+  "agent_buffer_font_size": 15.0,
+  "agent_ui_font_size": 15.0,
+  "ui_font_size": 15.0,
+  "buffer_font_size": 15.0,
   "agent_servers": {
     "claude-acp": {
       "type": "registry",
     },
   },
-  "icon_theme": "Material Icon Theme",
+  "icon_theme": {
+    "mode": "light",
+    "light": "Bearded Icon Theme",
+    "dark": "Bearded Icon Theme",
+  },
   "ui_font_family": "JetBrainsMono Nerd Font Propo",
   "buffer_font_family": "JetBrainsMono Nerd Font Propo",
   "buffer_line_height": "standard",
@@ -42,7 +46,7 @@
   "search": {
     "button": false,
   },
-  "theme": "Teide Dimmed (Claude)",
+  "theme": "Zeide",
   "toolbar": {
     "quick_actions": false,
   },

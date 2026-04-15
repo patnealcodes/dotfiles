@@ -1,6 +1,0 @@
-authors = ["Pat Neal"]
-description = "A vibrant, neon-accented dark theme for Zed. Ported from teide.nvim - which was ported from tokyonight"
-id = "zeide-theme
-name = "Zeide"
-schema_version = 1
-version = "0.1.0"
