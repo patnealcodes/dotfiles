@@ -16,8 +16,8 @@
 
 require("catppuccin").setup({
   float = {
-  	transparent = true,
-  	solid = false,
+    transparent = true,
+    solid = false,
   },
   integrations = {
     diffview = true,
@@ -37,19 +37,21 @@ require("catppuccin").setup({
   },
   custom_highlights = function(colors)
     return {
-      GitBlameInline         = { fg = "#3c404f", bg = "none" },
-      TelescopeNormal        = { bg = colors.base },
-      TelescopeBorder        = { fg = colors.blue, bg = colors.base },
-      TelescopePromptNormal  = { bg = colors.base },
-      TelescopePromptBorder  = { fg = colors.blue, bg = colors.base },
-      TelescopeResultsNormal = { bg = colors.base },
-      TelescopeResultsBorder = { fg = colors.blue, bg = colors.base },
-      TelescopePreviewNormal = { bg = colors.base },
-      TelescopePreviewBorder = { fg = colors.blue, bg = colors.base },
-      TelescopeTitle         = { fg = colors.mauve, bg = colors.base },
-      TelescopePromptTitle   = { fg = colors.mauve, bg = colors.base },
-      TelescopeResultsTitle  = { fg = colors.mauve, bg = colors.base },
-      TelescopePreviewTitle  = { fg = colors.mauve, bg = colors.base },
+      GitBlameInline          = { fg = "#3c404f", bg = "none" },
+      TelescopeResultsComment = { fg = "#3c404f", bg = "none" },
+      TelescopeSelection      = { link = "TelescopePreviewLine" },
+      TelescopeNormal         = { bg = colors.base },
+      TelescopeBorder         = { fg = colors.blue, bg = colors.base },
+      TelescopePromptNormal   = { bg = colors.base },
+      TelescopePromptBorder   = { fg = colors.blue, bg = colors.base },
+      TelescopeResultsNormal  = { bg = colors.base },
+      TelescopeResultsBorder  = { fg = colors.blue, bg = colors.base },
+      TelescopePreviewNormal  = { bg = colors.base },
+      TelescopePreviewBorder  = { fg = colors.blue, bg = colors.base },
+      TelescopeTitle          = { fg = colors.mauve, bg = colors.base },
+      TelescopePromptTitle    = { fg = colors.mauve, bg = colors.base },
+      TelescopeResultsTitle   = { fg = colors.mauve, bg = colors.base },
+      TelescopePreviewTitle   = { fg = colors.mauve, bg = colors.base },
     }
   end
 })

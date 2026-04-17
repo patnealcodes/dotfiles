@@ -22,6 +22,11 @@ telescope.setup({
         ["<C-x>"] = actions.delete_buffer,
       },
     },
+    path_display = {
+      filename_first = {
+        reverse_directories = false,
+      },
+    },
   },
   extensions = {
     ["ui-select"] = {
