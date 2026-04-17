@@ -1,7 +1,8 @@
 local plugins = {
-  "https://github.com/serhez/teide.nvim",
+  "https://github.com/catppuccin/nvim",
   "https://github.com/nvim-mini/mini.nvim",
   "https://github.com/tpope/vim-fugitive",
+  "https://github.com/sindrets/diffview.nvim",
   "https://github.com/f-person/git-blame.nvim",
   "https://github.com/nvim-tree/nvim-web-devicons",
   "https://github.com/nvim-tree/nvim-tree.lua",

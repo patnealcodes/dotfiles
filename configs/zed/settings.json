@@ -46,7 +46,7 @@
   "search": {
     "button": false,
   },
-  "theme": "Zeide",
+  "theme": "Catppuccin Mocha",
   "toolbar": {
     "quick_actions": false,
   },

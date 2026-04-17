@@ -26,3 +26,7 @@ key("n", "<leader>=-", function()
 end, { desc = "Load last session" })
 
 key("n", "<C-b>", "<cmd>NvimTreeFindFileToggle<cr>", { desc = "Toggle Nvim Tree" })
+key("n", "<leader>dvo", "<cmd>DiffviewOpen<cr>", {desc = "Diff view (working copy)" })
+key("n", "<leader>dvc", "<cmd>DiffviewClose<cr>", {desc = "Close diff view" })
+key("n", "<leader>dvh", "<cmd>DiffviewFileHistory %<cr>", {desc = "File history (current)" })
+key("n", "<leader>dvfh", "<cmd>DiffviewFileHistory<cr>", {desc = "File history (repo)" })

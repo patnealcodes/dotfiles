@@ -16,12 +16,12 @@ alias dot="~/codes/repos/dotfiles"
 
 # Dotfile shortcuts
 alias zrc="v ~/.zshrc"
-alias zut="v ~/codes/repos/dotfiles/files/.zshutils"
-alias ala="v ~/codes/repos/dotfiles/files/alacritty/alacritty.toml"
-alias gho="v ~/codes/repos/dotfiles/files/ghostty/config"
-alias wez="v ~/codes/repos/dotfiles/files/wezterm/wezterm.lua"
-alias vd="~/codes/repos/dotfiles/files/nvim && v"
-alias tx="v ~/codes/repos/dotfiles/files/.tmux.conf"
+alias zut="v ~/codes/repos/dotfiles/configs/.zshutils"
+alias ala="v ~/codes/repos/dotfiles/configs/alacritty/alacritty.toml"
+alias gho="v ~/codes/repos/dotfiles/configs/ghostty/config"
+alias wez="v ~/codes/repos/dotfiles/configs/wezterm/wezterm.lua"
+alias vd="~/codes/repos/dotfiles/configs/nvim && v"
+alias tx="v ~/codes/repos/dotfiles/configs/.tmux.conf"
 alias gflash="gemini --model=gemini-flash"
 alias gpro="gemini --model=gemini-pro"
 
@@ -33,7 +33,10 @@ alias ex="~/Exercism"
 # tmux shortcuts
 alias txl="tmux ls"
 alias txd="tmux detach"
-function txn() { if [ "$@" ]; then tmux new -s "$@"; else tmux; fi }
+
+function txn() {
+  bash ~/codes/repos/dotfiles/tmux-sessionizer "$@"
+}
 function txa() { if [ "$@" ]; then tmux attach -t "$@"; else tmux attach; fi }
 function txks() { tmux kill-session -t "$@" }
 function txkw() { tmux kill-window -t "$@" }
