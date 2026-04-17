@@ -43,7 +43,7 @@ function txkw() { tmux kill-window -t "$@" }
 
 # Utility Functions
 alias l="eza -lha --no-user"
-alias lg="lazygit"
+alias lg="LG_CONFIG_FILE=\"/Users/$USER/.config/lazygit/config.yml\" lazygit"
 alias gconfig="git config --global"
 function mkcd() { mkdir "$@" && cd "$@"; }
 function mkc() { mkdir "$@" && c "$@"; }
