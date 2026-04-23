@@ -1,4 +1,9 @@
 {
+  "agent": {
+    "dock": "left",
+    "favorite_models": [],
+    "model_parameters": []
+  },
   "agent_buffer_font_size": 15.0,
   "agent_ui_font_size": 15.0,
   "ui_font_size": 15.0,
@@ -18,12 +23,14 @@
   "buffer_line_height": "standard",
   "inline_code_actions": false,
   "collaboration_panel": {
+    "dock": "right",
     "button": false,
   },
   "git": {
     "git_gutter": "hide",
   },
   "git_panel": {
+    "dock": "right",
     "tree_view": true,
     "button": false,
     "status_style": null,
@@ -32,9 +39,11 @@
     "button": false,
   },
   "outline_panel": {
+    "dock": "right",
     "button": false,
   },
   "project_panel": {
+    "dock": "right",
     "button": false,
   },
   "indent_guides": {
