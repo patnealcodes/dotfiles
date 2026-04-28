@@ -60,6 +60,10 @@ oil.setup({
 })
 
 vim.keymap.set("n", "-", function()
+  oil.open_float()
+end, { desc = "Open Oil in float mode" })
+
+vim.keymap.set("n", "C--", function()
   oil.open_float(nil, nil, function()
     oil.open_preview({ vertical = true })
   end)

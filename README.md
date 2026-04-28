@@ -8,8 +8,8 @@
 ### Apps
 - Rectangle | *Mac window management*
   - [Download](https://rectangleapp.com/) 
-- Oh My Zsh
-  - [Download](https://ohmyz.sh/#install)
+- Starship
+  - `curl -sS https://starship.rs/install.sh | sh`
 ### Homebrew packages
 - mise | *like nvm, but for most things*
   - `brew install mise`

@@ -15,3 +15,4 @@ app = [ 'Rectangle', 'Zed' ]
 'nvim' = '~/.config/nvim'
 'opencode' = '~/.config/opencode'
 'zed' = '~/.config/zed'
+'starship.toml' = '~/.config/starship.toml'

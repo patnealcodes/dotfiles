@@ -1,5 +1,6 @@
 #----- MISE
 eval "$(/opt/homebrew/bin/mise activate zsh)"
+eval "$(starship init zsh)"
 
 # Setup
 LG_CONFIG_FILE="/Users/$USER/.config/lazygit/config.yml"
@@ -12,7 +13,7 @@ alias v="nvim"
 alias z="zed"
 
 # Repo shortcuts
-alias dot="~/codes/repos/dotfiles"
+alias dot="cd ~/codes/repos/dotfiles"
 
 # Dotfile shortcuts
 alias zrc="v ~/.zshrc"
