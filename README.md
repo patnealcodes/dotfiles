@@ -2,14 +2,12 @@
 
 ## install some tools/utils:
 
-### IDEs
+### Code stuff
   - [Neovim](https://neovim.io/doc/install/)
   - [Zed](https://zed.dev/)
 ### Apps
 - Rectangle | *Mac window management*
   - [Download](https://rectangleapp.com/) 
-- Starship
-  - `curl -sS https://starship.rs/install.sh | sh`
 ### Homebrew packages
 - mise | *like nvm, but for most things*
   - `brew install mise`
@@ -25,13 +23,17 @@
   - `brew install gitmux`
 - OpenCode | *Agent harness of choice*
   - `brew install anomalyco/tap/opencode`
+- Starship | *Neat-o shell prompt*
+  - `brew install starship`
+- zsh-history-substring-search | *search history matching the current prompt*
+  - `brew install zsh-history-substring-search`
 
 
 ___
 ## Configs
 ### Ezpz CLI to set up config file symlinks with `dotfiler`
 ```bash
-./dotfiler
+npm run dotfiler
 ```
 
 ### Some configs need to be imported manually
@@ -57,16 +59,3 @@ defaults write .GlobalPreferences com.apple.scrollwheel.scaling -1
 defaults write com.knollsoft.Hookshot screenEdgeGapTop -int 0
 ```
 - to change Rectangle top gap
-
-
-## Utils
-
-### `dotfiler` Go CLI
-- Build *(from `./utils/dotfiler`)*
-```bash
-cd ./utils/dotfiler && go build -o ../../dotfiler
-```
-- Run *(from `./`)*
-```bash
-./dotfiler
-```

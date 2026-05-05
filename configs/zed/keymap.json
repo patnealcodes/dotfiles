@@ -8,25 +8,25 @@
   {
     "context": "((VimControl && !menu) || !Editor)",
     "bindings": {
-      "ctrl-a h": "workspace::ActivatePaneLeft",
+      "ctrl-; h": "workspace::ActivatePaneLeft",
     },
   },
   {
     "context": "((VimControl && !menu) || !Editor)",
     "bindings": {
-      "ctrl-a j": "workspace::ActivatePaneDown",
+      "ctrl-; j": "workspace::ActivatePaneDown",
     },
   },
   {
     "context": "((VimControl && !menu) || !Editor)",
     "bindings": {
-      "ctrl-a k": "workspace::ActivatePaneUp",
+      "ctrl-; k": "workspace::ActivatePaneUp",
     },
   },
   {
     "context": "((VimControl && !menu) || !Editor)",
     "bindings": {
-      "ctrl-a l": "workspace::ActivatePaneRight",
+      "ctrl-; l": "workspace::ActivatePaneRight",
     },
   },
   {
@@ -41,7 +41,7 @@
   },
   {
     "bindings": {
-      "ctrl-a space": "tab_switcher::ToggleAll",
+      "ctrl-; space": "tab_switcher::ToggleAll",
     },
   },
   {
@@ -53,31 +53,31 @@
   {
     "context": "((VimControl && !menu) || (!Editor && !Terminal))",
     "bindings": {
-      "ctrl-a ctrl-up": "vim::ResizePaneUp",
+      "ctrl-; ctrl-up": "vim::ResizePaneUp",
     },
   },
   {
     "context": "((VimControl && !menu) || (!Editor && !Terminal))",
     "bindings": {
-      "ctrl-a ctrl-down": "vim::ResizePaneUp",
+      "ctrl-; ctrl-down": "vim::ResizePaneUp",
     },
   },
   {
     "context": "((VimControl && !menu) || (!Editor && !Terminal))",
     "bindings": {
-      "ctrl-a ctrl-left": "vim::ResizePaneLeft",
+      "ctrl-; ctrl-left": "vim::ResizePaneLeft",
     },
   },
   {
     "context": "((VimControl && !menu) || (!Editor && !Terminal))",
     "bindings": {
-      "ctrl-a ctrl-right": "vim::ResizePaneRight",
+      "ctrl-; ctrl-right": "vim::ResizePaneRight",
     },
   },
   {
     "context": "Editor",
     "bindings": {
-      "alt-g": "editor::ToggleGitBlameInline"
-    }
-  }
+      "alt-g": "editor::ToggleGitBlameInline",
+    },
+  },
 ]

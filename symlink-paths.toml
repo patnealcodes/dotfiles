@@ -17,3 +17,4 @@ app = [ 'Rectangle', 'Zed' ]
 'opencode' = '~/.config/opencode'
 'zed' = '~/.config/zed'
 'starship.toml' = '~/.config/starship.toml'
+'opencode/AGENTS.md' = '~/.claude/CLAUDE.md'

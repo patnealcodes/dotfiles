@@ -3,8 +3,8 @@ local config = {}
 
 
 config.color_scheme = 'catppuccin-mocha'
-config.font = wezterm.font('Agave Nerd Font Mono')
-config.font_size = 16
+config.font = wezterm.font('MonoLisa Trial')
+config.font_size = 15
 config.enable_tab_bar = false
 config.enable_wayland = false
 config.window_decorations = "RESIZE"

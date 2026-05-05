@@ -25,6 +25,7 @@ local plugins = {
   },
   "https://github.com/rafamadriz/friendly-snippets",
   "https://github.com/mbbill/undotree",
+  "https://github.com/kdheepak/lazygit.nvim"
 }
 
 if vim.fn.executable("make") == 1 then
@@ -35,7 +36,7 @@ vim.pack.add(plugins)
 
 vim.pack.add({
   { src = "https://github.com/folke/persistence.nvim", name = "persistence" },
-  { src = "https://github.com/ThePrimeagen/harpoon", name = "harpoon", version = "harpoon2" },
+  { src = "https://github.com/ThePrimeagen/harpoon",   name = "harpoon",    version = "harpoon2" },
   {
     src = "https://github.com/nvim-treesitter/nvim-treesitter-textobjects",
     name = "nvim-treesitter-textobjects",
