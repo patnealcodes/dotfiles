@@ -21,15 +21,15 @@ alias zut="v ~/codes/repos/dotfiles/configs/.zshutils"
 alias ala="v ~/codes/repos/dotfiles/configs/alacritty/alacritty.toml"
 alias gho="v ~/codes/repos/dotfiles/configs/ghostty/config"
 alias wez="v ~/codes/repos/dotfiles/configs/wezterm/wezterm.lua"
-alias vd="~/codes/repos/dotfiles/configs/nvim && v"
+alias vd="cd ~/codes/repos/dotfiles/configs/nvim && v"
 alias tx="v ~/codes/repos/dotfiles/configs/.tmux.conf"
 alias gflash="gemini --model=gemini-flash"
 alias gpro="gemini --model=gemini-pro"
 
 # Folder Shortcuts
-alias repos="~/codes/repos"
-alias tz="~/codes/testzone"
-alias ex="~/Exercism"
+alias repos="cd ~/codes/repos"
+alias tz="cd ~/codes/testzone"
+alias ex="cd ~/Exercism"
 
 # tmux shortcuts
 alias txl="tmux ls"

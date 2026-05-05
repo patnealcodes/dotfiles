@@ -10,6 +10,7 @@ app = [ 'Rectangle', 'Zed' ]
 '.zshutils' = '~/.zshutils'
 '.tmux.conf' = '~/.tmux.conf'
 'ghostty' = '~/.config/ghostty'
+'wezterm' = '~/.config/wezterm'
 'lazygit' = '~/.config/lazygit'
 'mise' = '~/.config/mise'
 'nvim' = '~/.config/nvim'
