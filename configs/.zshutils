@@ -1,6 +1,15 @@
 #----- MISE
 eval "$(/opt/homebrew/bin/mise activate zsh)"
 eval "$(starship init zsh)"
+ 
+# Plugins
+
+# Bind Up and Down arrows to search history matching the current prompt
+autoload -Uz up-line-or-beginning-search down-line-or-beginning-search
+zle -N up-line-or-beginning-search
+zle -N down-line-or-beginning-search
+bindkey '^[[A' up-line-or-beginning-search # Up arrow
+bindkey '^[[B' down-line-or-beginning-search # Down arrow
 
 # Setup
 LG_CONFIG_FILE="/Users/$USER/.config/lazygit/config.yml"
