@@ -30,7 +30,7 @@ vim.api.nvim_create_autocmd("LspAttach", {
     map("gD", vim.lsp.buf.declaration, "Goto declaration")
     map("K", vim.lsp.buf.hover, "Hover")
     map("<leader>ca", vim.lsp.buf.code_action, "Code action", { "n", "x" })
-    map("<leader>cr", vim.lsp.buf.rename, "Rename")
+    map("<leader>rn", vim.lsp.buf.rename, "Rename")
     map("<leader>cs", require("telescope.builtin").lsp_document_symbols, "Document symbols")
     map("<leader>cS", require("telescope.builtin").lsp_dynamic_workspace_symbols, "Workspace symbols")
     map("<leader>f", function()
