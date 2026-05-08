@@ -46,7 +46,6 @@ question({
     header: "Scope",
     question: "Which subsystems need detailed specs?",
     options: [
-      { label: "VCS layer", description: "jj-lib + gix unified interface" },
       { label: "Review workflow", description: "GitHub PR-style local review" },
       { label: "Event system", description: "pub/sub + persistence" }
     ],
