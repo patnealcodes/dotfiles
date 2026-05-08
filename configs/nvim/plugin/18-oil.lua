@@ -9,6 +9,12 @@ local oil = require("oil")
 
 oil.setup({
   constrain_cursor = "name",
+  confirmation = {
+    border = "rounded",
+  },
+  float = {
+    border = "rounded",
+  },
   columns = {
     {
       "permissions",
@@ -21,7 +27,7 @@ oil.setup({
         return hls
       end,
     },
-    { "size", highlight = "Special" },
+    { "size",  highlight = "Special" },
     { "mtime", highlight = "Number" },
     {
       "icon",
