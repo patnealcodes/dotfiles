@@ -1,6 +1,66 @@
 local actions = require("telescope.actions")
 local telescope = require("telescope")
 
+local exclude_folders = {
+  ".git", "node_modules", ".venv"
+}
+local exclude_files = {
+  ".DS_Store"
+}
+
+local function build_fd_exclude_args()
+  local args = {}
+
+  for _, folder in ipairs(exclude_folders) do
+    vim.list_extend(args, { "--exclude", folder })
+  end
+
+  for _, file in ipairs(exclude_files) do
+    vim.list_extend(args, { "--exclude", file })
+  end
+
+  return args
+end
+
+local function build_rg_hidden_args()
+  local args = { "--hidden" }
+
+  for _, folder in ipairs(exclude_folders) do
+    vim.list_extend(args, { "--glob", "!**/" .. folder .. "/*" })
+  end
+
+  for _, file in ipairs(exclude_files) do
+    vim.list_extend(args, { "--glob", "!**/" .. file })
+  end
+
+  return args
+end
+
+local fd_exclude_args = build_fd_exclude_args()
+local rg_hidden_args = build_rg_hidden_args()
+
+local function find_files_command(no_ignore)
+  if vim.fn.executable("fd") == 1 then
+    local command = { "fd", "--type", "f", "--hidden" }
+
+    if no_ignore then
+      table.insert(command, "--no-ignore")
+    end
+
+    return vim.list_extend(command, fd_exclude_args)
+  end
+
+  if vim.fn.executable("rg") == 1 then
+    local command = { "rg", "--files" }
+
+    if no_ignore then
+      table.insert(command, "--no-ignore")
+    end
+
+    return vim.list_extend(command, rg_hidden_args)
+  end
+end
+
 telescope.setup({
   defaults = {
     file_ignore_patterns = { "node_modules", ".git/" },
@@ -28,6 +88,18 @@ telescope.setup({
       },
     },
   },
+  pickers = {
+    find_files = {
+      hidden = true,
+      find_command = find_files_command(false),
+    },
+    live_grep = {
+      additional_args = rg_hidden_args,
+    },
+    grep_string = {
+      additional_args = rg_hidden_args,
+    },
+  },
   extensions = {
     ["ui-select"] = {
       require("telescope.themes").get_dropdown(),
@@ -43,7 +115,10 @@ local builtin = require("telescope.builtin")
 
 vim.keymap.set("n", "<leader>sf", builtin.find_files, { desc = "Search files" })
 vim.keymap.set("n", "<leader>saf", function()
-  builtin.find_files({ hidden = true, no_ignore = true })
+  builtin.find_files({
+    find_command = find_files_command(true),
+    hidden = true,
+  })
 end, { desc = "Search all files" })
 vim.keymap.set("n", "<leader>sg", builtin.live_grep, { desc = "Search grep" })
 vim.keymap.set("n", "<leader>sw", builtin.grep_string, { desc = "Search word" })
