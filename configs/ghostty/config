@@ -10,8 +10,8 @@ clipboard-read = allow
 clipboard-write = allow
 copy-on-select = true 
 
-font-family = MonoLisa Trial
-font-size = 14
+font-family = Dank Mono
+font-size = 16
 font-style = Regular
 font-style-italic = Regular Italic
 font-style-bold = Bold

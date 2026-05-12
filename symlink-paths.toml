@@ -1,6 +1,5 @@
 [packages]
-brew = [ 'ghostty', 'nvim', 'eza', 'gitmux' ]
-manual = [ 'omz' ]
+brew = [ 'ghostty', 'nvim', 'eza', 'gitmux', 'starship' ]
 app = [ 'Rectangle', 'Zed' ]
 
 [configs.app]
@@ -18,3 +17,6 @@ app = [ 'Rectangle', 'Zed' ]
 'zed' = '~/.config/zed'
 'starship.toml' = '~/.config/starship.toml'
 'opencode/AGENTS.md' = '~/.claude/CLAUDE.md'
+
+# My stuff
+'ezwt' = '~/.config/exwt'

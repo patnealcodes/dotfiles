@@ -19,10 +19,11 @@ key("n", "<leader>vd", vim.diagnostic.open_float, { desc = "Open diagnostics" })
 key("n", "]d", vim.diagnostic.goto_next, { desc = "Next diagnostic" })
 key("n", "[d", vim.diagnostic.goto_prev, { desc = "Previous diagnostic" })
 
-for _, lhs in ipairs({ "gra", "gri", "grn", "grr", "grt", "grx" }) do
-  pcall(vim.keymap.del, "n", lhs)
-end
-pcall(vim.keymap.del, "x", "gra")
+-- -- unbind gr* so 
+-- for _, lhs in ipairs({ "gra", "gri", "grn", "grr", "grt", "grx" }) do
+--   pcall(vim.keymap.del, "n", lhs)
+-- end
+-- pcall(vim.keymap.del, "x", "gra")
 
 key("n", "<leader>=-", function()
   vim.cmd.packadd("persistence")

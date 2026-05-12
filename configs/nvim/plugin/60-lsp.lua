@@ -1,4 +1,3 @@
-
 require("mason").setup({})
 require("fidget").setup({})
 
@@ -28,7 +27,14 @@ vim.api.nvim_create_autocmd("LspAttach", {
     map("gI", require("telescope.builtin").lsp_implementations, "Goto implementation")
     map("gy", require("telescope.builtin").lsp_type_definitions, "Goto type definition")
     map("gD", vim.lsp.buf.declaration, "Goto declaration")
-    map("K", vim.lsp.buf.hover, "Hover")
+    map("K", function()
+      vim.lsp.buf.hover({
+        border = "rounded",
+        source = "always",
+        header = "",
+        prefix = "",
+      })
+    end, "Hover")
     map("<leader>ca", vim.lsp.buf.code_action, "Code action", { "n", "x" })
     map("<leader>rn", vim.lsp.buf.rename, "Rename")
     map("<leader>cs", require("telescope.builtin").lsp_document_symbols, "Document symbols")
@@ -70,7 +76,7 @@ local servers = {
         {
           name = "@vue/typescript-plugin",
           location = vim.fn.stdpath("data")
-            .. "/mason/packages/vue-language-server/node_modules/@vue/language-server",
+              .. "/mason/packages/vue-language-server/node_modules/@vue/language-server",
           languages = { "vue" },
         },
       },

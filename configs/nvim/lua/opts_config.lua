@@ -26,13 +26,3 @@ vim.opt.undofile = true
 vim.opt.updatetime = 50
 vim.opt.wrap = false
 vim.opt.isfname:append("@-@")
-
-local hover = vim.lsp.buf.hover
-vim.lsp.buf.hover = function()
-  return hover({
-    border = "rounded",
-    source = "always",
-    header = "",
-    prefix = "",
-  })
-end

@@ -1,0 +1,3 @@
+[config]
+worktree_dir = "~/codes/worktrees"
+theme="catppuccin"
