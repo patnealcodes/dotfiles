@@ -1,9 +1,3 @@
-auto-update-channel = tip
-
-background-opacity = 0.94
-background-blur-radius = 20
-background-blur = true
-
 cursor-style-blink = true
 
 clipboard-read = allow
@@ -22,7 +16,7 @@ macos-titlebar-proxy-icon = hidden
 
 mouse-scroll-multiplier = 0.4
 
-theme = Catppuccin Mocha
+theme = Catppuccin Macchiato
 
 unfocused-split-opacity = 0.97  
 
