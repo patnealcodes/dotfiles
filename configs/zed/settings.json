@@ -3,13 +3,21 @@
   "agent": {
     "dock": "left",
     "favorite_models": [],
-    "model_parameters": []
+    "model_parameters": [],
   },
-  "agent_buffer_font_size": 15.0,
-  "agent_ui_font_size": 15.0,
-  "ui_font_size": 15.0,
-  "buffer_font_size": 15.0,
+  // "agent_buffer_font_size": 15.0,
+  // "agent_ui_font_size": 15.0,
+  // "ui_font_size": 15.0,
+  // "buffer_font_size": 15.0,
   "agent_servers": {
+    "opencode": {
+      "favorite_config_option_values": {
+        "model": [
+          "openai/gpt-5.5-pro"
+        ]
+      },
+      "type": "registry",
+    },
     "claude-acp": {
       "type": "registry",
     },
@@ -19,8 +27,8 @@
     "light": "Bearded Icon Theme",
     "dark": "Bearded Icon Theme",
   },
-  "ui_font_family": "JetBrainsMono Nerd Font Propo",
-  "buffer_font_family": "JetBrainsMono Nerd Font Propo",
+  "ui_font_family": "Dank Mono",
+  // "buffer_font_family": "JetBrainsMono Nerd Font Propo",
   "buffer_line_height": "standard",
   "inline_code_actions": false,
   "collaboration_panel": {

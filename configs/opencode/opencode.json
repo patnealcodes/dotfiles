@@ -69,6 +69,11 @@
       "url": "https://mcp.context7.com/mcp",
       "enabled": true
     },
+    "excalidraw": {
+      "type": "remote",
+      "url": "https://mcp.excalidraw.com",
+      "enabled": true
+    },
     "grep_app": {
       "type": "remote",
       "url": "https://mcp.grep.app",
