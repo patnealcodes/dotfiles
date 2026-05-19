@@ -115,10 +115,6 @@
       "rev": "5255aa27c422de944791318024167ad5d40aad20",
       "src": "https://github.com/nvim-telescope/telescope.nvim"
     },
-    "tmv-nvim": {
-      "rev": "48d0b5e3c1653e5faddf4f40f4197a280834f352",
-      "src": "file:///Users/patnealcodes/codes/repos/tmv.nvim"
-    },
     "tokyonight.nvim": {
       "rev": "cdc07ac78467a233fd62c493de29a17e0cf2b2b6",
       "src": "https://github.com/folke/tokyonight.nvim"

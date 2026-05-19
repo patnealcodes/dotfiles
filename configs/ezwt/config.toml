@@ -1,3 +1,4 @@
 [config]
 worktree_dir = "~/codes/worktrees"
 theme="catppuccin"
+tmux_session_on_create=true
