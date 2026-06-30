@@ -1,4 +1,5 @@
 {
+  "base_keymap": "Cursor",
   "diff_view_style": "unified",
   "agent": {
     "dock": "left",
@@ -64,7 +65,7 @@
   "search": {
     "button": false,
   },
-  "theme": "Catppuccin Mocha",
+  "theme": "Catppuccin Macchiato",
   "toolbar": {
     "quick_actions": false,
   },

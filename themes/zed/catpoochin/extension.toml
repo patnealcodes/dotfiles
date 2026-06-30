@@ -1,0 +1,6 @@
+authors = ["Pat Neal"]
+description = "CAT"
+id = "catppoochin"
+name = "Catppoochin"
+schema_version = 1
+version = "0.1.0"

@@ -1,5 +1,4 @@
 background-opacity = 0.94
-background-blur-radius = 20
 background-blur = true
 
 cursor-style-blink = true
@@ -10,7 +9,7 @@ copy-on-select = true
 
 
 font-family = Dank Mono
-font-size = 16
+font-size = 18
 font-style = Regular
 font-style-italic = Regular Italic
 font-style-bold = Bold

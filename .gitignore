@@ -3,4 +3,10 @@
 nvim.*
 node_modules
 configs/zed/prompts
-temp-slop/*
+.temp-slop/*
+.env
+
+# Pi local runtime state
+configs/.pi/agent/auth.json
+configs/.pi/agent/bin/
+configs/.pi/agent/sessions/

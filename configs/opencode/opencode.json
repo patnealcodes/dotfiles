@@ -71,8 +71,11 @@
     },
     "excalidraw": {
       "type": "remote",
-      "url": "https://mcp.excalidraw.com",
-      "enabled": true
+      "url": "https://api.excalidraw.com/api/v1/mcp",
+      "enabled": true,
+      "headers": {
+        "Authorization": "Bearer {env:EXCALIDRAW_API_KEY}"
+      }
     },
     "grep_app": {
       "type": "remote",
@@ -87,6 +90,6 @@
         "opensrc-mcp"
       ],
       "enabled": true
-    },
+    }
   }
 }
