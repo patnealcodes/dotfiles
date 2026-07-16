@@ -11,6 +11,9 @@ configs/.pi/agent/*
 configs/.pi/pi-acp
 configs/.pi/todos/*
 
+# OpenCode
+configs/opencode/service-*.json
+
 # .acli
 */*/.acli_*
 
