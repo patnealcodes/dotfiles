@@ -25,7 +25,8 @@ local plugins = {
   },
   "https://github.com/rafamadriz/friendly-snippets",
   "https://github.com/mbbill/undotree",
-  "https://github.com/kdheepak/lazygit.nvim"
+  "https://github.com/kdheepak/lazygit.nvim",
+  "https://github.com/paulbkim-dev/vim-herdr-navigation",
 }
 
 if vim.fn.executable("make") == 1 then

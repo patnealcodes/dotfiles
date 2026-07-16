@@ -1,3 +1,5 @@
+onboarding = false
+
 [terminal]
 default_shell = "zsh"
 shell_mode = "auto"
@@ -16,18 +18,64 @@ red = "#ed8796"
 yellow = "#eed49f"
 
 [keys]
-# Global prefix changed from default ctrl+b to avoid clobbering
-# common shell/readline and tmux bindings.
-# prefix = "ctrl+;"
+prefix = "ctrl+semicolon"
+previous_workspace = "prefix+up"
+next_workspace = "prefix+down"
+
+# vim-herdr-navigation forwards these chords into Vim/Neovim when focused;
+# otherwise it focuses the adjacent Herdr pane.
+[[keys.command]]
+key = "ctrl+h"
+type = "plugin_action"
+command = "vim-herdr-navigation.left"
+description = "Navigate left (Vim/Herdr)"
+
+[[keys.command]]
+key = "ctrl+j"
+type = "plugin_action"
+command = "vim-herdr-navigation.down"
+description = "Navigate down (Vim/Herdr)"
+
+[[keys.command]]
+key = "ctrl+k"
+type = "plugin_action"
+command = "vim-herdr-navigation.up"
+description = "Navigate up (Vim/Herdr)"
+
+[[keys.command]]
+key = "ctrl+l"
+type = "plugin_action"
+command = "vim-herdr-navigation.right"
+description = "Navigate right (Vim/Herdr)"
 
 [session]
 resume_agents_on_restore = true
 
 [ui]
-sidebar_width = 26
+confirm_close = true
+sidebar_width = 32
+sidebar_min_width = 18
+sidebar_max_width = 36
 mouse_capture = true
+hide_tab_bar_when_single_tab = true
+right_click_passthrough_modifier = "ctrl"
+mouse_scroll_lines = 3
+prompt_new_tab_name = true
+agent_panel_scope = "all"
+accent = "#c6a0f6"
+show_agent_labels_on_pane_borders = true
+
+[ui.toast]
+delivery = "herdr"
+delay_seconds = 1
+
+[ui.toast.herdr]
+position = "top-right"
 
 [update]
 channel = "stable"
 version_check = true
 manifest_check = true
+
+[experimental]
+switch_ascii_input_source_in_prefix = true

@@ -13,6 +13,7 @@ app = [ 'Rectangle', 'Zed' ]
 'ghostty' = '~/.config/ghostty'
 'wezterm' = '~/.config/wezterm'
 'lazygit' = '~/.config/lazygit'
+'herdr/config.toml' = '~/.config/herdr/config.toml'
 'mise' = '~/.config/mise'
 'nvim' = '~/.config/nvim'
 'zed' = '~/.config/zed'

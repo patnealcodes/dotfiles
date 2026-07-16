@@ -7,9 +7,12 @@ configs/zed/prompts
 .env
 
 # Pi local runtime state
-configs/.pi/agent/auth.json
-configs/.pi/agent/bin/
-configs/.pi/agent/sessions/
+configs/.pi/agent/*
 configs/.pi/pi-acp
+configs/.pi/todos/*
 
+# .acli
 */*/.acli_*
+
+# Google agent skills
+configs/.agents/skills/google-agents-cli*

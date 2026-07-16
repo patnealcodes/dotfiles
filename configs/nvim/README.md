@@ -35,7 +35,18 @@ On first launch, `vim.pack` prompts to install plugins. Confirm the install and 
 - `<leader>=-` restore the last session
 - `<leader>ha` add file to Harpoon
 - `<leader>ht` open Harpoon picker
+- `<C-h/j/k/l>` navigate across Neovim splits and Herdr panes
 - `gd`, `gr`, `K`, `<leader>ca`, `<leader>cr` LSP actions when a server is attached
+
+## Herdr Navigation
+
+The Neovim side is installed by `vim.pack`. Install the cooperating Herdr plugin once on each machine (Herdr `>= 0.7.0` and `jq` are required):
+
+```sh
+herdr plugin install paulbkim-dev/vim-herdr-navigation --yes
+```
+
+The Herdr key bindings live in `configs/herdr/config.toml`.
 
 ## Managing Plugins
 
