@@ -1,0 +1,34 @@
+# dependencies (npm install)
+node_modules/
+
+# pi-managed runtime/package install state
+agent/npm/
+agent/auth.json
+agent/bin/
+agent/sessions/
+
+# build/test output
+out/
+dist/
+coverage/
+*.lcov
+*.tsbuildinfo
+
+# logs
+logs/
+*.log
+report.[0-9]*.[0-9]*.[0-9]*.[0-9]*.json
+
+# dotenv environment variable files
+.env
+.env.development.local
+.env.test.local
+.env.production.local
+.env.local
+
+# caches
+.eslintcache
+.cache/
+
+# macOS
+.DS_Store

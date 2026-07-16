@@ -10,3 +10,6 @@ configs/zed/prompts
 configs/.pi/agent/auth.json
 configs/.pi/agent/bin/
 configs/.pi/agent/sessions/
+configs/.pi/pi-acp
+
+*/*/.acli_*

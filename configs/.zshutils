@@ -25,7 +25,7 @@ alias z="zed"
 alias dot="cd ~/codes/repos/dotfiles"
 
 # The OC
-alias oc="opencode"
+alias oc="opencode2"
 
 # Dotfile shortcuts
 alias zrc="v ~/.zshrc"

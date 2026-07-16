@@ -37,8 +37,46 @@ symbol = " "
 symbol = " "
 
 [python]
-disabled = true
-# detect_files = ["requirements.txt", "pyproject.toml", "Pipfile"]
+disabled = false
+# Icon only, and only inside an actual python project.
+symbol = " "
+detect_extensions = []
+detect_files = [
+  "requirements.txt",
+  "pyproject.toml",
+  "Pipfile",
+  "setup.py",
+  "tox.ini",
+  ".python-version",
+]
+detect_folders = [".venv", "venv"]
+# mise activates a global venv at ~/.venv in every shell; ignore it so the icon
+# doesn't light up outside python projects. Venv state is handled below.
+detect_env_vars = []
+format = '[${symbol}${version}]($style)'
+style = "yellow bold"
+
+# The venv indicators treat the global mise venv (~/.venv) as "no project venv",
+# so they reflect the *project's* venv state instead of the always-on global one.
+# starship ORs `when` with detect_folders, so all checks live inside `when`.
+
+# Active: a project venv is sourced (VIRTUAL_ENV points somewhere other than ~/.venv).
+[custom.venv_active]
+description = "Active project virtualenv"
+when = 'test -n "$VIRTUAL_ENV" && test "$VIRTUAL_ENV" != "$HOME/.venv"'
+command = 'basename "$VIRTUAL_ENV"'
+format = '[\($output\)]($style) '
+style = "bold green"
+
+# Inactive: a project venv exists on disk but isn't the active one.
+[custom.venv_inactive]
+description = "Existing but inactive project virtualenv"
+when = '{ test -d .venv || test -d venv; } && test "$VIRTUAL_ENV" != "$PWD/.venv" && test "$VIRTUAL_ENV" != "$PWD/venv"'
+command = """
+print "global venv"
+"""
+format = '[\($output\)]($style) '
+style = "red dimmed"
 
 [nodejs]
 detect_extensions = []
