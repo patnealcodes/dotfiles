@@ -5,11 +5,11 @@ cursor-style-blink = true
 
 clipboard-read = allow
 clipboard-write = allow
+
 copy-on-select = true 
 
-
-font-family = Dank Mono
-font-size = 18
+font-family = FiraCode Nerd Font Mono
+font-size = 16
 font-style = Regular
 font-style-italic = Regular Italic
 font-style-bold = Bold
@@ -22,7 +22,7 @@ mouse-scroll-multiplier = 0.4
 
 theme = Catppuccin Macchiato
 
-unfocused-split-opacity = 0.97  
+unfocused-split-opacity = 0.97
 
 window-width = 90
 window-height = 30
@@ -31,3 +31,6 @@ window-padding-color = background
 window-padding-balance = true
 window-padding-x = 0
 window-padding-y = 0
+
+# Keybinds
+keybind = cmd+a=unbind

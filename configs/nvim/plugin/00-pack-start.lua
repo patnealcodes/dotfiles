@@ -19,6 +19,7 @@ local plugins = {
   "https://github.com/WhoIsSethDaniel/mason-tool-installer.nvim",
   "https://github.com/j-hui/fidget.nvim",
   "https://github.com/akinsho/git-conflict.nvim",
+  "https://github.com/MeanderingProgrammer/render-markdown.nvim",
   {
     src = "https://github.com/saghen/blink.cmp",
     version = vim.version.range("1.x"),
