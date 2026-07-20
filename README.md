@@ -28,6 +28,10 @@
 - zsh-history-substring-search | *search history matching the current prompt*
   - `brew install zsh-history-substring-search`
 
+### QoL
+- Hex | *voice to text*
+  - `brew install --cask kitlangton-hex`
+
 
 ___
 ## Configs

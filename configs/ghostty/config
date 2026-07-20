@@ -15,7 +15,9 @@ font-style-italic = Regular Italic
 font-style-bold = Bold
 font-style-bold-italic = Bold Italic
 
+macos-auto-secure-input = true
 macos-option-as-alt = true
+macos-secure-input-indication = false
 macos-titlebar-proxy-icon = hidden
 
 mouse-scroll-multiplier = 0.4
