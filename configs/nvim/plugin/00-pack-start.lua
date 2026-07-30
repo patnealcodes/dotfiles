@@ -1,5 +1,6 @@
 local plugins = {
   "https://github.com/catppuccin/nvim",
+  "https://github.com/folke/tokyonight.nvim",
   "https://github.com/nvim-mini/mini.nvim",
   "https://github.com/tpope/vim-fugitive",
   "https://github.com/sindrets/diffview.nvim",

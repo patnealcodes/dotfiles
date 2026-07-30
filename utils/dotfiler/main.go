@@ -3,7 +3,9 @@ package main
 import (
 	"fmt"
 	"os"
+	"os/exec"
 	"path/filepath"
+	"strings"
 
 	"github.com/BurntSushi/toml"
 	tea "github.com/charmbracelet/bubbletea"
@@ -12,6 +14,12 @@ import (
 type Config struct {
 	Packages PackagesConfig
 	Configs  ConfigsConfig
+	Commands []CommandConfig
+}
+
+type CommandConfig struct {
+	Name    string
+	Command []string
 }
 
 type PackagesConfig struct {
@@ -61,4 +69,31 @@ func main() {
 	}
 
 	applyChanges(m.symlinks, configsDir)
+	if err := runCommands(cfg.Commands, repoRoot); err != nil {
+		fmt.Fprintf(os.Stderr, "error: %v\n", err)
+		os.Exit(1)
+	}
+}
+
+func runCommands(commands []CommandConfig, repoRoot string) error {
+	for _, configured := range commands {
+		if len(configured.Command) == 0 {
+			return fmt.Errorf("command %q has no executable", configured.Name)
+		}
+
+		name := configured.Name
+		if name == "" {
+			name = strings.Join(configured.Command, " ")
+		}
+		fmt.Printf("Running: %s\n", name)
+
+		cmd := exec.Command(configured.Command[0], configured.Command[1:]...)
+		cmd.Dir = repoRoot
+		cmd.Stdout = os.Stdout
+		cmd.Stderr = os.Stderr
+		if err := cmd.Run(); err != nil {
+			return fmt.Errorf("run %q: %w", name, err)
+		}
+	}
+	return nil
 }

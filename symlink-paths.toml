@@ -19,5 +19,6 @@ app = [ 'Rectangle', 'Zed' ]
 'zed' = '~/.config/zed'
 'starship.toml' = '~/.config/starship.toml'
 
-# My stuff
-'ezwt' = '~/.config/ezwt'
+[[commands]]
+name = 'Register Herdr default tabs plugin'
+command = [ 'herdr', 'plugin', 'link', 'configs/herdr/plugins/default-tabs' ]
