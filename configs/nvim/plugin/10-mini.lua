@@ -1,7 +1,7 @@
 require("mini.ai").setup({ n_lines = 500 })
 require("mini.comment").setup()
 require("mini.surround").setup()
-require("mini.pairs").setup()
+-- require("mini.pairs").setup()
 
 local statusline = require("mini.statusline")
 
@@ -9,13 +9,6 @@ statusline.mylsp = function()
   local buf_clients = vim.lsp.get_clients({ bufnr = 0 })
   if #buf_clients == 0 then
     return "LSP Inactive"
-  end
-
-  local buf_client_names = {}
-  for _, client in pairs(buf_clients) do
-    if client.name ~= "GitHub Copilot" then
-      table.insert(buf_client_names, client.name)
-    end
   end
 
   return string.format("[%s]", table.concat(buf_client_names, ", "))
