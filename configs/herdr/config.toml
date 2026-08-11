@@ -28,8 +28,9 @@ agent_panel_scope = "all"
 accent = "#c6a0f6"
 show_agent_labels_on_pane_borders = true
 
+agent_panel_sort = "priority"
 [ui.toast]
-delivery = "herdr"
+delivery = "terminal"
 delay_seconds = 1
 
 [ui.toast.herdr]
@@ -41,4 +42,5 @@ version_check = true
 manifest_check = true
 
 [experimental]
-switch_ascii_input_source_in_prefix = true
+kitty_graphics = true
+pane_history = true
