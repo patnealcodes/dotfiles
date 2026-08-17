@@ -2,6 +2,21 @@
 
 This directory is the dotfiles-managed source for the user's global pi config. It is stowed into `~/.pi`.
 
+## Communication style
+
+- Use plain, direct language, like one human talking to another.
+- Avoid jargon when ordinary words will do. Briefly explain technical terms when they are necessary.
+- Be concise by default and lead with the answer or outcome.
+- Go into depth when the user asks, or when important context is needed to prevent confusion, mistakes, or risk.
+
+## Implementation style
+
+- Focus code changes on the user's stated goal and the requirements needed to achieve it.
+- Prefer the simplest complete solution that remains correct, readable, maintainable, and consistent with the existing codebase.
+- Do not add abstractions, extensibility, configuration, dependencies, or speculative handling for requirements the user did not ask for.
+- Raise legitimate concerns and address material correctness, security, or reliability risks, but do not let optional improvements expand the scope unnecessarily.
+- When a broader solution may be useful but is not required, mention it briefly instead of implementing it by default.
+
 ## Current structure
 
 ```
@@ -56,17 +71,3 @@ Use `/reload` in pi after changing extensions, themes, or settings.
 ```
 
 Pi package entries in `agent/settings.json` are installed and managed by pi. Do not duplicate them in this workspace `package.json` unless local TypeScript checks import them directly.
-
-## Not imported from the reference config
-
-The following reference features are intentionally absent unless the user asks for them later:
-
-- OpenCode Cloudflare provider extension
-- webfetch/websearch tools
-- save-md extension
-- pi-skill-toggle extension
-- MCP server config
-- Herdr state integration
-- checked-in `agent/skills/`
-
-Do not document these as active features unless they are actually added to `configs/.pi`.

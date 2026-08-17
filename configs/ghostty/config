@@ -9,7 +9,7 @@ clipboard-write = allow
 copy-on-select = true 
 
 font-family = Intel One Mono
-font-size = 18
+font-size = 16
 font-style = Regular
 font-style-italic = Regular Italic
 font-style-bold = Bold
