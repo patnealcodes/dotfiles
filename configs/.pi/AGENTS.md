@@ -56,6 +56,19 @@ Use `/reload` in pi after changing extensions, themes, or settings.
 - If a future extension needs its own package dependencies, add a `package.json` in that extension directory and keep it compatible with the root workspace.
 - Keep extension code ESM/TypeScript and compatible with pi auto-discovery.
 
+## Implementation Simplicity
+
+Prefer the smallest local change that fully fixes the behavior, unless a broader or more abstract solution addresses a concrete, present need that the local change would leave unsolved.
+
+- Fix behavior at the existing ownership point before introducing helpers, modules, types, or new files.
+- Use ordinary language features and existing constants when they express the invariant clearly.
+- Do not extract a one-line operation solely for testability or hypothetical reuse.
+- Add an abstraction only when it hides meaningful complexity, serves multiple callers, or enforces a non-obvious invariant.
+- Do not create production seams merely to unit-test implementation details. Test observable behavior through an existing seam; if that is disproportionate, keep the fix local rather than manufacturing architecture.
+- Avoid broad refactors while fixing a narrow bug unless the existing structure prevents a correct fix.
+- Before adding a file or exported symbol, ask whether the same behavior can remain clear and correct in the owning function.
+- When multiple implementations are functionally equivalent, prefer the one with fewer concepts, files, exports, and state transitions—not merely fewer lines.
+
 ## Current settings
 
 `agent/settings.json` intentionally keeps this machine's provider/model defaults while selecting the imported theme and loading the configured pi package:
