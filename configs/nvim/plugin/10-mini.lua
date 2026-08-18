@@ -11,7 +11,11 @@ statusline.mylsp = function()
     return "LSP Inactive"
   end
 
-  return string.format("[%s]", table.concat(buf_client_names, ", "))
+  local client_names = vim.tbl_map(function(client)
+    return client.name
+  end, buf_clients)
+
+  return string.format("[%s]", table.concat(client_names, ", "))
 end
 
 statusline.setup({
