@@ -6,6 +6,7 @@ Global pi configuration managed by this dotfiles repo and stowed into `~/.pi`.
 
 This package currently tracks a small, selected subset of the reference `.temp-slop/.pi` config:
 
+- `agent/AGENTS.md` — symlink to the shared, harness-agnostic instructions in `configs/.agents/AGENTS.md`.
 - `agent/settings.json` — pi defaults; keeps `openai-codex` / `gpt-5.5`, uses high thinking, loads `npm:@plannotator/pi-extension`, and selects the `catppuccin-macchiato` theme.
 - `agent/cloak.json` — patterns consumed by the local `pi-cloak` extension to mask secrets in read-tool output.
 - `agent/extensions/answer.ts` — `/answer` command and `Ctrl+.` shortcut for answering extracted assistant questions.

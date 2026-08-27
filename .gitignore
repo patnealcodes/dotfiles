@@ -8,6 +8,7 @@ configs/zed/prompts
 
 # Pi local runtime state
 configs/.pi/agent/*
+!configs/.pi/agent/AGENTS.md
 configs/.pi/agent/*/*
 configs/.pi/pi-acp
 configs/.pi/todos/*

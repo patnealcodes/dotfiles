@@ -2,29 +2,20 @@
 
 This directory is the dotfiles-managed source for the user's global pi config. It is stowed into `~/.pi`.
 
-## Communication style
+## Shared instructions
 
-- Use plain, direct language, like one human talking to another.
-- Avoid jargon when ordinary words will do. Briefly explain technical terms when they are necessary.
-- Be concise by default and lead with the answer or outcome.
-- Go into depth when the user asks, or when important context is needed to prevent confusion, mistakes, or risk.
-
-## Implementation style
-
-- Focus code changes on the user's stated goal and the requirements needed to achieve it.
-- Prefer the simplest complete solution that remains correct, readable, maintainable, and consistent with the existing codebase.
-- Do not add abstractions, extensibility, configuration, dependencies, or speculative handling for requirements the user did not ask for.
-- Raise legitimate concerns and address material correctness, security, or reliability risks, but do not let optional improvements expand the scope unnecessarily.
-- When a broader solution may be useful but is not required, mention it briefly instead of implementing it by default.
+`agent/AGENTS.md` links to the harness-agnostic instructions in `configs/.agents/AGENTS.md`, so pi loads the same global instructions as other harnesses. Keep this file limited to pi config workspace guidance.
 
 ## Current structure
 
 ```
 configs/.pi/
-├── package.json          # npm workspace root for extension type-checking
-├── tsconfig.json         # strict TypeScript config for local extensions
+├── AGENTS.md            # pi config workspace guidance
+├── package.json         # npm workspace root for extension type-checking
+├── tsconfig.json        # strict TypeScript config for local extensions
 ├── agent/
-│   ├── settings.json     # provider/model/theme defaults
+│   ├── AGENTS.md        # link to shared global agent instructions
+│   ├── settings.json    # provider/model/theme defaults
 │   ├── cloak.json        # pi-cloak masking rules
 │   ├── extensions/
 │   │   ├── answer.ts             # /answer command + Ctrl+. shortcut
@@ -55,19 +46,6 @@ Use `/reload` in pi after changing extensions, themes, or settings.
 - Directory extensions live in `agent/extensions/<name>/index.ts`.
 - If a future extension needs its own package dependencies, add a `package.json` in that extension directory and keep it compatible with the root workspace.
 - Keep extension code ESM/TypeScript and compatible with pi auto-discovery.
-
-## Implementation Simplicity
-
-Prefer the smallest local change that fully fixes the behavior, unless a broader or more abstract solution addresses a concrete, present need that the local change would leave unsolved.
-
-- Fix behavior at the existing ownership point before introducing helpers, modules, types, or new files.
-- Use ordinary language features and existing constants when they express the invariant clearly.
-- Do not extract a one-line operation solely for testability or hypothetical reuse.
-- Add an abstraction only when it hides meaningful complexity, serves multiple callers, or enforces a non-obvious invariant.
-- Do not create production seams merely to unit-test implementation details. Test observable behavior through an existing seam; if that is disproportionate, keep the fix local rather than manufacturing architecture.
-- Avoid broad refactors while fixing a narrow bug unless the existing structure prevents a correct fix.
-- Before adding a file or exported symbol, ask whether the same behavior can remain clear and correct in the owning function.
-- When multiple implementations are functionally equivalent, prefer the one with fewer concepts, files, exports, and state transitions—not merely fewer lines.
 
 ## Current settings
 
