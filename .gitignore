@@ -13,6 +13,38 @@ configs/.pi/agent/*/*
 configs/.pi/pi-acp
 configs/.pi/todos/*
 
+# Claude — only CLAUDE.md, settings.json, hooks/, themes/ and commands/ are versioned.
+# Everything below is either machine-local runtime state or holds credentials.
+# Secrets
+configs/.claude/sessions
+configs/.claude/daemon-auth-*
+configs/.claude/remote-settings.json
+configs/.claude/policy-limits.json*
+configs/.claude/mcp-needs-auth-cache.json
+configs/.claude/settings.local.json
+configs/.claude/.credentials.json
+# Runtime state
+configs/.claude/projects
+configs/.claude/plugins
+configs/.claude/jobs
+configs/.claude/file-history
+configs/.claude/shell-snapshots
+configs/.claude/session-env
+configs/.claude/paste-cache
+configs/.claude/statsig
+configs/.claude/cache
+configs/.claude/backups
+configs/.claude/daemon
+configs/.claude/debug
+configs/.claude/downloads
+configs/.claude/tasks
+configs/.claude/todos
+configs/.claude/plans
+configs/.claude/history.jsonl
+configs/.claude/*.log
+configs/.claude/stats-cache.json
+configs/.claude/.last-*
+
 # OpenCode
 configs/opencode/service-*.json
 
@@ -21,6 +53,8 @@ configs/opencode/service-*.json
 
 # Google agent skills
 configs/.agents/skills/google-agents-cli*
+# Claude Code writes its synced-skills bucket here now that ~/.claude/skills points at this dir
+configs/.agents/skills/synced
 _temp-slop/*
 
 ./configs/.pi/sessions

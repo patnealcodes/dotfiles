@@ -8,6 +8,14 @@ app = [ 'Rectangle', 'Zed' ]
 [configs.symlink]
 '.agents' = '~/.agents'
 '.pi' = '~/.pi'
+# Per-entry, never the whole '~/.claude' directory: dotfiler RemoveAll's a target
+# that already exists as a real path, which would delete projects/, history and plugins.
+'.claude/CLAUDE.md' = '~/.claude/CLAUDE.md'
+'.claude/settings.json' = '~/.claude/settings.json'
+'.claude/hooks' = '~/.claude/hooks'
+'.claude/themes' = '~/.claude/themes'
+'.claude/commands' = '~/.claude/commands'
+'.agents/skills' = '~/.claude/skills'
 '.tmux.conf' = '~/.tmux.conf'
 '.zshutils' = '~/.zshutils'
 'ghostty' = '~/.config/ghostty'
@@ -16,6 +24,7 @@ app = [ 'Rectangle', 'Zed' ]
 'herdr/config.toml' = '~/.config/herdr/config.toml'
 'mise' = '~/.config/mise'
 'nvim' = '~/.config/nvim'
+'rex' = '~/.config/rex'
 'zed' = '~/.config/zed'
 'starship.toml' = '~/.config/starship.toml'
 

@@ -50,7 +50,7 @@ Before writing any code:
 
 - [ ] Confirm with user what interface changes are needed
 - [ ] Confirm with user which behaviors to test (prioritize)
-- [ ] Identify opportunities for deep modules (small interface, deep implementation) — see `../coding-standards/DESIGNING_MODULES.md` for the vocabulary and testability checks
+- [ ] Identify opportunities for deep modules (small interface, deep implementation) — see `../typescript-standards/DESIGNING_MODULES.md` for the vocabulary and testability checks
 - [ ] List the behaviors to test (not implementation steps)
 - [ ] Get user approval on the plan
 
@@ -110,7 +110,7 @@ After all tests pass, look for [refactor candidates](refactoring.md):
 ## Local overrides (dmmulroy/skills)
 
 This skill is vendored from mattpocock/skills. In this repository,
-`../coding-standards/TESTING_AND_VERIFICATION.md` is the source of truth for
+`../typescript-standards/TESTING_AND_VERIFICATION.md` is the source of truth for
 testing and **supersedes `mocking.md`** wherever they disagree:
 
 - Do not use module-patching APIs (`vi.mock`, `jest.mock`) or method-spy APIs

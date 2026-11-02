@@ -1,0 +1,62 @@
+#!/usr/bin/env bash
+
+set -euo pipefail
+
+select_folder() {
+  local roots=()
+  local worktree_root
+
+  [[ -d "$HOME/codes/repos" ]] && roots+=("$HOME/codes/repos")
+  [[ -d "$HOME/codes/testzone" ]] && roots+=("$HOME/codes/testzone")
+
+  for worktree_root in "$HOME"/codes/worktrees/*; do
+    [[ -d "$worktree_root" ]] && roots+=("$worktree_root")
+  done
+
+  if [[ ${#roots[@]} -eq 0 ]]; then
+    echo "No project roots found under ~/codes/repos, ~/codes/worktrees, or ~/codes/testzone." >&2
+    return 1
+  fi
+
+  if ! command -v fzf >/dev/null 2>&1; then
+    echo "fzf is required to choose a project folder." >&2
+    return 1
+  fi
+
+  find "${roots[@]}" -mindepth 1 -maxdepth 1 -type d 2>/dev/null |
+    sort -u |
+    fzf --prompt='Rex project> '
+}
+
+if [[ $# -gt 1 ]]; then
+  echo "Usage: rex-sessionizer [FOLDER]" >&2
+  exit 2
+fi
+
+if [[ $# -eq 1 ]]; then
+  selected=$1
+else
+  selected=$(select_folder) || exit $?
+fi
+
+[[ -n "$selected" ]] || exit 0
+
+if ! selected=$(cd -- "$selected" 2>/dev/null && pwd -P); then
+  echo "Project folder does not exist or is not accessible: $selected" >&2
+  exit 1
+fi
+
+session_name=$(basename "$selected")
+sessions=$(rex ls --json)
+session_id=$(jq -r --arg label "$session_name" \
+  '[.sessions[] | select(.label == $label)][0].session_id // empty' <<<"$sessions")
+
+if [[ -z "$session_id" ]]; then
+  created=$(rex new "$session_name" --cwd "$selected" --json)
+  session_id=$(jq -er '.session_id' <<<"$created")
+fi
+
+if ! rex do session.select session_id="$session_id" >/dev/null; then
+  echo "Session '$session_name' is available, but the Rex app could not switch to it. Ensure Rex is running with Remote Control enabled." >&2
+  exit 1
+fi

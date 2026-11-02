@@ -6,7 +6,7 @@ disable-model-invocation: true
 
 # Improve Codebase Architecture
 
-Scan a codebase for architecture improvement opportunities grounded in `../coding-standards/`. This is planning-only: do not edit code, run refactors, update docs, create ADRs, run tests, or run static checks unless the user explicitly asks after the scan.
+Scan a codebase for architecture improvement opportunities grounded in `../typescript-standards/`. This is planning-only: do not edit code, run refactors, update docs, create ADRs, run tests, or run static checks unless the user explicitly asks after the scan.
 
 The output is a globally ranked set of refactor candidates. Each candidate names the concrete friction, the standards areas involved, and the leverage the refactor would create.
 
@@ -37,21 +37,21 @@ Completion criterion: the scan scope is explicit, either from the user, inferred
 
 Read the core standards:
 
-- `../coding-standards/SKILL.md`
-- `../coding-standards/VOCABULARY.md`
-- `../coding-standards/DESIGNING_MODULES.md`
-- `../coding-standards/DOMAIN_MODELING.md`
-- `../coding-standards/BOUNDARIES_AND_PARSING.md`
-- `../coding-standards/ERROR_HANDLING.md`
-- `../coding-standards/TESTING_AND_VERIFICATION.md`
+- `../typescript-standards/SKILL.md`
+- `../typescript-standards/VOCABULARY.md`
+- `../typescript-standards/DESIGNING_MODULES.md`
+- `../typescript-standards/DOMAIN_MODELING.md`
+- `../typescript-standards/BOUNDARIES_AND_PARSING.md`
+- `../typescript-standards/ERROR_HANDLING.md`
+- `../typescript-standards/TESTING_AND_VERIFICATION.md`
 
 Load optional standards when the repository or scan scope touches them:
 
-- `../coding-standards/OBSERVABILITY.md` for tracing, logging, telemetry, redaction, or safe summaries.
-- `../coding-standards/ASYNC_AND_WORKFLOWS.md` for cancellation, promise ownership, concurrency, retries, idempotency, transactions, or workflows.
-- `../coding-standards/TYPESCRIPT_CONTRACTS.md` for casts, `any`, exported contracts, collection/object-shape friction, JSDoc, or toolchain architecture.
-- `../coding-standards/CLOUDFLARE_ARCHITECTURE.md` for Workers, bindings, Durable Objects, Agents, D1, KV/R2, Queues, Workflows, service bindings, or workerd runtime hops.
-- `../coding-standards/EFFECT.md` for Effect Services/Layers, typed error channels, Schema, Redacted values, Effect tests, or Effect RPC.
+- `../typescript-standards/OBSERVABILITY.md` for tracing, logging, telemetry, redaction, or safe summaries.
+- `../typescript-standards/ASYNC_AND_WORKFLOWS.md` for cancellation, promise ownership, concurrency, retries, idempotency, transactions, or workflows.
+- `../typescript-standards/TYPESCRIPT_CONTRACTS.md` for casts, `any`, exported contracts, collection/object-shape friction, JSDoc, or toolchain architecture.
+- `../typescript-standards/CLOUDFLARE_ARCHITECTURE.md` for Workers, bindings, Durable Objects, Agents, D1, KV/R2, Queues, Workflows, service bindings, or workerd runtime hops.
+- `../typescript-standards/EFFECT.md` for Effect Services/Layers, typed error channels, Schema, Redacted values, Effect tests, or Effect RPC.
 
 Read local context when present and relevant:
 

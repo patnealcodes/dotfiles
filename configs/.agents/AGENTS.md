@@ -39,6 +39,7 @@
 - **Never compromise type safety**: no `any`, no non-null assertion operator (`!`), no unsafe type assertions
 - Parse and validate inputs at boundaries; keep internal states typed and explicit
 - **Make illegal states unrepresentable**; prefer algebraic data types/discriminated unions over boolean flags and loosely optional fields
+- When a feature becomes standard, delete its flag, rollout modes, and conditional branches instead of flipping a default; a default-on toggle keeps unsupported states alive, tested, and one misconfiguration away. Keep a switch only when every state is a supported configuration, and handle one-time bootstrap ordering as a sequenced step, not a permanent flag
 - Prefer existing helpers/patterns over new abstractions
 - Add an abstraction only when it hides meaningful complexity, serves multiple callers, or enforces a non-obvious invariant
 - Keep abstractions consciously constrained, pragmatically parameterized, and documented when non-obvious

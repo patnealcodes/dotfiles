@@ -1,14 +1,14 @@
 ---
-name: code-review
+name: code-review-standards
 description: Review code against the local coding standards.
 disable-model-invocation: true
 ---
 
-# Code Review
+# Code Review Standards
 
 Run a standards-backed code review. This is review-only: do not edit files, apply patches, or "fix as you go" unless the user explicitly asks after the review.
 
-Treat `../coding-standards/` as the standards package. Load standards by topic; do not duplicate or reinvent them here.
+Treat `../typescript-standards/` as the standards package. Load standards by topic; do not duplicate or reinvent them here.
 
 ## Review principles
 
@@ -36,23 +36,23 @@ Completion criterion: the review target is explicit and backed by inspected git 
 
 Read:
 
-- `../coding-standards/SKILL.md`
-- `../coding-standards/VOCABULARY.md`
+- `../typescript-standards/SKILL.md`
+- `../typescript-standards/VOCABULARY.md`
 
 Then load topic files matching the changed responsibilities:
 
 | Change touches... | Load... |
 |---|---|
-| domain values, invariants, states, transitions | `../coding-standards/DOMAIN_MODELING.md` |
-| expected failures, custom errors, catch/classification | `../coding-standards/ERROR_HANDLING.md` |
-| logs, traces, telemetry, redaction, secrets | `../coding-standards/OBSERVABILITY.md` |
-| modules, interfaces, seams, adapters, dependencies | `../coding-standards/DESIGNING_MODULES.md` |
-| parsing, DTOs, storage rows, config, projections, codecs | `../coding-standards/BOUNDARIES_AND_PARSING.md` |
-| cancellation, promises, concurrency, retries, transactions, workflows | `../coding-standards/ASYNC_AND_WORKFLOWS.md` |
-| tests, real seams, properties, persistence/runtime evidence | `../coding-standards/TESTING_AND_VERIFICATION.md` |
-| casts, `any`, readonly contracts, collections, exports, JSDoc, toolchain | `../coding-standards/TYPESCRIPT_CONTRACTS.md` |
-| Workers, Durable Objects, Agents, D1, KV/R2, Queues, Workflows | `../coding-standards/CLOUDFLARE_ARCHITECTURE.md` |
-| Effect Services/Layers, typed channel, Schema, Redacted, Effect tests | `../coding-standards/EFFECT.md` |
+| domain values, invariants, states, transitions | `../typescript-standards/DOMAIN_MODELING.md` |
+| expected failures, custom errors, catch/classification | `../typescript-standards/ERROR_HANDLING.md` |
+| logs, traces, telemetry, redaction, secrets | `../typescript-standards/OBSERVABILITY.md` |
+| modules, interfaces, seams, adapters, dependencies | `../typescript-standards/DESIGNING_MODULES.md` |
+| parsing, DTOs, storage rows, config, projections, codecs | `../typescript-standards/BOUNDARIES_AND_PARSING.md` |
+| cancellation, promises, concurrency, retries, transactions, workflows | `../typescript-standards/ASYNC_AND_WORKFLOWS.md` |
+| tests, real seams, properties, persistence/runtime evidence | `../typescript-standards/TESTING_AND_VERIFICATION.md` |
+| casts, `any`, readonly contracts, collections, exports, JSDoc, toolchain | `../typescript-standards/TYPESCRIPT_CONTRACTS.md` |
+| Workers, Durable Objects, Agents, D1, KV/R2, Queues, Workflows | `../typescript-standards/CLOUDFLARE_ARCHITECTURE.md` |
+| Effect Services/Layers, typed channel, Schema, Redacted, Effect tests | `../typescript-standards/EFFECT.md` |
 
 Inspect local code/docs for conventions around errors, schemas, testing, dependency injection, observability, adapters, and module layout before reporting pattern deviations.
 
